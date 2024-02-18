@@ -1,0 +1,35 @@
+name: pixel_battle
+
+packages:
+  - apps/admin_app
+  - apps/user_app
+  - core
+
+scripts:
+  # Исправляет линты и форматирует все файлы в проекте
+  fix_format: 'melos exec "dart fix --apply && dart format ."'
+
+  # Запускает во всех пакетах pub upgrade, обновляя dev_kit и swagger_parser
+  pub_update: 'melos exec "flutter pub upgrade dev_kit swagger_parser "'
+
+  # Запускает во всех пакетах pub get
+  pub_get: 'melos exec "flutter pub get"'
+
+  # Запускает build_runner build в admin_app package
+  admin_build: 'melos exec --scope="admin_app" "dart run build_runner build -d"'
+  
+  # Запускает build_runner watch в admin_app package
+  admin_watch: 'melos exec --scope="admin_app" "dart run build_runner watch -d"'
+
+  # Запускает build_runner build в user_app package
+  user_build: 'melos exec --scope="user_app" "dart run build_runner build -d"'
+  
+  # Запускает build_runner watch в user_app package
+  user_watch: 'melos exec --scope="user_app" "dart run build_runner watch -d"'
+
+  # Запускает build_runner build в core package
+  core_build: 'melos exec --scope="core" "dart run build_runner build -d"'
+  
+  # Запускает build_runner watch в core package
+  core_watch: 'melos exec --scope="core" "dart run build_runner watch -d"'
+  

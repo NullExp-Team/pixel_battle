@@ -349,7 +349,7 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
+      ref: develop
       resolved-ref: f605234a9164cb79d18bf8b35959b8b8496cdf2b
       url: "https://github.com/StarProxima/dev_kit"
     source: git
