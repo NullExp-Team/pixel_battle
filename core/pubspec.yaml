@@ -1,0 +1,100 @@
+name: core
+description: Application core
+publish_to: 'none'
+
+version: 1.0.0
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+  flutter: '<=3.13.9'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  dev_kit:
+    git:
+      url: https://github.com/StarProxima/dev_kit
+      ref: develop
+
+  collection: ^1.17.2
+  cupertino_icons: ^1.0.6
+  confetti: ^0.7.0
+
+  intl: ^0.18.1
+  google_fonts: ^6.1.0
+  uuid: ^4.2.1
+  numberpicker: ^2.1.2
+
+  dio: ^5.4.0
+
+  flutter_svg: ^2.0.9
+
+  app_links: ^3.4.5
+  auto_route: ^7.8.4
+
+  device_preview: ^1.1.0
+
+  flutter_hooks: ^0.20.3
+  hooks_riverpod: ^2.4.9
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  fluttertoast: ^8.2.4
+  proxima_logger: ^0.7.2
+  path_provider: ^2.1.1
+  package_info_plus: ^4.2.0
+
+  json_annotation: ^4.8.1
+  freezed_annotation: ^2.4.1
+  riverpod_annotation: ^2.3.3
+  theme_tailor_annotation: ^2.0.2
+  
+  easy_refresh: ^3.3.2+4
+
+  slang: ^3.26.1
+  slang_flutter: ^3.26.1
+
+  mask_text_input_formatter: ^2.8.0
+  just_the_tooltip: ^0.0.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.2
+  lints: ^2.1.1
+  custom_lint:
+  riverpod_lint:
+  
+  build_runner: ^2.4.6
+  flutter_gen_runner: ^5.3.2
+  riverpod_generator: ^2.3.3
+  freezed: ^2.4.5
+  json_serializable: ^6.7.1
+  hive_generator: ^2.0.1
+  retrofit_generator: ^7.0.2
+  auto_route_generator: ^7.3.2
+  theme_tailor: ^2.0.2
+
+  auto_exporter: ^1.5.0
+  melos: ^3.4.0
+
+
+flutter_gen:
+  output: lib/src/assets/
+  integrations:
+    flutter_svg: true
+  assets:
+    enabled: true
+    outputs:
+      package_parameter_enabled: true
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
