@@ -1,0 +1,6 @@
+# Для запуска генерации: dart run slang
+test: Test $name
+
+today: today
+yesterday: yesterday
+tomorrow: tomorrow
