@@ -266,17 +266,7 @@ class AppTextField extends HookConsumerWidget {
                                   child:
                                       CircularProgressIndicator(strokeWidth: 3),
                                 )
-                              : !isEmpty.value && !isReadOnly
-                                  ? IconButton(
-                                      onPressed: clearText,
-                                      icon: Assets.icons.closeCircle.svg(
-                                        colorFilter: ColorFilter.mode(
-                                          colors.grey100,
-                                          BlendMode.srcIn,
-                                        ),
-                                      ),
-                                    )
-                                  : null,
+                              : null,
                         ),
                       );
                     },

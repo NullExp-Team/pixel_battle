@@ -16,6 +16,9 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:auto_route/auto_route.dart';
 export 'package:package_info_plus/package_info_plus.dart';
 export 'package:device_preview/device_preview.dart';
+export 'package:intl/intl.dart';
+export 'package:flutter_svg/flutter_svg.dart';
+export 'package:dio/dio.dart';
 export 'dart:async' show FutureOr;
 
 // Api
@@ -28,7 +31,6 @@ export 'package:core/src/extensions/config_extension.dart';
 export 'package:core/src/extensions/hardcoded_string.dart';
 export 'package:dev_kit/src/extensions/ref_cache.dart';
 export 'package:core/src/hooks/app_lifecycle_listener_hook.dart';
-export 'package:core/src/hooks/confetti_controller_hook.dart';
 export 'package:core/src/locales/translations.g.dart';
 export 'package:core/src/theme/app_colors.dart';
 export 'package:core/src/theme/app_shadows.dart';

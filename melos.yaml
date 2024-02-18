@@ -10,6 +10,9 @@ scripts:
   # Исправляет линты и форматирует все файлы в проекте
   fix_format: 'melos exec "dart fix --apply && dart format ."'
 
+  # Запуск генерации переводов
+  slang: 'melos exec "dart run slang"'
+
   # Запускает во всех пакетах pub upgrade, обновляя dev_kit и swagger_parser
   pub_update: 'melos exec "flutter pub upgrade dev_kit swagger_parser "'
 

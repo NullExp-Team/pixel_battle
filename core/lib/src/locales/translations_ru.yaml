@@ -5,5 +5,10 @@ today: сегодня
 yesterday: вчера
 tomorrow: завтра
   
-
+fixValidationErrors(param=errorsCount):
+  one: Исправьте $errorsCount ошибку
+  two: Исправьте $errorsCount ошибки
+  few: Исправьте $errorsCount ошибки
+  many: Исправьте $errorsCount ошибок
+  other: Исправьте $errorsCount ошибок
 

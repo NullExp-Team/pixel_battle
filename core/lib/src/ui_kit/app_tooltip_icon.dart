@@ -62,12 +62,9 @@ class AppTooltipIcon extends StatelessWidget {
           ),
         ),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: SvgIcon(
-          Assets.icons.infoCircle,
-          color: colors.grey100,
-        ),
+      child: const Padding(
+        padding: EdgeInsets.all(4),
+        child: Icon(Icons.info),
       ),
     );
   }

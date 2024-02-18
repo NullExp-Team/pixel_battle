@@ -9,7 +9,7 @@ part of 'app_api_wrap_controller.dart';
 // **************************************************************************
 
 String _$appApiWrapControllerHash() =>
-    r'ab644055a0f60d87a36d9a04fa8145220dc8c55b';
+    r'b6a0b1da15b7bcf68b05dd07bb765b269bc8636c';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -37,8 +37,7 @@ class _SystemHash {
 const appApiWrapControllerProvider = AppApiWrapControllerFamily();
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerFamily
-    extends Family<ApiWrapController<BaseApiError>> {
+class AppApiWrapControllerFamily extends Family<ApiWrapController<Object>> {
   /// See also [appApiWrapController].
   const AppApiWrapControllerFamily();
 
@@ -76,8 +75,7 @@ class AppApiWrapControllerFamily
 }
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerProvider
-    extends Provider<ApiWrapController<BaseApiError>> {
+class AppApiWrapControllerProvider extends Provider<ApiWrapController<Object>> {
   /// See also [appApiWrapController].
   AppApiWrapControllerProvider(
     String key,
@@ -112,8 +110,7 @@ class AppApiWrapControllerProvider
 
   @override
   Override overrideWith(
-    ApiWrapController<BaseApiError> Function(AppApiWrapControllerRef provider)
-        create,
+    ApiWrapController<Object> Function(AppApiWrapControllerRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -130,7 +127,7 @@ class AppApiWrapControllerProvider
   }
 
   @override
-  ProviderElement<ApiWrapController<BaseApiError>> createElement() {
+  ProviderElement<ApiWrapController<Object>> createElement() {
     return _AppApiWrapControllerProviderElement(this);
   }
 
@@ -148,13 +145,13 @@ class AppApiWrapControllerProvider
   }
 }
 
-mixin AppApiWrapControllerRef on ProviderRef<ApiWrapController<BaseApiError>> {
+mixin AppApiWrapControllerRef on ProviderRef<ApiWrapController<Object>> {
   /// The parameter `key` of this provider.
   String get key;
 }
 
 class _AppApiWrapControllerProviderElement
-    extends ProviderElement<ApiWrapController<BaseApiError>>
+    extends ProviderElement<ApiWrapController<Object>>
     with AppApiWrapControllerRef {
   _AppApiWrapControllerProviderElement(super.provider);
 

@@ -1,12 +1,12 @@
 /// Generated file. Do not edit.
 ///
-/// Original: packages/core/lib/src/locales
+/// Original: lib/src/locales
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 25 (12 per locale)
+/// Strings: 13 (6 per locale)
 ///
-/// Built on 2024-02-01 at 16:25 UTC
+/// Built on 2024-02-18 at 21:16 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -146,56 +146,12 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get today => 'сегодня';
 	String get yesterday => 'вчера';
 	String get tomorrow => 'завтра';
-	late final TranslationsPillowsReasonRu pillowsReason = TranslationsPillowsReasonRu._(_root);
 	String fixValidationErrors({required num errorsCount}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ru'))(errorsCount,
 		one: 'Исправьте ${errorsCount} ошибку',
 		two: 'Исправьте ${errorsCount} ошибки',
 		few: 'Исправьте ${errorsCount} ошибки',
 		many: 'Исправьте ${errorsCount} ошибок',
 		other: 'Исправьте ${errorsCount} ошибок',
-	);
-	late final TranslationsArticleRu article = TranslationsArticleRu._(_root);
-}
-
-// Path: pillowsReason
-class TranslationsPillowsReasonRu {
-	TranslationsPillowsReasonRu._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get sleep => 'Вознаграждение за ночь';
-	String get challenge => 'Челлендж';
-	String get referral => 'Вознаграждение за реферала';
-	String get purchase => 'Обмен подушек на билеты';
-	String get unknown => 'Неизвестно';
-}
-
-// Path: article
-class TranslationsArticleRu {
-	TranslationsArticleRu._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final TranslationsArticleQuizRu quiz = TranslationsArticleQuizRu._(_root);
-}
-
-// Path: article.quiz
-class TranslationsArticleQuizRu {
-	TranslationsArticleQuizRu._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get attemptsAreOver => 'Попытки закончились, приходите завтра';
-	String remainingAttempts({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ru'))(n,
-		zero: 'У вас ${n} попыток',
-		one: 'У вас ${n} попытка',
-		two: 'У вас ${n} попытки',
-		few: 'У вас ${n} попытки',
-		many: 'У вас ${n} попыток',
-		other: 'У вас ${n} попыток',
 	);
 }
 
