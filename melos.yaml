@@ -4,6 +4,7 @@ packages:
   - apps/admin_app
   - apps/user_app
   - core
+  - shared
 
 scripts:
   # Исправляет линты и форматирует все файлы в проекте
