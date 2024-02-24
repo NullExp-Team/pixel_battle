@@ -36,4 +36,10 @@ scripts:
   
   # Запускает build_runner watch в core package
   core_watch: 'melos exec --scope="core" "dart run build_runner watch -d"'
+
+  # Запускает build_runner build в shared package
+  shared_build: 'melos exec --scope="shared" "dart run build_runner build -d"'
+  
+  # Запускает build_runner watch в shared package
+  shared_watch: 'melos exec --scope="shared" "dart run build_runner watch -d"'
   

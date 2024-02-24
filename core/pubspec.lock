@@ -57,6 +57,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auto_exporter:
+    dependency: "direct dev"
+    description:
+      name: auto_exporter
+      sha256: a00ea5536985ce94f09548f0a61c4f2ecd2fb147f923a874cc2f00b24121bfc8
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
+  auto_exporter_annotation:
+    dependency: "direct main"
+    description:
+      name: auto_exporter_annotation
+      sha256: "4b5ec6740fcdce418cf569160fe63d5f4217e7129f4a02f002caf59fe1db0170"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   auto_route:
     dependency: "direct main"
     description:
@@ -1355,14 +1371,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  web_socket_channel:
+  web:
     dependency: transitive
     description:
-      name: web_socket_channel
-      sha256: d88238e5eac9a42bb43ca4e721edba3c08c6354d4a53063afaa568516217621b
+      name: web
+      sha256: "1d9158c616048c38f712a6646e317a3426da10e884447626167240d45209cbad"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.0"
+    version: "0.5.0"
+  web_socket_channel:
+    dependency: "direct main"
+    description:
+      name: web_socket_channel
+      sha256: "1d8e795e2a8b3730c41b8a98a2dff2e0fb57ae6f0764a1c46ec5915387d257b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.4"
   webkit_inspection_protocol:
     dependency: transitive
     description:

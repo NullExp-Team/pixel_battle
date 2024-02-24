@@ -16,14 +16,6 @@ targets:
       - lib/**
       - api_specs/**
     builders:
-      # json_serializable:
-      #   options:
-      #     explicit_to_json: true
-      swagger_dart_code_generator:
-        options:
-          output_folder: 'lib/src/config/api/'
-          input_folder: 'api_specs/'
-          separate_models: true
       source_gen|combining_builder:
         options:
           ignore_for_file:
@@ -32,3 +24,7 @@ targets:
           - unused_import
           - require_trailing_commas
           - library_private_types_in_public_api
+      auto_exporter:
+        options:
+          default_export_all: true
+          project_name: src/export
