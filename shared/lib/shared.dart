@@ -3,9 +3,10 @@
 // remenber to format this file, you can use: dart format
 // publish your package hint: dart pub publish --dry-run
 // if you want to update your packages on power: dart pub upgrade --major-versions
-export 'package:shared/src/data/models/app_request.dart';
-export 'package:shared/src/data/models/app_response.dart';
+export 'package:shared/canvas/canvas.dart';
 export 'package:shared/src/data/models/field_pixel.dart';
-export 'package:shared/src/data/models/online_count.dart';
 export 'package:shared/src/data/models/update_pixel.dart';
+export 'package:shared/src/data/models/app_request.dart';
+export 'package:shared/src/data/models/online_count.dart';
+export 'package:shared/src/data/models/app_response.dart';
 export 'package:shared/src/data/api/web_socket_api.dart';
