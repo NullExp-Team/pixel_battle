@@ -70,3 +70,15 @@ Map<String, dynamic> _$$OnlineCountResponseImplToJson(
     <String, dynamic>{
       'type': instance.$type,
     };
+
+_$UnknownResponseImpl _$$UnknownResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UnknownResponseImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$UnknownResponseImplToJson(
+        _$UnknownResponseImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };

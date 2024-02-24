@@ -28,8 +28,7 @@ AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
       return OnlineCountResponse.fromJson(json);
 
     default:
-      throw CheckedFromJsonException(
-          json, 'type', 'AppResponse', 'Invalid union type "${json['type']}"!');
+      return UnknownResponse.fromJson(json);
   }
 }
 
@@ -42,6 +41,7 @@ mixin _$AppResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +51,7 @@ mixin _$AppResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +61,7 @@ mixin _$AppResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,6 +72,7 @@ mixin _$AppResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +82,7 @@ mixin _$AppResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +92,7 @@ mixin _$AppResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +167,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) {
     return banned();
   }
@@ -174,6 +180,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) {
     return banned?.call();
   }
@@ -186,6 +193,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (banned != null) {
@@ -202,6 +210,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) {
     return banned(this);
   }
@@ -214,6 +223,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) {
     return banned?.call(this);
   }
@@ -226,6 +236,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
     if (banned != null) {
@@ -328,6 +339,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) {
     return error(message);
   }
@@ -340,6 +352,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) {
     return error?.call(message);
   }
@@ -352,6 +365,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -368,6 +382,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) {
     return error(this);
   }
@@ -380,6 +395,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) {
     return error?.call(this);
   }
@@ -392,6 +408,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -408,7 +425,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   }
 }
 
-abstract class BackendErrorResponse implements AppResponse {
+abstract class BackendErrorResponse implements AppResponse, Exception {
   const factory BackendErrorResponse(final String message) =
       _$BackendErrorResponseImpl;
 
@@ -498,6 +515,7 @@ class _$AuthResponseImpl implements AuthResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) {
     return userId(data);
   }
@@ -510,6 +528,7 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) {
     return userId?.call(data);
   }
@@ -522,6 +541,7 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (userId != null) {
@@ -538,6 +558,7 @@ class _$AuthResponseImpl implements AuthResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) {
     return userId(this);
   }
@@ -550,6 +571,7 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) {
     return userId?.call(this);
   }
@@ -562,6 +584,7 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
     if (userId != null) {
@@ -677,6 +700,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) {
     return fieldState(data);
   }
@@ -689,6 +713,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) {
     return fieldState?.call(data);
   }
@@ -701,6 +726,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (fieldState != null) {
@@ -717,6 +743,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) {
     return fieldState(this);
   }
@@ -729,6 +756,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) {
     return fieldState?.call(this);
   }
@@ -741,6 +769,7 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
     if (fieldState != null) {
@@ -822,6 +851,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(int data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function() onlineCount,
+    required TResult Function() unknown,
   }) {
     return onlineCount();
   }
@@ -834,6 +864,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(int data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
   }) {
     return onlineCount?.call();
   }
@@ -846,6 +877,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(int data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
+    TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
@@ -862,6 +894,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
   }) {
     return onlineCount(this);
   }
@@ -874,6 +907,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
   }) {
     return onlineCount?.call(this);
   }
@@ -886,6 +920,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
@@ -907,4 +942,148 @@ abstract class OnlineCountResponse implements AppResponse {
 
   factory OnlineCountResponse.fromJson(Map<String, dynamic> json) =
       _$OnlineCountResponseImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$UnknownResponseImplCopyWith<$Res> {
+  factory _$$UnknownResponseImplCopyWith(_$UnknownResponseImpl value,
+          $Res Function(_$UnknownResponseImpl) then) =
+      __$$UnknownResponseImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UnknownResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$UnknownResponseImpl>
+    implements _$$UnknownResponseImplCopyWith<$Res> {
+  __$$UnknownResponseImplCopyWithImpl(
+      _$UnknownResponseImpl _value, $Res Function(_$UnknownResponseImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UnknownResponseImpl implements UnknownResponse {
+  const _$UnknownResponseImpl({final String? $type})
+      : $type = $type ?? 'unknown';
+
+  factory _$UnknownResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnknownResponseImplFromJson(json);
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppResponse.unknown()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnknownResponseImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() banned,
+    required TResult Function(String message) error,
+    required TResult Function(int data) userId,
+    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function() onlineCount,
+    required TResult Function() unknown,
+  }) {
+    return unknown();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? banned,
+    TResult? Function(String message)? error,
+    TResult? Function(int data)? userId,
+    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
+  }) {
+    return unknown?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? banned,
+    TResult Function(String message)? error,
+    TResult Function(int data)? userId,
+    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function()? onlineCount,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
+    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
+  }) {
+    return unknown(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
+    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
+  }) {
+    return unknown?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
+    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (unknown != null) {
+      return unknown(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UnknownResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UnknownResponse implements AppResponse {
+  const factory UnknownResponse() = _$UnknownResponseImpl;
+
+  factory UnknownResponse.fromJson(Map<String, dynamic> json) =
+      _$UnknownResponseImpl.fromJson;
 }
