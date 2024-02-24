@@ -17,15 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'banned':
-      return BannedAppResponse.fromJson(json);
+      return BannedResponse.fromJson(json);
     case 'error':
-      return ErrorAppResponse.fromJson(json);
+      return BackendErrorResponse.fromJson(json);
     case 'user_id':
-      return UserIdAppResponse.fromJson(json);
+      return AuthResponse.fromJson(json);
     case 'field_state':
       return FieldStateAppResponse.fromJson(json);
     case 'online_count':
-      return OnlineCountAppResponse.fromJson(json);
+      return OnlineCountResponse.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -65,29 +65,29 @@ mixin _$AppResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,29 +113,28 @@ class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse>
 }
 
 /// @nodoc
-abstract class _$$BannedAppResponseImplCopyWith<$Res> {
-  factory _$$BannedAppResponseImplCopyWith(_$BannedAppResponseImpl value,
-          $Res Function(_$BannedAppResponseImpl) then) =
-      __$$BannedAppResponseImplCopyWithImpl<$Res>;
+abstract class _$$BannedResponseImplCopyWith<$Res> {
+  factory _$$BannedResponseImplCopyWith(_$BannedResponseImpl value,
+          $Res Function(_$BannedResponseImpl) then) =
+      __$$BannedResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BannedAppResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$BannedAppResponseImpl>
-    implements _$$BannedAppResponseImplCopyWith<$Res> {
-  __$$BannedAppResponseImplCopyWithImpl(_$BannedAppResponseImpl _value,
-      $Res Function(_$BannedAppResponseImpl) _then)
+class __$$BannedResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$BannedResponseImpl>
+    implements _$$BannedResponseImplCopyWith<$Res> {
+  __$$BannedResponseImplCopyWithImpl(
+      _$BannedResponseImpl _value, $Res Function(_$BannedResponseImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BannedAppResponseImpl implements BannedAppResponse {
-  const _$BannedAppResponseImpl({final String? $type})
-      : $type = $type ?? 'banned';
+class _$BannedResponseImpl implements BannedResponse {
+  const _$BannedResponseImpl({final String? $type}) : $type = $type ?? 'banned';
 
-  factory _$BannedAppResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BannedAppResponseImplFromJson(json);
+  factory _$BannedResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BannedResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -148,7 +147,7 @@ class _$BannedAppResponseImpl implements BannedAppResponse {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BannedAppResponseImpl);
+        (other.runtimeType == runtimeType && other is _$BannedResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -198,11 +197,11 @@ class _$BannedAppResponseImpl implements BannedAppResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) {
     return banned(this);
   }
@@ -210,11 +209,11 @@ class _$BannedAppResponseImpl implements BannedAppResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) {
     return banned?.call(this);
   }
@@ -222,11 +221,11 @@ class _$BannedAppResponseImpl implements BannedAppResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) {
     if (banned != null) {
@@ -237,34 +236,34 @@ class _$BannedAppResponseImpl implements BannedAppResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BannedAppResponseImplToJson(
+    return _$$BannedResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class BannedAppResponse implements AppResponse {
-  const factory BannedAppResponse() = _$BannedAppResponseImpl;
+abstract class BannedResponse implements AppResponse {
+  const factory BannedResponse() = _$BannedResponseImpl;
 
-  factory BannedAppResponse.fromJson(Map<String, dynamic> json) =
-      _$BannedAppResponseImpl.fromJson;
+  factory BannedResponse.fromJson(Map<String, dynamic> json) =
+      _$BannedResponseImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$ErrorAppResponseImplCopyWith<$Res> {
-  factory _$$ErrorAppResponseImplCopyWith(_$ErrorAppResponseImpl value,
-          $Res Function(_$ErrorAppResponseImpl) then) =
-      __$$ErrorAppResponseImplCopyWithImpl<$Res>;
+abstract class _$$BackendErrorResponseImplCopyWith<$Res> {
+  factory _$$BackendErrorResponseImplCopyWith(_$BackendErrorResponseImpl value,
+          $Res Function(_$BackendErrorResponseImpl) then) =
+      __$$BackendErrorResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$ErrorAppResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$ErrorAppResponseImpl>
-    implements _$$ErrorAppResponseImplCopyWith<$Res> {
-  __$$ErrorAppResponseImplCopyWithImpl(_$ErrorAppResponseImpl _value,
-      $Res Function(_$ErrorAppResponseImpl) _then)
+class __$$BackendErrorResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$BackendErrorResponseImpl>
+    implements _$$BackendErrorResponseImplCopyWith<$Res> {
+  __$$BackendErrorResponseImplCopyWithImpl(_$BackendErrorResponseImpl _value,
+      $Res Function(_$BackendErrorResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -272,7 +271,7 @@ class __$$ErrorAppResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$ErrorAppResponseImpl(
+    return _then(_$BackendErrorResponseImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -283,12 +282,12 @@ class __$$ErrorAppResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ErrorAppResponseImpl implements ErrorAppResponse {
-  const _$ErrorAppResponseImpl(this.message, {final String? $type})
+class _$BackendErrorResponseImpl implements BackendErrorResponse {
+  const _$BackendErrorResponseImpl(this.message, {final String? $type})
       : $type = $type ?? 'error';
 
-  factory _$ErrorAppResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ErrorAppResponseImplFromJson(json);
+  factory _$BackendErrorResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BackendErrorResponseImplFromJson(json);
 
   @override
   final String message;
@@ -305,7 +304,7 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ErrorAppResponseImpl &&
+            other is _$BackendErrorResponseImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -316,9 +315,10 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ErrorAppResponseImplCopyWith<_$ErrorAppResponseImpl> get copyWith =>
-      __$$ErrorAppResponseImplCopyWithImpl<_$ErrorAppResponseImpl>(
-          this, _$identity);
+  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl>
+      get copyWith =>
+          __$$BackendErrorResponseImplCopyWithImpl<_$BackendErrorResponseImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -363,11 +363,11 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) {
     return error(this);
   }
@@ -375,11 +375,11 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) {
     return error?.call(this);
   }
@@ -387,11 +387,11 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -402,39 +402,40 @@ class _$ErrorAppResponseImpl implements ErrorAppResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ErrorAppResponseImplToJson(
+    return _$$BackendErrorResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class ErrorAppResponse implements AppResponse {
-  const factory ErrorAppResponse(final String message) = _$ErrorAppResponseImpl;
+abstract class BackendErrorResponse implements AppResponse {
+  const factory BackendErrorResponse(final String message) =
+      _$BackendErrorResponseImpl;
 
-  factory ErrorAppResponse.fromJson(Map<String, dynamic> json) =
-      _$ErrorAppResponseImpl.fromJson;
+  factory BackendErrorResponse.fromJson(Map<String, dynamic> json) =
+      _$BackendErrorResponseImpl.fromJson;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$ErrorAppResponseImplCopyWith<_$ErrorAppResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserIdAppResponseImplCopyWith<$Res> {
-  factory _$$UserIdAppResponseImplCopyWith(_$UserIdAppResponseImpl value,
-          $Res Function(_$UserIdAppResponseImpl) then) =
-      __$$UserIdAppResponseImplCopyWithImpl<$Res>;
+abstract class _$$AuthResponseImplCopyWith<$Res> {
+  factory _$$AuthResponseImplCopyWith(
+          _$AuthResponseImpl value, $Res Function(_$AuthResponseImpl) then) =
+      __$$AuthResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int data});
 }
 
 /// @nodoc
-class __$$UserIdAppResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$UserIdAppResponseImpl>
-    implements _$$UserIdAppResponseImplCopyWith<$Res> {
-  __$$UserIdAppResponseImplCopyWithImpl(_$UserIdAppResponseImpl _value,
-      $Res Function(_$UserIdAppResponseImpl) _then)
+class __$$AuthResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$AuthResponseImpl>
+    implements _$$AuthResponseImplCopyWith<$Res> {
+  __$$AuthResponseImplCopyWithImpl(
+      _$AuthResponseImpl _value, $Res Function(_$AuthResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -442,7 +443,7 @@ class __$$UserIdAppResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$UserIdAppResponseImpl(
+    return _then(_$AuthResponseImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -453,12 +454,12 @@ class __$$UserIdAppResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserIdAppResponseImpl implements UserIdAppResponse {
-  const _$UserIdAppResponseImpl(this.data, {final String? $type})
+class _$AuthResponseImpl implements AuthResponse {
+  const _$AuthResponseImpl(this.data, {final String? $type})
       : $type = $type ?? 'user_id';
 
-  factory _$UserIdAppResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserIdAppResponseImplFromJson(json);
+  factory _$AuthResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthResponseImplFromJson(json);
 
   @override
   final int data;
@@ -475,7 +476,7 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserIdAppResponseImpl &&
+            other is _$AuthResponseImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -486,9 +487,8 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserIdAppResponseImplCopyWith<_$UserIdAppResponseImpl> get copyWith =>
-      __$$UserIdAppResponseImplCopyWithImpl<_$UserIdAppResponseImpl>(
-          this, _$identity);
+  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith =>
+      __$$AuthResponseImplCopyWithImpl<_$AuthResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -533,11 +533,11 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) {
     return userId(this);
   }
@@ -545,11 +545,11 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) {
     return userId?.call(this);
   }
@@ -557,11 +557,11 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) {
     if (userId != null) {
@@ -572,21 +572,21 @@ class _$UserIdAppResponseImpl implements UserIdAppResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UserIdAppResponseImplToJson(
+    return _$$AuthResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class UserIdAppResponse implements AppResponse {
-  const factory UserIdAppResponse(final int data) = _$UserIdAppResponseImpl;
+abstract class AuthResponse implements AppResponse {
+  const factory AuthResponse(final int data) = _$AuthResponseImpl;
 
-  factory UserIdAppResponse.fromJson(Map<String, dynamic> json) =
-      _$UserIdAppResponseImpl.fromJson;
+  factory AuthResponse.fromJson(Map<String, dynamic> json) =
+      _$AuthResponseImpl.fromJson;
 
   int get data;
   @JsonKey(ignore: true)
-  _$$UserIdAppResponseImplCopyWith<_$UserIdAppResponseImpl> get copyWith =>
+  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -712,11 +712,11 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) {
     return fieldState(this);
   }
@@ -724,11 +724,11 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) {
     return fieldState?.call(this);
   }
@@ -736,11 +736,11 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) {
     if (fieldState != null) {
@@ -771,31 +771,29 @@ abstract class FieldStateAppResponse implements AppResponse {
 }
 
 /// @nodoc
-abstract class _$$OnlineCountAppResponseImplCopyWith<$Res> {
-  factory _$$OnlineCountAppResponseImplCopyWith(
-          _$OnlineCountAppResponseImpl value,
-          $Res Function(_$OnlineCountAppResponseImpl) then) =
-      __$$OnlineCountAppResponseImplCopyWithImpl<$Res>;
+abstract class _$$OnlineCountResponseImplCopyWith<$Res> {
+  factory _$$OnlineCountResponseImplCopyWith(_$OnlineCountResponseImpl value,
+          $Res Function(_$OnlineCountResponseImpl) then) =
+      __$$OnlineCountResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnlineCountAppResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountAppResponseImpl>
-    implements _$$OnlineCountAppResponseImplCopyWith<$Res> {
-  __$$OnlineCountAppResponseImplCopyWithImpl(
-      _$OnlineCountAppResponseImpl _value,
-      $Res Function(_$OnlineCountAppResponseImpl) _then)
+class __$$OnlineCountResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountResponseImpl>
+    implements _$$OnlineCountResponseImplCopyWith<$Res> {
+  __$$OnlineCountResponseImplCopyWithImpl(_$OnlineCountResponseImpl _value,
+      $Res Function(_$OnlineCountResponseImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
-  const _$OnlineCountAppResponseImpl({final String? $type})
+class _$OnlineCountResponseImpl implements OnlineCountResponse {
+  const _$OnlineCountResponseImpl({final String? $type})
       : $type = $type ?? 'online_count';
 
-  factory _$OnlineCountAppResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OnlineCountAppResponseImplFromJson(json);
+  factory _$OnlineCountResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OnlineCountResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -809,7 +807,7 @@ class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineCountAppResponseImpl);
+            other is _$OnlineCountResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -859,11 +857,11 @@ class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(BannedAppResponse value) banned,
-    required TResult Function(ErrorAppResponse value) error,
-    required TResult Function(UserIdAppResponse value) userId,
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
     required TResult Function(FieldStateAppResponse value) fieldState,
-    required TResult Function(OnlineCountAppResponse value) onlineCount,
+    required TResult Function(OnlineCountResponse value) onlineCount,
   }) {
     return onlineCount(this);
   }
@@ -871,11 +869,11 @@ class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BannedAppResponse value)? banned,
-    TResult? Function(ErrorAppResponse value)? error,
-    TResult? Function(UserIdAppResponse value)? userId,
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
     TResult? Function(FieldStateAppResponse value)? fieldState,
-    TResult? Function(OnlineCountAppResponse value)? onlineCount,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
   }) {
     return onlineCount?.call(this);
   }
@@ -883,11 +881,11 @@ class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(BannedAppResponse value)? banned,
-    TResult Function(ErrorAppResponse value)? error,
-    TResult Function(UserIdAppResponse value)? userId,
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
     TResult Function(FieldStateAppResponse value)? fieldState,
-    TResult Function(OnlineCountAppResponse value)? onlineCount,
+    TResult Function(OnlineCountResponse value)? onlineCount,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
@@ -898,15 +896,15 @@ class _$OnlineCountAppResponseImpl implements OnlineCountAppResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OnlineCountAppResponseImplToJson(
+    return _$$OnlineCountResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class OnlineCountAppResponse implements AppResponse {
-  const factory OnlineCountAppResponse() = _$OnlineCountAppResponseImpl;
+abstract class OnlineCountResponse implements AppResponse {
+  const factory OnlineCountResponse() = _$OnlineCountResponseImpl;
 
-  factory OnlineCountAppResponse.fromJson(Map<String, dynamic> json) =
-      _$OnlineCountAppResponseImpl.fromJson;
+  factory OnlineCountResponse.fromJson(Map<String, dynamic> json) =
+      _$OnlineCountResponseImpl.fromJson;
 }

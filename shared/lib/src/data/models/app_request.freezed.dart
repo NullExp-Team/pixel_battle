@@ -17,13 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 AppRequest _$AppRequestFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'auth':
-      return AuthAppRequest.fromJson(json);
+      return AuthRequest.fromJson(json);
     case 'update_pixel':
-      return UpdatePixelAppRequest.fromJson(json);
+      return UpdatePixelRequest.fromJson(json);
     case 'get_field_state':
-      return GetFieldStateAppRequest.fromJson(json);
+      return GetFieldStateRequest.fromJson(json);
     case 'disconnect':
-      return DisconnectAppRequest.fromJson(json);
+      return DisconnectRequest.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -64,26 +64,26 @@ mixin _$AppRequest {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthAppRequest value) auth,
-    required TResult Function(UpdatePixelAppRequest value) updatePixel,
-    required TResult Function(GetFieldStateAppRequest value) getFieldState,
-    required TResult Function(DisconnectAppRequest value) disconnect,
+    required TResult Function(AuthRequest value) auth,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(DisconnectRequest value) disconnect,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthAppRequest value)? auth,
-    TResult? Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult? Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult? Function(DisconnectAppRequest value)? disconnect,
+    TResult? Function(AuthRequest value)? auth,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(DisconnectRequest value)? disconnect,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthAppRequest value)? auth,
-    TResult Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult Function(DisconnectAppRequest value)? disconnect,
+    TResult Function(AuthRequest value)? auth,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(DisconnectRequest value)? disconnect,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,20 +109,20 @@ class _$AppRequestCopyWithImpl<$Res, $Val extends AppRequest>
 }
 
 /// @nodoc
-abstract class _$$AuthAppRequestImplCopyWith<$Res> {
-  factory _$$AuthAppRequestImplCopyWith(_$AuthAppRequestImpl value,
-          $Res Function(_$AuthAppRequestImpl) then) =
-      __$$AuthAppRequestImplCopyWithImpl<$Res>;
+abstract class _$$AuthRequestImplCopyWith<$Res> {
+  factory _$$AuthRequestImplCopyWith(
+          _$AuthRequestImpl value, $Res Function(_$AuthRequestImpl) then) =
+      __$$AuthRequestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String nickname, @JsonKey(name: 'user_id') int? userId});
 }
 
 /// @nodoc
-class __$$AuthAppRequestImplCopyWithImpl<$Res>
-    extends _$AppRequestCopyWithImpl<$Res, _$AuthAppRequestImpl>
-    implements _$$AuthAppRequestImplCopyWith<$Res> {
-  __$$AuthAppRequestImplCopyWithImpl(
-      _$AuthAppRequestImpl _value, $Res Function(_$AuthAppRequestImpl) _then)
+class __$$AuthRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$AuthRequestImpl>
+    implements _$$AuthRequestImplCopyWith<$Res> {
+  __$$AuthRequestImplCopyWithImpl(
+      _$AuthRequestImpl _value, $Res Function(_$AuthRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -131,7 +131,7 @@ class __$$AuthAppRequestImplCopyWithImpl<$Res>
     Object? nickname = null,
     Object? userId = freezed,
   }) {
-    return _then(_$AuthAppRequestImpl(
+    return _then(_$AuthRequestImpl(
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -146,15 +146,15 @@ class __$$AuthAppRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AuthAppRequestImpl implements AuthAppRequest {
-  _$AuthAppRequestImpl(
+class _$AuthRequestImpl implements AuthRequest {
+  _$AuthRequestImpl(
       {required this.nickname,
       @JsonKey(name: 'user_id') this.userId,
       final String? $type})
       : $type = $type ?? 'auth';
 
-  factory _$AuthAppRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AuthAppRequestImplFromJson(json);
+  factory _$AuthRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthRequestImplFromJson(json);
 
   @override
   final String nickname;
@@ -174,7 +174,7 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthAppRequestImpl &&
+            other is _$AuthRequestImpl &&
             (identical(other.nickname, nickname) ||
                 other.nickname == nickname) &&
             (identical(other.userId, userId) || other.userId == userId));
@@ -187,9 +187,8 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AuthAppRequestImplCopyWith<_$AuthAppRequestImpl> get copyWith =>
-      __$$AuthAppRequestImplCopyWithImpl<_$AuthAppRequestImpl>(
-          this, _$identity);
+  _$$AuthRequestImplCopyWith<_$AuthRequestImpl> get copyWith =>
+      __$$AuthRequestImplCopyWithImpl<_$AuthRequestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -235,10 +234,10 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthAppRequest value) auth,
-    required TResult Function(UpdatePixelAppRequest value) updatePixel,
-    required TResult Function(GetFieldStateAppRequest value) getFieldState,
-    required TResult Function(DisconnectAppRequest value) disconnect,
+    required TResult Function(AuthRequest value) auth,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(DisconnectRequest value) disconnect,
   }) {
     return auth(this);
   }
@@ -246,10 +245,10 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthAppRequest value)? auth,
-    TResult? Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult? Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult? Function(DisconnectAppRequest value)? disconnect,
+    TResult? Function(AuthRequest value)? auth,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(DisconnectRequest value)? disconnect,
   }) {
     return auth?.call(this);
   }
@@ -257,10 +256,10 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthAppRequest value)? auth,
-    TResult Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult Function(DisconnectAppRequest value)? disconnect,
+    TResult Function(AuthRequest value)? auth,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(DisconnectRequest value)? disconnect,
     required TResult orElse(),
   }) {
     if (auth != null) {
@@ -271,34 +270,33 @@ class _$AuthAppRequestImpl implements AuthAppRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AuthAppRequestImplToJson(
+    return _$$AuthRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class AuthAppRequest implements AppRequest {
-  factory AuthAppRequest(
+abstract class AuthRequest implements AppRequest {
+  factory AuthRequest(
       {required final String nickname,
-      @JsonKey(name: 'user_id') final int? userId}) = _$AuthAppRequestImpl;
+      @JsonKey(name: 'user_id') final int? userId}) = _$AuthRequestImpl;
 
-  factory AuthAppRequest.fromJson(Map<String, dynamic> json) =
-      _$AuthAppRequestImpl.fromJson;
+  factory AuthRequest.fromJson(Map<String, dynamic> json) =
+      _$AuthRequestImpl.fromJson;
 
   String get nickname;
   @JsonKey(name: 'user_id')
   int? get userId;
   @JsonKey(ignore: true)
-  _$$AuthAppRequestImplCopyWith<_$AuthAppRequestImpl> get copyWith =>
+  _$$AuthRequestImplCopyWith<_$AuthRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdatePixelAppRequestImplCopyWith<$Res> {
-  factory _$$UpdatePixelAppRequestImplCopyWith(
-          _$UpdatePixelAppRequestImpl value,
-          $Res Function(_$UpdatePixelAppRequestImpl) then) =
-      __$$UpdatePixelAppRequestImplCopyWithImpl<$Res>;
+abstract class _$$UpdatePixelRequestImplCopyWith<$Res> {
+  factory _$$UpdatePixelRequestImplCopyWith(_$UpdatePixelRequestImpl value,
+          $Res Function(_$UpdatePixelRequestImpl) then) =
+      __$$UpdatePixelRequestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdatePixel data});
 
@@ -306,11 +304,11 @@ abstract class _$$UpdatePixelAppRequestImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdatePixelAppRequestImplCopyWithImpl<$Res>
-    extends _$AppRequestCopyWithImpl<$Res, _$UpdatePixelAppRequestImpl>
-    implements _$$UpdatePixelAppRequestImplCopyWith<$Res> {
-  __$$UpdatePixelAppRequestImplCopyWithImpl(_$UpdatePixelAppRequestImpl _value,
-      $Res Function(_$UpdatePixelAppRequestImpl) _then)
+class __$$UpdatePixelRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$UpdatePixelRequestImpl>
+    implements _$$UpdatePixelRequestImplCopyWith<$Res> {
+  __$$UpdatePixelRequestImplCopyWithImpl(_$UpdatePixelRequestImpl _value,
+      $Res Function(_$UpdatePixelRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -318,7 +316,7 @@ class __$$UpdatePixelAppRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$UpdatePixelAppRequestImpl(
+    return _then(_$UpdatePixelRequestImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -337,12 +335,12 @@ class __$$UpdatePixelAppRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
-  _$UpdatePixelAppRequestImpl(this.data, {final String? $type})
+class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
+  _$UpdatePixelRequestImpl(this.data, {final String? $type})
       : $type = $type ?? 'update_pixel';
 
-  factory _$UpdatePixelAppRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdatePixelAppRequestImplFromJson(json);
+  factory _$UpdatePixelRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdatePixelRequestImplFromJson(json);
 
   @override
   final UpdatePixel data;
@@ -359,7 +357,7 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdatePixelAppRequestImpl &&
+            other is _$UpdatePixelRequestImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -370,9 +368,9 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdatePixelAppRequestImplCopyWith<_$UpdatePixelAppRequestImpl>
-      get copyWith => __$$UpdatePixelAppRequestImplCopyWithImpl<
-          _$UpdatePixelAppRequestImpl>(this, _$identity);
+  _$$UpdatePixelRequestImplCopyWith<_$UpdatePixelRequestImpl> get copyWith =>
+      __$$UpdatePixelRequestImplCopyWithImpl<_$UpdatePixelRequestImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -418,10 +416,10 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthAppRequest value) auth,
-    required TResult Function(UpdatePixelAppRequest value) updatePixel,
-    required TResult Function(GetFieldStateAppRequest value) getFieldState,
-    required TResult Function(DisconnectAppRequest value) disconnect,
+    required TResult Function(AuthRequest value) auth,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(DisconnectRequest value) disconnect,
   }) {
     return updatePixel(this);
   }
@@ -429,10 +427,10 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthAppRequest value)? auth,
-    TResult? Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult? Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult? Function(DisconnectAppRequest value)? disconnect,
+    TResult? Function(AuthRequest value)? auth,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(DisconnectRequest value)? disconnect,
   }) {
     return updatePixel?.call(this);
   }
@@ -440,10 +438,10 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthAppRequest value)? auth,
-    TResult Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult Function(DisconnectAppRequest value)? disconnect,
+    TResult Function(AuthRequest value)? auth,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(DisconnectRequest value)? disconnect,
     required TResult orElse(),
   }) {
     if (updatePixel != null) {
@@ -454,51 +452,48 @@ class _$UpdatePixelAppRequestImpl implements UpdatePixelAppRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UpdatePixelAppRequestImplToJson(
+    return _$$UpdatePixelRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class UpdatePixelAppRequest implements AppRequest {
-  factory UpdatePixelAppRequest(final UpdatePixel data) =
-      _$UpdatePixelAppRequestImpl;
+abstract class UpdatePixelRequest implements AppRequest {
+  factory UpdatePixelRequest(final UpdatePixel data) = _$UpdatePixelRequestImpl;
 
-  factory UpdatePixelAppRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdatePixelAppRequestImpl.fromJson;
+  factory UpdatePixelRequest.fromJson(Map<String, dynamic> json) =
+      _$UpdatePixelRequestImpl.fromJson;
 
   UpdatePixel get data;
   @JsonKey(ignore: true)
-  _$$UpdatePixelAppRequestImplCopyWith<_$UpdatePixelAppRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdatePixelRequestImplCopyWith<_$UpdatePixelRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$GetFieldStateAppRequestImplCopyWith<$Res> {
-  factory _$$GetFieldStateAppRequestImplCopyWith(
-          _$GetFieldStateAppRequestImpl value,
-          $Res Function(_$GetFieldStateAppRequestImpl) then) =
-      __$$GetFieldStateAppRequestImplCopyWithImpl<$Res>;
+abstract class _$$GetFieldStateRequestImplCopyWith<$Res> {
+  factory _$$GetFieldStateRequestImplCopyWith(_$GetFieldStateRequestImpl value,
+          $Res Function(_$GetFieldStateRequestImpl) then) =
+      __$$GetFieldStateRequestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetFieldStateAppRequestImplCopyWithImpl<$Res>
-    extends _$AppRequestCopyWithImpl<$Res, _$GetFieldStateAppRequestImpl>
-    implements _$$GetFieldStateAppRequestImplCopyWith<$Res> {
-  __$$GetFieldStateAppRequestImplCopyWithImpl(
-      _$GetFieldStateAppRequestImpl _value,
-      $Res Function(_$GetFieldStateAppRequestImpl) _then)
+class __$$GetFieldStateRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$GetFieldStateRequestImpl>
+    implements _$$GetFieldStateRequestImplCopyWith<$Res> {
+  __$$GetFieldStateRequestImplCopyWithImpl(_$GetFieldStateRequestImpl _value,
+      $Res Function(_$GetFieldStateRequestImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
-  _$GetFieldStateAppRequestImpl({final String? $type})
+class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
+  _$GetFieldStateRequestImpl({final String? $type})
       : $type = $type ?? 'get_field_state';
 
-  factory _$GetFieldStateAppRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetFieldStateAppRequestImplFromJson(json);
+  factory _$GetFieldStateRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetFieldStateRequestImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -512,7 +507,7 @@ class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetFieldStateAppRequestImpl);
+            other is _$GetFieldStateRequestImpl);
   }
 
   @JsonKey(ignore: true)
@@ -563,10 +558,10 @@ class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthAppRequest value) auth,
-    required TResult Function(UpdatePixelAppRequest value) updatePixel,
-    required TResult Function(GetFieldStateAppRequest value) getFieldState,
-    required TResult Function(DisconnectAppRequest value) disconnect,
+    required TResult Function(AuthRequest value) auth,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(DisconnectRequest value) disconnect,
   }) {
     return getFieldState(this);
   }
@@ -574,10 +569,10 @@ class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthAppRequest value)? auth,
-    TResult? Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult? Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult? Function(DisconnectAppRequest value)? disconnect,
+    TResult? Function(AuthRequest value)? auth,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(DisconnectRequest value)? disconnect,
   }) {
     return getFieldState?.call(this);
   }
@@ -585,10 +580,10 @@ class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthAppRequest value)? auth,
-    TResult Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult Function(DisconnectAppRequest value)? disconnect,
+    TResult Function(AuthRequest value)? auth,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(DisconnectRequest value)? disconnect,
     required TResult orElse(),
   }) {
     if (getFieldState != null) {
@@ -599,43 +594,43 @@ class _$GetFieldStateAppRequestImpl implements GetFieldStateAppRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GetFieldStateAppRequestImplToJson(
+    return _$$GetFieldStateRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class GetFieldStateAppRequest implements AppRequest {
-  factory GetFieldStateAppRequest() = _$GetFieldStateAppRequestImpl;
+abstract class GetFieldStateRequest implements AppRequest {
+  factory GetFieldStateRequest() = _$GetFieldStateRequestImpl;
 
-  factory GetFieldStateAppRequest.fromJson(Map<String, dynamic> json) =
-      _$GetFieldStateAppRequestImpl.fromJson;
+  factory GetFieldStateRequest.fromJson(Map<String, dynamic> json) =
+      _$GetFieldStateRequestImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$DisconnectAppRequestImplCopyWith<$Res> {
-  factory _$$DisconnectAppRequestImplCopyWith(_$DisconnectAppRequestImpl value,
-          $Res Function(_$DisconnectAppRequestImpl) then) =
-      __$$DisconnectAppRequestImplCopyWithImpl<$Res>;
+abstract class _$$DisconnectRequestImplCopyWith<$Res> {
+  factory _$$DisconnectRequestImplCopyWith(_$DisconnectRequestImpl value,
+          $Res Function(_$DisconnectRequestImpl) then) =
+      __$$DisconnectRequestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$DisconnectAppRequestImplCopyWithImpl<$Res>
-    extends _$AppRequestCopyWithImpl<$Res, _$DisconnectAppRequestImpl>
-    implements _$$DisconnectAppRequestImplCopyWith<$Res> {
-  __$$DisconnectAppRequestImplCopyWithImpl(_$DisconnectAppRequestImpl _value,
-      $Res Function(_$DisconnectAppRequestImpl) _then)
+class __$$DisconnectRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$DisconnectRequestImpl>
+    implements _$$DisconnectRequestImplCopyWith<$Res> {
+  __$$DisconnectRequestImplCopyWithImpl(_$DisconnectRequestImpl _value,
+      $Res Function(_$DisconnectRequestImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
-  _$DisconnectAppRequestImpl({final String? $type})
+class _$DisconnectRequestImpl implements DisconnectRequest {
+  _$DisconnectRequestImpl({final String? $type})
       : $type = $type ?? 'disconnect';
 
-  factory _$DisconnectAppRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DisconnectAppRequestImplFromJson(json);
+  factory _$DisconnectRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DisconnectRequestImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -648,8 +643,7 @@ class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DisconnectAppRequestImpl);
+        (other.runtimeType == runtimeType && other is _$DisconnectRequestImpl);
   }
 
   @JsonKey(ignore: true)
@@ -700,10 +694,10 @@ class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthAppRequest value) auth,
-    required TResult Function(UpdatePixelAppRequest value) updatePixel,
-    required TResult Function(GetFieldStateAppRequest value) getFieldState,
-    required TResult Function(DisconnectAppRequest value) disconnect,
+    required TResult Function(AuthRequest value) auth,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(DisconnectRequest value) disconnect,
   }) {
     return disconnect(this);
   }
@@ -711,10 +705,10 @@ class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthAppRequest value)? auth,
-    TResult? Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult? Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult? Function(DisconnectAppRequest value)? disconnect,
+    TResult? Function(AuthRequest value)? auth,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(DisconnectRequest value)? disconnect,
   }) {
     return disconnect?.call(this);
   }
@@ -722,10 +716,10 @@ class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthAppRequest value)? auth,
-    TResult Function(UpdatePixelAppRequest value)? updatePixel,
-    TResult Function(GetFieldStateAppRequest value)? getFieldState,
-    TResult Function(DisconnectAppRequest value)? disconnect,
+    TResult Function(AuthRequest value)? auth,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(DisconnectRequest value)? disconnect,
     required TResult orElse(),
   }) {
     if (disconnect != null) {
@@ -736,15 +730,15 @@ class _$DisconnectAppRequestImpl implements DisconnectAppRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DisconnectAppRequestImplToJson(
+    return _$$DisconnectRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class DisconnectAppRequest implements AppRequest {
-  factory DisconnectAppRequest() = _$DisconnectAppRequestImpl;
+abstract class DisconnectRequest implements AppRequest {
+  factory DisconnectRequest() = _$DisconnectRequestImpl;
 
-  factory DisconnectAppRequest.fromJson(Map<String, dynamic> json) =
-      _$DisconnectAppRequestImpl.fromJson;
+  factory DisconnectRequest.fromJson(Map<String, dynamic> json) =
+      _$DisconnectRequestImpl.fromJson;
 }

@@ -10,13 +10,13 @@ sealed class AppRequest with _$AppRequest {
   factory AppRequest.auth({
     required String nickname,
     @JsonKey(name: 'user_id') int? userId,
-  }) = AuthAppRequest;
+  }) = AuthRequest;
 
-  factory AppRequest.updatePixel(UpdatePixel data) = UpdatePixelAppRequest;
+  factory AppRequest.updatePixel(UpdatePixel data) = UpdatePixelRequest;
 
-  factory AppRequest.getFieldState() = GetFieldStateAppRequest;
+  factory AppRequest.getFieldState() = GetFieldStateRequest;
 
-  factory AppRequest.disconnect() = DisconnectAppRequest;
+  factory AppRequest.disconnect() = DisconnectRequest;
 
   factory AppRequest.fromJson(Map<String, dynamic> json) =>
       _$AppRequestFromJson(json);

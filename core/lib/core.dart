@@ -12,6 +12,7 @@ export 'package:proxima_logger/proxima_logger.dart';
 export 'package:riverpod_annotation/riverpod_annotation.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:json_annotation/json_annotation.dart';
+export 'package:auto_exporter_annotation/auto_exporter_annotation.dart';
 
 export 'package:auto_route/auto_route.dart';
 export 'package:package_info_plus/package_info_plus.dart';

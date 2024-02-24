@@ -6,41 +6,38 @@ part of 'app_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BannedAppResponseImpl _$$BannedAppResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BannedAppResponseImpl(
+_$BannedResponseImpl _$$BannedResponseImplFromJson(Map<String, dynamic> json) =>
+    _$BannedResponseImpl(
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$BannedAppResponseImplToJson(
-        _$BannedAppResponseImpl instance) =>
+Map<String, dynamic> _$$BannedResponseImplToJson(
+        _$BannedResponseImpl instance) =>
     <String, dynamic>{
       'type': instance.$type,
     };
 
-_$ErrorAppResponseImpl _$$ErrorAppResponseImplFromJson(
+_$BackendErrorResponseImpl _$$BackendErrorResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$ErrorAppResponseImpl(
+    _$BackendErrorResponseImpl(
       json['message'] as String,
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$ErrorAppResponseImplToJson(
-        _$ErrorAppResponseImpl instance) =>
+Map<String, dynamic> _$$BackendErrorResponseImplToJson(
+        _$BackendErrorResponseImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
       'type': instance.$type,
     };
 
-_$UserIdAppResponseImpl _$$UserIdAppResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$UserIdAppResponseImpl(
+_$AuthResponseImpl _$$AuthResponseImplFromJson(Map<String, dynamic> json) =>
+    _$AuthResponseImpl(
       json['data'] as int,
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$UserIdAppResponseImplToJson(
-        _$UserIdAppResponseImpl instance) =>
+Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'type': instance.$type,
@@ -62,14 +59,14 @@ Map<String, dynamic> _$$FieldStateAppResponseImplToJson(
       'type': instance.$type,
     };
 
-_$OnlineCountAppResponseImpl _$$OnlineCountAppResponseImplFromJson(
+_$OnlineCountResponseImpl _$$OnlineCountResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$OnlineCountAppResponseImpl(
+    _$OnlineCountResponseImpl(
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$OnlineCountAppResponseImplToJson(
-        _$OnlineCountAppResponseImpl instance) =>
+Map<String, dynamic> _$$OnlineCountResponseImplToJson(
+        _$OnlineCountResponseImpl instance) =>
     <String, dynamic>{
       'type': instance.$type,
     };

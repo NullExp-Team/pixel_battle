@@ -37,7 +37,8 @@ class _SystemHash {
 const appApiWrapControllerProvider = AppApiWrapControllerFamily();
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerFamily extends Family<ApiWrapController<Object>> {
+class AppApiWrapControllerFamily
+    extends Family<ApiWrapController<BaseApiError>> {
   /// See also [appApiWrapController].
   const AppApiWrapControllerFamily();
 
@@ -75,7 +76,8 @@ class AppApiWrapControllerFamily extends Family<ApiWrapController<Object>> {
 }
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerProvider extends Provider<ApiWrapController<Object>> {
+class AppApiWrapControllerProvider
+    extends Provider<ApiWrapController<BaseApiError>> {
   /// See also [appApiWrapController].
   AppApiWrapControllerProvider(
     String key,
@@ -110,7 +112,8 @@ class AppApiWrapControllerProvider extends Provider<ApiWrapController<Object>> {
 
   @override
   Override overrideWith(
-    ApiWrapController<Object> Function(AppApiWrapControllerRef provider) create,
+    ApiWrapController<BaseApiError> Function(AppApiWrapControllerRef provider)
+        create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -127,7 +130,7 @@ class AppApiWrapControllerProvider extends Provider<ApiWrapController<Object>> {
   }
 
   @override
-  ProviderElement<ApiWrapController<Object>> createElement() {
+  ProviderElement<ApiWrapController<BaseApiError>> createElement() {
     return _AppApiWrapControllerProviderElement(this);
   }
 
@@ -145,13 +148,13 @@ class AppApiWrapControllerProvider extends Provider<ApiWrapController<Object>> {
   }
 }
 
-mixin AppApiWrapControllerRef on ProviderRef<ApiWrapController<Object>> {
+mixin AppApiWrapControllerRef on ProviderRef<ApiWrapController<BaseApiError>> {
   /// The parameter `key` of this provider.
   String get key;
 }
 
 class _AppApiWrapControllerProviderElement
-    extends ProviderElement<ApiWrapController<Object>>
+    extends ProviderElement<ApiWrapController<BaseApiError>>
     with AppApiWrapControllerRef {
   _AppApiWrapControllerProviderElement(super.provider);
 

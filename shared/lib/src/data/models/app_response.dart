@@ -7,16 +7,16 @@ part 'app_response.g.dart';
 
 @Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.snake)
 sealed class AppResponse with _$AppResponse {
-  const factory AppResponse.banned() = BannedAppResponse;
+  const factory AppResponse.banned() = BannedResponse;
 
-  const factory AppResponse.error(String message) = ErrorAppResponse;
+  const factory AppResponse.error(String message) = BackendErrorResponse;
 
-  const factory AppResponse.userId(int data) = UserIdAppResponse;
+  const factory AppResponse.userId(int data) = AuthResponse;
 
   const factory AppResponse.fieldState(List<FieldPixel> data) =
       FieldStateAppResponse;
 
-  const factory AppResponse.onlineCount() = OnlineCountAppResponse;
+  const factory AppResponse.onlineCount() = OnlineCountResponse;
 
   factory AppResponse.fromJson(Map<String, dynamic> json) =>
       _$AppResponseFromJson(json);

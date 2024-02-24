@@ -12,7 +12,7 @@ String _$appRouterHash() => r'ad133790edab242cd6b0a127f765524896fc9bed';
 
 /// See also [appRouter].
 @ProviderFor(appRouter)
-final appRouterProvider = Provider<StackRouter>.internal(
+final appRouterProvider = Provider<Raw<StackRouter>>.internal(
   appRouter,
   name: r'appRouterProvider',
   debugGetCreateSourceHash:
@@ -21,6 +21,6 @@ final appRouterProvider = Provider<StackRouter>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef AppRouterRef = ProviderRef<StackRouter>;
+typedef AppRouterRef = ProviderRef<Raw<StackRouter>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
