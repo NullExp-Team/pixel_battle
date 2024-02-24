@@ -5,6 +5,12 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": [
+        "source.fixAll",
+    ],
+  },
   "folderTemplates.structures": [
     {
       "name": "Feature Template",
