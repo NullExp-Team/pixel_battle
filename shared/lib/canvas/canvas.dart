@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import '../src/features/field/domain/field_state_service.dart';
+
 class MyCanvas extends ConsumerStatefulWidget {
   const MyCanvas({super.key});
 
@@ -20,64 +22,34 @@ class Aboba extends ConsumerState<MyCanvas> {
 
   @override
   Widget build(BuildContext context) {
-    return InteractiveViewer(
-      maxScale: 100,
-      minScale: 1,
-      boundaryMargin: const EdgeInsets.all(32),
-      child: CustomPaint(
-        painter: CanvasPainter(selectedPixel),
-      ),
+    final asyncImage = ref.watch(fieldStateServiceProvider);
+
+    return asyncImage.when(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (e, s) => SText(e.toString()),
+      data: (image) {
+        return InteractiveViewer(
+          maxScale: 100,
+          minScale: 1,
+          boundaryMargin: const EdgeInsets.all(32),
+          child: CustomPaint(
+            painter: CanvasPainter(selectedPixel: selectedPixel, image: image),
+          ),
+        );
+      },
     );
   }
 }
 
 class CanvasPainter extends CustomPainter {
-  CanvasPainter(this.selectedPixel);
+  CanvasPainter({this.selectedPixel, required this.image});
 
   Point? selectedPixel;
 
   late ui.Image image;
 
-  Future<void> test() async {
-    const size = Size(200, 100);
-    final width = size.width.toInt();
-    final height = size.height.toInt();
-    final length = width * height;
-
-    final pixels = Uint32List(length);
-
-    final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-
-    for (var i = 0; i < height; i++) {
-      for (var j = 0; j < width; j++) {
-        pixels[i * width + j] = colors[(i + j) % 4].value;
-      }
-    }
-
-    await _imageByUint32List(
-      size: size,
-      pixels: pixels,
-    ).then((value) => image = value);
-  }
-
-  Future<ui.Image> _imageByUint32List({
-    required Size size,
-    required Uint32List pixels,
-  }) async {
-    final completer = Completer<ui.Image>();
-    ui.decodeImageFromPixels(
-      pixels.buffer.asUint8List(),
-      size.width.toInt(),
-      size.height.toInt(),
-      ui.PixelFormat.bgra8888,
-      completer.complete,
-    );
-    return completer.future;
-  }
-
   @override
   void paint(Canvas canvas, Size size) {
-    test();
     final p = Paint();
     p.color = Colors.white;
     p.strokeWidth = 0.1;
