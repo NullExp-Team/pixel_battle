@@ -21,5 +21,7 @@ export 'package:flutter_svg/flutter_svg.dart';
 export 'package:dio/dio.dart' hide ResponseType;
 export 'dart:async' show FutureOr;
 
+export 'package:rxdart/rxdart.dart';
+
 // Core
 export 'src/export.dart';

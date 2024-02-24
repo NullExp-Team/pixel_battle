@@ -10,7 +10,7 @@ _$FieldPixelImpl _$$FieldPixelImplFromJson(Map<String, dynamic> json) =>
     _$FieldPixelImpl(
       x: json['x'] as int,
       y: json['y'] as int,
-      color: json['color'] as String,
+      color: json['color'] as int,
       userId: json['user_id'] as String,
     );
 
