@@ -18,7 +18,7 @@ export 'package:package_info_plus/package_info_plus.dart';
 export 'package:device_preview/device_preview.dart';
 export 'package:intl/intl.dart';
 export 'package:flutter_svg/flutter_svg.dart';
-export 'package:dio/dio.dart';
+export 'package:dio/dio.dart' hide ResponseType;
 export 'dart:async' show FutureOr;
 
 // Api
