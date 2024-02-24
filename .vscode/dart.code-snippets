@@ -1,0 +1,89 @@
+{
+	"Freezed model": {
+		"prefix": "freezedModel",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '$TM_FILENAME_BASE.freezed.dart';",
+			"",
+			"@freezed",
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$$1 {",
+			"",
+			"\tfactory $1() = _$1;",
+			"}"
+		]
+	},
+	"Freezed model with toJson/fromJson": {
+		"prefix": "freezedJsonModel",
+		"body": [
+			"import 'package:freezed_annotation/freezed_annotation.dart';",
+			"",
+			"part '$TM_FILENAME_BASE.freezed.dart';",
+			"part '$TM_FILENAME_BASE.g.dart';",
+			"",
+			"@freezed",
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$$1 {",
+			"",
+			"\tfactory $1() = _$1;",
+			"",
+			"\tfactory $1.fromJson(Map<String, dynamic> json) => _$$1FromJson(json);",
+			"}"
+		]
+	},
+	"Controller": {
+		"prefix": "controller",
+		"body": [
+			"import 'package:core/core.dart';",
+			"",
+			"part '$TM_FILENAME_BASE.freezed.dart';",
+			"part '$TM_FILENAME_BASE.g.dart';",
+			"",
+			"@freezed",
+			"class ${4:$1State} with _$$4 {",
+			"  factory $4() = _$4;",
+			"}",
+			"",
+			"@Riverpod()",
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends _$$1 with ControllerMixin {",
+			"  @override",
+			"  $4 build() {",
+			"    return $4();",
+			"  }",
+			"}"
+		]
+	},
+	"HookWidget": {
+		"prefix": "hookWidget",
+		"body": [
+			"import 'package:core/core.dart';",
+			"import 'package:flutter/material.dart';",
+			"",
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends HookWidget {",
+			"\tconst $1({super.key});",
+			"",
+			"\t@override",
+			"\tWidget build(BuildContext context) {",
+			"\t\treturn Container();",
+			"\t}",
+			"}",
+			""
+		]
+	},
+	"HookConsumerWidget": {
+		"prefix": "hookConsumerWidget",
+		"body": [
+			"import 'package:core/core.dart';",
+			"import 'package:flutter/material.dart';",
+			"",
+			"class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} extends HookConsumerWidget {",
+			"\tconst $1({super.key});",
+			"",
+			"\t@override",
+			"\tWidget build(BuildContext context, WidgetRef ref) {",
+			"\t\treturn Container();",
+			"\t}",
+			"}",
+			""
+		]
+	}
+}
