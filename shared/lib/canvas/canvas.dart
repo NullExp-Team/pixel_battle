@@ -141,16 +141,41 @@ class CanvasPainter extends CustomPainter {
 
   void drawImage(Canvas canvas, Size size) {
     final aspectRatio = image.width / image.height;
-    canvas.drawImageRect(
-      image,
+    final paint = Paint();
+
+    canvas.clipRect(
       Rect.fromLTRB(
-        0.5,
-        0.5,
-        image.width.toDouble() - 0.5,
-        image.height.toDouble() - 0.5,
+        0,
+        0,
+        size.width,
+        size.width / aspectRatio,
       ),
-      Rect.fromLTRB(0, 0, size.width, size.width / aspectRatio),
-      Paint(),
+    );
+
+    canvas.drawAtlas(
+      image,
+      [
+        RSTransform.fromComponents(
+          rotation: 0,
+          scale: size.width / image.width,
+          anchorX: 0,
+          anchorY: 0,
+          translateX: 0,
+          translateY: 0,
+        ),
+      ],
+      [
+        Rect.fromLTRB(
+          0,
+          0,
+          size.width,
+          size.width / aspectRatio,
+        ),
+      ],
+      null,
+      null,
+      null,
+      paint,
     );
   }
 
