@@ -19,23 +19,23 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     //     ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
 
     // Mock Start
-    final random = Random();
     final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
     await Future.delayed(const Duration(milliseconds: 800));
-    const width = 300;
-    const height = 700;
+    const width = 200;
+    const height = 200;
     final fieldStateStream = Stream<FieldStateResponse>.value(
       FieldStateResponse(
         width: width,
         height: height,
         data: [
-          for (int i = 0; i < 500; i++)
-            FieldPixel(
-              x: random.nextInt(width),
-              y: random.nextInt(height),
-              color: colors.random.value,
-              userId: '',
-            ),
+          for (int x = 0; x < width; x++)
+            for (int y = 0; y < height; y++)
+              FieldPixel(
+                x: x,
+                y: y,
+                color: colors[(x + y) % 4].value,
+                userId: '',
+              ),
         ],
       ),
     );
@@ -63,7 +63,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     }
 
     for (final pixel in fieldState.data) {
-      final index = pixel.x * width + pixel.y;
+      final index = pixel.y * width + pixel.x;
       pixels[index] = pixel.color;
     }
 
