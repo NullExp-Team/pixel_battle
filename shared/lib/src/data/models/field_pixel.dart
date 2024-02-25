@@ -8,7 +8,7 @@ class FieldPixel with _$FieldPixel {
   factory FieldPixel({
     required int x,
     required int y,
-    required String color,
+    required int color,
     @JsonKey(name: 'user_id') required String userId,
   }) = _FieldPixel;
 

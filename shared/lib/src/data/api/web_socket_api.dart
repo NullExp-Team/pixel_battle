@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:core/core.dart';
@@ -10,7 +11,7 @@ part 'web_socket_api.g.dart';
 @Riverpod()
 class WebSocketApi extends _$WebSocketApi with ControllerMixin {
   @override
-  Stream<AppResponse> build() async* {
+  Raw<Stream<AppResponse>> build() async* {
     final channel = await ref.watch(webSocketChannelProvider.future);
 
     _sink = channel.sink;
@@ -39,6 +40,8 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     Duration timeout = const Duration(seconds: 30),
   }) async {
     _sink.add(request.toJson());
+    if (T is NoResponse) return const NoResponse() as T;
+
     final response = await _stream
         .firstWhere((e) => e is T || e is BackendErrorResponse)
         .timeout(timeout);

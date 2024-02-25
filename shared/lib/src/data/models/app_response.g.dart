@@ -43,18 +43,22 @@ Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
       'type': instance.$type,
     };
 
-_$FieldStateAppResponseImpl _$$FieldStateAppResponseImplFromJson(
+_$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$FieldStateAppResponseImpl(
-      (json['data'] as List<dynamic>)
+    _$FieldStateResponseImpl(
+      width: json['width'] as int,
+      height: json['height'] as int,
+      data: (json['data'] as List<dynamic>)
           .map((e) => FieldPixel.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$FieldStateAppResponseImplToJson(
-        _$FieldStateAppResponseImpl instance) =>
+Map<String, dynamic> _$$FieldStateResponseImplToJson(
+        _$FieldStateResponseImpl instance) =>
     <String, dynamic>{
+      'width': instance.width,
+      'height': instance.height,
       'data': instance.data,
       'type': instance.$type,
     };
@@ -79,6 +83,16 @@ _$UnknownResponseImpl _$$UnknownResponseImplFromJson(
 
 Map<String, dynamic> _$$UnknownResponseImplToJson(
         _$UnknownResponseImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };
+
+_$NoResponseImpl _$$NoResponseImplFromJson(Map<String, dynamic> json) =>
+    _$NoResponseImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$NoResponseImplToJson(_$NoResponseImpl instance) =>
     <String, dynamic>{
       'type': instance.$type,
     };

@@ -22,7 +22,7 @@ FieldPixel _$FieldPixelFromJson(Map<String, dynamic> json) {
 mixin _$FieldPixel {
   int get x => throw _privateConstructorUsedError;
   int get y => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+  int get color => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_id')
   String get userId => throw _privateConstructorUsedError;
 
@@ -38,8 +38,7 @@ abstract class $FieldPixelCopyWith<$Res> {
           FieldPixel value, $Res Function(FieldPixel) then) =
       _$FieldPixelCopyWithImpl<$Res, FieldPixel>;
   @useResult
-  $Res call(
-      {int x, int y, String color, @JsonKey(name: 'user_id') String userId});
+  $Res call({int x, int y, int color, @JsonKey(name: 'user_id') String userId});
 }
 
 /// @nodoc
@@ -72,7 +71,7 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -89,8 +88,7 @@ abstract class _$$FieldPixelImplCopyWith<$Res>
       __$$FieldPixelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int x, int y, String color, @JsonKey(name: 'user_id') String userId});
+  $Res call({int x, int y, int color, @JsonKey(name: 'user_id') String userId});
 }
 
 /// @nodoc
@@ -121,7 +119,7 @@ class __$$FieldPixelImplCopyWithImpl<$Res>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -147,7 +145,7 @@ class _$FieldPixelImpl implements _FieldPixel {
   @override
   final int y;
   @override
-  final String color;
+  final int color;
   @override
   @JsonKey(name: 'user_id')
   final String userId;
@@ -190,7 +188,7 @@ abstract class _FieldPixel implements FieldPixel {
   factory _FieldPixel(
           {required final int x,
           required final int y,
-          required final String color,
+          required final int color,
           @JsonKey(name: 'user_id') required final String userId}) =
       _$FieldPixelImpl;
 
@@ -202,7 +200,7 @@ abstract class _FieldPixel implements FieldPixel {
   @override
   int get y;
   @override
-  String get color;
+  int get color;
   @override
   @JsonKey(name: 'user_id')
   String get userId;

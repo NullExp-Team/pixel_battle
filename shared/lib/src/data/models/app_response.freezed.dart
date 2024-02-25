@@ -23,9 +23,11 @@ AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
     case 'user_id':
       return AuthResponse.fromJson(json);
     case 'field_state':
-      return FieldStateAppResponse.fromJson(json);
+      return FieldStateResponse.fromJson(json);
     case 'online_count':
       return OnlineCountResponse.fromJson(json);
+    case 'no_response':
+      return NoResponse.fromJson(json);
 
     default:
       return UnknownResponse.fromJson(json);
@@ -39,9 +41,11 @@ mixin _$AppResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,9 +53,10 @@ mixin _$AppResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,9 +64,10 @@ mixin _$AppResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,9 +76,10 @@ mixin _$AppResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,9 +87,10 @@ mixin _$AppResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,9 +98,10 @@ mixin _$AppResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -165,9 +174,11 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
     return banned();
   }
@@ -178,9 +189,10 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
     return banned?.call();
   }
@@ -191,9 +203,10 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (banned != null) {
@@ -208,9 +221,10 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return banned(this);
   }
@@ -221,9 +235,10 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return banned?.call(this);
   }
@@ -234,9 +249,10 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (banned != null) {
@@ -337,9 +353,11 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
     return error(message);
   }
@@ -350,9 +368,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
     return error?.call(message);
   }
@@ -363,9 +382,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -380,9 +400,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return error(this);
   }
@@ -393,9 +414,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return error?.call(this);
   }
@@ -406,9 +428,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -513,9 +536,11 @@ class _$AuthResponseImpl implements AuthResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
     return userId(data);
   }
@@ -526,9 +551,10 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
     return userId?.call(data);
   }
@@ -539,9 +565,10 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (userId != null) {
@@ -556,9 +583,10 @@ class _$AuthResponseImpl implements AuthResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return userId(this);
   }
@@ -569,9 +597,10 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return userId?.call(this);
   }
@@ -582,9 +611,10 @@ class _$AuthResponseImpl implements AuthResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (userId != null) {
@@ -614,30 +644,39 @@ abstract class AuthResponse implements AppResponse {
 }
 
 /// @nodoc
-abstract class _$$FieldStateAppResponseImplCopyWith<$Res> {
-  factory _$$FieldStateAppResponseImplCopyWith(
-          _$FieldStateAppResponseImpl value,
-          $Res Function(_$FieldStateAppResponseImpl) then) =
-      __$$FieldStateAppResponseImplCopyWithImpl<$Res>;
+abstract class _$$FieldStateResponseImplCopyWith<$Res> {
+  factory _$$FieldStateResponseImplCopyWith(_$FieldStateResponseImpl value,
+          $Res Function(_$FieldStateResponseImpl) then) =
+      __$$FieldStateResponseImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<FieldPixel> data});
+  $Res call({int width, int height, List<FieldPixel> data});
 }
 
 /// @nodoc
-class __$$FieldStateAppResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$FieldStateAppResponseImpl>
-    implements _$$FieldStateAppResponseImplCopyWith<$Res> {
-  __$$FieldStateAppResponseImplCopyWithImpl(_$FieldStateAppResponseImpl _value,
-      $Res Function(_$FieldStateAppResponseImpl) _then)
+class __$$FieldStateResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$FieldStateResponseImpl>
+    implements _$$FieldStateResponseImplCopyWith<$Res> {
+  __$$FieldStateResponseImplCopyWithImpl(_$FieldStateResponseImpl _value,
+      $Res Function(_$FieldStateResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? width = null,
+    Object? height = null,
     Object? data = null,
   }) {
-    return _then(_$FieldStateAppResponseImpl(
-      null == data
+    return _then(_$FieldStateResponseImpl(
+      width: null == width
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<FieldPixel>,
@@ -647,15 +686,22 @@ class __$$FieldStateAppResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
-  const _$FieldStateAppResponseImpl(final List<FieldPixel> data,
-      {final String? $type})
+class _$FieldStateResponseImpl implements FieldStateResponse {
+  const _$FieldStateResponseImpl(
+      {required this.width,
+      required this.height,
+      required final List<FieldPixel> data,
+      final String? $type})
       : _data = data,
         $type = $type ?? 'field_state';
 
-  factory _$FieldStateAppResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FieldStateAppResponseImplFromJson(json);
+  factory _$FieldStateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FieldStateResponseImplFromJson(json);
 
+  @override
+  final int width;
+  @override
+  final int height;
   final List<FieldPixel> _data;
   @override
   List<FieldPixel> get data {
@@ -669,28 +715,30 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
 
   @override
   String toString() {
-    return 'AppResponse.fieldState(data: $data)';
+    return 'AppResponse.fieldState(width: $width, height: $height, data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FieldStateAppResponseImpl &&
+            other is _$FieldStateResponseImpl &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.height, height) || other.height == height) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(
+      runtimeType, width, height, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FieldStateAppResponseImplCopyWith<_$FieldStateAppResponseImpl>
-      get copyWith => __$$FieldStateAppResponseImplCopyWithImpl<
-          _$FieldStateAppResponseImpl>(this, _$identity);
+  _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith =>
+      __$$FieldStateResponseImplCopyWithImpl<_$FieldStateResponseImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -698,11 +746,13 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
-    return fieldState(data);
+    return fieldState(width, height, data);
   }
 
   @override
@@ -711,11 +761,12 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
-    return fieldState?.call(data);
+    return fieldState?.call(width, height, data);
   }
 
   @override
@@ -724,13 +775,14 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (fieldState != null) {
-      return fieldState(data);
+      return fieldState(width, height, data);
     }
     return orElse();
   }
@@ -741,9 +793,10 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return fieldState(this);
   }
@@ -754,9 +807,10 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return fieldState?.call(this);
   }
@@ -767,9 +821,10 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (fieldState != null) {
@@ -780,23 +835,27 @@ class _$FieldStateAppResponseImpl implements FieldStateAppResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FieldStateAppResponseImplToJson(
+    return _$$FieldStateResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class FieldStateAppResponse implements AppResponse {
-  const factory FieldStateAppResponse(final List<FieldPixel> data) =
-      _$FieldStateAppResponseImpl;
+abstract class FieldStateResponse implements AppResponse {
+  const factory FieldStateResponse(
+      {required final int width,
+      required final int height,
+      required final List<FieldPixel> data}) = _$FieldStateResponseImpl;
 
-  factory FieldStateAppResponse.fromJson(Map<String, dynamic> json) =
-      _$FieldStateAppResponseImpl.fromJson;
+  factory FieldStateResponse.fromJson(Map<String, dynamic> json) =
+      _$FieldStateResponseImpl.fromJson;
 
+  int get width;
+  int get height;
   List<FieldPixel> get data;
   @JsonKey(ignore: true)
-  _$$FieldStateAppResponseImplCopyWith<_$FieldStateAppResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -849,9 +908,11 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
     return onlineCount();
   }
@@ -862,9 +923,10 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
     return onlineCount?.call();
   }
@@ -875,9 +937,10 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
@@ -892,9 +955,10 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return onlineCount(this);
   }
@@ -905,9 +969,10 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return onlineCount?.call(this);
   }
@@ -918,9 +983,10 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
@@ -993,9 +1059,11 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
+    required TResult Function() noResponse,
   }) {
     return unknown();
   }
@@ -1006,9 +1074,10 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(int data)? userId,
-    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult? Function()? onlineCount,
     TResult? Function()? unknown,
+    TResult? Function()? noResponse,
   }) {
     return unknown?.call();
   }
@@ -1019,9 +1088,10 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(int data)? userId,
-    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
     TResult Function()? onlineCount,
     TResult Function()? unknown,
+    TResult Function()? noResponse,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -1036,9 +1106,10 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(BannedResponse value) banned,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(AuthResponse value) userId,
-    required TResult Function(FieldStateAppResponse value) fieldState,
+    required TResult Function(FieldStateResponse value) fieldState,
     required TResult Function(OnlineCountResponse value) onlineCount,
     required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
   }) {
     return unknown(this);
   }
@@ -1049,9 +1120,10 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(BannedResponse value)? banned,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(AuthResponse value)? userId,
-    TResult? Function(FieldStateAppResponse value)? fieldState,
+    TResult? Function(FieldStateResponse value)? fieldState,
     TResult? Function(OnlineCountResponse value)? onlineCount,
     TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
   }) {
     return unknown?.call(this);
   }
@@ -1062,9 +1134,10 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(BannedResponse value)? banned,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(AuthResponse value)? userId,
-    TResult Function(FieldStateAppResponse value)? fieldState,
+    TResult Function(FieldStateResponse value)? fieldState,
     TResult Function(OnlineCountResponse value)? onlineCount,
     TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -1086,4 +1159,155 @@ abstract class UnknownResponse implements AppResponse {
 
   factory UnknownResponse.fromJson(Map<String, dynamic> json) =
       _$UnknownResponseImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$NoResponseImplCopyWith<$Res> {
+  factory _$$NoResponseImplCopyWith(
+          _$NoResponseImpl value, $Res Function(_$NoResponseImpl) then) =
+      __$$NoResponseImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NoResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$NoResponseImpl>
+    implements _$$NoResponseImplCopyWith<$Res> {
+  __$$NoResponseImplCopyWithImpl(
+      _$NoResponseImpl _value, $Res Function(_$NoResponseImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$NoResponseImpl implements NoResponse {
+  const _$NoResponseImpl({final String? $type})
+      : $type = $type ?? 'no_response';
+
+  factory _$NoResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoResponseImplFromJson(json);
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppResponse.noResponse()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoResponseImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() banned,
+    required TResult Function(String message) error,
+    required TResult Function(int data) userId,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
+    required TResult Function() onlineCount,
+    required TResult Function() unknown,
+    required TResult Function() noResponse,
+  }) {
+    return noResponse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? banned,
+    TResult? Function(String message)? error,
+    TResult? Function(int data)? userId,
+    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function()? onlineCount,
+    TResult? Function()? unknown,
+    TResult? Function()? noResponse,
+  }) {
+    return noResponse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? banned,
+    TResult Function(String message)? error,
+    TResult Function(int data)? userId,
+    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function()? onlineCount,
+    TResult Function()? unknown,
+    TResult Function()? noResponse,
+    required TResult orElse(),
+  }) {
+    if (noResponse != null) {
+      return noResponse();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(AuthResponse value) userId,
+    required TResult Function(FieldStateResponse value) fieldState,
+    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(UnknownResponse value) unknown,
+    required TResult Function(NoResponse value) noResponse,
+  }) {
+    return noResponse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(AuthResponse value)? userId,
+    TResult? Function(FieldStateResponse value)? fieldState,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(UnknownResponse value)? unknown,
+    TResult? Function(NoResponse value)? noResponse,
+  }) {
+    return noResponse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(AuthResponse value)? userId,
+    TResult Function(FieldStateResponse value)? fieldState,
+    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(UnknownResponse value)? unknown,
+    TResult Function(NoResponse value)? noResponse,
+    required TResult orElse(),
+  }) {
+    if (noResponse != null) {
+      return noResponse(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NoResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class NoResponse implements AppResponse {
+  const factory NoResponse() = _$NoResponseImpl;
+
+  factory NoResponse.fromJson(Map<String, dynamic> json) =
+      _$NoResponseImpl.fromJson;
 }
