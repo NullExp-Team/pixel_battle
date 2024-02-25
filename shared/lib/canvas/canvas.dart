@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 import '../src/features/field/domain/field_state_service.dart';
 
-class MyCanvas extends ConsumerStatefulWidget {
-  const MyCanvas({super.key});
+class PixelCanvas extends ConsumerStatefulWidget {
+  const PixelCanvas({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => Aboba();
+  ConsumerState<ConsumerStatefulWidget> createState() => PixelCanvasState();
 }
 
-class Aboba extends ConsumerState<MyCanvas> {
+class PixelCanvasState extends ConsumerState<PixelCanvas> {
   final TransformationController transformationController =
       TransformationController();
   Offset? selectedPixel;
