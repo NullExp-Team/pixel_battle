@@ -11,68 +11,41 @@ part 'app_text_styles.tailor.dart';
   themeGetter: ThemeGetter.none,
 )
 class _$AppTextStyles {
-  static const _roboto = 'Roboto';
-
-  static final h1 = [
-    const TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.w600,
-      fontFamily: _roboto,
-      height: 33.6 / 24,
-    ),
-  ];
-
-  static final h2 = [
-    const TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w600,
-      fontFamily: _roboto,
-      height: 28 / 20,
-    ),
-  ];
+  static const _inter = 'Inter';
 
   static final text = [
     const TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.w400,
-      fontFamily: _roboto,
-      height: 20 / 16,
+      fontWeight: FontWeight.w500,
+      fontFamily: _inter,
+      height: 19.36 / 16,
     ),
   ];
 
-  static final textAccent = [
+  static final subtitle = [
     const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w600,
-      fontFamily: _roboto,
-      height: 24 / 16,
+      fontFamily: _inter,
+      height: 19.36 / 16,
     ),
   ];
 
-  static final textS = [
+  static final title = [
     const TextStyle(
-      fontSize: 13,
-      fontWeight: FontWeight.w400,
-      fontFamily: _roboto,
-      height: 15.6 / 13,
-    ),
-  ];
-
-  static final textSAccent = [
-    const TextStyle(
-      fontSize: 13,
+      fontSize: 20,
       fontWeight: FontWeight.w600,
-      fontFamily: _roboto,
-      height: 15.6 / 13,
+      fontFamily: _inter,
+      height: 24.2 / 20,
     ),
   ];
 
   static final label = [
     const TextStyle(
-      fontSize: 10,
-      fontWeight: FontWeight.w600,
-      fontFamily: _roboto,
-      height: 12 / 10,
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      fontFamily: _inter,
+      height: 38.73 / 32,
     ),
   ];
 }

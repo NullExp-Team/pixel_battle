@@ -9,5 +9,5 @@ export 'package:shared/src/data/models/field_pixel.dart';
 export 'package:shared/src/data/models/online_count.dart';
 export 'package:shared/src/data/models/update_pixel.dart';
 export 'package:shared/src/data/api/web_socket_api.dart';
-export 'package:shared/src/features/field/domain/field_state_service.dart';
 export 'package:shared/canvas/canvas.dart';
+export 'package:shared/src/features/field/domain/field_state_service.dart';
