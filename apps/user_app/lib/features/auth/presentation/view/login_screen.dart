@@ -11,53 +11,34 @@ class LoginScreen extends HookConsumerWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(),
-      body: _buildBody(context, textController),
-    );
-  }
-
-  Widget _buildBody(
-    BuildContext context,
-    TextEditingController textController,
-  ) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            _buildHeader(context),
-            const SizedBox(height: 28),
-            _buildTextField(textController),
-            const Spacer(flex: 2),
-            _buildActionButton(),
-            const SizedBox(height: 50),
-          ],
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Spacer(),
+              Text(
+                'Рисовашка',
+                style: textStyles.label,
+              ),
+              const SizedBox(height: 28),
+              AppTextField(
+                placeholder: 'Введите ник',
+                controller: textController,
+              ),
+              const Spacer(flex: 2),
+              AppButton(
+                text: 'Начать',
+                onTap: () {
+                  // Handle button tap
+                },
+              ),
+              const SizedBox(height: 50),
+            ],
+          ),
         ),
       ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context) {
-    return Text(
-      'Рисовашка',
-      style: AppTextStyles.general.label,
-    );
-  }
-
-  Widget _buildTextField(TextEditingController controller) {
-    return AppTextField(
-      placeholder: 'Введите ник',
-      controller: controller,
-    );
-  }
-
-  Widget _buildActionButton() {
-    return AppButton(
-      text: 'Начать',
-      onTap: () {
-        // Handle button tap
-      },
     );
   }
 }
