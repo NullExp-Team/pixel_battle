@@ -38,3 +38,5 @@ export 'package:core/src/widgets/svg_icon.dart';
 export 'package:core/src/widgets/s_text.dart';
 export 'package:core/src/widgets/work_in_progress_screen.dart';
 export 'package:core/src/assets/assets.gen.dart';
+export 'package:core/src/ui_kit/app_button.dart';
+export 'package:core/src/ui_kit/app_textfield.dart';
