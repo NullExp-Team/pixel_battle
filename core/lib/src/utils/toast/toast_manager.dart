@@ -70,14 +70,14 @@ class ToastManager {
         onDismissed: hideCurrent,
         title: title != null ? SText.text(title) : null,
         text: text != null
-            ? SText.textS(
+            ? SText.text(
                 text,
                 maxLines: 16,
                 overflow: TextOverflow.ellipsis,
               )
             : null,
         debugText: FlavorManager.isDev && debugText != null
-            ? SText.textS(
+            ? SText.subtitle(
                 debugText,
                 fontWeight: FontWeight.w400,
               )

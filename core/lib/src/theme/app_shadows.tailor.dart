@@ -10,13 +10,13 @@ part of 'app_shadows.dart';
 
 class AppShadows extends ThemeExtension<AppShadows> {
   const AppShadows({
-    required this.dropMenu,
+    required this.shadow,
   });
 
-  final BoxShadow dropMenu;
+  final BoxShadow shadow;
 
   static final AppShadows general = AppShadows(
-    dropMenu: _$AppShadows.dropMenu[0],
+    shadow: _$AppShadows.shadow[0],
   );
 
   static final themes = [
@@ -25,10 +25,10 @@ class AppShadows extends ThemeExtension<AppShadows> {
 
   @override
   AppShadows copyWith({
-    BoxShadow? dropMenu,
+    BoxShadow? shadow,
   }) {
     return AppShadows(
-      dropMenu: dropMenu ?? this.dropMenu,
+      shadow: shadow ?? this.shadow,
     );
   }
 
@@ -36,7 +36,7 @@ class AppShadows extends ThemeExtension<AppShadows> {
   AppShadows lerp(covariant ThemeExtension<AppShadows>? other, double t) {
     if (other is! AppShadows) return this as AppShadows;
     return AppShadows(
-      dropMenu: t < 0.5 ? dropMenu : other.dropMenu,
+      shadow: t < 0.5 ? shadow : other.shadow,
     );
   }
 
@@ -45,14 +45,14 @@ class AppShadows extends ThemeExtension<AppShadows> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AppShadows &&
-            const DeepCollectionEquality().equals(dropMenu, other.dropMenu));
+            const DeepCollectionEquality().equals(shadow, other.shadow));
   }
 
   @override
   int get hashCode {
     return Object.hash(
       runtimeType.hashCode,
-      const DeepCollectionEquality().hash(dropMenu),
+      const DeepCollectionEquality().hash(shadow),
     );
   }
 }

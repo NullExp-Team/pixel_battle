@@ -19,7 +19,7 @@ class AppWrapper extends StatelessWidget {
 
     return AppWrapper(
       builder: (context) => ColoredBox(
-        color: context.colors.grey102,
+        color: context.colors.background,
         child: FadeAnimated(
           duration: const Duration(milliseconds: 300),
           child: child,

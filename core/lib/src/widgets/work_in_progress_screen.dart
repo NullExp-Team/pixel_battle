@@ -71,7 +71,7 @@ class WorkInProgressScreen extends HookConsumerWidget {
               animationDelay: Duration(milliseconds: 200),
             ),
             const Gap(16),
-            SText.h1(screenName),
+            SText.title(screenName),
             const Gap(4),
             Consumer(
               builder: (context, ref, child) {

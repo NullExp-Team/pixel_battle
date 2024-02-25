@@ -9,12 +9,11 @@ part 'app_shadows.tailor.dart';
   themeGetter: ThemeGetter.none,
 )
 class _$AppShadows {
-  static final dropMenu = [
-    const BoxShadow(
-      blurRadius: 22,
-      spreadRadius: -10,
-      offset: Offset(0, 4),
-      color: Color.fromRGBO(15, 15, 15, 0.1),
+  static final shadow = [
+    BoxShadow(
+      blurRadius: 12,
+      offset: const Offset(0, 2),
+      color: const Color(0xFFBABABA).withOpacity(0.25),
     ),
   ];
 }
