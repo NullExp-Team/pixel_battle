@@ -25,14 +25,14 @@ class AppTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.light.textMinor),
+          borderSide: BorderSide(color: colors.textMinor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.light.textMinor),
+          borderSide: BorderSide(color: colors.textMinor),
         ),
       ),
-      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+      style: textStyles.text,
     );
   }
 }
