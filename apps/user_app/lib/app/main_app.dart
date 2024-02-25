@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared/canvas/canvas.dart';
 
+import '../features/auth/presentation/view/login_screen.dart';
+
 // import '../router/app_router_config_provider.dart';
 
 class MainApp extends HookConsumerWidget {
@@ -29,7 +31,7 @@ class MainApp extends HookConsumerWidget {
       themeMode: themeMode,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      home: const PixelCanvas(),
+      home: const LoginScreen(),
       // routerConfig: routerConfig,
     );
   }
