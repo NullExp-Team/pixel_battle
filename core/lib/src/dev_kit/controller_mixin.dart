@@ -26,6 +26,5 @@ mixin ControllerMixin implements IRef, IApiWrap<BaseApiError> {
   StackRouter get router => ref.watch(appRouterProvider);
 
   @override
-  late final ApiWrapController<BaseApiError> wrapController =
-      ref.watch(appApiWrapControllerProvider('$hashCode'));
+  late final ApiWrapController<BaseApiError> wrapController = ref.watch(appApiWrapControllerProvider('$hashCode'));
 }

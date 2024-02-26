@@ -20,8 +20,7 @@ class AppSplash extends HookConsumerWidget {
         animationController.forward();
         Future.delayed(
           Duration(
-            milliseconds: duration.inMilliseconds -
-                animationController.reverseDuration!.inMilliseconds,
+            milliseconds: duration.inMilliseconds - animationController.reverseDuration!.inMilliseconds,
           ),
           () {
             if (context.mounted) animationController.reverse();

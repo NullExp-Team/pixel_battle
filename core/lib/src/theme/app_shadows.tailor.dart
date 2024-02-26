@@ -43,9 +43,7 @@ class AppShadows extends ThemeExtension<AppShadows> {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AppShadows &&
-            const DeepCollectionEquality().equals(shadow, other.shadow));
+        (other.runtimeType == runtimeType && other is AppShadows && const DeepCollectionEquality().equals(shadow, other.shadow));
   }
 
   @override

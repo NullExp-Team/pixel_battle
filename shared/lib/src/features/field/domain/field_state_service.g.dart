@@ -10,13 +10,10 @@ String _$fieldStateServiceHash() => r'34f6b203272615c3839e7f21e687bac1023eff8b';
 
 /// See also [FieldStateService].
 @ProviderFor(FieldStateService)
-final fieldStateServiceProvider =
-    AutoDisposeStreamNotifierProvider<FieldStateService, ui.Image>.internal(
+final fieldStateServiceProvider = AutoDisposeStreamNotifierProvider<FieldStateService, ui.Image>.internal(
   FieldStateService.new,
   name: r'fieldStateServiceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$fieldStateServiceHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$fieldStateServiceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

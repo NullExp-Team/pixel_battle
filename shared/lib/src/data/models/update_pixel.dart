@@ -12,6 +12,5 @@ class UpdatePixel with _$UpdatePixel {
     @JsonKey(name: 'action_time') required DateTime actionTime,
   }) = _UpdatePixel;
 
-  factory UpdatePixel.fromJson(Map<String, dynamic> json) =>
-      _$UpdatePixelFromJson(json);
+  factory UpdatePixel.fromJson(Map<String, dynamic> json) => _$UpdatePixelFromJson(json);
 }

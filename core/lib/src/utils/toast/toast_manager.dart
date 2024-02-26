@@ -36,8 +36,7 @@ class ToastManager {
 
   Duration _calculateDuration({String? text, String? debugText}) {
     return Duration(
-      milliseconds:
-          4500 + (text?.length ?? 0) * 35 + (debugText?.length ?? 0) * 10,
+      milliseconds: 4500 + (text?.length ?? 0) * 35 + (debugText?.length ?? 0) * 10,
     );
   }
 
@@ -56,12 +55,9 @@ class ToastManager {
 
     title = title != null && title.isEmpty ? null : title;
 
-    final apiErrorDebugText =
-        apiError != null ? _apiErrorFormatter.format(apiError).$3 : null;
+    final apiErrorDebugText = apiError != null ? _apiErrorFormatter.format(apiError).$3 : null;
 
-    debugText =
-        '${debugText ?? ''}${apiErrorDebugText != null ? '\n\n $apiErrorDebugText' : ''}'
-            .trimOrNull();
+    debugText = '${debugText ?? ''}${apiErrorDebugText != null ? '\n\n $apiErrorDebugText' : ''}'.trimOrNull();
 
     _fToast.showToast(
       child: ToastCard(

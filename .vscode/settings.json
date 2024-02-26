@@ -5,10 +5,15 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
+  "dart.lineLength": 150,
   "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": [
         "source.fixAll",
+    ],
+    "editor.rulers": [
+      150
     ],
   },
   "folderTemplates.structures": [

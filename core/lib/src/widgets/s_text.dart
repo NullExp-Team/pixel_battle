@@ -148,13 +148,12 @@ class SText extends Text {
   TextStyle _getStyle({DefaultTextStyle? defaultTextStyle}) {
     final parentStyle = defaultTextStyle?.style ?? const TextStyle();
 
-    TextStyle mergeStyle(TextStyle? textStyle) =>
-        parentStyle.merge(textStyle).merge(super.style).copyWith(
-              color: color,
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              height: heigth,
-            );
+    TextStyle mergeStyle(TextStyle? textStyle) => parentStyle.merge(textStyle).merge(super.style).copyWith(
+          color: color,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          height: heigth,
+        );
 
     return switch (_appTextStyle) {
       _AppTextStyles.text => mergeStyle(textStyles.text),

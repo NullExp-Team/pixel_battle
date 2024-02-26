@@ -28,26 +28,18 @@ mixin _$UpdatePixel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UpdatePixelCopyWith<UpdatePixel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdatePixelCopyWith<UpdatePixel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdatePixelCopyWith<$Res> {
-  factory $UpdatePixelCopyWith(
-          UpdatePixel value, $Res Function(UpdatePixel) then) =
-      _$UpdatePixelCopyWithImpl<$Res, UpdatePixel>;
+  factory $UpdatePixelCopyWith(UpdatePixel value, $Res Function(UpdatePixel) then) = _$UpdatePixelCopyWithImpl<$Res, UpdatePixel>;
   @useResult
-  $Res call(
-      {int x,
-      int y,
-      String color,
-      @JsonKey(name: 'action_time') DateTime actionTime});
+  $Res call({int x, int y, String color, @JsonKey(name: 'action_time') DateTime actionTime});
 }
 
 /// @nodoc
-class _$UpdatePixelCopyWithImpl<$Res, $Val extends UpdatePixel>
-    implements $UpdatePixelCopyWith<$Res> {
+class _$UpdatePixelCopyWithImpl<$Res, $Val extends UpdatePixel> implements $UpdatePixelCopyWith<$Res> {
   _$UpdatePixelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -85,27 +77,16 @@ class _$UpdatePixelCopyWithImpl<$Res, $Val extends UpdatePixel>
 }
 
 /// @nodoc
-abstract class _$$UpdatePixelImplCopyWith<$Res>
-    implements $UpdatePixelCopyWith<$Res> {
-  factory _$$UpdatePixelImplCopyWith(
-          _$UpdatePixelImpl value, $Res Function(_$UpdatePixelImpl) then) =
-      __$$UpdatePixelImplCopyWithImpl<$Res>;
+abstract class _$$UpdatePixelImplCopyWith<$Res> implements $UpdatePixelCopyWith<$Res> {
+  factory _$$UpdatePixelImplCopyWith(_$UpdatePixelImpl value, $Res Function(_$UpdatePixelImpl) then) = __$$UpdatePixelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int x,
-      int y,
-      String color,
-      @JsonKey(name: 'action_time') DateTime actionTime});
+  $Res call({int x, int y, String color, @JsonKey(name: 'action_time') DateTime actionTime});
 }
 
 /// @nodoc
-class __$$UpdatePixelImplCopyWithImpl<$Res>
-    extends _$UpdatePixelCopyWithImpl<$Res, _$UpdatePixelImpl>
-    implements _$$UpdatePixelImplCopyWith<$Res> {
-  __$$UpdatePixelImplCopyWithImpl(
-      _$UpdatePixelImpl _value, $Res Function(_$UpdatePixelImpl) _then)
-      : super(_value, _then);
+class __$$UpdatePixelImplCopyWithImpl<$Res> extends _$UpdatePixelCopyWithImpl<$Res, _$UpdatePixelImpl> implements _$$UpdatePixelImplCopyWith<$Res> {
+  __$$UpdatePixelImplCopyWithImpl(_$UpdatePixelImpl _value, $Res Function(_$UpdatePixelImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -139,14 +120,9 @@ class __$$UpdatePixelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UpdatePixelImpl implements _UpdatePixel {
-  _$UpdatePixelImpl(
-      {required this.x,
-      required this.y,
-      required this.color,
-      @JsonKey(name: 'action_time') required this.actionTime});
+  _$UpdatePixelImpl({required this.x, required this.y, required this.color, @JsonKey(name: 'action_time') required this.actionTime});
 
-  factory _$UpdatePixelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdatePixelImplFromJson(json);
+  factory _$UpdatePixelImpl.fromJson(Map<String, dynamic> json) => _$$UpdatePixelImplFromJson(json);
 
   @override
   final int x;
@@ -171,8 +147,7 @@ class _$UpdatePixelImpl implements _UpdatePixel {
             (identical(other.x, x) || other.x == x) &&
             (identical(other.y, y) || other.y == y) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.actionTime, actionTime) ||
-                other.actionTime == actionTime));
+            (identical(other.actionTime, actionTime) || other.actionTime == actionTime));
   }
 
   @JsonKey(ignore: true)
@@ -182,8 +157,7 @@ class _$UpdatePixelImpl implements _UpdatePixel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdatePixelImplCopyWith<_$UpdatePixelImpl> get copyWith =>
-      __$$UpdatePixelImplCopyWithImpl<_$UpdatePixelImpl>(this, _$identity);
+  _$$UpdatePixelImplCopyWith<_$UpdatePixelImpl> get copyWith => __$$UpdatePixelImplCopyWithImpl<_$UpdatePixelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -195,14 +169,12 @@ class _$UpdatePixelImpl implements _UpdatePixel {
 
 abstract class _UpdatePixel implements UpdatePixel {
   factory _UpdatePixel(
-          {required final int x,
-          required final int y,
-          required final String color,
-          @JsonKey(name: 'action_time') required final DateTime actionTime}) =
-      _$UpdatePixelImpl;
+      {required final int x,
+      required final int y,
+      required final String color,
+      @JsonKey(name: 'action_time') required final DateTime actionTime}) = _$UpdatePixelImpl;
 
-  factory _UpdatePixel.fromJson(Map<String, dynamic> json) =
-      _$UpdatePixelImpl.fromJson;
+  factory _UpdatePixel.fromJson(Map<String, dynamic> json) = _$UpdatePixelImpl.fromJson;
 
   @override
   int get x;
@@ -215,6 +187,5 @@ abstract class _UpdatePixel implements UpdatePixel {
   DateTime get actionTime;
   @override
   @JsonKey(ignore: true)
-  _$$UpdatePixelImplCopyWith<_$UpdatePixelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdatePixelImplCopyWith<_$UpdatePixelImpl> get copyWith => throw _privateConstructorUsedError;
 }

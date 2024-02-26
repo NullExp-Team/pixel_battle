@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import '../../../core.dart';
 
 part 'dio_provider.g.dart';

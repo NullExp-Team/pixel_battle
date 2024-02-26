@@ -15,8 +15,7 @@ String _$appLinksHash() => r'06c763f4324adabcafe3ece40079a4507cd629cf';
 final appLinksProvider = StreamProvider<Uri>.internal(
   appLinks,
   name: r'appLinksProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$appLinksHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$appLinksHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

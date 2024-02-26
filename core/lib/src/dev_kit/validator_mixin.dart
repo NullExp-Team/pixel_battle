@@ -21,8 +21,7 @@ extension ValidatorMixinX on ValidatorMixin {
         title: t.fixValidationErrors(errorsCount: errors.length),
         text: errors
             .mapIndexed(
-              (i, rec) =>
-                  '${errors.length > 1 ? '${i + 1}) ' : ''}${rec.label != null ? '${rec.label}: ' : ''}${rec.error}',
+              (i, rec) => '${errors.length > 1 ? '${i + 1}) ' : ''}${rec.label != null ? '${rec.label}: ' : ''}${rec.error}',
             )
             .join('\n'),
       );

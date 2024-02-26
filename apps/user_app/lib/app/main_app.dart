@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shared/canvas/canvas.dart';
 
 import '../features/auth/presentation/view/login_screen.dart';
 
@@ -19,9 +18,7 @@ class MainApp extends HookConsumerWidget {
       debugShowCheckedModeBanner: false,
       title: 'Рисовашка',
       builder: AppWrapper.builder,
-      locale: FlavorManager.isDev
-          ? DevicePreview.locale(context)
-          : TranslationProvider.of(context).flutterLocale,
+      locale: FlavorManager.isDev ? DevicePreview.locale(context) : TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,

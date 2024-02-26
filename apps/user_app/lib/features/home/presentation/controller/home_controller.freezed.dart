@@ -20,22 +20,19 @@ mixin _$HomeControllerState {
   Point<int>? get selectedPixelPosition => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeControllerStateCopyWith<HomeControllerState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HomeControllerStateCopyWith<HomeControllerState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HomeControllerStateCopyWith<$Res> {
-  factory $HomeControllerStateCopyWith(
-          HomeControllerState value, $Res Function(HomeControllerState) then) =
+  factory $HomeControllerStateCopyWith(HomeControllerState value, $Res Function(HomeControllerState) then) =
       _$HomeControllerStateCopyWithImpl<$Res, HomeControllerState>;
   @useResult
   $Res call({Color selectedColor, Point<int>? selectedPixelPosition});
 }
 
 /// @nodoc
-class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
-    implements $HomeControllerStateCopyWith<$Res> {
+class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState> implements $HomeControllerStateCopyWith<$Res> {
   _$HomeControllerStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -63,10 +60,8 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
 }
 
 /// @nodoc
-abstract class _$$HomeControllerStateImplCopyWith<$Res>
-    implements $HomeControllerStateCopyWith<$Res> {
-  factory _$$HomeControllerStateImplCopyWith(_$HomeControllerStateImpl value,
-          $Res Function(_$HomeControllerStateImpl) then) =
+abstract class _$$HomeControllerStateImplCopyWith<$Res> implements $HomeControllerStateCopyWith<$Res> {
+  factory _$$HomeControllerStateImplCopyWith(_$HomeControllerStateImpl value, $Res Function(_$HomeControllerStateImpl) then) =
       __$$HomeControllerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -74,12 +69,9 @@ abstract class _$$HomeControllerStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HomeControllerStateImplCopyWithImpl<$Res>
-    extends _$HomeControllerStateCopyWithImpl<$Res, _$HomeControllerStateImpl>
+class __$$HomeControllerStateImplCopyWithImpl<$Res> extends _$HomeControllerStateCopyWithImpl<$Res, _$HomeControllerStateImpl>
     implements _$$HomeControllerStateImplCopyWith<$Res> {
-  __$$HomeControllerStateImplCopyWithImpl(_$HomeControllerStateImpl _value,
-      $Res Function(_$HomeControllerStateImpl) _then)
-      : super(_value, _then);
+  __$$HomeControllerStateImplCopyWithImpl(_$HomeControllerStateImpl _value, $Res Function(_$HomeControllerStateImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -103,8 +95,7 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeControllerStateImpl implements _HomeControllerState {
-  _$HomeControllerStateImpl(
-      {required this.selectedColor, required this.selectedPixelPosition});
+  _$HomeControllerStateImpl({required this.selectedColor, required this.selectedPixelPosition});
 
   @override
   final Color selectedColor;
@@ -121,29 +112,22 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeControllerStateImpl &&
-            (identical(other.selectedColor, selectedColor) ||
-                other.selectedColor == selectedColor) &&
-            (identical(other.selectedPixelPosition, selectedPixelPosition) ||
-                other.selectedPixelPosition == selectedPixelPosition));
+            (identical(other.selectedColor, selectedColor) || other.selectedColor == selectedColor) &&
+            (identical(other.selectedPixelPosition, selectedPixelPosition) || other.selectedPixelPosition == selectedPixelPosition));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, selectedColor, selectedPixelPosition);
+  int get hashCode => Object.hash(runtimeType, selectedColor, selectedPixelPosition);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$HomeControllerStateImplCopyWith<_$HomeControllerStateImpl> get copyWith =>
-      __$$HomeControllerStateImplCopyWithImpl<_$HomeControllerStateImpl>(
-          this, _$identity);
+      __$$HomeControllerStateImplCopyWithImpl<_$HomeControllerStateImpl>(this, _$identity);
 }
 
 abstract class _HomeControllerState implements HomeControllerState {
-  factory _HomeControllerState(
-          {required final Color selectedColor,
-          required final Point<int>? selectedPixelPosition}) =
-      _$HomeControllerStateImpl;
+  factory _HomeControllerState({required final Color selectedColor, required final Point<int>? selectedPixelPosition}) = _$HomeControllerStateImpl;
 
   @override
   Color get selectedColor;
@@ -151,6 +135,5 @@ abstract class _HomeControllerState implements HomeControllerState {
   Point<int>? get selectedPixelPosition;
   @override
   @JsonKey(ignore: true)
-  _$$HomeControllerStateImplCopyWith<_$HomeControllerStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HomeControllerStateImplCopyWith<_$HomeControllerStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
