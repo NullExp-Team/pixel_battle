@@ -84,9 +84,7 @@ class TimeDurationFormat {
     secondsLabel ??= this.secondsLabel;
     millisecondsLabel ??= this.millisecondsLabel;
 
-    var dur = duration.isNegative
-        ? Duration.zero
-        : Duration(milliseconds: duration.inMilliseconds);
+    var dur = duration.isNegative ? Duration.zero : Duration(milliseconds: duration.inMilliseconds);
 
     final days = dur.inDays;
     dur -= Duration(days: days);

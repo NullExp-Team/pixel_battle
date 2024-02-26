@@ -8,18 +8,14 @@ part of 'token_storage.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TokenStorageStateImpl _$$TokenStorageStateImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TokenStorageStateImpl(
+_$TokenStorageStateImpl _$$TokenStorageStateImplFromJson(Map<String, dynamic> json) => _$TokenStorageStateImpl(
       userPassedOnboarding: json['userPassedOnboarding'] as bool,
       userAuthorized: json['userAuthorized'] as bool,
       refreshToken: json['refreshToken'] as String?,
       accessToken: json['accessToken'] as String?,
     );
 
-Map<String, dynamic> _$$TokenStorageStateImplToJson(
-        _$TokenStorageStateImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$TokenStorageStateImplToJson(_$TokenStorageStateImpl instance) => <String, dynamic>{
       'userPassedOnboarding': instance.userPassedOnboarding,
       'userAuthorized': instance.userAuthorized,
       'refreshToken': instance.refreshToken,
@@ -30,20 +26,16 @@ Map<String, dynamic> _$$TokenStorageStateImplToJson(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$tokenStorageManagerHash() =>
-    r'ec73eba1b8b6c7799e7b23315e88a47a907f9eb0';
+String _$tokenStorageManagerHash() => r'ec73eba1b8b6c7799e7b23315e88a47a907f9eb0';
 
 /// Отвечает за управление и хранение токенов авторизации пользователя
 ///
 /// Copied from [TokenStorageManager].
 @ProviderFor(TokenStorageManager)
-final tokenStorageManagerProvider =
-    NotifierProvider<TokenStorageManager, TokenStorageState>.internal(
+final tokenStorageManagerProvider = NotifierProvider<TokenStorageManager, TokenStorageState>.internal(
   TokenStorageManager.new,
   name: r'tokenStorageManagerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$tokenStorageManagerHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$tokenStorageManagerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

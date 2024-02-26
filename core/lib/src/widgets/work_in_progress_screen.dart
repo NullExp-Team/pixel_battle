@@ -5,13 +5,11 @@ import 'package:flutter/material.dart';
 
 import '../../core.dart';
 
-final _workInProgressTextControllerProvider = NotifierProvider.autoDispose
-    .family<_WorkInProgressTextController, String, String>(
+final _workInProgressTextControllerProvider = NotifierProvider.autoDispose.family<_WorkInProgressTextController, String, String>(
   _WorkInProgressTextController.new,
 );
 
-class _WorkInProgressTextController
-    extends AutoDisposeFamilyNotifier<String, String> with ControllerMixin {
+class _WorkInProgressTextController extends AutoDisposeFamilyNotifier<String, String> with ControllerMixin {
   @override
   String build(_) => '';
 
@@ -28,8 +26,7 @@ class _WorkInProgressTextController
         for (var i = 0; i < text.length; i++) {
           if (!active) return;
           await Future.delayed(Duration(milliseconds: 30 + _rand.nextInt(50)));
-          state =
-              '${text.substring(0, i + 1)}${i != text.length - 1 ? '|' : ' '}';
+          state = '${text.substring(0, i + 1)}${i != text.length - 1 ? '|' : ' '}';
 
           if (i == text.length - 1) {
             for (var j = 0; j < 7; j++) {
@@ -52,8 +49,7 @@ class WorkInProgressScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller =
-        ref.read(_workInProgressTextControllerProvider(screenName).notifier);
+    final controller = ref.read(_workInProgressTextControllerProvider(screenName).notifier);
 
     useEffect(() {
       Future.delayed(const Duration(milliseconds: 200), controller.animate);
@@ -75,8 +71,7 @@ class WorkInProgressScreen extends HookConsumerWidget {
             const Gap(4),
             Consumer(
               builder: (context, ref, child) {
-                final text = ref
-                    .watch(_workInProgressTextControllerProvider(screenName));
+                final text = ref.watch(_workInProgressTextControllerProvider(screenName));
                 return SText.text(text);
               },
             ),

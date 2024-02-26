@@ -30,6 +30,5 @@ sealed class AppResponse with _$AppResponse {
 
   const factory AppResponse.noResponse() = NoResponse;
 
-  factory AppResponse.fromJson(Map<String, dynamic> json) =>
-      _$AppResponseFromJson(json);
+  factory AppResponse.fromJson(Map<String, dynamic> json) => _$AppResponseFromJson(json);
 }

@@ -14,14 +14,12 @@ class TokenStorageState with _$TokenStorageState {
     String? accessToken,
   }) = _TokenStorageState;
 
-  factory TokenStorageState.fromJson(Map<String, dynamic> json) =>
-      _$TokenStorageStateFromJson(json);
+  factory TokenStorageState.fromJson(Map<String, dynamic> json) => _$TokenStorageStateFromJson(json);
 }
 
 /// Отвечает за управление и хранение токенов авторизации пользователя
 @Riverpod(keepAlive: true)
-class TokenStorageManager extends _$TokenStorageManager
-    with PersistenceMixin<TokenStorageState> {
+class TokenStorageManager extends _$TokenStorageManager with PersistenceMixin<TokenStorageState> {
   @override
   TokenStorageState build() => persistentBuild(
         () => TokenStorageState(
@@ -31,8 +29,7 @@ class TokenStorageManager extends _$TokenStorageManager
         fromJson: TokenStorageState.fromJson,
       );
 
-  void updateUserPassedOnboarding(bool value) =>
-      state = state.copyWith(userPassedOnboarding: value);
+  void updateUserPassedOnboarding(bool value) => state = state.copyWith(userPassedOnboarding: value);
 
   void updateToken({
     required String refreshToken,

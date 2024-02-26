@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 import '../../../../core.dart';
@@ -28,8 +27,7 @@ class AppFormatter {
         initialText: initialText,
       );
 
-  TextInputFormatter endFormatter(String endText) =>
-      TextInputFormatter.withFunction((oldValue, newValue) {
+  TextInputFormatter endFormatter(String endText) => TextInputFormatter.withFunction((oldValue, newValue) {
         if (oldValue.text.isEmpty && newValue.text.isNotEmpty) {
           return newValue.copyWith(
             text: '${newValue.text}$endText',
@@ -50,8 +48,7 @@ class AppFormatter {
               extentOffset: newValue.selection.extentOffset - 1,
             ),
           );
-        } else if (newValue.text.lastIndexOf(endText) !=
-            newValue.text.length - 1) {
+        } else if (newValue.text.lastIndexOf(endText) != newValue.text.length - 1) {
           final newText = '${newValue.text.replaceAll(endText, '')}$endText';
           return newValue.copyWith(
             text: newText,
@@ -99,8 +96,7 @@ class AppFormatter {
       );
 
   String strDateDifference(String dateTime) {
-    final duration =
-        DateTime.parse(dateTime).toLocal().difference(DateTime.now());
+    final duration = DateTime.parse(dateTime).toLocal().difference(DateTime.now());
     return formatter.timeDuration(
       duration,
       showSeconds: duration.inHours < 1,
@@ -110,8 +106,7 @@ class AppFormatter {
   String weekday(int weekday, {String pattern = 'EE'}) {
     final date = DateTime(0);
     final weekDayDate = date.addDays(-date.weekday + weekday);
-    final weekDayStr =
-        DateFormat(pattern, lang).format(weekDayDate).capitalize();
+    final weekDayStr = DateFormat(pattern, lang).format(weekDayDate).capitalize();
     return weekDayStr;
   }
 }

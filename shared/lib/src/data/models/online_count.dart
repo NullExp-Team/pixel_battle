@@ -1,4 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:core/core.dart';
 
 part 'online_count.freezed.dart';
 part 'online_count.g.dart';
@@ -9,6 +9,5 @@ class OnlineCount with _$OnlineCount {
     required int online,
   }) = _OnlineCount;
 
-  factory OnlineCount.fromJson(Map<String, dynamic> json) =>
-      _$OnlineCountFromJson(json);
+  factory OnlineCount.fromJson(Map<String, dynamic> json) => _$OnlineCountFromJson(json);
 }

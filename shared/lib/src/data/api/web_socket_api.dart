@@ -42,9 +42,7 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     _sink.add(request.toJson());
     if (T is NoResponse) return const NoResponse() as T;
 
-    final response = await _stream
-        .firstWhere((e) => e is T || e is BackendErrorResponse)
-        .timeout(timeout);
+    final response = await _stream.firstWhere((e) => e is T || e is BackendErrorResponse).timeout(timeout);
     if (response is BackendErrorResponse) throw response;
 
     return response as T;

@@ -14,8 +14,7 @@ LogSettings _settingsBuilder(ILogType logType) {
     LogPart.message,
   ];
 
-  const skipStackTraceRegExp =
-      'package:riverpod|api_wrap|app_button|logger|dio|controller_utils|dev_kit';
+  const skipStackTraceRegExp = 'package:riverpod|api_wrap|app_button|logger|dio|controller_utils|dev_kit';
 
   return switch (logType) {
     Log.request || Log.response => const LogSettings(
