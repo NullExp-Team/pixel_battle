@@ -28,18 +28,22 @@ mixin _$FieldPixel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FieldPixelCopyWith<FieldPixel> get copyWith => throw _privateConstructorUsedError;
+  $FieldPixelCopyWith<FieldPixel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FieldPixelCopyWith<$Res> {
-  factory $FieldPixelCopyWith(FieldPixel value, $Res Function(FieldPixel) then) = _$FieldPixelCopyWithImpl<$Res, FieldPixel>;
+  factory $FieldPixelCopyWith(
+          FieldPixel value, $Res Function(FieldPixel) then) =
+      _$FieldPixelCopyWithImpl<$Res, FieldPixel>;
   @useResult
   $Res call({int x, int y, int color, @JsonKey(name: 'user_id') String userId});
 }
 
 /// @nodoc
-class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel> implements $FieldPixelCopyWith<$Res> {
+class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
+    implements $FieldPixelCopyWith<$Res> {
   _$FieldPixelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,16 +81,23 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel> implements $FieldP
 }
 
 /// @nodoc
-abstract class _$$FieldPixelImplCopyWith<$Res> implements $FieldPixelCopyWith<$Res> {
-  factory _$$FieldPixelImplCopyWith(_$FieldPixelImpl value, $Res Function(_$FieldPixelImpl) then) = __$$FieldPixelImplCopyWithImpl<$Res>;
+abstract class _$$FieldPixelImplCopyWith<$Res>
+    implements $FieldPixelCopyWith<$Res> {
+  factory _$$FieldPixelImplCopyWith(
+          _$FieldPixelImpl value, $Res Function(_$FieldPixelImpl) then) =
+      __$$FieldPixelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int x, int y, int color, @JsonKey(name: 'user_id') String userId});
 }
 
 /// @nodoc
-class __$$FieldPixelImplCopyWithImpl<$Res> extends _$FieldPixelCopyWithImpl<$Res, _$FieldPixelImpl> implements _$$FieldPixelImplCopyWith<$Res> {
-  __$$FieldPixelImplCopyWithImpl(_$FieldPixelImpl _value, $Res Function(_$FieldPixelImpl) _then) : super(_value, _then);
+class __$$FieldPixelImplCopyWithImpl<$Res>
+    extends _$FieldPixelCopyWithImpl<$Res, _$FieldPixelImpl>
+    implements _$$FieldPixelImplCopyWith<$Res> {
+  __$$FieldPixelImplCopyWithImpl(
+      _$FieldPixelImpl _value, $Res Function(_$FieldPixelImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -120,9 +131,14 @@ class __$$FieldPixelImplCopyWithImpl<$Res> extends _$FieldPixelCopyWithImpl<$Res
 /// @nodoc
 @JsonSerializable()
 class _$FieldPixelImpl implements _FieldPixel {
-  _$FieldPixelImpl({required this.x, required this.y, required this.color, @JsonKey(name: 'user_id') required this.userId});
+  _$FieldPixelImpl(
+      {required this.x,
+      required this.y,
+      required this.color,
+      @JsonKey(name: 'user_id') required this.userId});
 
-  factory _$FieldPixelImpl.fromJson(Map<String, dynamic> json) => _$$FieldPixelImplFromJson(json);
+  factory _$FieldPixelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FieldPixelImplFromJson(json);
 
   @override
   final int x;
@@ -157,7 +173,8 @@ class _$FieldPixelImpl implements _FieldPixel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith => __$$FieldPixelImplCopyWithImpl<_$FieldPixelImpl>(this, _$identity);
+  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith =>
+      __$$FieldPixelImplCopyWithImpl<_$FieldPixelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -169,12 +186,14 @@ class _$FieldPixelImpl implements _FieldPixel {
 
 abstract class _FieldPixel implements FieldPixel {
   factory _FieldPixel(
-      {required final int x,
-      required final int y,
-      required final int color,
-      @JsonKey(name: 'user_id') required final String userId}) = _$FieldPixelImpl;
+          {required final int x,
+          required final int y,
+          required final int color,
+          @JsonKey(name: 'user_id') required final String userId}) =
+      _$FieldPixelImpl;
 
-  factory _FieldPixel.fromJson(Map<String, dynamic> json) = _$FieldPixelImpl.fromJson;
+  factory _FieldPixel.fromJson(Map<String, dynamic> json) =
+      _$FieldPixelImpl.fromJson;
 
   @override
   int get x;
@@ -187,5 +206,6 @@ abstract class _FieldPixel implements FieldPixel {
   String get userId;
   @override
   @JsonKey(ignore: true)
-  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

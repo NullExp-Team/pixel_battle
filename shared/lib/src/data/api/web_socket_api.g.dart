@@ -10,10 +10,12 @@ String _$webSocketApiHash() => r'bb5cc12ffbe9fc3d255ae8769fa5af777c148ca4';
 
 /// See also [WebSocketApi].
 @ProviderFor(WebSocketApi)
-final webSocketApiProvider = AutoDisposeNotifierProvider<WebSocketApi, Raw<Stream<AppResponse>>>.internal(
+final webSocketApiProvider = AutoDisposeNotifierProvider<WebSocketApi,
+    Raw<Stream<AppResponse>>>.internal(
   WebSocketApi.new,
   name: r'webSocketApiProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$webSocketApiHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$webSocketApiHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

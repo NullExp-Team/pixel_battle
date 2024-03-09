@@ -18,5 +18,6 @@ sealed class AppRequest with _$AppRequest {
 
   factory AppRequest.disconnect() = DisconnectRequest;
 
-  factory AppRequest.fromJson(Map<String, dynamic> json) => _$AppRequestFromJson(json);
+  factory AppRequest.fromJson(Map<String, dynamic> json) =>
+      _$AppRequestFromJson(json);
 }

@@ -15,7 +15,8 @@ String _$appRouterHash() => r'ad133790edab242cd6b0a127f765524896fc9bed';
 final appRouterProvider = Provider<Raw<StackRouter>>.internal(
   appRouter,
   name: r'appRouterProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$appRouterHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$appRouterHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

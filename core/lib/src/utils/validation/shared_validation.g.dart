@@ -12,10 +12,13 @@ String _$sharedValidationHash() => r'cfdf2385e462674791871df3806b4577da22648f';
 
 /// See also [SharedValidation].
 @ProviderFor(SharedValidation)
-final sharedValidationProvider = NotifierProvider<SharedValidation, void>.internal(
+final sharedValidationProvider =
+    NotifierProvider<SharedValidation, void>.internal(
   SharedValidation.new,
   name: r'sharedValidationProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$sharedValidationHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$sharedValidationHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

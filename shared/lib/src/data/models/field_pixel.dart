@@ -12,5 +12,6 @@ class FieldPixel with _$FieldPixel {
     @JsonKey(name: 'user_id') required String userId,
   }) = _FieldPixel;
 
-  factory FieldPixel.fromJson(Map<String, dynamic> json) => _$FieldPixelFromJson(json);
+  factory FieldPixel.fromJson(Map<String, dynamic> json) =>
+      _$FieldPixelFromJson(json);
 }

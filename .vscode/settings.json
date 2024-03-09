@@ -5,12 +5,12 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
-  "dart.lineLength": 150,
+  "dart.lineLength": 80,
   "[dart]": {
     "editor.defaultFormatter": "Dart-Code.dart-code",
     "editor.formatOnSave": true,
     "editor.rulers": [
-      150
+      80
     ],
   },
   "folderTemplates.structures": [

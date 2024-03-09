@@ -81,8 +81,10 @@ class AppColors extends ThemeExtension<AppColors> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AppColors &&
-            const DeepCollectionEquality().equals(background, other.background) &&
-            const DeepCollectionEquality().equals(backgroundMinor, other.backgroundMinor) &&
+            const DeepCollectionEquality()
+                .equals(background, other.background) &&
+            const DeepCollectionEquality()
+                .equals(backgroundMinor, other.backgroundMinor) &&
             const DeepCollectionEquality().equals(divider, other.divider) &&
             const DeepCollectionEquality().equals(shade700, other.shade700) &&
             const DeepCollectionEquality().equals(shadow, other.shadow) &&
