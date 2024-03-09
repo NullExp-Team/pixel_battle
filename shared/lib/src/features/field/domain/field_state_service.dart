@@ -13,31 +13,29 @@ part 'field_state_service.g.dart';
 class FieldStateService extends _$FieldStateService with ControllerMixin {
   @override
   Stream<ui.Image> build() async* {
-    // TODO: Заменить
-    // final fieldStateStream =
-    //     ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
+    final fieldStateStream = ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
 
     // Mock Start
-    final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-    await Future.delayed(const Duration(milliseconds: 800));
-    const width = 200;
-    const height = 200;
-    final fieldStateStream = Stream<FieldStateResponse>.value(
-      FieldStateResponse(
-        width: width,
-        height: height,
-        data: [
-          for (int x = 0; x < width; x++)
-            for (int y = 0; y < height; y++)
-              FieldPixel(
-                x: x,
-                y: y,
-                color: colors[(x + y) % 4].value,
-                userId: '',
-              ),
-        ],
-      ),
-    );
+    // final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
+    // await Future.delayed(const Duration(milliseconds: 800));
+    // const width = 200;
+    // const height = 200;
+    // final fieldStateStream = Stream<FieldStateResponse>.value(
+    //   FieldStateResponse(
+    //     width: width,
+    //     height: height,
+    //     data: [
+    //       for (int x = 0; x < width; x++)
+    //         for (int y = 0; y < height; y++)
+    //           FieldPixel(
+    //             x: x,
+    //             y: y,
+    //             color: colors[(x + y) % 4].value,
+    //             userId: '',
+    //           ),
+    //     ],
+    //   ),
+    // );
     // Mock End
 
     await for (final fieldState in fieldStateStream) {
