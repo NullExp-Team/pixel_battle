@@ -17,7 +17,8 @@ class Assets {
   static const String package = 'core';
 
   static const AssetGenImage aboba = AssetGenImage('assets/aboba.png');
-  static const SvgGenImage workInProgress = SvgGenImage('assets/work-in-progress.svg');
+  static const SvgGenImage workInProgress =
+      SvgGenImage('assets/work-in-progress.svg');
 
   /// List of all assets
   static List<dynamic> get values => [aboba, workInProgress];
@@ -50,7 +51,8 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = false,
     bool isAntiAlias = false,
-    @Deprecated('Do not specify package for a generated library asset') String? package = package,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -85,7 +87,8 @@ class AssetGenImage {
 
   ImageProvider provider({
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset') String? package = package,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
   }) {
     return AssetImage(
       _assetName,
@@ -110,7 +113,8 @@ class SvgGenImage {
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    @Deprecated('Do not specify package for a generated library asset') String? package = package,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,

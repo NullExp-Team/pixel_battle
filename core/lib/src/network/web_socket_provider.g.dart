@@ -12,10 +12,13 @@ String _$webSocketChannelHash() => r'3e4bfbdbc5b571a829f153a4457f62496e0b233c';
 
 /// See also [webSocketChannel].
 @ProviderFor(webSocketChannel)
-final webSocketChannelProvider = AutoDisposeFutureProvider<WebSocketChannel>.internal(
+final webSocketChannelProvider =
+    AutoDisposeFutureProvider<WebSocketChannel>.internal(
   webSocketChannel,
   name: r'webSocketChannelProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$webSocketChannelHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$webSocketChannelHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

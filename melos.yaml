@@ -8,7 +8,7 @@ packages:
 
 scripts:
   # Исправляет линты и форматирует все файлы в проекте
-  fix_format: 'melos exec "dart fix --apply && dart format --line-length=150 ."'
+  fix_format: 'melos exec "dart fix --apply && dart format --line-length=80 ."'
 
   # Запуск генерации переводов
   slang: 'melos exec "dart run slang"'

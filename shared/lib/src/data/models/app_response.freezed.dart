@@ -41,7 +41,8 @@ mixin _$AppResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -109,11 +110,14 @@ mixin _$AppResponse {
 
 /// @nodoc
 abstract class $AppResponseCopyWith<$Res> {
-  factory $AppResponseCopyWith(AppResponse value, $Res Function(AppResponse) then) = _$AppResponseCopyWithImpl<$Res, AppResponse>;
+  factory $AppResponseCopyWith(
+          AppResponse value, $Res Function(AppResponse) then) =
+      _$AppResponseCopyWithImpl<$Res, AppResponse>;
 }
 
 /// @nodoc
-class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse> implements $AppResponseCopyWith<$Res> {
+class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse>
+    implements $AppResponseCopyWith<$Res> {
   _$AppResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -124,14 +128,18 @@ class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse> implements $AppR
 
 /// @nodoc
 abstract class _$$BannedResponseImplCopyWith<$Res> {
-  factory _$$BannedResponseImplCopyWith(_$BannedResponseImpl value, $Res Function(_$BannedResponseImpl) then) =
+  factory _$$BannedResponseImplCopyWith(_$BannedResponseImpl value,
+          $Res Function(_$BannedResponseImpl) then) =
       __$$BannedResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BannedResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$BannedResponseImpl>
+class __$$BannedResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$BannedResponseImpl>
     implements _$$BannedResponseImplCopyWith<$Res> {
-  __$$BannedResponseImplCopyWithImpl(_$BannedResponseImpl _value, $Res Function(_$BannedResponseImpl) _then) : super(_value, _then);
+  __$$BannedResponseImplCopyWithImpl(
+      _$BannedResponseImpl _value, $Res Function(_$BannedResponseImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -139,7 +147,8 @@ class __$$BannedResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl
 class _$BannedResponseImpl implements BannedResponse {
   const _$BannedResponseImpl({final String? $type}) : $type = $type ?? 'banned';
 
-  factory _$BannedResponseImpl.fromJson(Map<String, dynamic> json) => _$$BannedResponseImplFromJson(json);
+  factory _$BannedResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BannedResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -151,7 +160,8 @@ class _$BannedResponseImpl implements BannedResponse {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$BannedResponseImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$BannedResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -164,7 +174,8 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -261,21 +272,26 @@ class _$BannedResponseImpl implements BannedResponse {
 abstract class BannedResponse implements AppResponse {
   const factory BannedResponse() = _$BannedResponseImpl;
 
-  factory BannedResponse.fromJson(Map<String, dynamic> json) = _$BannedResponseImpl.fromJson;
+  factory BannedResponse.fromJson(Map<String, dynamic> json) =
+      _$BannedResponseImpl.fromJson;
 }
 
 /// @nodoc
 abstract class _$$BackendErrorResponseImplCopyWith<$Res> {
-  factory _$$BackendErrorResponseImplCopyWith(_$BackendErrorResponseImpl value, $Res Function(_$BackendErrorResponseImpl) then) =
+  factory _$$BackendErrorResponseImplCopyWith(_$BackendErrorResponseImpl value,
+          $Res Function(_$BackendErrorResponseImpl) then) =
       __$$BackendErrorResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$BackendErrorResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$BackendErrorResponseImpl>
+class __$$BackendErrorResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$BackendErrorResponseImpl>
     implements _$$BackendErrorResponseImplCopyWith<$Res> {
-  __$$BackendErrorResponseImplCopyWithImpl(_$BackendErrorResponseImpl _value, $Res Function(_$BackendErrorResponseImpl) _then) : super(_value, _then);
+  __$$BackendErrorResponseImplCopyWithImpl(_$BackendErrorResponseImpl _value,
+      $Res Function(_$BackendErrorResponseImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -294,9 +310,11 @@ class __$$BackendErrorResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWi
 /// @nodoc
 @JsonSerializable()
 class _$BackendErrorResponseImpl implements BackendErrorResponse {
-  const _$BackendErrorResponseImpl(this.message, {final String? $type}) : $type = $type ?? 'error';
+  const _$BackendErrorResponseImpl(this.message, {final String? $type})
+      : $type = $type ?? 'error';
 
-  factory _$BackendErrorResponseImpl.fromJson(Map<String, dynamic> json) => _$$BackendErrorResponseImplFromJson(json);
+  factory _$BackendErrorResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BackendErrorResponseImplFromJson(json);
 
   @override
   final String message;
@@ -312,7 +330,9 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$BackendErrorResponseImpl && (identical(other.message, message) || other.message == message));
+        (other.runtimeType == runtimeType &&
+            other is _$BackendErrorResponseImpl &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @JsonKey(ignore: true)
@@ -322,8 +342,10 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl> get copyWith =>
-      __$$BackendErrorResponseImplCopyWithImpl<_$BackendErrorResponseImpl>(this, _$identity);
+  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl>
+      get copyWith =>
+          __$$BackendErrorResponseImplCopyWithImpl<_$BackendErrorResponseImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,7 +353,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -426,26 +449,34 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
 }
 
 abstract class BackendErrorResponse implements AppResponse, Exception {
-  const factory BackendErrorResponse(final String message) = _$BackendErrorResponseImpl;
+  const factory BackendErrorResponse(final String message) =
+      _$BackendErrorResponseImpl;
 
-  factory BackendErrorResponse.fromJson(Map<String, dynamic> json) = _$BackendErrorResponseImpl.fromJson;
+  factory BackendErrorResponse.fromJson(Map<String, dynamic> json) =
+      _$BackendErrorResponseImpl.fromJson;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$BackendErrorResponseImplCopyWith<_$BackendErrorResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$AuthResponseImplCopyWith<$Res> {
-  factory _$$AuthResponseImplCopyWith(_$AuthResponseImpl value, $Res Function(_$AuthResponseImpl) then) = __$$AuthResponseImplCopyWithImpl<$Res>;
+  factory _$$AuthResponseImplCopyWith(
+          _$AuthResponseImpl value, $Res Function(_$AuthResponseImpl) then) =
+      __$$AuthResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int data});
 }
 
 /// @nodoc
-class __$$AuthResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$AuthResponseImpl>
+class __$$AuthResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$AuthResponseImpl>
     implements _$$AuthResponseImplCopyWith<$Res> {
-  __$$AuthResponseImplCopyWithImpl(_$AuthResponseImpl _value, $Res Function(_$AuthResponseImpl) _then) : super(_value, _then);
+  __$$AuthResponseImplCopyWithImpl(
+      _$AuthResponseImpl _value, $Res Function(_$AuthResponseImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -464,9 +495,11 @@ class __$$AuthResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$
 /// @nodoc
 @JsonSerializable()
 class _$AuthResponseImpl implements AuthResponse {
-  const _$AuthResponseImpl(this.data, {final String? $type}) : $type = $type ?? 'user_id';
+  const _$AuthResponseImpl(this.data, {final String? $type})
+      : $type = $type ?? 'user_id';
 
-  factory _$AuthResponseImpl.fromJson(Map<String, dynamic> json) => _$$AuthResponseImplFromJson(json);
+  factory _$AuthResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthResponseImplFromJson(json);
 
   @override
   final int data;
@@ -482,7 +515,9 @@ class _$AuthResponseImpl implements AuthResponse {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthResponseImpl && (identical(other.data, data) || other.data == data));
+        (other.runtimeType == runtimeType &&
+            other is _$AuthResponseImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
@@ -492,7 +527,8 @@ class _$AuthResponseImpl implements AuthResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith => __$$AuthResponseImplCopyWithImpl<_$AuthResponseImpl>(this, _$identity);
+  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith =>
+      __$$AuthResponseImplCopyWithImpl<_$AuthResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -500,7 +536,8 @@ class _$AuthResponseImpl implements AuthResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -597,25 +634,31 @@ class _$AuthResponseImpl implements AuthResponse {
 abstract class AuthResponse implements AppResponse {
   const factory AuthResponse(final int data) = _$AuthResponseImpl;
 
-  factory AuthResponse.fromJson(Map<String, dynamic> json) = _$AuthResponseImpl.fromJson;
+  factory AuthResponse.fromJson(Map<String, dynamic> json) =
+      _$AuthResponseImpl.fromJson;
 
   int get data;
   @JsonKey(ignore: true)
-  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$AuthResponseImplCopyWith<_$AuthResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FieldStateResponseImplCopyWith<$Res> {
-  factory _$$FieldStateResponseImplCopyWith(_$FieldStateResponseImpl value, $Res Function(_$FieldStateResponseImpl) then) =
+  factory _$$FieldStateResponseImplCopyWith(_$FieldStateResponseImpl value,
+          $Res Function(_$FieldStateResponseImpl) then) =
       __$$FieldStateResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int width, int height, List<FieldPixel> data});
 }
 
 /// @nodoc
-class __$$FieldStateResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$FieldStateResponseImpl>
+class __$$FieldStateResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$FieldStateResponseImpl>
     implements _$$FieldStateResponseImplCopyWith<$Res> {
-  __$$FieldStateResponseImplCopyWithImpl(_$FieldStateResponseImpl _value, $Res Function(_$FieldStateResponseImpl) _then) : super(_value, _then);
+  __$$FieldStateResponseImplCopyWithImpl(_$FieldStateResponseImpl _value,
+      $Res Function(_$FieldStateResponseImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -644,11 +687,16 @@ class __$$FieldStateResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWith
 /// @nodoc
 @JsonSerializable()
 class _$FieldStateResponseImpl implements FieldStateResponse {
-  const _$FieldStateResponseImpl({required this.width, required this.height, required final List<FieldPixel> data, final String? $type})
+  const _$FieldStateResponseImpl(
+      {required this.width,
+      required this.height,
+      required final List<FieldPixel> data,
+      final String? $type})
       : _data = data,
         $type = $type ?? 'field_state';
 
-  factory _$FieldStateResponseImpl.fromJson(Map<String, dynamic> json) => _$$FieldStateResponseImplFromJson(json);
+  factory _$FieldStateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FieldStateResponseImplFromJson(json);
 
   @override
   final int width;
@@ -682,13 +730,15 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, width, height, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(
+      runtimeType, width, height, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith =>
-      __$$FieldStateResponseImplCopyWithImpl<_$FieldStateResponseImpl>(this, _$identity);
+      __$$FieldStateResponseImplCopyWithImpl<_$FieldStateResponseImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -696,7 +746,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -791,36 +842,46 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
 }
 
 abstract class FieldStateResponse implements AppResponse {
-  const factory FieldStateResponse({required final int width, required final int height, required final List<FieldPixel> data}) =
-      _$FieldStateResponseImpl;
+  const factory FieldStateResponse(
+      {required final int width,
+      required final int height,
+      required final List<FieldPixel> data}) = _$FieldStateResponseImpl;
 
-  factory FieldStateResponse.fromJson(Map<String, dynamic> json) = _$FieldStateResponseImpl.fromJson;
+  factory FieldStateResponse.fromJson(Map<String, dynamic> json) =
+      _$FieldStateResponseImpl.fromJson;
 
   int get width;
   int get height;
   List<FieldPixel> get data;
   @JsonKey(ignore: true)
-  _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$OnlineCountResponseImplCopyWith<$Res> {
-  factory _$$OnlineCountResponseImplCopyWith(_$OnlineCountResponseImpl value, $Res Function(_$OnlineCountResponseImpl) then) =
+  factory _$$OnlineCountResponseImplCopyWith(_$OnlineCountResponseImpl value,
+          $Res Function(_$OnlineCountResponseImpl) then) =
       __$$OnlineCountResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnlineCountResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountResponseImpl>
+class __$$OnlineCountResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountResponseImpl>
     implements _$$OnlineCountResponseImplCopyWith<$Res> {
-  __$$OnlineCountResponseImplCopyWithImpl(_$OnlineCountResponseImpl _value, $Res Function(_$OnlineCountResponseImpl) _then) : super(_value, _then);
+  __$$OnlineCountResponseImplCopyWithImpl(_$OnlineCountResponseImpl _value,
+      $Res Function(_$OnlineCountResponseImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OnlineCountResponseImpl implements OnlineCountResponse {
-  const _$OnlineCountResponseImpl({final String? $type}) : $type = $type ?? 'online_count';
+  const _$OnlineCountResponseImpl({final String? $type})
+      : $type = $type ?? 'online_count';
 
-  factory _$OnlineCountResponseImpl.fromJson(Map<String, dynamic> json) => _$$OnlineCountResponseImplFromJson(json);
+  factory _$OnlineCountResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OnlineCountResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -832,7 +893,9 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$OnlineCountResponseImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnlineCountResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -845,7 +908,8 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -942,27 +1006,34 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
 abstract class OnlineCountResponse implements AppResponse {
   const factory OnlineCountResponse() = _$OnlineCountResponseImpl;
 
-  factory OnlineCountResponse.fromJson(Map<String, dynamic> json) = _$OnlineCountResponseImpl.fromJson;
+  factory OnlineCountResponse.fromJson(Map<String, dynamic> json) =
+      _$OnlineCountResponseImpl.fromJson;
 }
 
 /// @nodoc
 abstract class _$$UnknownResponseImplCopyWith<$Res> {
-  factory _$$UnknownResponseImplCopyWith(_$UnknownResponseImpl value, $Res Function(_$UnknownResponseImpl) then) =
+  factory _$$UnknownResponseImplCopyWith(_$UnknownResponseImpl value,
+          $Res Function(_$UnknownResponseImpl) then) =
       __$$UnknownResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnknownResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$UnknownResponseImpl>
+class __$$UnknownResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$UnknownResponseImpl>
     implements _$$UnknownResponseImplCopyWith<$Res> {
-  __$$UnknownResponseImplCopyWithImpl(_$UnknownResponseImpl _value, $Res Function(_$UnknownResponseImpl) _then) : super(_value, _then);
+  __$$UnknownResponseImplCopyWithImpl(
+      _$UnknownResponseImpl _value, $Res Function(_$UnknownResponseImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$UnknownResponseImpl implements UnknownResponse {
-  const _$UnknownResponseImpl({final String? $type}) : $type = $type ?? 'unknown';
+  const _$UnknownResponseImpl({final String? $type})
+      : $type = $type ?? 'unknown';
 
-  factory _$UnknownResponseImpl.fromJson(Map<String, dynamic> json) => _$$UnknownResponseImplFromJson(json);
+  factory _$UnknownResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnknownResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -974,7 +1045,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$UnknownResponseImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UnknownResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -987,7 +1059,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -1084,25 +1157,34 @@ class _$UnknownResponseImpl implements UnknownResponse {
 abstract class UnknownResponse implements AppResponse {
   const factory UnknownResponse() = _$UnknownResponseImpl;
 
-  factory UnknownResponse.fromJson(Map<String, dynamic> json) = _$UnknownResponseImpl.fromJson;
+  factory UnknownResponse.fromJson(Map<String, dynamic> json) =
+      _$UnknownResponseImpl.fromJson;
 }
 
 /// @nodoc
 abstract class _$$NoResponseImplCopyWith<$Res> {
-  factory _$$NoResponseImplCopyWith(_$NoResponseImpl value, $Res Function(_$NoResponseImpl) then) = __$$NoResponseImplCopyWithImpl<$Res>;
+  factory _$$NoResponseImplCopyWith(
+          _$NoResponseImpl value, $Res Function(_$NoResponseImpl) then) =
+      __$$NoResponseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NoResponseImplCopyWithImpl<$Res> extends _$AppResponseCopyWithImpl<$Res, _$NoResponseImpl> implements _$$NoResponseImplCopyWith<$Res> {
-  __$$NoResponseImplCopyWithImpl(_$NoResponseImpl _value, $Res Function(_$NoResponseImpl) _then) : super(_value, _then);
+class __$$NoResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$NoResponseImpl>
+    implements _$$NoResponseImplCopyWith<$Res> {
+  __$$NoResponseImplCopyWithImpl(
+      _$NoResponseImpl _value, $Res Function(_$NoResponseImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$NoResponseImpl implements NoResponse {
-  const _$NoResponseImpl({final String? $type}) : $type = $type ?? 'no_response';
+  const _$NoResponseImpl({final String? $type})
+      : $type = $type ?? 'no_response';
 
-  factory _$NoResponseImpl.fromJson(Map<String, dynamic> json) => _$$NoResponseImplFromJson(json);
+  factory _$NoResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NoResponseImplFromJson(json);
 
   @JsonKey(name: 'type')
   final String $type;
@@ -1114,7 +1196,8 @@ class _$NoResponseImpl implements NoResponse {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$NoResponseImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NoResponseImpl);
   }
 
   @JsonKey(ignore: true)
@@ -1127,7 +1210,8 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(int data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data) fieldState,
+    required TResult Function(int width, int height, List<FieldPixel> data)
+        fieldState,
     required TResult Function() onlineCount,
     required TResult Function() unknown,
     required TResult Function() noResponse,
@@ -1224,5 +1308,6 @@ class _$NoResponseImpl implements NoResponse {
 abstract class NoResponse implements AppResponse {
   const factory NoResponse() = _$NoResponseImpl;
 
-  factory NoResponse.fromJson(Map<String, dynamic> json) = _$NoResponseImpl.fromJson;
+  factory NoResponse.fromJson(Map<String, dynamic> json) =
+      _$NoResponseImpl.fromJson;
 }

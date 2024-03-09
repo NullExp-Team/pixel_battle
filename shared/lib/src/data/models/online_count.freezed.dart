@@ -24,18 +24,22 @@ mixin _$OnlineCount {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OnlineCountCopyWith<OnlineCount> get copyWith => throw _privateConstructorUsedError;
+  $OnlineCountCopyWith<OnlineCount> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OnlineCountCopyWith<$Res> {
-  factory $OnlineCountCopyWith(OnlineCount value, $Res Function(OnlineCount) then) = _$OnlineCountCopyWithImpl<$Res, OnlineCount>;
+  factory $OnlineCountCopyWith(
+          OnlineCount value, $Res Function(OnlineCount) then) =
+      _$OnlineCountCopyWithImpl<$Res, OnlineCount>;
   @useResult
   $Res call({int online});
 }
 
 /// @nodoc
-class _$OnlineCountCopyWithImpl<$Res, $Val extends OnlineCount> implements $OnlineCountCopyWith<$Res> {
+class _$OnlineCountCopyWithImpl<$Res, $Val extends OnlineCount>
+    implements $OnlineCountCopyWith<$Res> {
   _$OnlineCountCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -58,16 +62,23 @@ class _$OnlineCountCopyWithImpl<$Res, $Val extends OnlineCount> implements $Onli
 }
 
 /// @nodoc
-abstract class _$$OnlineCountImplCopyWith<$Res> implements $OnlineCountCopyWith<$Res> {
-  factory _$$OnlineCountImplCopyWith(_$OnlineCountImpl value, $Res Function(_$OnlineCountImpl) then) = __$$OnlineCountImplCopyWithImpl<$Res>;
+abstract class _$$OnlineCountImplCopyWith<$Res>
+    implements $OnlineCountCopyWith<$Res> {
+  factory _$$OnlineCountImplCopyWith(
+          _$OnlineCountImpl value, $Res Function(_$OnlineCountImpl) then) =
+      __$$OnlineCountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int online});
 }
 
 /// @nodoc
-class __$$OnlineCountImplCopyWithImpl<$Res> extends _$OnlineCountCopyWithImpl<$Res, _$OnlineCountImpl> implements _$$OnlineCountImplCopyWith<$Res> {
-  __$$OnlineCountImplCopyWithImpl(_$OnlineCountImpl _value, $Res Function(_$OnlineCountImpl) _then) : super(_value, _then);
+class __$$OnlineCountImplCopyWithImpl<$Res>
+    extends _$OnlineCountCopyWithImpl<$Res, _$OnlineCountImpl>
+    implements _$$OnlineCountImplCopyWith<$Res> {
+  __$$OnlineCountImplCopyWithImpl(
+      _$OnlineCountImpl _value, $Res Function(_$OnlineCountImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -88,7 +99,8 @@ class __$$OnlineCountImplCopyWithImpl<$Res> extends _$OnlineCountCopyWithImpl<$R
 class _$OnlineCountImpl implements _OnlineCount {
   _$OnlineCountImpl({required this.online});
 
-  factory _$OnlineCountImpl.fromJson(Map<String, dynamic> json) => _$$OnlineCountImplFromJson(json);
+  factory _$OnlineCountImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OnlineCountImplFromJson(json);
 
   @override
   final int online;
@@ -101,7 +113,9 @@ class _$OnlineCountImpl implements _OnlineCount {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnlineCountImpl && (identical(other.online, online) || other.online == online));
+        (other.runtimeType == runtimeType &&
+            other is _$OnlineCountImpl &&
+            (identical(other.online, online) || other.online == online));
   }
 
   @JsonKey(ignore: true)
@@ -111,7 +125,8 @@ class _$OnlineCountImpl implements _OnlineCount {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineCountImplCopyWith<_$OnlineCountImpl> get copyWith => __$$OnlineCountImplCopyWithImpl<_$OnlineCountImpl>(this, _$identity);
+  _$$OnlineCountImplCopyWith<_$OnlineCountImpl> get copyWith =>
+      __$$OnlineCountImplCopyWithImpl<_$OnlineCountImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -124,11 +139,13 @@ class _$OnlineCountImpl implements _OnlineCount {
 abstract class _OnlineCount implements OnlineCount {
   factory _OnlineCount({required final int online}) = _$OnlineCountImpl;
 
-  factory _OnlineCount.fromJson(Map<String, dynamic> json) = _$OnlineCountImpl.fromJson;
+  factory _OnlineCount.fromJson(Map<String, dynamic> json) =
+      _$OnlineCountImpl.fromJson;
 
   @override
   int get online;
   @override
   @JsonKey(ignore: true)
-  _$$OnlineCountImplCopyWith<_$OnlineCountImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$OnlineCountImplCopyWith<_$OnlineCountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

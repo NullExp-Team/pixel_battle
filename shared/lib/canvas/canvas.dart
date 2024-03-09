@@ -13,7 +13,8 @@ class PixelCanvas extends ConsumerStatefulWidget {
 }
 
 class PixelCanvasState extends ConsumerState<PixelCanvas> {
-  final TransformationController transformationController = TransformationController();
+  final TransformationController transformationController =
+      TransformationController();
   Offset? selectedPixel;
 
   bool isFirstBuild = true;
@@ -39,13 +40,17 @@ class PixelCanvasState extends ConsumerState<PixelCanvas> {
       data: (image) {
         if (isFirstBuild) {
           transformationController.value[13] =
-              (MediaQuery.of(context).size.height - MediaQuery.of(context).size.width * (image.height / image.width)) / 2;
+              (MediaQuery.of(context).size.height -
+                      MediaQuery.of(context).size.width *
+                          (image.height / image.width)) /
+                  2;
           isFirstBuild = false;
         }
 
         return GestureDetector(
           onTapUp: (details) {
-            final position = pixelPosition(details.localPosition, image.width.toDouble());
+            final position =
+                pixelPosition(details.localPosition, image.width.toDouble());
 
             if (Rect.fromLTWH(
               0,
@@ -88,7 +93,9 @@ class PixelCanvasState extends ConsumerState<PixelCanvas> {
           windowSize.width / 2,
           windowSize.height / 2,
           windowSize.width / 2,
-          -(windowSize.height - windowSize.width * (image.height / image.width)) + windowSize.height / 2,
+          -(windowSize.height -
+                  windowSize.width * (image.height / image.width)) +
+              windowSize.height / 2,
         ) /
         scale;
   }

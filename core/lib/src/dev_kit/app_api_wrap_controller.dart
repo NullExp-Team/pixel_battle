@@ -14,7 +14,8 @@ ApiWrapController<BaseApiError> appApiWrapController(
   /// Метод для обработки ошибок API c логгированием и показом тостов при необходимости.
   FutureOr<D?> onError<D>({
     required dev_kit.ApiError<BaseApiError> error,
-    required FutureOr<D?> Function(dev_kit.ApiError<BaseApiError> error)? originalOnError,
+    required FutureOr<D?> Function(dev_kit.ApiError<BaseApiError> error)?
+        originalOnError,
     required bool showErrorToast,
   }) {
     if (showErrorToast) {

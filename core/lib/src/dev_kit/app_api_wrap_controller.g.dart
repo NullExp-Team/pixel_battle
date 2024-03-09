@@ -8,7 +8,8 @@ part of 'app_api_wrap_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appApiWrapControllerHash() => r'b6a0b1da15b7bcf68b05dd07bb765b269bc8636c';
+String _$appApiWrapControllerHash() =>
+    r'b6a0b1da15b7bcf68b05dd07bb765b269bc8636c';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -36,7 +37,8 @@ class _SystemHash {
 const appApiWrapControllerProvider = AppApiWrapControllerFamily();
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerFamily extends Family<ApiWrapController<BaseApiError>> {
+class AppApiWrapControllerFamily
+    extends Family<ApiWrapController<BaseApiError>> {
   /// See also [appApiWrapController].
   const AppApiWrapControllerFamily();
 
@@ -66,14 +68,16 @@ class AppApiWrapControllerFamily extends Family<ApiWrapController<BaseApiError>>
   static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies => _allTransitiveDependencies;
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
 
   @override
   String? get name => r'appApiWrapControllerProvider';
 }
 
 /// See also [appApiWrapController].
-class AppApiWrapControllerProvider extends Provider<ApiWrapController<BaseApiError>> {
+class AppApiWrapControllerProvider
+    extends Provider<ApiWrapController<BaseApiError>> {
   /// See also [appApiWrapController].
   AppApiWrapControllerProvider(
     String key,
@@ -84,9 +88,13 @@ class AppApiWrapControllerProvider extends Provider<ApiWrapController<BaseApiErr
           ),
           from: appApiWrapControllerProvider,
           name: r'appApiWrapControllerProvider',
-          debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$appApiWrapControllerHash,
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$appApiWrapControllerHash,
           dependencies: AppApiWrapControllerFamily._dependencies,
-          allTransitiveDependencies: AppApiWrapControllerFamily._allTransitiveDependencies,
+          allTransitiveDependencies:
+              AppApiWrapControllerFamily._allTransitiveDependencies,
           key: key,
         );
 
@@ -104,7 +112,8 @@ class AppApiWrapControllerProvider extends Provider<ApiWrapController<BaseApiErr
 
   @override
   Override overrideWith(
-    ApiWrapController<BaseApiError> Function(AppApiWrapControllerRef provider) create,
+    ApiWrapController<BaseApiError> Function(AppApiWrapControllerRef provider)
+        create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -144,7 +153,9 @@ mixin AppApiWrapControllerRef on ProviderRef<ApiWrapController<BaseApiError>> {
   String get key;
 }
 
-class _AppApiWrapControllerProviderElement extends ProviderElement<ApiWrapController<BaseApiError>> with AppApiWrapControllerRef {
+class _AppApiWrapControllerProviderElement
+    extends ProviderElement<ApiWrapController<BaseApiError>>
+    with AppApiWrapControllerRef {
   _AppApiWrapControllerProviderElement(super.provider);
 
   @override

@@ -17,7 +17,9 @@ class MainApp extends HookConsumerWidget {
       debugShowCheckedModeBanner: false,
       title: 'Рисовашка',
       builder: AppWrapper.builder,
-      locale: FlavorManager.isDev ? DevicePreview.locale(context) : TranslationProvider.of(context).flutterLocale,
+      locale: FlavorManager.isDev
+          ? DevicePreview.locale(context)
+          : TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,

@@ -13,7 +13,8 @@ part 'field_state_service.g.dart';
 class FieldStateService extends _$FieldStateService with ControllerMixin {
   @override
   Stream<ui.Image> build() async* {
-    final fieldStateStream = ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
+    final fieldStateStream =
+        ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
 
     // Mock Start
     // final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];

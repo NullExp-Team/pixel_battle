@@ -9,5 +9,6 @@ class OnlineCount with _$OnlineCount {
     required int online,
   }) = _OnlineCount;
 
-  factory OnlineCount.fromJson(Map<String, dynamic> json) => _$OnlineCountFromJson(json);
+  factory OnlineCount.fromJson(Map<String, dynamic> json) =>
+      _$OnlineCountFromJson(json);
 }
