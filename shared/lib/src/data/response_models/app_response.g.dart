@@ -31,13 +31,14 @@ Map<String, dynamic> _$$BackendErrorResponseImplToJson(
       'type': instance.$type,
     };
 
-_$AuthResponseImpl _$$AuthResponseImplFromJson(Map<String, dynamic> json) =>
-    _$AuthResponseImpl(
-      json['data'] as int,
+_$UserIdResponseImpl _$$UserIdResponseImplFromJson(Map<String, dynamic> json) =>
+    _$UserIdResponseImpl(
+      json['data'] as String,
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$AuthResponseImplToJson(_$AuthResponseImpl instance) =>
+Map<String, dynamic> _$$UserIdResponseImplToJson(
+        _$UserIdResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data,
       'type': instance.$type,
@@ -63,6 +64,20 @@ Map<String, dynamic> _$$FieldStateResponseImplToJson(
       'type': instance.$type,
     };
 
+_$PixelUpdateResponseImpl _$$PixelUpdateResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PixelUpdateResponseImpl(
+      FieldPixel.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$PixelUpdateResponseImplToJson(
+        _$PixelUpdateResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'type': instance.$type,
+    };
+
 _$OnlineCountResponseImpl _$$OnlineCountResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$OnlineCountResponseImpl(
@@ -75,6 +90,16 @@ Map<String, dynamic> _$$OnlineCountResponseImplToJson(
       'type': instance.$type,
     };
 
+_$NoResponseImpl _$$NoResponseImplFromJson(Map<String, dynamic> json) =>
+    _$NoResponseImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$NoResponseImplToJson(_$NoResponseImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };
+
 _$UnknownResponseImpl _$$UnknownResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$UnknownResponseImpl(
@@ -83,16 +108,6 @@ _$UnknownResponseImpl _$$UnknownResponseImplFromJson(
 
 Map<String, dynamic> _$$UnknownResponseImplToJson(
         _$UnknownResponseImpl instance) =>
-    <String, dynamic>{
-      'type': instance.$type,
-    };
-
-_$NoResponseImpl _$$NoResponseImplFromJson(Map<String, dynamic> json) =>
-    _$NoResponseImpl(
-      $type: json['type'] as String?,
-    );
-
-Map<String, dynamic> _$$NoResponseImplToJson(_$NoResponseImpl instance) =>
     <String, dynamic>{
       'type': instance.$type,
     };

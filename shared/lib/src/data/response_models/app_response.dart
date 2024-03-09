@@ -16,7 +16,7 @@ sealed class AppResponse with _$AppResponse {
   @Implements<Exception>()
   const factory AppResponse.error(String message) = BackendErrorResponse;
 
-  const factory AppResponse.userId(int data) = AuthResponse;
+  const factory AppResponse.userId(String data) = UserIdResponse;
 
   const factory AppResponse.fieldState({
     required int width,
@@ -24,11 +24,13 @@ sealed class AppResponse with _$AppResponse {
     required List<FieldPixel> data,
   }) = FieldStateResponse;
 
+  const factory AppResponse.pixelUpdate(FieldPixel data) = PixelUpdateResponse;
+
   const factory AppResponse.onlineCount() = OnlineCountResponse;
 
-  const factory AppResponse.unknown() = UnknownResponse;
+  const factory AppResponse.no() = NoResponse;
 
-  const factory AppResponse.noResponse() = NoResponse;
+  const factory AppResponse.unknown() = UnknownResponse;
 
   factory AppResponse.fromJson(Map<String, dynamic> json) =>
       _$AppResponseFromJson(json);

@@ -42,14 +42,12 @@ class HomeController extends _$HomeController with ControllerMixin {
     if (point == null) return;
 
     await apiWrap(
-      () => _api.request<NoResponse>(
+      () => _api.request(
         AppRequest.updatePixel(
-          UpdatePixel(
+          UpdatePixelData(
             x: point.x,
             y: point.y,
-            // TODO: Convert to hex
-            color: state.selectedColor.toString(),
-            actionTime: DateTime.now(),
+            color: state.selectedColor.value,
           ),
         ),
       ),
