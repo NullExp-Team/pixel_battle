@@ -43,8 +43,7 @@ mixin _$AppResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -56,7 +55,7 @@ mixin _$AppResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -68,7 +67,7 @@ mixin _$AppResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -182,8 +181,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -198,7 +196,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -213,7 +211,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -367,8 +365,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -383,7 +380,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -398,7 +395,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -557,8 +554,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -573,7 +569,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -588,7 +584,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -676,7 +672,7 @@ abstract class _$$FieldStateResponseImplCopyWith<$Res> {
           $Res Function(_$FieldStateResponseImpl) then) =
       __$$FieldStateResponseImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int width, int height, List<FieldPixel> data});
+  $Res call({List<FieldPixel> data});
 }
 
 /// @nodoc
@@ -690,19 +686,9 @@ class __$$FieldStateResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? width = null,
-    Object? height = null,
     Object? data = null,
   }) {
     return _then(_$FieldStateResponseImpl(
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -715,21 +701,18 @@ class __$$FieldStateResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FieldStateResponseImpl implements FieldStateResponse {
   const _$FieldStateResponseImpl(
-      {required this.width,
-      required this.height,
-      required final List<FieldPixel> data,
-      final String? $type})
+      {required final List<FieldPixel> data, final String? $type})
       : _data = data,
         $type = $type ?? 'field_state';
 
   factory _$FieldStateResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$FieldStateResponseImplFromJson(json);
 
-  @override
-  final int width;
-  @override
-  final int height;
+// required int width,
+// required int height,
   final List<FieldPixel> _data;
+// required int width,
+// required int height,
   @override
   List<FieldPixel> get data {
     if (_data is EqualUnmodifiableListView) return _data;
@@ -742,7 +725,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
 
   @override
   String toString() {
-    return 'AppResponse.fieldState(width: $width, height: $height, data: $data)';
+    return 'AppResponse.fieldState(data: $data)';
   }
 
   @override
@@ -750,15 +733,13 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FieldStateResponseImpl &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.height, height) || other.height == height) &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, width, height, const DeepCollectionEquality().hash(_data));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -773,14 +754,13 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
-    return fieldState(width, height, data);
+    return fieldState(data);
   }
 
   @override
@@ -789,13 +769,13 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
-    return fieldState?.call(width, height, data);
+    return fieldState?.call(data);
   }
 
   @override
@@ -804,7 +784,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -812,7 +792,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult orElse(),
   }) {
     if (fieldState != null) {
-      return fieldState(width, height, data);
+      return fieldState(data);
     }
     return orElse();
   }
@@ -875,16 +855,14 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
 }
 
 abstract class FieldStateResponse implements AppResponse {
-  const factory FieldStateResponse(
-      {required final int width,
-      required final int height,
-      required final List<FieldPixel> data}) = _$FieldStateResponseImpl;
+  const factory FieldStateResponse({required final List<FieldPixel> data}) =
+      _$FieldStateResponseImpl;
 
   factory FieldStateResponse.fromJson(Map<String, dynamic> json) =
       _$FieldStateResponseImpl.fromJson;
 
-  int get width;
-  int get height;
+// required int width,
+// required int height,
   List<FieldPixel> get data;
   @JsonKey(ignore: true)
   _$$FieldStateResponseImplCopyWith<_$FieldStateResponseImpl> get copyWith =>
@@ -977,8 +955,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -993,7 +970,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -1008,7 +985,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -1141,8 +1118,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -1157,7 +1133,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -1172,7 +1148,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -1297,8 +1273,7 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -1313,7 +1288,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -1328,7 +1303,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,
@@ -1454,8 +1429,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function() banned,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
-    required TResult Function(int width, int height, List<FieldPixel> data)
-        fieldState,
+    required TResult Function(List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function() onlineCount,
     required TResult Function() no,
@@ -1470,7 +1444,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function()? banned,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
-    TResult? Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult? Function(List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function()? onlineCount,
     TResult? Function()? no,
@@ -1485,7 +1459,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function()? banned,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
-    TResult Function(int width, int height, List<FieldPixel> data)? fieldState,
+    TResult Function(List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function()? onlineCount,
     TResult Function()? no,

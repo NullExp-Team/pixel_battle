@@ -6,6 +6,18 @@ part of 'app_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$LoginRequestImpl _$$LoginRequestImplFromJson(Map<String, dynamic> json) =>
+    _$LoginRequestImpl(
+      LoginData.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$LoginRequestImplToJson(_$LoginRequestImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'type': instance.$type,
+    };
+
 _$GetFieldStateRequestImpl _$$GetFieldStateRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$GetFieldStateRequestImpl(

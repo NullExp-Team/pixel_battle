@@ -11,7 +11,7 @@ _$UpdatePixelDataImpl _$$UpdatePixelDataImplFromJson(
     _$UpdatePixelDataImpl(
       x: json['x'] as int,
       y: json['y'] as int,
-      color: json['color'] as int,
+      color: json['color'] as String,
     );
 
 Map<String, dynamic> _$$UpdatePixelDataImplToJson(

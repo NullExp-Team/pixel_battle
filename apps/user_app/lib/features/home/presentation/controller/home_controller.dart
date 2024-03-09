@@ -23,8 +23,6 @@ class HomeController extends _$HomeController with ControllerMixin {
         selectedPixelPosition: null,
       );
 
-  WebSocketApi get _api => ref.watch(webSocketApiProvider.notifier);
-
   // Update methods
 
   void updateColor(Color color) {
@@ -42,12 +40,12 @@ class HomeController extends _$HomeController with ControllerMixin {
     if (point == null) return;
 
     await apiWrap(
-      () => _api.request(
+      () => api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
             x: point.x,
             y: point.y,
-            color: state.selectedColor.value,
+            color: state.selectedColor.value.toRadixString(16),
           ),
         ),
       ),

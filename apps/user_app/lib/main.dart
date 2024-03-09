@@ -32,6 +32,8 @@ void main() {
                 ),
               );
 
+              await ref.read(sharedPreferencesProvider.future);
+
               await Future.delayed(splashDuration);
             },
             builder: (context, snapshot, _) => TranslationProvider(

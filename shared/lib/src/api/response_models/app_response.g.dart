@@ -47,8 +47,6 @@ Map<String, dynamic> _$$UserIdResponseImplToJson(
 _$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$FieldStateResponseImpl(
-      width: json['width'] as int,
-      height: json['height'] as int,
       data: (json['data'] as List<dynamic>)
           .map((e) => FieldPixel.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -58,8 +56,6 @@ _$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
 Map<String, dynamic> _$$FieldStateResponseImplToJson(
         _$FieldStateResponseImpl instance) =>
     <String, dynamic>{
-      'width': instance.width,
-      'height': instance.height,
       'data': instance.data,
       'type': instance.$type,
     };

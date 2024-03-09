@@ -8,7 +8,7 @@ class UpdatePixelData with _$UpdatePixelData {
   factory UpdatePixelData({
     required int x,
     required int y,
-    required int color,
+    required String color,
   }) = _UpdatePixelData;
 
   factory UpdatePixelData.fromJson(Map<String, dynamic> json) =>
