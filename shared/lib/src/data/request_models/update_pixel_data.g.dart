@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'update_pixel.dart';
+part of 'update_pixel_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UpdatePixelImpl _$$UpdatePixelImplFromJson(Map<String, dynamic> json) =>
-    _$UpdatePixelImpl(
+_$UpdatePixelDataImpl _$$UpdatePixelDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UpdatePixelDataImpl(
       x: json['x'] as int,
       y: json['y'] as int,
-      color: json['color'] as String,
-      actionTime: DateTime.parse(json['action_time'] as String),
+      color: json['color'] as int,
     );
 
-Map<String, dynamic> _$$UpdatePixelImplToJson(_$UpdatePixelImpl instance) =>
+Map<String, dynamic> _$$UpdatePixelDataImplToJson(
+        _$UpdatePixelDataImpl instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
       'color': instance.color,
-      'action_time': instance.actionTime.toIso8601String(),
     };
