@@ -1,8 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
-import '../features/auth/presentation/view/login_screen.dart';
+import 'package:shared/shared.dart';
 
 // import '../router/app_router_config_provider.dart';
 
@@ -28,7 +27,7 @@ class MainApp extends HookConsumerWidget {
       themeMode: themeMode,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      home: const LoginScreen(),
+      home: const PixelCanvas(),
       // routerConfig: routerConfig,
     );
   }
