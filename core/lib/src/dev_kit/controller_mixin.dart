@@ -1,4 +1,5 @@
 import 'package:dev_kit/core_dev_kit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core.dart';
 
@@ -24,6 +25,9 @@ mixin ControllerMixin implements IRef, IApiWrap<BaseApiError> {
   ToastManager get toast => ref.watch(toastManagerProvider);
   @protected
   StackRouter get router => ref.watch(appRouterProvider);
+  @protected
+  SharedPreferences get prefs =>
+      ref.watch(sharedPreferencesProvider).requireValue;
 
   @override
   late final ApiWrapController<BaseApiError> wrapController =

@@ -11,7 +11,22 @@ Future<WebSocketChannel> webSocketChannel(WebSocketChannelRef ref) async {
   final wsUrl = Uri.parse(_baseUrl);
   final channel = WebSocketChannel.connect(wsUrl);
 
+  ref.onDispose(channel.sink.close);
+
   await channel.ready;
 
   return channel;
+}
+
+@riverpod
+Raw<Stream> webSocketStream(WebSocketStreamRef ref) async* {
+  final channel = await ref.watch(webSocketChannelProvider.future);
+
+  yield* channel.stream.asBroadcastStream();
+}
+
+@riverpod
+Future<WebSocketSink> webSocketSink(WebSocketSinkRef ref) async {
+  final channel = await ref.watch(webSocketChannelProvider.future);
+  return channel.sink;
 }

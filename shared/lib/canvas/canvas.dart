@@ -32,7 +32,7 @@ class PixelCanvasState extends ConsumerState<PixelCanvas> {
 
   @override
   Widget build(BuildContext context) {
-    final asyncImage = ref.watch(fieldStateServiceProvider);
+    final asyncImage = ref.watch(fieldImageServiceProvider);
 
     return asyncImage.when(
       loading: () => const Center(child: CircularProgressIndicator()),

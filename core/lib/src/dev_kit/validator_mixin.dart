@@ -5,7 +5,7 @@ import '../../../core.dart';
 /// Расширение на миксин, которое позволяет задать специфичную для приложения логику
 /// Например, показ тоста с ошибками валидации
 extension ValidatorMixinX on ValidatorMixin {
-  SharedValidation get shared => ref.read(sharedValidationProvider.notifier);
+  // SharedValidation get shared => ref.read(sharedValidationProvider.notifier);
 
   Future<bool> validateAll({
     bool softMode = false,

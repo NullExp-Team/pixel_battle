@@ -26,6 +26,7 @@ dependencies:
   uuid: ^4.3.3
   slang: ^3.29.0
   slang_flutter: ^3.29.0
+  shared_preferences: ^2.2.2
   collection: ^1.18.0
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0

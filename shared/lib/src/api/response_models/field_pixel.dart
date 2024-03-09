@@ -8,8 +8,8 @@ class FieldPixel with _$FieldPixel {
   factory FieldPixel({
     required int x,
     required int y,
-    required int color,
-    @JsonKey(name: 'user_id') required String userId,
+    required String color,
+    required String username,
   }) = _FieldPixel;
 
   factory FieldPixel.fromJson(Map<String, dynamic> json) =>
