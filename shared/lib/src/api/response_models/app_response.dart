@@ -13,6 +13,8 @@ part 'app_response.g.dart';
 sealed class AppResponse with _$AppResponse {
   const factory AppResponse.banned() = BannedResponse;
 
+  const factory AppResponse.success(String data) = BackendSuccessResponse;
+
   @Implements<Exception>()
   const factory AppResponse.error(String message) = BackendErrorResponse;
 

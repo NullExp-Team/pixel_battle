@@ -27,19 +27,28 @@ class LoginContoller extends _$LoginContoller with ControllerMixin {
   Future<void> login() async {
     final nickname = state.nickname;
     final userId = prefs.getString('userId');
-    await apiWrap(
-      () => api.request<UserIdResponse>(
-        LoginRequest(
-          LoginData(
-            nickname: nickname,
-            // userId: userId,
+
+    if (userId == null) {
+      await apiWrap(
+        () => api.request<BackendSuccessResponse>(
+          LoginRequest(LoginData(nickname: nickname)),
+        ),
+      );
+    } else {
+      await apiWrap(
+        () => api.request<UserIdResponse>(
+          LoginRequest(
+            LoginData(
+              nickname: nickname,
+              userId: userId,
+            ),
           ),
         ),
-      ),
-      onSuccess: (res) async {
-        await prefs.setString('nickname', nickname);
-        await prefs.setString('userId', res.data);
-      },
-    );
+        onSuccess: (res) async {
+          await prefs.setString('nickname', nickname);
+          await prefs.setString('userId', res.data);
+        },
+      );
+    }
   }
 }

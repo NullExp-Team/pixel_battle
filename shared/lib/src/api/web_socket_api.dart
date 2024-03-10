@@ -16,8 +16,9 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
 
     final newStream = stream.asyncMap((event) async {
       final json = jsonDecode(event);
+      logger.debug('Web Socket Response', json);
+
       final response = AppResponse.fromJson(json);
-      logger.debug('Web Socket Message', response.toJson());
       return response;
     }).asBroadcastStream();
 
@@ -31,7 +32,10 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     // ignore: close_sinks
     final sink = await ref.watch(webSocketSinkProvider.future);
 
-    sink.add(jsonEncode(request.toJson()));
+    final json = jsonEncode(request.toJson());
+    logger.debug('Web Socket Request', json);
+
+    sink.add(json);
 
     if (T == NoResponse) {
       return const NoResponse() as T;
