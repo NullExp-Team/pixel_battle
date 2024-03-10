@@ -28,5 +28,6 @@ Raw<Stream> webSocketStream(WebSocketStreamRef ref) async* {
 @riverpod
 Future<WebSocketSink> webSocketSink(WebSocketSinkRef ref) async {
   final channel = await ref.watch(webSocketChannelProvider.future);
+
   return channel.sink;
 }

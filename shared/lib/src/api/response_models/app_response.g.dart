@@ -17,6 +17,20 @@ Map<String, dynamic> _$$BannedResponseImplToJson(
       'type': instance.$type,
     };
 
+_$BackendSuccessResponseImpl _$$BackendSuccessResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BackendSuccessResponseImpl(
+      json['data'] as String,
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$BackendSuccessResponseImplToJson(
+        _$BackendSuccessResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'type': instance.$type,
+    };
+
 _$BackendErrorResponseImpl _$$BackendErrorResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$BackendErrorResponseImpl(

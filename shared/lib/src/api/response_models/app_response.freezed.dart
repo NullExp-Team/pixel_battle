@@ -18,6 +18,8 @@ AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'banned':
       return BannedResponse.fromJson(json);
+    case 'success':
+      return BackendSuccessResponse.fromJson(json);
     case 'error':
       return BackendErrorResponse.fromJson(json);
     case 'user_id':
@@ -41,6 +43,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -53,6 +56,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -65,6 +69,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -78,6 +83,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -90,6 +96,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -102,6 +109,7 @@ mixin _$AppResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -179,6 +187,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -194,6 +203,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -209,6 +219,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -228,6 +239,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -243,6 +255,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -258,6 +271,7 @@ class _$BannedResponseImpl implements BannedResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -286,6 +300,203 @@ abstract class BannedResponse implements AppResponse {
 
   factory BannedResponse.fromJson(Map<String, dynamic> json) =
       _$BannedResponseImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$BackendSuccessResponseImplCopyWith<$Res> {
+  factory _$$BackendSuccessResponseImplCopyWith(
+          _$BackendSuccessResponseImpl value,
+          $Res Function(_$BackendSuccessResponseImpl) then) =
+      __$$BackendSuccessResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$BackendSuccessResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$BackendSuccessResponseImpl>
+    implements _$$BackendSuccessResponseImplCopyWith<$Res> {
+  __$$BackendSuccessResponseImplCopyWithImpl(
+      _$BackendSuccessResponseImpl _value,
+      $Res Function(_$BackendSuccessResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$BackendSuccessResponseImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
+  const _$BackendSuccessResponseImpl(this.data, {final String? $type})
+      : $type = $type ?? 'success';
+
+  factory _$BackendSuccessResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BackendSuccessResponseImplFromJson(json);
+
+  @override
+  final String data;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppResponse.success(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BackendSuccessResponseImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BackendSuccessResponseImplCopyWith<_$BackendSuccessResponseImpl>
+      get copyWith => __$$BackendSuccessResponseImplCopyWithImpl<
+          _$BackendSuccessResponseImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() banned,
+    required TResult Function(String data) success,
+    required TResult Function(String message) error,
+    required TResult Function(String data) userId,
+    required TResult Function(List<FieldPixel> data) fieldState,
+    required TResult Function(FieldPixel data) pixelUpdate,
+    required TResult Function() onlineCount,
+    required TResult Function() no,
+    required TResult Function() unknown,
+  }) {
+    return success(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? banned,
+    TResult? Function(String data)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String data)? userId,
+    TResult? Function(List<FieldPixel> data)? fieldState,
+    TResult? Function(FieldPixel data)? pixelUpdate,
+    TResult? Function()? onlineCount,
+    TResult? Function()? no,
+    TResult? Function()? unknown,
+  }) {
+    return success?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? banned,
+    TResult Function(String data)? success,
+    TResult Function(String message)? error,
+    TResult Function(String data)? userId,
+    TResult Function(List<FieldPixel> data)? fieldState,
+    TResult Function(FieldPixel data)? pixelUpdate,
+    TResult Function()? onlineCount,
+    TResult Function()? no,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(UserIdResponse value) userId,
+    required TResult Function(FieldStateResponse value) fieldState,
+    required TResult Function(PixelUpdateResponse value) pixelUpdate,
+    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(NoResponse value) no,
+    required TResult Function(UnknownResponse value) unknown,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(UserIdResponse value)? userId,
+    TResult? Function(FieldStateResponse value)? fieldState,
+    TResult? Function(PixelUpdateResponse value)? pixelUpdate,
+    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(NoResponse value)? no,
+    TResult? Function(UnknownResponse value)? unknown,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(UserIdResponse value)? userId,
+    TResult Function(FieldStateResponse value)? fieldState,
+    TResult Function(PixelUpdateResponse value)? pixelUpdate,
+    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(NoResponse value)? no,
+    TResult Function(UnknownResponse value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BackendSuccessResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class BackendSuccessResponse implements AppResponse {
+  const factory BackendSuccessResponse(final String data) =
+      _$BackendSuccessResponseImpl;
+
+  factory BackendSuccessResponse.fromJson(Map<String, dynamic> json) =
+      _$BackendSuccessResponseImpl.fromJson;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$BackendSuccessResponseImplCopyWith<_$BackendSuccessResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -363,6 +574,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -378,6 +590,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -393,6 +606,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -412,6 +626,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -427,6 +642,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -442,6 +658,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -552,6 +769,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -567,6 +785,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -582,6 +801,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -601,6 +821,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -616,6 +837,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -631,6 +853,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -752,6 +975,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -767,6 +991,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -782,6 +1007,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -801,6 +1027,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -816,6 +1043,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -831,6 +1059,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -953,6 +1182,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -968,6 +1198,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -983,6 +1214,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -1002,6 +1234,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -1017,6 +1250,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -1032,6 +1266,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -1116,6 +1351,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -1131,6 +1367,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -1146,6 +1383,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -1165,6 +1403,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -1180,6 +1419,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -1195,6 +1435,7 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -1271,6 +1512,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -1286,6 +1528,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -1301,6 +1544,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -1320,6 +1564,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -1335,6 +1580,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -1350,6 +1596,7 @@ class _$NoResponseImpl implements NoResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
@@ -1427,6 +1674,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() banned,
+    required TResult Function(String data) success,
     required TResult Function(String message) error,
     required TResult Function(String data) userId,
     required TResult Function(List<FieldPixel> data) fieldState,
@@ -1442,6 +1690,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? banned,
+    TResult? Function(String data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String data)? userId,
     TResult? Function(List<FieldPixel> data)? fieldState,
@@ -1457,6 +1706,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? banned,
+    TResult Function(String data)? success,
     TResult Function(String message)? error,
     TResult Function(String data)? userId,
     TResult Function(List<FieldPixel> data)? fieldState,
@@ -1476,6 +1726,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
     required TResult Function(BackendErrorResponse value) error,
     required TResult Function(UserIdResponse value) userId,
     required TResult Function(FieldStateResponse value) fieldState,
@@ -1491,6 +1742,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
     TResult? Function(BackendErrorResponse value)? error,
     TResult? Function(UserIdResponse value)? userId,
     TResult? Function(FieldStateResponse value)? fieldState,
@@ -1506,6 +1758,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
     TResult Function(BackendErrorResponse value)? error,
     TResult Function(UserIdResponse value)? userId,
     TResult Function(FieldStateResponse value)? fieldState,
