@@ -1,5 +1,7 @@
 import 'package:core/core.dart';
-import 'package:shared/shared.dart';
+
+import '../../../../router/app_router.dart';
+import '../../domain/user_service.dart';
 
 part 'login_contoller.freezed.dart';
 part 'login_contoller.g.dart';
@@ -12,7 +14,10 @@ class LoginContollerState with _$LoginContollerState {
 }
 
 @Riverpod()
-class LoginContoller extends _$LoginContoller with ControllerMixin {
+class LoginContoller extends _$LoginContoller
+    with ControllerMixin, ValidatorMixin, LoginContollerValdator {
+  UserService get _userService => ref.read(userServiceProvider.notifier);
+
   @override
   LoginContollerState build() {
     return LoginContollerState(
@@ -26,29 +31,28 @@ class LoginContoller extends _$LoginContoller with ControllerMixin {
 
   Future<void> login() async {
     final nickname = state.nickname;
-    final userId = prefs.getString('userId');
 
-    if (userId == null) {
-      await apiWrap(
-        () => api.request<BackendSuccessResponse>(
-          LoginRequest(LoginData(nickname: nickname)),
-        ),
-      );
-    } else {
-      await apiWrap(
-        () => api.request<UserIdResponse>(
-          LoginRequest(
-            LoginData(
-              nickname: nickname,
-              userId: userId,
-            ),
-          ),
-        ),
-        onSuccess: (res) async {
-          await prefs.setString('nickname', nickname);
-          await prefs.setString('userId', res.data);
-        },
-      );
-    }
+    await apiWrap(
+      () => _userService.auth(nickname: nickname),
+      onSuccess: (_) {
+        router.replaceAll([const HomeRoute()]);
+      },
+    );
   }
+}
+
+mixin LoginContollerValdator implements _$LoginContoller, ValidatorMixin {
+  String? validateNickname(String nickname) => switch (nickname) {
+        _ when nickname.isEmpty => 'Обязательное поле',
+        _ when nickname.length < 3 => 'Слишком короткий никнейм',
+        _ when nickname.length > 63 => 'Слишком длинный никнейм',
+        _ when !RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(nickname) =>
+          'Никнейм может содержать только латинские буквы, цифры и символ подчеркивания',
+        _ => null
+      };
+
+  late final nicknameValidator = createValidator(
+    () => state.nickname,
+    validateNickname,
+  );
 }

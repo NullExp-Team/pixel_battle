@@ -8,7 +8,7 @@ import 'response_models/app_response.dart';
 
 part 'web_socket_api.g.dart';
 
-@Riverpod()
+@Riverpod(keepAlive: true, dependencies: [])
 class WebSocketApi extends _$WebSocketApi with ControllerMixin {
   @override
   Raw<Stream<AppResponse>> build() {
@@ -51,8 +51,6 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
   }
 }
 
-extension WebSocketApiControllerMixinX on ControllerMixin {
-  @protected
-  WebSocketApi get api =>
-      (ref as AutoDisposeRef).watch(webSocketApiProvider.notifier);
+extension WebSocketApiX on ControllerMixin {
+  WebSocketApi get api => ref.watch(webSocketApiProvider.notifier);
 }

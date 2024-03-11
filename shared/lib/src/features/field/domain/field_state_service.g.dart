@@ -6,7 +6,7 @@ part of 'field_state_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fieldImageServiceHash() => r'3bf2beed14b27b29f27aa964077efc705a952672';
+String _$fieldImageServiceHash() => r'3f33ca5d23cbdbb17a1773f6f5fd9941732117e9';
 
 /// See also [FieldImageService].
 @ProviderFor(FieldImageService)
@@ -17,12 +17,15 @@ final fieldImageServiceProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$fieldImageServiceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[webSocketApiProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    webSocketApiProvider,
+    ...?webSocketApiProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$FieldImageService = AutoDisposeAsyncNotifier<ui.Image>;
-String _$fieldStateServiceHash() => r'2aefe1b5c1a859bb432466aa82d325127c16242f';
+String _$fieldStateServiceHash() => r'36f2f420d8bd03056c91d211dcec023190e050ca';
 
 /// See also [FieldStateService].
 @ProviderFor(FieldStateService)
@@ -33,8 +36,11 @@ final fieldStateServiceProvider = AutoDisposeStreamNotifierProvider<
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$fieldStateServiceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[webSocketApiProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    webSocketApiProvider,
+    ...?webSocketApiProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$FieldStateService = AutoDisposeStreamNotifier<FieldStateMap>;

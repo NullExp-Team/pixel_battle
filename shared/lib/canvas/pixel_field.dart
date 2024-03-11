@@ -3,16 +3,16 @@ import 'dart:ui' as ui;
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-import '../src/features/field/domain/field_state_service.dart';
+import '../shared.dart';
 
-class PixelCanvas extends ConsumerStatefulWidget {
-  const PixelCanvas({super.key});
+class PixelField extends ConsumerStatefulWidget {
+  const PixelField({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => PixelCanvasState();
+  ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
 }
 
-class PixelCanvasState extends ConsumerState<PixelCanvas> {
+class PixelFieldState extends ConsumerState<PixelField> {
   final TransformationController transformationController =
       TransformationController();
   Offset? selectedPixel;

@@ -6,12 +6,16 @@ import 'dart:ui' as ui;
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../shared.dart';
+import '../../../api/request_models/app_request.dart';
+import '../../../api/request_models/update_pixel_data.dart';
+import '../../../api/response_models/app_response.dart';
+import '../../../api/response_models/field_pixel.dart';
+import '../../../api/web_socket_api.dart';
 
 part 'field_state_service.freezed.dart';
 part 'field_state_service.g.dart';
 
-@Riverpod()
+@Riverpod(dependencies: [WebSocketApi])
 class FieldImageService extends _$FieldImageService with ControllerMixin {
   @override
   Future<ui.Image> build() async {
@@ -83,15 +87,16 @@ class FieldStateMap with _$FieldStateMap {
   }) = _FieldStateMap;
 }
 
-@Riverpod()
+@Riverpod(dependencies: [WebSocketApi])
 class FieldStateService extends _$FieldStateService with ControllerMixin {
   @override
-  Stream<FieldStateMap> build() async* {
-    final fieldStateStream =
-        ref.watch(webSocketApiProvider).whereType<FieldStateResponse>();
+  Stream<FieldStateMap> build() => _build().asBroadcastStream();
 
-    final pixelUpdateStream =
-        ref.watch(webSocketApiProvider).whereType<PixelUpdateResponse>();
+  Stream<FieldStateMap> _build() async* {
+    final apiStream = ref.watch(webSocketApiProvider);
+
+    final fieldStateStream = apiStream.whereType<FieldStateResponse>();
+    final pixelUpdateStream = apiStream.whereType<PixelUpdateResponse>();
 
     final rand = Random();
     final timer = Timer.periodic(const Duration(milliseconds: 3000), (timer) {
@@ -158,9 +163,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
       Future(() => api.request<NoResponse>(GetFieldStateRequest())),
     );
 
-    await for (final fieldState in fieldStateStream) {
-      yield _convertFieldStateToFieldStateMap(fieldState);
-    }
+    yield* fieldStateStream.map(_convertFieldStateToFieldStateMap);
   }
 
   FieldStateMap _convertFieldStateToFieldStateMap(

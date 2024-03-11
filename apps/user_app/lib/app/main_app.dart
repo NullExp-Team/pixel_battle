@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared/shared.dart';
 
 import '../features/auth/presentation/view/login_screen.dart';
+import '../router/app_router_config_provider.dart';
 
 // import '../router/app_router_config_provider.dart';
 
@@ -13,11 +14,11 @@ class MainApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
-    // final routerConfig = ref.watch(appRouterConfigProvider);
+    final routerConfig = ref.watch(appRouterConfigProvider);
 
     // final prefs = ref.watch(sharedPreferencesProvider).requireValue;
 
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Рисовашка',
       builder: AppWrapper.builder,
@@ -33,8 +34,7 @@ class MainApp extends HookConsumerWidget {
       themeMode: themeMode,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      home: const LoginScreen(),
-      // routerConfig: routerConfig,
+      routerConfig: routerConfig,
     );
   }
 }
