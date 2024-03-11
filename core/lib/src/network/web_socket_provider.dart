@@ -6,7 +6,7 @@ part 'web_socket_provider.g.dart';
 
 const _baseUrl = 'ws://10.0.2.2:8000/ws/';
 
-@riverpod
+@Riverpod(keepAlive: true)
 Future<WebSocketChannel> webSocketChannel(WebSocketChannelRef ref) async {
   final wsUrl = Uri.parse(_baseUrl);
   final channel = WebSocketChannel.connect(wsUrl);
@@ -18,14 +18,18 @@ Future<WebSocketChannel> webSocketChannel(WebSocketChannelRef ref) async {
   return channel;
 }
 
-@riverpod
-Raw<Stream> webSocketStream(WebSocketStreamRef ref) async* {
-  final channel = await ref.watch(webSocketChannelProvider.future);
-
-  yield* channel.stream.asBroadcastStream();
+@Riverpod(keepAlive: true)
+Raw<Stream> webSocketStream(WebSocketStreamRef ref) {
+  return _webSocketStream(ref).asBroadcastStream();
 }
 
-@riverpod
+Raw<Stream> _webSocketStream(WebSocketStreamRef ref) async* {
+  final channel = await ref.watch(webSocketChannelProvider.future);
+
+  yield* channel.stream;
+}
+
+@Riverpod(keepAlive: true)
 Future<WebSocketSink> webSocketSink(WebSocketSinkRef ref) async {
   final channel = await ref.watch(webSocketChannelProvider.future);
 

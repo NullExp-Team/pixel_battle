@@ -8,12 +8,11 @@ part of 'web_socket_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$webSocketChannelHash() => r'5b14ca4dfb88883a4f059083fff1ee163f89d28f';
+String _$webSocketChannelHash() => r'eae1a6e232d82e6d601c7edc428164ec0585a94f';
 
 /// See also [webSocketChannel].
 @ProviderFor(webSocketChannel)
-final webSocketChannelProvider =
-    AutoDisposeFutureProvider<WebSocketChannel>.internal(
+final webSocketChannelProvider = FutureProvider<WebSocketChannel>.internal(
   webSocketChannel,
   name: r'webSocketChannelProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -23,12 +22,12 @@ final webSocketChannelProvider =
   allTransitiveDependencies: null,
 );
 
-typedef WebSocketChannelRef = AutoDisposeFutureProviderRef<WebSocketChannel>;
-String _$webSocketStreamHash() => r'd51fbeb3b94ca267a91b9374b1bf18f3852abedd';
+typedef WebSocketChannelRef = FutureProviderRef<WebSocketChannel>;
+String _$webSocketStreamHash() => r'21659bcd8d5362bfbdda4104a7e9dc587c27f04e';
 
 /// See also [webSocketStream].
 @ProviderFor(webSocketStream)
-final webSocketStreamProvider = AutoDisposeProvider<Raw<Stream>>.internal(
+final webSocketStreamProvider = Provider<Raw<Stream>>.internal(
   webSocketStream,
   name: r'webSocketStreamProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -38,12 +37,12 @@ final webSocketStreamProvider = AutoDisposeProvider<Raw<Stream>>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef WebSocketStreamRef = AutoDisposeProviderRef<Raw<Stream>>;
-String _$webSocketSinkHash() => r'e8b4ae1fd9844ea955b2e6446f7d5a56dcd19086';
+typedef WebSocketStreamRef = ProviderRef<Raw<Stream>>;
+String _$webSocketSinkHash() => r'3ba7992bb5d0e2e5ed145e8f44ebdf8c1aba709e';
 
 /// See also [webSocketSink].
 @ProviderFor(webSocketSink)
-final webSocketSinkProvider = AutoDisposeFutureProvider<WebSocketSink>.internal(
+final webSocketSinkProvider = FutureProvider<WebSocketSink>.internal(
   webSocketSink,
   name: r'webSocketSinkProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -53,6 +52,6 @@ final webSocketSinkProvider = AutoDisposeFutureProvider<WebSocketSink>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef WebSocketSinkRef = AutoDisposeFutureProviderRef<WebSocketSink>;
+typedef WebSocketSinkRef = FutureProviderRef<WebSocketSink>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

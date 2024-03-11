@@ -1,5 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:shared/canvas/pixel_field.dart';
 
 @RoutePage()
 class HomeScreen extends HookConsumerWidget {
@@ -7,10 +9,17 @@ class HomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    return const PixelField();
+
     return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('HomeScreen'),
+      appBar: AppBar(
+        title: Text('HomeScreen'),
+      ),
+      backgroundColor: colors.alert,
+      body: const Stack(
+        children: [
+          PixelField(),
+        ],
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shared/canvas/canvas.dart';
+// import 'package:shared/canvas/canvas.dart';
 
 class MainApp extends HookConsumerWidget {
   const MainApp({super.key});
@@ -26,7 +26,7 @@ class MainApp extends HookConsumerWidget {
       themeMode: themeMode,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      home: const PixelCanvas(),
+      // home: const PixelCanvas(),
     );
   }
 }

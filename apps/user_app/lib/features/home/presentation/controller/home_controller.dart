@@ -4,6 +4,8 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
+import '../../../../api/user_web_socket_api.dart';
+
 part 'home_controller.freezed.dart';
 part 'home_controller.g.dart';
 

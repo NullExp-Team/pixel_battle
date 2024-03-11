@@ -6,7 +6,7 @@ part of 'login_contoller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$loginContollerHash() => r'6c22d2ea7c625d5e478a5f6f1094084058c080c4';
+String _$loginContollerHash() => r'f4200ca174d99c2f09100236f8bdbe25c3ab8aa8';
 
 /// See also [LoginContoller].
 @ProviderFor(LoginContoller)

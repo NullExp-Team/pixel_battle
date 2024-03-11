@@ -31,18 +31,12 @@ class LoginScreen extends HookConsumerWidget {
                 AppTextField(
                   hintText: 'Введите ник',
                   onChanged: controller.updateNickname,
+                  validator: controller.nicknameValidator,
                 ),
                 const Spacer(flex: 2),
                 AppButton.fill(
                   text: 'Начать',
-                  onTap: () async {
-                    await controller.login();
-
-                    // ignore: unawaited_futures
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const PixelCanvas()),
-                    );
-                  },
+                  onTap: controller.login,
                 ),
                 const SizedBox(height: 50),
               ],
