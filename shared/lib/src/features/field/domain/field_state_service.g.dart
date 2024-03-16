@@ -6,7 +6,7 @@ part of 'field_state_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fieldStateServiceHash() => r'a33472bafabb0517b262d347f494002be8ff6a81';
+String _$fieldStateServiceHash() => r'2105ab9aef095df0094e184c9e0bb044a23d2b64';
 
 /// See also [FieldStateService].
 @ProviderFor(FieldStateService)
