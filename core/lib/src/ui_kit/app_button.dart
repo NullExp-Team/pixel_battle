@@ -153,7 +153,8 @@ class AppButton extends HookWidget {
             },
             disabledBackgroundColor: switch (_style) {
               _Style.fill => colors.textMinor,
-              _Style.outline || _Style.text => Colors.transparent,
+              _Style.outline => colors.backgroundMinor,
+              _Style.text => Colors.transparent,
             },
             padding: padding ??
                 const EdgeInsets.symmetric(

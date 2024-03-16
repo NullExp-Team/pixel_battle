@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
@@ -12,6 +10,7 @@ class HomeControllerState with _$HomeControllerState {
   factory HomeControllerState({
     required Color selectedColor,
     required Offset? selectedPixelPosition,
+    required Duration untilFill,
   }) = _HomeControllerState;
 }
 
@@ -21,6 +20,7 @@ class HomeController extends _$HomeController with ControllerMixin {
   HomeControllerState build() => HomeControllerState(
         selectedColor: Colors.red,
         selectedPixelPosition: null,
+        untilFill: Duration.zero,
       );
 
   // Update methods
@@ -47,6 +47,12 @@ class HomeController extends _$HomeController with ControllerMixin {
             y: offset.dy.toInt(),
             color: state.selectedColor,
           ),
+        ),
+      ),
+      rateLimiter: Throttle(
+        duration: const Duration(seconds: 3),
+        onTickCooldown: (remainingTime) => state = state.copyWith(
+          untilFill: remainingTime,
         ),
       ),
     );
