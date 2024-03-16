@@ -11,7 +11,7 @@ _$UpdatePixelDataImpl _$$UpdatePixelDataImplFromJson(
     _$UpdatePixelDataImpl(
       x: json['x'] as int,
       y: json['y'] as int,
-      color: json['color'] as String,
+      color: const ColorConverter().fromJson(json['color'] as String),
     );
 
 Map<String, dynamic> _$$UpdatePixelDataImplToJson(
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$UpdatePixelDataImplToJson(
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
-      'color': instance.color,
+      'color': const ColorConverter().toJson(instance.color),
     };

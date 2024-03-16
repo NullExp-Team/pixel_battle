@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:shared/shared.dart';
 
 import '../controller/login_contoller.dart';
 

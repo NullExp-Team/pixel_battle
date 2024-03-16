@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:core/core.dart';
+
+import '../convertors/color_convertor.dart';
 
 part 'field_pixel.freezed.dart';
 part 'field_pixel.g.dart';
@@ -8,7 +12,7 @@ class FieldPixel with _$FieldPixel {
   factory FieldPixel({
     required int x,
     required int y,
-    required String color,
+    @ColorConverter() required Color color,
     required String nickname,
   }) = _FieldPixel;
 

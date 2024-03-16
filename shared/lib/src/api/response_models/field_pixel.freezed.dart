@@ -22,7 +22,8 @@ FieldPixel _$FieldPixelFromJson(Map<String, dynamic> json) {
 mixin _$FieldPixel {
   int get x => throw _privateConstructorUsedError;
   int get y => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+  @ColorConverter()
+  Color get color => throw _privateConstructorUsedError;
   String get nickname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,7 +38,7 @@ abstract class $FieldPixelCopyWith<$Res> {
           FieldPixel value, $Res Function(FieldPixel) then) =
       _$FieldPixelCopyWithImpl<$Res, FieldPixel>;
   @useResult
-  $Res call({int x, int y, String color, String nickname});
+  $Res call({int x, int y, @ColorConverter() Color color, String nickname});
 }
 
 /// @nodoc
@@ -70,7 +71,7 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Color,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -87,7 +88,7 @@ abstract class _$$FieldPixelImplCopyWith<$Res>
       __$$FieldPixelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int x, int y, String color, String nickname});
+  $Res call({int x, int y, @ColorConverter() Color color, String nickname});
 }
 
 /// @nodoc
@@ -118,7 +119,7 @@ class __$$FieldPixelImplCopyWithImpl<$Res>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Color,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -133,7 +134,7 @@ class _$FieldPixelImpl implements _FieldPixel {
   _$FieldPixelImpl(
       {required this.x,
       required this.y,
-      required this.color,
+      @ColorConverter() required this.color,
       required this.nickname});
 
   factory _$FieldPixelImpl.fromJson(Map<String, dynamic> json) =>
@@ -144,7 +145,8 @@ class _$FieldPixelImpl implements _FieldPixel {
   @override
   final int y;
   @override
-  final String color;
+  @ColorConverter()
+  final Color color;
   @override
   final String nickname;
 
@@ -187,7 +189,7 @@ abstract class _FieldPixel implements FieldPixel {
   factory _FieldPixel(
       {required final int x,
       required final int y,
-      required final String color,
+      @ColorConverter() required final Color color,
       required final String nickname}) = _$FieldPixelImpl;
 
   factory _FieldPixel.fromJson(Map<String, dynamic> json) =
@@ -198,7 +200,8 @@ abstract class _FieldPixel implements FieldPixel {
   @override
   int get y;
   @override
-  String get color;
+  @ColorConverter()
+  Color get color;
   @override
   String get nickname;
   @override

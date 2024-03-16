@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
-import 'package:flutter/material.dart';
 
 import '../../../api/web_socket_api.dart';
 import 'field_state_service.dart';
@@ -43,9 +42,7 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
         final y = entry2.key;
         final pixel = entry2.value;
         final index = x * width + y;
-        final colorValue = int.parse(pixel.color.substring(1), radix: 16);
-        final color = Color(colorValue).withOpacity(1);
-        pixels[index] = color.value;
+        pixels[index] = pixel.color.value;
       }
     }
 

@@ -1,8 +1,6 @@
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
-import '../../../api/user_web_socket_api.dart';
-
 part 'user_service.freezed.dart';
 part 'user_service.g.dart';
 

@@ -14,3 +14,4 @@ export 'package:shared/src/api/response_models/field_pixel.dart';
 export 'package:shared/src/api/web_socket_api.dart';
 export 'package:shared/src/features/field/domain/field_state_service.dart';
 export 'package:shared/src/features/field/domain/field_image_service.dart';
+export 'package:shared/src/api/convertors/color_convertor.dart';
