@@ -96,6 +96,7 @@ class AppTextField extends HookConsumerWidget {
     return Padding(
       padding: padding,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           // if (labelText != null && label == null)
           //   Align(
@@ -155,6 +156,7 @@ class AppTextField extends HookConsumerWidget {
                 hintStyle: textStyles.text.copyWith(
                   color: colors.textMinor,
                 ),
+                isDense: true,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 errorBorder: InputBorder.none,
@@ -191,7 +193,7 @@ class AppTextField extends HookConsumerWidget {
               ),
             ),
           ),
-          _Error(errorText: errorText)
+          _Error(errorText: errorText),
         ],
       ),
     );
@@ -243,7 +245,9 @@ class __ErrorState extends ConsumerState<_Error> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 12, top: 4),
+          padding: errorText != null
+              ? const EdgeInsets.only(left: 12, top: 4)
+              : EdgeInsets.zero,
           child: SText.text(
             lastErrorText,
             color: colors.alert,

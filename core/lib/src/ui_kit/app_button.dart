@@ -51,6 +51,7 @@ class AppButton extends HookWidget {
     this.allowTapDuringLoading = false,
     this.isLoading = false,
     this.isDisabled = false,
+    this.padding,
     this.leftIcon,
     super.key,
   }) : _style = _Style.fill;
@@ -63,6 +64,7 @@ class AppButton extends HookWidget {
     this.allowTapDuringLoading = false,
     this.isLoading = false,
     this.isDisabled = false,
+    this.padding,
     this.leftIcon,
     super.key,
   }) : _style = _Style.outline;
@@ -75,6 +77,7 @@ class AppButton extends HookWidget {
     this.allowTapDuringLoading = false,
     this.isLoading = false,
     this.isDisabled = false,
+    this.padding,
     this.leftIcon,
     super.key,
   }) : _style = _Style.text;
@@ -87,6 +90,7 @@ class AppButton extends HookWidget {
   final bool isLoading;
   final bool isDisabled;
 
+  final EdgeInsetsGeometry? padding;
   final Widget? leftIcon;
 
   final _Style _style;
@@ -151,10 +155,11 @@ class AppButton extends HookWidget {
               _Style.fill => colors.textMinor,
               _Style.outline || _Style.text => Colors.transparent,
             },
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-              vertical: 14,
-            ),
+            padding: padding ??
+                const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 14,
+                ),
             elevation: 0,
             surfaceTintColor: Colors.transparent,
             shadowColor: Colors.transparent,

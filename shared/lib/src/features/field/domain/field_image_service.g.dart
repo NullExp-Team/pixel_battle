@@ -6,7 +6,7 @@ part of 'field_image_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fieldImageServiceHash() => r'c022e49b801debb4a71c75a7d78fa8f1d1cd6f49';
+String _$fieldImageServiceHash() => r'1502ca81a3fdcd6ecf24351d5ad54e93fce52a1b';
 
 /// See also [FieldImageService].
 @ProviderFor(FieldImageService)

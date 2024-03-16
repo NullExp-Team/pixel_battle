@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
@@ -34,15 +36,15 @@ class HomeController extends _$HomeController with ControllerMixin {
   // Business logic
 
   Future<void> fillPixel() async {
-    final point = state.selectedPixelPosition;
-    if (point == null) return;
+    final offset = state.selectedPixelPosition;
+    if (offset == null) return;
 
     await apiWrap(
       () => api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
-            x: point.dx.toInt(),
-            y: point.dy.toInt(),
+            x: offset.dx.toInt(),
+            y: offset.dy.toInt(),
             color: state.selectedColor,
           ),
         ),
