@@ -44,6 +44,10 @@ const _baseUrl = 'ws://10.0.2.2:8000/ws/';
 Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
   final client = WebSocketClient(
     WebSocketOptions.common(
+      connectionRetryInterval: (
+        max: const Duration(seconds: 10),
+        min: const Duration(milliseconds: 10)
+      ),
       interceptors: [
         WSInterceptor.wrap(
           onMessage: (data) {
