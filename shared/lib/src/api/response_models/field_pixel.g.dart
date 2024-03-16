@@ -11,7 +11,7 @@ _$FieldPixelImpl _$$FieldPixelImplFromJson(Map<String, dynamic> json) =>
       x: json['x'] as int,
       y: json['y'] as int,
       color: json['color'] as String,
-      username: json['username'] as String,
+      nickname: json['nickname'] as String,
     );
 
 Map<String, dynamic> _$$FieldPixelImplToJson(_$FieldPixelImpl instance) =>
@@ -19,5 +19,5 @@ Map<String, dynamic> _$$FieldPixelImplToJson(_$FieldPixelImpl instance) =>
       'x': instance.x,
       'y': instance.y,
       'color': instance.color,
-      'username': instance.username,
+      'nickname': instance.nickname,
     };

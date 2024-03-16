@@ -14,7 +14,7 @@ _$LoginRequestImpl _$$LoginRequestImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$LoginRequestImplToJson(_$LoginRequestImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 
@@ -40,7 +40,7 @@ _$UpdatePixelRequestImpl _$$UpdatePixelRequestImplFromJson(
 Map<String, dynamic> _$$UpdatePixelRequestImplToJson(
         _$UpdatePixelRequestImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 
@@ -54,7 +54,7 @@ _$UpdatePixelAdminRequestImpl _$$UpdatePixelAdminRequestImplFromJson(
 Map<String, dynamic> _$$UpdatePixelAdminRequestImplToJson(
         _$UpdatePixelAdminRequestImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 
@@ -68,7 +68,7 @@ _$PixelInfoAdminRequestImpl _$$PixelInfoAdminRequestImplFromJson(
 Map<String, dynamic> _$$PixelInfoAdminRequestImplToJson(
         _$PixelInfoAdminRequestImpl instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 

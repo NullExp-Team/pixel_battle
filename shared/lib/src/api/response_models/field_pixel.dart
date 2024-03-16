@@ -9,7 +9,7 @@ class FieldPixel with _$FieldPixel {
     required int x,
     required int y,
     required String color,
-    required String username,
+    required String nickname,
   }) = _FieldPixel;
 
   factory FieldPixel.fromJson(Map<String, dynamic> json) =>
