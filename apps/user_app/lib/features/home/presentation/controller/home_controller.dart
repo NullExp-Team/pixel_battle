@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
@@ -45,7 +43,7 @@ class HomeController extends _$HomeController with ControllerMixin {
           UpdatePixelData(
             x: point.dx.toInt(),
             y: point.dy.toInt(),
-            color: state.selectedColor.value.toRadixString(16),
+            color: state.selectedColor,
           ),
         ),
       ),

@@ -22,7 +22,8 @@ UpdatePixelData _$UpdatePixelDataFromJson(Map<String, dynamic> json) {
 mixin _$UpdatePixelData {
   int get x => throw _privateConstructorUsedError;
   int get y => throw _privateConstructorUsedError;
-  String get color => throw _privateConstructorUsedError;
+  @ColorConverter()
+  Color get color => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $UpdatePixelDataCopyWith<$Res> {
           UpdatePixelData value, $Res Function(UpdatePixelData) then) =
       _$UpdatePixelDataCopyWithImpl<$Res, UpdatePixelData>;
   @useResult
-  $Res call({int x, int y, String color});
+  $Res call({int x, int y, @ColorConverter() Color color});
 }
 
 /// @nodoc
@@ -68,7 +69,7 @@ class _$UpdatePixelDataCopyWithImpl<$Res, $Val extends UpdatePixelData>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Color,
     ) as $Val);
   }
 }
@@ -81,7 +82,7 @@ abstract class _$$UpdatePixelDataImplCopyWith<$Res>
       __$$UpdatePixelDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int x, int y, String color});
+  $Res call({int x, int y, @ColorConverter() Color color});
 }
 
 /// @nodoc
@@ -111,7 +112,7 @@ class __$$UpdatePixelDataImplCopyWithImpl<$Res>
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Color,
     ));
   }
 }
@@ -120,7 +121,9 @@ class __$$UpdatePixelDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdatePixelDataImpl implements _UpdatePixelData {
   _$UpdatePixelDataImpl(
-      {required this.x, required this.y, required this.color});
+      {required this.x,
+      required this.y,
+      @ColorConverter() required this.color});
 
   factory _$UpdatePixelDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdatePixelDataImplFromJson(json);
@@ -130,7 +133,8 @@ class _$UpdatePixelDataImpl implements _UpdatePixelData {
   @override
   final int y;
   @override
-  final String color;
+  @ColorConverter()
+  final Color color;
 
   @override
   String toString() {
@@ -170,7 +174,7 @@ abstract class _UpdatePixelData implements UpdatePixelData {
   factory _UpdatePixelData(
       {required final int x,
       required final int y,
-      required final String color}) = _$UpdatePixelDataImpl;
+      @ColorConverter() required final Color color}) = _$UpdatePixelDataImpl;
 
   factory _UpdatePixelData.fromJson(Map<String, dynamic> json) =
       _$UpdatePixelDataImpl.fromJson;
@@ -180,7 +184,8 @@ abstract class _UpdatePixelData implements UpdatePixelData {
   @override
   int get y;
   @override
-  String get color;
+  @ColorConverter()
+  Color get color;
   @override
   @JsonKey(ignore: true)
   _$$UpdatePixelDataImplCopyWith<_$UpdatePixelDataImpl> get copyWith =>

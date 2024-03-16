@@ -51,8 +51,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
             UpdatePixelData(
               x: x,
               y: y,
-              color:
-                  '#${Colors.red.value.toRadixString(16).substring(2).toUpperCase()}',
+              color: Colors.red,
             ),
           ),
         );
