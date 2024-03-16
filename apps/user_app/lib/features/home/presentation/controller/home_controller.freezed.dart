@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeControllerState {
   Color get selectedColor => throw _privateConstructorUsedError;
   Offset? get selectedPixelPosition => throw _privateConstructorUsedError;
+  Duration get untilFill => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeControllerStateCopyWith<HomeControllerState> get copyWith =>
@@ -30,7 +31,8 @@ abstract class $HomeControllerStateCopyWith<$Res> {
           HomeControllerState value, $Res Function(HomeControllerState) then) =
       _$HomeControllerStateCopyWithImpl<$Res, HomeControllerState>;
   @useResult
-  $Res call({Color selectedColor, Offset? selectedPixelPosition});
+  $Res call(
+      {Color selectedColor, Offset? selectedPixelPosition, Duration untilFill});
 }
 
 /// @nodoc
@@ -46,11 +48,12 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedColor = null,
+    Object? selectedColor = freezed,
     Object? selectedPixelPosition = freezed,
+    Object? untilFill = null,
   }) {
     return _then(_value.copyWith(
-      selectedColor: null == selectedColor
+      selectedColor: freezed == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -58,6 +61,10 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
+      untilFill: null == untilFill
+          ? _value.untilFill
+          : untilFill // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ) as $Val);
   }
 }
@@ -70,7 +77,8 @@ abstract class _$$HomeControllerStateImplCopyWith<$Res>
       __$$HomeControllerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Color selectedColor, Offset? selectedPixelPosition});
+  $Res call(
+      {Color selectedColor, Offset? selectedPixelPosition, Duration untilFill});
 }
 
 /// @nodoc
@@ -84,11 +92,12 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedColor = null,
+    Object? selectedColor = freezed,
     Object? selectedPixelPosition = freezed,
+    Object? untilFill = null,
   }) {
     return _then(_$HomeControllerStateImpl(
-      selectedColor: null == selectedColor
+      selectedColor: freezed == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -96,6 +105,10 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
+      untilFill: null == untilFill
+          ? _value.untilFill
+          : untilFill // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -104,16 +117,20 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
 
 class _$HomeControllerStateImpl implements _HomeControllerState {
   _$HomeControllerStateImpl(
-      {required this.selectedColor, required this.selectedPixelPosition});
+      {required this.selectedColor,
+      required this.selectedPixelPosition,
+      required this.untilFill});
 
   @override
   final Color selectedColor;
   @override
   final Offset? selectedPixelPosition;
+  @override
+  final Duration untilFill;
 
   @override
   String toString() {
-    return 'HomeControllerState(selectedColor: $selectedColor, selectedPixelPosition: $selectedPixelPosition)';
+    return 'HomeControllerState(selectedColor: $selectedColor, selectedPixelPosition: $selectedPixelPosition, untilFill: $untilFill)';
   }
 
   @override
@@ -121,15 +138,20 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeControllerStateImpl &&
-            (identical(other.selectedColor, selectedColor) ||
-                other.selectedColor == selectedColor) &&
-            (identical(other.selectedPixelPosition, selectedPixelPosition) ||
-                other.selectedPixelPosition == selectedPixelPosition));
+            const DeepCollectionEquality()
+                .equals(other.selectedColor, selectedColor) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedPixelPosition, selectedPixelPosition) &&
+            (identical(other.untilFill, untilFill) ||
+                other.untilFill == untilFill));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, selectedColor, selectedPixelPosition);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(selectedColor),
+      const DeepCollectionEquality().hash(selectedPixelPosition),
+      untilFill);
 
   @JsonKey(ignore: true)
   @override
@@ -141,14 +163,16 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
 
 abstract class _HomeControllerState implements HomeControllerState {
   factory _HomeControllerState(
-          {required final Color selectedColor,
-          required final Offset? selectedPixelPosition}) =
-      _$HomeControllerStateImpl;
+      {required final Color selectedColor,
+      required final Offset? selectedPixelPosition,
+      required final Duration untilFill}) = _$HomeControllerStateImpl;
 
   @override
   Color get selectedColor;
   @override
   Offset? get selectedPixelPosition;
+  @override
+  Duration get untilFill;
   @override
   @JsonKey(ignore: true)
   _$$HomeControllerStateImplCopyWith<_$HomeControllerStateImpl> get copyWith =>
