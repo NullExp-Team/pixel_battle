@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 import '../shared.dart';
 
 class PixelField extends ConsumerStatefulWidget {
-  const PixelField({super.key});
+  const PixelField({
+    super.key,
+    required this.selectedPixel,
+    required this.onPixelSelectionChanged,
+  });
+
+  final Offset? selectedPixel;
+  final Function(Offset?) onPixelSelectionChanged;
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
@@ -15,7 +22,6 @@ class PixelField extends ConsumerStatefulWidget {
 class PixelFieldState extends ConsumerState<PixelField> {
   final TransformationController transformationController =
       TransformationController();
-  Offset? selectedPixel;
 
   bool isFirstBuild = true;
 
@@ -58,13 +64,11 @@ class PixelFieldState extends ConsumerState<PixelField> {
               image.width.toDouble(),
               image.height.toDouble(),
             ).contains(position)) {
-              setState(() {
-                if (selectedPixel == position) {
-                  selectedPixel = null;
-                } else {
-                  selectedPixel = position;
-                }
-              });
+              if (widget.selectedPixel == position) {
+                widget.onPixelSelectionChanged(null);
+              } else {
+                widget.onPixelSelectionChanged(position);
+              }
             }
           },
           child: InteractiveViewer(
@@ -75,9 +79,10 @@ class PixelFieldState extends ConsumerState<PixelField> {
             onInteractionUpdate: (_) => setState(() {}),
             onInteractionEnd: (_) => setState(() {}),
             child: CustomPaint(
+              size: MediaQuery.of(context).size,
               painter: CanvasPainter(
                 scale: scale,
-                selectedPixel: selectedPixel,
+                selectedPixel: widget.selectedPixel,
                 image: image,
               ),
             ),

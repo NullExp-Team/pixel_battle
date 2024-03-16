@@ -4,8 +4,6 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
-import '../../../../api/user_web_socket_api.dart';
-
 part 'home_controller.freezed.dart';
 part 'home_controller.g.dart';
 
@@ -13,7 +11,7 @@ part 'home_controller.g.dart';
 class HomeControllerState with _$HomeControllerState {
   factory HomeControllerState({
     required Color selectedColor,
-    required Point<int>? selectedPixelPosition,
+    required Offset? selectedPixelPosition,
   }) = _HomeControllerState;
 }
 
@@ -31,7 +29,7 @@ class HomeController extends _$HomeController with ControllerMixin {
     state = state.copyWith(selectedColor: color);
   }
 
-  void updateSelectedPosition(Point<int>? position) {
+  void updateSelectedPosition(Offset? position) {
     state = state.copyWith(selectedPixelPosition: position);
   }
 
@@ -45,8 +43,8 @@ class HomeController extends _$HomeController with ControllerMixin {
       () => api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
-            x: point.x,
-            y: point.y,
+            x: point.dx.toInt(),
+            y: point.dy.toInt(),
             color: state.selectedColor.value.toRadixString(16),
           ),
         ),
