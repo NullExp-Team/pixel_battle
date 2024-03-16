@@ -6,7 +6,7 @@ part of 'field_state_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fieldImageServiceHash() => r'3f33ca5d23cbdbb17a1773f6f5fd9941732117e9';
+String _$fieldImageServiceHash() => r'311e4eef1e58fc4290744c16952068d5740c0392';
 
 /// See also [FieldImageService].
 @ProviderFor(FieldImageService)
@@ -25,7 +25,7 @@ final fieldImageServiceProvider =
 );
 
 typedef _$FieldImageService = AutoDisposeAsyncNotifier<ui.Image>;
-String _$fieldStateServiceHash() => r'36f2f420d8bd03056c91d211dcec023190e050ca';
+String _$fieldStateServiceHash() => r'6265c60da837c07172d2556070be8b889db660b5';
 
 /// See also [FieldStateService].
 @ProviderFor(FieldStateService)

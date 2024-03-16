@@ -41,6 +41,8 @@ class PixelFieldState extends ConsumerState<PixelField> {
     final asyncImage = ref.watch(fieldImageServiceProvider);
 
     return asyncImage.when(
+      skipLoadingOnReload: true,
+      skipError: true,
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (e, s) => SText(e.toString()),
       data: (image) {

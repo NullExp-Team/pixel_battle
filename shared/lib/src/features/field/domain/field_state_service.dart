@@ -48,7 +48,9 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
         final y = entry2.key;
         final pixel = entry2.value;
         final index = x * width + y;
-        pixels[index] = int.parse(pixel.color.substring(1), radix: 16);
+        final colorValue = int.parse(pixel.color.substring(1), radix: 16);
+        final color = Color(colorValue).withOpacity(1);
+        pixels[index] = color.value;
       }
     }
 
@@ -78,7 +80,7 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
   }
 }
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class FieldStateMap with _$FieldStateMap {
   factory FieldStateMap({
     required int width,
@@ -89,6 +91,13 @@ class FieldStateMap with _$FieldStateMap {
 
 @Riverpod(dependencies: [WebSocketApi])
 class FieldStateService extends _$FieldStateService with ControllerMixin {
+  @override
+  bool updateShouldNotify(
+    AsyncValue<FieldStateMap> previous,
+    AsyncValue<FieldStateMap> next,
+  ) =>
+      true;
+
   @override
   Stream<FieldStateMap> build() => _build().asBroadcastStream();
 
@@ -109,11 +118,11 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
             UpdatePixelData(
               x: x,
               y: y,
-              color: '#${Colors.red.value.toRadixString(16).substring(2)}',
+              color:
+                  '#${Colors.red.value.toRadixString(16).substring(2).toUpperCase()}',
             ),
           ),
         );
-        api.request<NoResponse>(GetFieldStateRequest());
       }
     });
 

@@ -21,8 +21,7 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.userId(String data) = UserIdResponse;
 
   const factory AppResponse.fieldState({
-    // required int width,
-    // required int height,
+    required List<int> size,
     required List<FieldPixel> data,
   }) = FieldStateResponse;
 

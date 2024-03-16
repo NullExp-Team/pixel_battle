@@ -105,7 +105,7 @@ class __$$FieldStateMapImplCopyWithImpl<$Res>
           : height // ignore: cast_nullable_to_non_nullable
               as int,
       pixels: null == pixels
-          ? _value._pixels
+          ? _value.pixels
           : pixels // ignore: cast_nullable_to_non_nullable
               as Map<int, Map<int, FieldPixel>>,
     ));
@@ -116,22 +116,14 @@ class __$$FieldStateMapImplCopyWithImpl<$Res>
 
 class _$FieldStateMapImpl implements _FieldStateMap {
   _$FieldStateMapImpl(
-      {required this.width,
-      required this.height,
-      required final Map<int, Map<int, FieldPixel>> pixels})
-      : _pixels = pixels;
+      {required this.width, required this.height, required this.pixels});
 
   @override
   final int width;
   @override
   final int height;
-  final Map<int, Map<int, FieldPixel>> _pixels;
   @override
-  Map<int, Map<int, FieldPixel>> get pixels {
-    if (_pixels is EqualUnmodifiableMapView) return _pixels;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_pixels);
-  }
+  final Map<int, Map<int, FieldPixel>> pixels;
 
   @override
   String toString() {
@@ -145,12 +137,12 @@ class _$FieldStateMapImpl implements _FieldStateMap {
             other is _$FieldStateMapImpl &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height) &&
-            const DeepCollectionEquality().equals(other._pixels, _pixels));
+            const DeepCollectionEquality().equals(other.pixels, pixels));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, width, height, const DeepCollectionEquality().hash(_pixels));
+      runtimeType, width, height, const DeepCollectionEquality().hash(pixels));
 
   @JsonKey(ignore: true)
   @override
