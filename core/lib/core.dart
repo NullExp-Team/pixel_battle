@@ -22,6 +22,7 @@ export 'package:dio/dio.dart' hide ResponseType;
 export 'dart:async' show FutureOr;
 
 export 'package:rxdart/rxdart.dart';
+export 'package:ws/ws.dart';
 
 // Core
 export 'src/export.dart';
