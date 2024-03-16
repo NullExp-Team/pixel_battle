@@ -29,9 +29,9 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
 
     final pixels = Uint32List(length);
 
-    for (var x = 0; x < height; x++) {
-      for (var y = 0; y < width; y++) {
-        final index = x * width + y;
+    for (var y = 0; y < width; y++) {
+      for (var x = 0; x < height; x++) {
+        final index = y * width + x;
         pixels[index] = AppColors.light.backgroundMinor.value;
       }
     }
@@ -41,7 +41,7 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
         final x = entry1.key;
         final y = entry2.key;
         final pixel = entry2.value;
-        final index = x * width + y;
+        final index = y * width + x;
         pixels[index] = pixel.color.value;
       }
     }

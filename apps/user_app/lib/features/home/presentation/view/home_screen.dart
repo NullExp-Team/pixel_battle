@@ -5,6 +5,8 @@ import 'package:shared/canvas/pixel_field.dart';
 
 import '../controller/home_controller.dart';
 
+part 'widgets/bottom_panel.dart';
+
 @RoutePage()
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
@@ -14,10 +16,20 @@ class HomeScreen extends HookConsumerWidget {
     final state = ref.watch(homeControllerProvider);
     final controller = ref.watch(homeControllerProvider.notifier);
 
-    return Scaffold(
-      body: PixelField(
-        selectedPixel: state.selectedPixelPosition,
-        onPixelSelectionChanged: controller.updateSelectedPosition,
+    return AutoUnfocus(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            PixelField(
+              selectedPixel: state.selectedPixelPosition,
+              onPixelSelectionChanged: controller.updateSelectedPosition,
+            ),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: _BottomPanel(),
+            ),
+          ],
+        ),
       ),
     );
   }
