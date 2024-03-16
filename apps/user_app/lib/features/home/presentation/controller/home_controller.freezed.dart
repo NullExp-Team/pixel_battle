@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HomeControllerState {
   Color get selectedColor => throw _privateConstructorUsedError;
-  Point<int>? get selectedPixelPosition => throw _privateConstructorUsedError;
+  Offset? get selectedPixelPosition => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeControllerStateCopyWith<HomeControllerState> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $HomeControllerStateCopyWith<$Res> {
           HomeControllerState value, $Res Function(HomeControllerState) then) =
       _$HomeControllerStateCopyWithImpl<$Res, HomeControllerState>;
   @useResult
-  $Res call({Color selectedColor, Point<int>? selectedPixelPosition});
+  $Res call({Color selectedColor, Offset? selectedPixelPosition});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
-              as Point<int>?,
+              as Offset?,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$HomeControllerStateImplCopyWith<$Res>
       __$$HomeControllerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Color selectedColor, Point<int>? selectedPixelPosition});
+  $Res call({Color selectedColor, Offset? selectedPixelPosition});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
-              as Point<int>?,
+              as Offset?,
     ));
   }
 }
@@ -109,7 +109,7 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
   @override
   final Color selectedColor;
   @override
-  final Point<int>? selectedPixelPosition;
+  final Offset? selectedPixelPosition;
 
   @override
   String toString() {
@@ -142,13 +142,13 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
 abstract class _HomeControllerState implements HomeControllerState {
   factory _HomeControllerState(
           {required final Color selectedColor,
-          required final Point<int>? selectedPixelPosition}) =
+          required final Offset? selectedPixelPosition}) =
       _$HomeControllerStateImpl;
 
   @override
   Color get selectedColor;
   @override
-  Point<int>? get selectedPixelPosition;
+  Offset? get selectedPixelPosition;
   @override
   @JsonKey(ignore: true)
   _$$HomeControllerStateImplCopyWith<_$HomeControllerStateImpl> get copyWith =>
