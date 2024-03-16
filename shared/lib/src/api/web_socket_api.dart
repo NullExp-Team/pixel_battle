@@ -12,17 +12,20 @@ part 'web_socket_api.g.dart';
 class WebSocketApi extends _$WebSocketApi with ControllerMixin {
   @override
   Raw<Stream<AppResponse>> build() {
-    final stream = ref.watch(webSocketStreamProvider);
+    return _build().asBroadcastStream();
+  }
+
+  Stream<AppResponse> _build() async* {
+    final stream = await ref
+        .watch(webSocketClientProvider.selectAsync((data) => data.stream));
 
     final newStream = stream.asyncMap((event) async {
-      final json = jsonDecode(event);
-      logger.debug('Web Socket Response', json);
-
+      final json = jsonDecode(event.toString());
       final response = AppResponse.fromJson(json);
       return response;
     }).asBroadcastStream();
 
-    return newStream;
+    yield* newStream;
   }
 
   Future<T> request<T extends AppResponse>(
@@ -30,12 +33,10 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     Duration timeout = const Duration(seconds: 30),
   }) async {
     // ignore: close_sinks
-    final sink = await ref.watch(webSocketSinkProvider.future);
+    final client = await ref.watch(webSocketClientProvider.future);
 
     final json = jsonEncode(request.toJson());
-    logger.debug('Web Socket Request', json);
-
-    sink.add(json);
+    await client.add(json);
 
     if (T == NoResponse) {
       return const NoResponse() as T;

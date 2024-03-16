@@ -8,50 +8,20 @@ part of 'web_socket_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$webSocketChannelHash() => r'eae1a6e232d82e6d601c7edc428164ec0585a94f';
+String _$webSocketClientHash() => r'8dee1c87d7c494ee15f76fcac4f65c8afd3f89d1';
 
-/// See also [webSocketChannel].
-@ProviderFor(webSocketChannel)
-final webSocketChannelProvider = FutureProvider<WebSocketChannel>.internal(
-  webSocketChannel,
-  name: r'webSocketChannelProvider',
+/// See also [webSocketClient].
+@ProviderFor(webSocketClient)
+final webSocketClientProvider = FutureProvider<WebSocketClient>.internal(
+  webSocketClient,
+  name: r'webSocketClientProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$webSocketChannelHash,
+      : _$webSocketClientHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef WebSocketChannelRef = FutureProviderRef<WebSocketChannel>;
-String _$webSocketStreamHash() => r'21659bcd8d5362bfbdda4104a7e9dc587c27f04e';
-
-/// See also [webSocketStream].
-@ProviderFor(webSocketStream)
-final webSocketStreamProvider = Provider<Raw<Stream>>.internal(
-  webSocketStream,
-  name: r'webSocketStreamProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$webSocketStreamHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef WebSocketStreamRef = ProviderRef<Raw<Stream>>;
-String _$webSocketSinkHash() => r'3ba7992bb5d0e2e5ed145e8f44ebdf8c1aba709e';
-
-/// See also [webSocketSink].
-@ProviderFor(webSocketSink)
-final webSocketSinkProvider = FutureProvider<WebSocketSink>.internal(
-  webSocketSink,
-  name: r'webSocketSinkProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$webSocketSinkHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef WebSocketSinkRef = FutureProviderRef<WebSocketSink>;
+typedef WebSocketClientRef = FutureProviderRef<WebSocketClient>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

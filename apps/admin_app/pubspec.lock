@@ -1329,6 +1329,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.2.0"
+  ws:
+    dependency: transitive
+    description:
+      name: ws
+      sha256: bb40a7b9219324ac285133c6b3c11bc16015d9cd5889e6555b76bd3e3a64b3e7
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   xdg_directories:
     dependency: transitive
     description:
