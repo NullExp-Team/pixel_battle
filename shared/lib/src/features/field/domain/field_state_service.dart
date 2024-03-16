@@ -104,7 +104,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
       if (map != null) {
         final x = rand.nextInt(map.width);
         final y = rand.nextInt(map.height);
-        api.request<NoResponse>(
+        api.request<BackendSuccessResponse>(
           UpdatePixelRequest(
             UpdatePixelData(
               x: x,
@@ -113,10 +113,11 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
             ),
           ),
         );
+        api.request<NoResponse>(GetFieldStateRequest());
       }
     });
 
-    ref.onCancel(timer.cancel);
+    ref.onDispose(timer.cancel);
 
     final sub = pixelUpdateStream.listen(
       (res) {
@@ -134,7 +135,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
       },
     );
 
-    ref.onCancel(sub.cancel);
+    ref.onDispose(sub.cancel);
 
     // Mock Start
     // final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];

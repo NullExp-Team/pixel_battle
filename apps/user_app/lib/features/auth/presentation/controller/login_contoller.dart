@@ -32,6 +32,9 @@ class LoginContoller extends _$LoginContoller
   Future<void> login() async {
     final nickname = state.nickname;
 
+    final isValid = await validateAll();
+    if (!isValid) return;
+
     await apiWrap(
       () => _userService.auth(nickname: nickname),
       onSuccess: (_) {
