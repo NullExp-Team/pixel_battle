@@ -20,7 +20,6 @@ class UserService extends _$UserService
     with ControllerMixin, PersistenceMixin<UserServiceState?> {
   @override
   UserServiceState? build() => persistentBuild(
-        enabled: false,
         () => null,
         fromJson: UserServiceState.fromJson,
       );

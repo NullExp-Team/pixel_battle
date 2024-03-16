@@ -1,11 +1,8 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:core/core.dart';
-import 'package:flutter/material.dart';
 
 import '../../../api/request_models/app_request.dart';
-import '../../../api/request_models/update_pixel_data.dart';
 import '../../../api/response_models/app_response.dart';
 import '../../../api/response_models/field_pixel.dart';
 import '../../../api/web_socket_api.dart';
@@ -40,26 +37,6 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     final fieldStateStream = apiStream.whereType<FieldStateResponse>();
     final pixelUpdateStream = apiStream.whereType<PixelUpdateResponse>();
 
-    final rand = Random();
-    final timer = Timer.periodic(const Duration(milliseconds: 3000), (timer) {
-      final map = state.valueOrNull;
-      if (map != null) {
-        final x = rand.nextInt(map.width);
-        final y = rand.nextInt(map.height);
-        api.request<BackendSuccessResponse>(
-          UpdatePixelRequest(
-            UpdatePixelData(
-              x: x,
-              y: y,
-              color: Colors.red,
-            ),
-          ),
-        );
-      }
-    });
-
-    ref.onDispose(timer.cancel);
-
     final sub = pixelUpdateStream.listen(
       (res) {
         final map = state.valueOrNull;
@@ -79,26 +56,42 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     ref.onDispose(sub.cancel);
 
     // Mock Start
+
     // final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
     // await Future.delayed(const Duration(milliseconds: 800));
-    // const width = 200;
-    // const height = 200;
+    // const width = 64;
+    // const height = 64;
     // final fieldStateStream = Stream<FieldStateResponse>.value(
     //   FieldStateResponse(
-    //     width: width,
-    //     height: height,
+    //     size: [width, height],
     //     data: [
     //       for (int x = 0; x < width; x++)
     //         for (int y = 0; y < height; y++)
-    //           FieldPixel(
-    //             x: x,
-    //             y: y,
-    //             color: colors[(x + y) % 4].value,
-    //             userId: '',
-    //           ),
+    //           FieldPixel(x: x, y: y, color: colors[(x + y) % 4], nickname: ''),
     //     ],
     //   ),
     // );
+
+    // final rand = Random();
+    // final timer = Timer.periodic(const Duration(milliseconds: 3000), (timer) {
+    //   final map = state.valueOrNull;
+    //   if (map != null) {
+    //     final x = rand.nextInt(map.width);
+    //     final y = rand.nextInt(map.height);
+    //     api.request<NoResponse>(
+    //       UpdatePixelRequest(
+    //         UpdatePixelData(
+    //           x: x,
+    //           y: y,
+    //           color: Colors.red,
+    //         ),
+    //       ),
+    //     );
+    //   }
+    // });
+
+    // ref.onDispose(timer.cancel);
+
     // Mock End
 
     unawaited(
@@ -111,10 +104,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
   FieldStateMap _convertFieldStateToFieldStateMap(
     FieldStateResponse fieldState,
   ) {
-    // final width = fieldState.width;
-    // final height = fieldState.height;
-    const width = 64;
-    const height = 64;
+    final [width, height] = fieldState.size;
 
     final pixels = <int, Map<int, FieldPixel>>{};
 

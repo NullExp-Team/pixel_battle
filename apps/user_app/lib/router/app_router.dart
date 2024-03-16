@@ -32,7 +32,7 @@ class AppRouter extends _$AppRouter implements AutoRouteGuard {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: LoginRoute.page),
-        AutoRoute(page: HomeRoute.page, initial: true),
+        AutoRoute(page: LoginRoute.page, initial: true),
+        AutoRoute(page: HomeRoute.page),
       ];
 }
