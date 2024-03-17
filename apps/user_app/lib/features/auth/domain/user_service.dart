@@ -37,10 +37,27 @@ class UserService extends _$UserService
       ),
     );
 
+    await api.refresh();
+
     if (userId != null) {
       await apiWrapStrictSingle(
         () => api.request<BackendSuccessResponse>(loginRequest),
         showErrorToast: false,
+        onError: (error) async {
+          switch (error) {
+            case InternalError(
+                error: BackendErrorResponse(message: 'User not found')
+              ):
+              if (state != null) {
+                state = null;
+                return auth(nickname: nickname);
+              } else {
+                throw error;
+              }
+            default:
+              throw error;
+          }
+        },
       );
     } else {
       await apiWrapStrict(
