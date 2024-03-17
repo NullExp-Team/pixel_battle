@@ -7,6 +7,8 @@ import 'package:shared/canvas/pixel_field.dart';
 import '../controller/home_controller.dart';
 
 part 'widgets/bottom_panel.dart';
+part 'widgets/color_picker_bottom_sheet.dart';
+part 'widgets/color_card.dart';
 
 @RoutePage()
 class HomeScreen extends HookConsumerWidget {

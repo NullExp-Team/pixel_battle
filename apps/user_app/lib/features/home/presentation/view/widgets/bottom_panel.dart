@@ -20,19 +20,16 @@ class _BottomPanel extends HookConsumerWidget {
           const Spacer(),
           Consumer(
             builder: (_, ref, __) {
-              final color = ref.watch(
+              final selectedColor = ref.watch(
                 homeControllerProvider.select((value) => value.selectedColor),
               );
-              return Container(
+
+              return SizedBox(
                 height: 40,
                 width: 40,
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    width: 2,
-                    color: Color.lerp(color, Colors.black, 0.2)!,
-                  ),
+                child: _ColorCard(
+                  color: selectedColor,
+                  onTap: () => _showColorPickerBottomSheet(context: context),
                 ),
               );
             },

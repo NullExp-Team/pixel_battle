@@ -13,8 +13,8 @@ class UserWebSocketApi extends WebSocketApi {
   Raw<Stream<AppResponse>> _build() async* {
     final stream = super.build();
 
-    final userServiceState = ref.watch(userServiceProvider);
-    final userService = ref.watch(userServiceProvider.notifier);
+    final userServiceState = ref.read(userServiceProvider);
+    final userService = ref.read(userServiceProvider.notifier);
 
     if (userServiceState != null) {
       // await userService.auth(nickname: userServiceState.nickname);
