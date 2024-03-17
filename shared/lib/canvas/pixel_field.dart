@@ -8,6 +8,7 @@ import '../shared.dart';
 class PixelField extends ConsumerStatefulWidget {
   const PixelField({
     super.key,
+    this.transformationController,
     required this.selectedPixel,
     required this.onPixelSelectionChanged,
   });
@@ -15,13 +16,15 @@ class PixelField extends ConsumerStatefulWidget {
   final Offset? selectedPixel;
   final Function(Offset?) onPixelSelectionChanged;
 
+  final TransformationController? transformationController;
+
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
 }
 
 class PixelFieldState extends ConsumerState<PixelField> {
-  final TransformationController transformationController =
-      TransformationController();
+  late final TransformationController transformationController =
+      widget.transformationController ?? TransformationController();
 
   bool isFirstBuild = true;
 

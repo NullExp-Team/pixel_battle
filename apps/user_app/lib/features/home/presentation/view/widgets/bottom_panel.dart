@@ -1,7 +1,13 @@
 part of '../home_screen.dart';
 
 class _BottomPanel extends HookConsumerWidget {
-  const _BottomPanel();
+  const _BottomPanel({
+    required this.onZoomIn,
+    required this.onZoomOut,
+  });
+
+  final VoidCallback onZoomIn;
+  final VoidCallback onZoomOut;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
