@@ -1,7 +1,5 @@
 import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shared/canvas/pixel_field.dart';
 
 import '../controller/home_controller.dart';
@@ -19,17 +17,23 @@ class HomeScreen extends HookConsumerWidget {
     final state = ref.watch(homeControllerProvider);
     final controller = ref.watch(homeControllerProvider.notifier);
 
+    final transformationController = useTransformationController();
+
     return AutoUnfocus(
       child: Scaffold(
         body: Stack(
           children: [
             PixelField(
+              transformationController: transformationController,
               selectedPixel: state.selectedPixelPosition,
               onPixelSelectionChanged: controller.updateSelectedPosition,
             ),
-            const Align(
+            Align(
               alignment: Alignment.bottomCenter,
-              child: _BottomPanel(),
+              child: _BottomPanel(
+                onZoomIn: () {},
+                onZoomOut: () {},
+              ),
             ),
           ],
         ),
