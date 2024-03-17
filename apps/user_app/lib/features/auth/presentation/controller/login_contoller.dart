@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:shared/shared.dart';
 
 import '../../../../router/app_router.dart';
 import '../../domain/user_service.dart';
@@ -39,6 +40,22 @@ class LoginContoller extends _$LoginContoller
       () => _userService.auth(nickname: nickname),
       onSuccess: (_) {
         router.replaceAll([const HomeRoute()]);
+      },
+      showErrorToast: false,
+      onError: (error) {
+        final errorStr = switch (error) {
+          InternalError(
+            error: BackendErrorResponse(message: 'Nickname already exists')
+          ) =>
+            'Такой никнейм уже занят',
+          _ => null,
+        };
+
+        if (errorStr != null) {
+          nicknameValidator.setError(errorStr);
+        } else {
+          toast.apiError(error);
+        }
       },
     );
   }

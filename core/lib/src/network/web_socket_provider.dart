@@ -45,8 +45,8 @@ Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
   final client = WebSocketClient(
     WebSocketOptions.common(
       connectionRetryInterval: (
-        max: const Duration(seconds: 10),
-        min: const Duration(milliseconds: 10)
+        max: const Duration(seconds: 1),
+        min: Duration.zero,
       ),
       interceptors: [
         WSInterceptor.wrap(
@@ -71,15 +71,22 @@ Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
 
   await client.connect(_baseUrl);
 
-  ref.onDispose(() {
-    client.close();
+  // ref.onDispose(() {
+  //   client.close();
 
-    logger.log(
-      LogType.info,
-      title: 'WebSocket Metrics',
-      message: client.metrics.toJson(),
-    );
-  });
+  //   logger.log(
+  //     LogType.info,
+  //     title: 'WebSocket Metrics',
+  //     message: client.metrics.toJson(),
+  //   );
+  // });
 
   return client;
+}
+
+extension WebSocketClientX on WebSocketClient {
+  Future<void> reconnect() async {
+    if (state is WebSocketClientState$Open) await disconnect();
+    await connect(_baseUrl);
+  }
 }

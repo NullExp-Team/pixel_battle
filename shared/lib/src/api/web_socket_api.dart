@@ -50,6 +50,21 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
 
     return response as T;
   }
+
+  Future<void> refresh({
+    Duration timeout = const Duration(seconds: 30),
+  }) async {
+    final isInit = ref.read(
+      webSocketClientProvider.select((value) => value.hasValue),
+    );
+
+    // Если не готово, то подключение ещё в процессе и рефреш не нужен
+    if (!isInit) return;
+
+    // ignore: close_sinks
+    final client = await ref.watch(webSocketClientProvider.future);
+    await client.reconnect();
+  }
 }
 
 extension WebSocketApiX on ControllerMixin {
