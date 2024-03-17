@@ -64,6 +64,7 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
               ),
             ],
           ),
+          const Gap(12),
           Consumer(
             builder: (_, ref, __) {
               final selectedColor = ref.watch(

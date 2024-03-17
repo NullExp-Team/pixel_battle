@@ -18,6 +18,9 @@ class _BottomPanel extends HookConsumerWidget {
         color: colors.background,
         border: Border.all(color: colors.divider, strokeAlign: 1),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+        boxShadow: [
+          shadows.shadow,
+        ],
       ),
       padding: pagePadding.copyWith(top: 12, bottom: 36),
       child: Row(
