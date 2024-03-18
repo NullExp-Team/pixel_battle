@@ -45,7 +45,9 @@ class LoginContoller extends _$LoginContoller
       onError: (error) {
         final errorStr = switch (error) {
           InternalError(
-            error: BackendErrorResponse(message: 'Nickname already exists')
+            error: BackendErrorResponse(
+              message: 'Nickname already exists' || 'Nickname already exist'
+            )
           ) =>
             'Такой никнейм уже занят',
           _ => null,
