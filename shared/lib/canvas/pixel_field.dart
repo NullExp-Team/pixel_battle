@@ -160,9 +160,9 @@ class CanvasPainter extends CustomPainter {
   }
 
   void drawImage(Canvas canvas, Size size) {
-    final scale = size.width / image.width;
+    final scale = size.width / (image.width - 1);
     canvas.scale(scale, scale);
-    canvas.drawImage(image, Offset.zero, Paint());
+    canvas.drawImage(image, Offset(-0.5, -0.5), Paint());
     canvas.scale(1 / scale, 1 / scale);
   }
 
