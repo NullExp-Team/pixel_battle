@@ -1,6 +1,9 @@
+import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -160,9 +163,17 @@ class CanvasPainter extends CustomPainter {
   }
 
   void drawImage(Canvas canvas, Size size) {
-    final scale = size.width / (image.width - 1);
+    var width = image.width;
+    var offset = Offset.zero;
+
+    if (!kIsWeb && Platform.isIOS) {
+      width -= 1;
+      offset = const Offset(-0.5, -0.5);
+    }
+
+    final scale = size.width / width;
     canvas.scale(scale, scale);
-    canvas.drawImage(image, Offset(-0.5, -0.5), Paint());
+    canvas.drawImage(image, offset, Paint());
     canvas.scale(1 / scale, 1 / scale);
   }
 
