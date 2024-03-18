@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../shared.dart';
 
@@ -141,7 +142,7 @@ class CanvasPainter extends CustomPainter {
   Offset? selectedPixel;
   late ui.Image image;
 
-  final double minScaleForGrid = 5;
+  final double minScaleForGrid = 4.5;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -159,43 +160,10 @@ class CanvasPainter extends CustomPainter {
   }
 
   void drawImage(Canvas canvas, Size size) {
-    final aspectRatio = image.width / image.height;
-    final paint = Paint();
-
-    canvas.clipRect(
-      Rect.fromLTRB(
-        0,
-        0,
-        size.width,
-        size.width / aspectRatio,
-      ),
-    );
-
-    canvas.drawAtlas(
-      image,
-      [
-        RSTransform.fromComponents(
-          rotation: 0,
-          scale: size.width / image.width,
-          anchorX: 0,
-          anchorY: 0,
-          translateX: 0,
-          translateY: 0,
-        ),
-      ],
-      [
-        Rect.fromLTRB(
-          0,
-          0,
-          size.width,
-          size.width / aspectRatio,
-        ),
-      ],
-      null,
-      null,
-      null,
-      paint,
-    );
+    final scale = size.width / image.width;
+    canvas.scale(scale, scale);
+    canvas.drawImage(image, Offset.zero, Paint());
+    canvas.scale(1 / scale, 1 / scale);
   }
 
   void drawGrid(Canvas canvas, Size size, double scaleFactor) {
