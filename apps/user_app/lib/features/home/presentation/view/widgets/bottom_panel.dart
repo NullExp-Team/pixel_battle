@@ -26,6 +26,32 @@ class _BottomPanel extends HookConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 40,
+            child: AppButton.outline(
+              text: '-',
+              padding: EdgeInsets.zero,
+              isExtended: false,
+              borderRadius: const BorderRadius.horizontal(
+                left: Radius.circular(12),
+              ),
+              showLoading: false,
+              onTap: onZoomOut,
+            ),
+          ),
+          SizedBox(
+            height: 40,
+            child: AppButton.outline(
+              text: '+',
+              padding: EdgeInsets.zero,
+              isExtended: false,
+              borderRadius: const BorderRadius.horizontal(
+                right: Radius.circular(12),
+              ),
+              showLoading: false,
+              onTap: onZoomIn,
+            ),
+          ),
           const Spacer(),
           Consumer(
             builder: (_, ref, __) {
