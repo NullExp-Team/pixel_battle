@@ -9,14 +9,19 @@ class PixelField extends ConsumerStatefulWidget {
   const PixelField({
     super.key,
     this.transformationController,
+    required this.maxScale,
+    required this.minScale,
     required this.selectedPixel,
     required this.onPixelSelectionChanged,
   });
 
+  final TransformationController? transformationController;
+
+  final double maxScale;
+  final double minScale;
+
   final Offset? selectedPixel;
   final Function(Offset?) onPixelSelectionChanged;
-
-  final TransformationController? transformationController;
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
@@ -81,15 +86,19 @@ class PixelFieldState extends ConsumerState<PixelField> {
             maxScale: 100,
             minScale: 1,
             boundaryMargin: boundaryMargin(image),
-            onInteractionUpdate: (_) => setState(() {}),
-            onInteractionEnd: (_) => setState(() {}),
-            child: CustomPaint(
-              size: MediaQuery.of(context).size,
-              painter: CanvasPainter(
-                scale: scale,
-                selectedPixel: widget.selectedPixel,
-                image: image,
-              ),
+            child: HookBuilder(
+              builder: (context) {
+                useListenable(transformationController);
+
+                return CustomPaint(
+                  size: MediaQuery.of(context).size,
+                  painter: CanvasPainter(
+                    scale: scale,
+                    selectedPixel: widget.selectedPixel,
+                    image: image,
+                  ),
+                );
+              },
             ),
           ),
         );

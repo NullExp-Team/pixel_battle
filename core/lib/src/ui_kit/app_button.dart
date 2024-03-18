@@ -52,6 +52,7 @@ class AppButton extends HookWidget {
     this.isLoading = false,
     this.isDisabled = false,
     this.padding,
+    this.borderRadius,
     this.leftIcon,
     super.key,
   }) : _style = _Style.fill;
@@ -65,6 +66,7 @@ class AppButton extends HookWidget {
     this.isLoading = false,
     this.isDisabled = false,
     this.padding,
+    this.borderRadius,
     this.leftIcon,
     super.key,
   }) : _style = _Style.outline;
@@ -78,6 +80,7 @@ class AppButton extends HookWidget {
     this.isLoading = false,
     this.isDisabled = false,
     this.padding,
+    this.borderRadius,
     this.leftIcon,
     super.key,
   }) : _style = _Style.text;
@@ -91,6 +94,7 @@ class AppButton extends HookWidget {
   final bool isDisabled;
 
   final EdgeInsetsGeometry? padding;
+  final BorderRadius? borderRadius;
   final Widget? leftIcon;
 
   final _Style _style;
@@ -165,7 +169,7 @@ class AppButton extends HookWidget {
             surfaceTintColor: Colors.transparent,
             shadowColor: Colors.transparent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: borderRadius ?? BorderRadius.circular(12),
               side: switch (_style) {
                 _Style.outline => BorderSide(color: colors.divider),
                 _Style.fill || _Style.text => BorderSide.none,
