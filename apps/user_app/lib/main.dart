@@ -14,7 +14,7 @@ import 'router/app_router_create_fn.dart';
 void main() {
   FlavorManager.initial(FlavorType.develop);
 
-  const splashDuration = Duration(milliseconds: 2000);
+  const splashDuration = Duration(milliseconds: 5000);
 
   final widgetConfiguration = WidgetConfiguration(
     child: ProviderScope(
