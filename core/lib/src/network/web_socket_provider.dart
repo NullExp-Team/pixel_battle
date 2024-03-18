@@ -2,7 +2,7 @@ import '../../core.dart';
 
 part 'web_socket_provider.g.dart';
 
-const _baseUrl = 'ws://10.0.2.2:8000/ws/';
+const _baseUrl = 'ws://pixel-battle.k-lab.su/ws/';
 
 // @Riverpod(keepAlive: true)
 // Future<WebSocketChannel> webSocketChannel(WebSocketChannelRef ref) async {
