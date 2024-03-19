@@ -2,6 +2,8 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
+import '../view/home_screen.dart';
+
 part 'home_controller.freezed.dart';
 part 'home_controller.g.dart';
 
@@ -18,7 +20,7 @@ class HomeControllerState with _$HomeControllerState {
 class HomeController extends _$HomeController with ControllerMixin {
   @override
   HomeControllerState build() => HomeControllerState(
-        selectedColor: Colors.red,
+        selectedColor: pixelAvailableColors.first,
         selectedPixelPosition: null,
         untilFill: Duration.zero,
       );
@@ -29,7 +31,12 @@ class HomeController extends _$HomeController with ControllerMixin {
     state = state.copyWith(selectedColor: color);
   }
 
-  void updateSelectedPosition(Offset? position) {
+  Future<void> updateSelectedPosition(Offset position) async {
+    if (position == state.selectedPixelPosition) {
+      await fillPixel();
+      state = state.copyWith(selectedPixelPosition: null);
+      return;
+    }
     state = state.copyWith(selectedPixelPosition: position);
   }
 
@@ -50,7 +57,7 @@ class HomeController extends _$HomeController with ControllerMixin {
         ),
       ),
       rateLimiter: Throttle(
-        duration: const Duration(seconds: 3),
+        // duration: const Duration(seconds: 1),
         onTickCooldown: (remainingTime) => state = state.copyWith(
           untilFill: remainingTime,
         ),

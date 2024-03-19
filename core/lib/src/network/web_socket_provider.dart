@@ -9,9 +9,10 @@ Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
   final client = WebSocketClient(
     WebSocketOptions.common(
       connectionRetryInterval: (
-        max: const Duration(seconds: 1),
-        min: Duration.zero,
+        max: const Duration(seconds: 10),
+        min: const Duration(seconds: 1),
       ),
+      timeout: const Duration(seconds: 15),
       interceptors: [
         WSInterceptor.wrap(
           onMessage: (data) {
@@ -33,17 +34,14 @@ Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
     ),
   );
 
+  client.stateChanges.listen((value) {
+    logger.log(
+      Log.info,
+      message: value.toString(),
+    );
+  });
+
   await client.connect(_baseUrl);
-
-  // ref.onDispose(() {
-  //   client.close();
-
-  //   logger.log(
-  //     LogType.info,
-  //     title: 'WebSocket Metrics',
-  //     message: client.metrics.toJson(),
-  //   );
-  // });
 
   return client;
 }

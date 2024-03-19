@@ -32,7 +32,7 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
     for (var y = 0; y < width; y++) {
       for (var x = 0; x < height; x++) {
         final index = y * width + x;
-        pixels[index] = AppColors.light.backgroundMinor.value;
+        pixels[index] = 0xFFFFFFFF;
       }
     }
 
