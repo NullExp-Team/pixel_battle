@@ -10,6 +10,10 @@ import '../controller/home_controller.dart';
 part 'widgets/bottom_panel.dart';
 part 'widgets/color_picker_bottom_sheet.dart';
 part 'widgets/color_card.dart';
+part 'widgets/zoom_buttons.dart';
+
+const minScale = 1.0;
+const maxScale = 100.0;
 
 @RoutePage()
 class HomeScreen extends HookConsumerWidget {
@@ -21,47 +25,6 @@ class HomeScreen extends HookConsumerWidget {
     final controller = ref.watch(homeControllerProvider.notifier);
 
     final transformationController = useTransformationController();
-
-    final animationController = useAnimationController(
-      duration: const Duration(milliseconds: 150),
-    );
-
-    const minScale = 1.0;
-    const maxScale = 100.0;
-
-    Future<void> animateZoom(double scaleFactor) async {
-      animationController.reset();
-
-      final beginMatrix = transformationController.value;
-
-      final curScale = beginMatrix.getMaxScaleOnAxis();
-
-      if (curScale * scaleFactor > maxScale) {
-        scaleFactor = maxScale / curScale;
-      } else if (curScale * scaleFactor < minScale) {
-        scaleFactor = minScale / curScale;
-      }
-
-      final endMatrix = _calculateZoomMatrix(
-        matrix4: beginMatrix,
-        size: MediaQuery.sizeOf(context),
-        scaleFactor: scaleFactor,
-      );
-
-      final animation =
-          Matrix4Tween(begin: beginMatrix, end: endMatrix).animate(
-        CurvedAnimation(
-          parent: animationController,
-          curve: Curves.easeInOut,
-        ),
-      );
-
-      void listener() => transformationController.value = animation.value;
-
-      animation.addListener(listener);
-      await animationController.forward();
-      animation.removeListener(listener);
-    }
 
     return AutoUnfocus(
       child: Scaffold(
@@ -78,8 +41,7 @@ class HomeScreen extends HookConsumerWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: _BottomPanel(
-                onZoomIn: () => animateZoom(2),
-                onZoomOut: () => animateZoom(0.5),
+                transformationController: transformationController,
               ),
             ),
           ],
@@ -87,32 +49,4 @@ class HomeScreen extends HookConsumerWidget {
       ),
     );
   }
-}
-
-Matrix4 _calculateZoomMatrix({
-  required Matrix4 matrix4,
-  required Size size,
-  required double scaleFactor,
-}) {
-  final value = matrix4.clone();
-
-  final translation = value.getTranslation();
-
-  final centerVector = vector_math_64.Vector3(
-    size.width / 2,
-    size.height / 2,
-    0,
-  );
-
-  translation
-    ..sub(centerVector)
-    ..scale(scaleFactor)
-    ..add(centerVector);
-
-  value
-    ..setTranslation(translation)
-    ..scale(scaleFactor, scaleFactor)
-    ..setTranslation(translation);
-
-  return value;
 }

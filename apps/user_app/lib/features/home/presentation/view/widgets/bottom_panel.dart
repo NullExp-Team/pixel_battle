@@ -2,12 +2,10 @@ part of '../home_screen.dart';
 
 class _BottomPanel extends HookConsumerWidget {
   const _BottomPanel({
-    required this.onZoomIn,
-    required this.onZoomOut,
+    required this.transformationController,
   });
 
-  final VoidCallback onZoomIn;
-  final VoidCallback onZoomOut;
+  final TransformationController transformationController;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,31 +24,8 @@ class _BottomPanel extends HookConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: 40,
-            child: AppButton.outline(
-              text: '-',
-              padding: EdgeInsets.zero,
-              isExtended: false,
-              borderRadius: const BorderRadius.horizontal(
-                left: Radius.circular(12),
-              ),
-              showLoading: false,
-              onTap: onZoomOut,
-            ),
-          ),
-          SizedBox(
-            height: 40,
-            child: AppButton.outline(
-              text: '+',
-              padding: EdgeInsets.zero,
-              isExtended: false,
-              borderRadius: const BorderRadius.horizontal(
-                right: Radius.circular(12),
-              ),
-              showLoading: false,
-              onTap: onZoomIn,
-            ),
+          _ZoomButtons(
+            transformationController: transformationController,
           ),
           const Spacer(),
           Consumer(
