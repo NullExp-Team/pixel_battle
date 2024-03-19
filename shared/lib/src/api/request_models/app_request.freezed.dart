@@ -18,6 +18,8 @@ AppRequest _$AppRequestFromJson(Map<String, dynamic> json) {
   switch (json['type']) {
     case 'login':
       return LoginRequest.fromJson(json);
+    case 'login_admin':
+      return LoginAdminRequest.fromJson(json);
     case 'get_field_state':
       return GetFieldStateRequest.fromJson(json);
     case 'update_pixel':
@@ -44,36 +46,39 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) =>
@@ -81,6 +86,7 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -93,6 +99,7 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -105,6 +112,7 @@ mixin _$AppRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -219,12 +227,13 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return login(data);
@@ -234,12 +243,13 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return login?.call(data);
@@ -249,12 +259,13 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -268,6 +279,7 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -283,6 +295,7 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -298,6 +311,7 @@ class _$LoginRequestImpl implements LoginRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -330,6 +344,200 @@ abstract class LoginRequest implements AppRequest {
   LoginData get data;
   @JsonKey(ignore: true)
   _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoginAdminRequestImplCopyWith<$Res> {
+  factory _$$LoginAdminRequestImplCopyWith(_$LoginAdminRequestImpl value,
+          $Res Function(_$LoginAdminRequestImpl) then) =
+      __$$LoginAdminRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$LoginAdminRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$LoginAdminRequestImpl>
+    implements _$$LoginAdminRequestImplCopyWith<$Res> {
+  __$$LoginAdminRequestImplCopyWithImpl(_$LoginAdminRequestImpl _value,
+      $Res Function(_$LoginAdminRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$LoginAdminRequestImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LoginAdminRequestImpl implements LoginAdminRequest {
+  _$LoginAdminRequestImpl(this.data, {final String? $type})
+      : $type = $type ?? 'login_admin';
+
+  factory _$LoginAdminRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoginAdminRequestImplFromJson(json);
+
+  @override
+  final String data;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppRequest.loginAdmin(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginAdminRequestImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginAdminRequestImplCopyWith<_$LoginAdminRequestImpl> get copyWith =>
+      __$$LoginAdminRequestImplCopyWithImpl<_$LoginAdminRequestImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
+    required TResult Function() getFieldState,
+    required TResult Function(UpdatePixelData data) updatePixel,
+    required TResult Function(UpdatePixelData data) updatePixelAdmin,
+    required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
+    required TResult Function() disconnect,
+  }) {
+    return loginAdmin(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
+    TResult? Function()? getFieldState,
+    TResult? Function(UpdatePixelData data)? updatePixel,
+    TResult? Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
+    TResult? Function()? disconnect,
+  }) {
+    return loginAdmin?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
+    TResult Function()? getFieldState,
+    TResult Function(UpdatePixelData data)? updatePixel,
+    TResult Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
+    TResult Function()? disconnect,
+    required TResult orElse(),
+  }) {
+    if (loginAdmin != null) {
+      return loginAdmin(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
+    required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
+    required TResult Function(BanUserAdminRequest value) banUserAdmin,
+    required TResult Function(ResetGameAdminRequest value) resetGameAdmin,
+    required TResult Function(DisconnectRequest value) disconnect,
+  }) {
+    return loginAdmin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult? Function(BanUserAdminRequest value)? banUserAdmin,
+    TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult? Function(DisconnectRequest value)? disconnect,
+  }) {
+    return loginAdmin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult Function(BanUserAdminRequest value)? banUserAdmin,
+    TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult Function(DisconnectRequest value)? disconnect,
+    required TResult orElse(),
+  }) {
+    if (loginAdmin != null) {
+      return loginAdmin(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoginAdminRequestImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class LoginAdminRequest implements AppRequest {
+  factory LoginAdminRequest(final String data) = _$LoginAdminRequestImpl;
+
+  factory LoginAdminRequest.fromJson(Map<String, dynamic> json) =
+      _$LoginAdminRequestImpl.fromJson;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$LoginAdminRequestImplCopyWith<_$LoginAdminRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -381,12 +589,13 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return getFieldState();
@@ -396,12 +605,13 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return getFieldState?.call();
@@ -411,12 +621,13 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -430,6 +641,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -445,6 +657,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -460,6 +673,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -574,12 +788,13 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return updatePixel(data);
@@ -589,12 +804,13 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return updatePixel?.call(data);
@@ -604,12 +820,13 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -623,6 +840,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -638,6 +856,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -653,6 +872,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -775,12 +995,13 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return updatePixelAdmin(data);
@@ -790,12 +1011,13 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return updatePixelAdmin?.call(data);
@@ -805,12 +1027,13 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -824,6 +1047,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -839,6 +1063,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -854,6 +1079,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -975,12 +1201,13 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return pixelInfoAdmin(data);
@@ -990,12 +1217,13 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return pixelInfoAdmin?.call(data);
@@ -1005,12 +1233,13 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -1024,6 +1253,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -1039,6 +1269,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1054,6 +1285,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1095,6 +1327,10 @@ abstract class _$$BanUserAdminRequestImplCopyWith<$Res> {
   factory _$$BanUserAdminRequestImplCopyWith(_$BanUserAdminRequestImpl value,
           $Res Function(_$BanUserAdminRequestImpl) then) =
       __$$BanUserAdminRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BanUserAdminData data});
+
+  $BanUserAdminDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1104,81 +1340,116 @@ class __$$BanUserAdminRequestImplCopyWithImpl<$Res>
   __$$BanUserAdminRequestImplCopyWithImpl(_$BanUserAdminRequestImpl _value,
       $Res Function(_$BanUserAdminRequestImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$BanUserAdminRequestImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BanUserAdminData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BanUserAdminDataCopyWith<$Res> get data {
+    return $BanUserAdminDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
-  _$BanUserAdminRequestImpl({final String? $type})
+  _$BanUserAdminRequestImpl(this.data, {final String? $type})
       : $type = $type ?? 'ban_user_admin';
 
   factory _$BanUserAdminRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$BanUserAdminRequestImplFromJson(json);
+
+  @override
+  final BanUserAdminData data;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'AppRequest.banUserAdmin()';
+    return 'AppRequest.banUserAdmin(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BanUserAdminRequestImpl);
+            other is _$BanUserAdminRequestImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BanUserAdminRequestImplCopyWith<_$BanUserAdminRequestImpl> get copyWith =>
+      __$$BanUserAdminRequestImplCopyWithImpl<_$BanUserAdminRequestImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
-    return banUserAdmin();
+    return banUserAdmin(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
-    return banUserAdmin?.call();
+    return banUserAdmin?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
     if (banUserAdmin != null) {
-      return banUserAdmin();
+      return banUserAdmin(data);
     }
     return orElse();
   }
@@ -1187,6 +1458,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -1202,6 +1474,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1217,6 +1490,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1241,10 +1515,16 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
 }
 
 abstract class BanUserAdminRequest implements AppRequest {
-  factory BanUserAdminRequest() = _$BanUserAdminRequestImpl;
+  factory BanUserAdminRequest(final BanUserAdminData data) =
+      _$BanUserAdminRequestImpl;
 
   factory BanUserAdminRequest.fromJson(Map<String, dynamic> json) =
       _$BanUserAdminRequestImpl.fromJson;
+
+  BanUserAdminData get data;
+  @JsonKey(ignore: true)
+  _$$BanUserAdminRequestImplCopyWith<_$BanUserAdminRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1253,6 +1533,8 @@ abstract class _$$ResetGameAdminRequestImplCopyWith<$Res> {
           _$ResetGameAdminRequestImpl value,
           $Res Function(_$ResetGameAdminRequestImpl) then) =
       __$$ResetGameAdminRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<int> data});
 }
 
 /// @nodoc
@@ -1262,81 +1544,115 @@ class __$$ResetGameAdminRequestImplCopyWithImpl<$Res>
   __$$ResetGameAdminRequestImplCopyWithImpl(_$ResetGameAdminRequestImpl _value,
       $Res Function(_$ResetGameAdminRequestImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$ResetGameAdminRequestImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<int>,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
-  _$ResetGameAdminRequestImpl({final String? $type})
-      : $type = $type ?? 'reset_game_admin';
+  _$ResetGameAdminRequestImpl(final List<int> data, {final String? $type})
+      : _data = data,
+        $type = $type ?? 'reset_game_admin';
 
   factory _$ResetGameAdminRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$ResetGameAdminRequestImplFromJson(json);
+
+  final List<int> _data;
+  @override
+  List<int> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'AppRequest.resetGameAdmin()';
+    return 'AppRequest.resetGameAdmin(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResetGameAdminRequestImpl);
+            other is _$ResetGameAdminRequestImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ResetGameAdminRequestImplCopyWith<_$ResetGameAdminRequestImpl>
+      get copyWith => __$$ResetGameAdminRequestImplCopyWithImpl<
+          _$ResetGameAdminRequestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
-    return resetGameAdmin();
+    return resetGameAdmin(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
-    return resetGameAdmin?.call();
+    return resetGameAdmin?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
     if (resetGameAdmin != null) {
-      return resetGameAdmin();
+      return resetGameAdmin(data);
     }
     return orElse();
   }
@@ -1345,6 +1661,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -1360,6 +1677,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1375,6 +1693,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1399,10 +1718,16 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
 }
 
 abstract class ResetGameAdminRequest implements AppRequest {
-  factory ResetGameAdminRequest() = _$ResetGameAdminRequestImpl;
+  factory ResetGameAdminRequest(final List<int> data) =
+      _$ResetGameAdminRequestImpl;
 
   factory ResetGameAdminRequest.fromJson(Map<String, dynamic> json) =
       _$ResetGameAdminRequestImpl.fromJson;
+
+  List<int> get data;
+  @JsonKey(ignore: true)
+  _$$ResetGameAdminRequestImplCopyWith<_$ResetGameAdminRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1452,12 +1777,13 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
-    required TResult Function() banUserAdmin,
-    required TResult Function() resetGameAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
     required TResult Function() disconnect,
   }) {
     return disconnect();
@@ -1467,12 +1793,13 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult? Function()? banUserAdmin,
-    TResult? Function()? resetGameAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
     TResult? Function()? disconnect,
   }) {
     return disconnect?.call();
@@ -1482,12 +1809,13 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
-    TResult Function()? banUserAdmin,
-    TResult Function()? resetGameAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
     TResult Function()? disconnect,
     required TResult orElse(),
   }) {
@@ -1501,6 +1829,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
@@ -1516,6 +1845,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
@@ -1531,6 +1861,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,

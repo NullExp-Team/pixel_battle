@@ -90,6 +90,20 @@ Map<String, dynamic> _$$PixelUpdateResponseImplToJson(
       'type': instance.$type,
     };
 
+_$PixelInfoAdminResponseImpl _$$PixelInfoAdminResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PixelInfoAdminResponseImpl(
+      PixelInfoAdmin.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$PixelInfoAdminResponseImplToJson(
+        _$PixelInfoAdminResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data.toJson(),
+      'type': instance.$type,
+    };
+
 _$OnlineCountResponseImpl _$$OnlineCountResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$OnlineCountResponseImpl(
