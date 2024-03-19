@@ -153,7 +153,8 @@ class AppButton extends HookWidget {
             },
             backgroundColor: switch (_style) {
               _Style.fill => colors.text,
-              _Style.outline || _Style.text => Colors.transparent,
+              _Style.outline => colors.background,
+              _Style.text => Colors.transparent,
             },
             disabledBackgroundColor: switch (_style) {
               _Style.fill => colors.textMinor,

@@ -21,8 +21,12 @@ class LoginContoller extends _$LoginContoller
 
   @override
   LoginContollerState build() {
+    final nickname = ref.read(
+      userServiceProvider.select((value) => value?.nickname ?? ''),
+    );
+
     return LoginContollerState(
-      nickname: '',
+      nickname: nickname,
     );
   }
 
