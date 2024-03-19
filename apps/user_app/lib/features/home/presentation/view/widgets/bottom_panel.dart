@@ -22,7 +22,7 @@ class _BottomPanel extends HookConsumerWidget {
           shadows.shadow,
         ],
       ),
-      padding: pagePadding.copyWith(top: 12, bottom: 36),
+      padding: pagePadding.copyWith(top: 12, bottom: 100),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

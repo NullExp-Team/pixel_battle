@@ -25,7 +25,7 @@ class PixelField extends ConsumerStatefulWidget {
   final double minScale;
 
   final Offset? selectedPixel;
-  final Function(Offset?) onPixelSelectionChanged;
+  final Function(Offset) onPixelSelectionChanged;
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
@@ -78,11 +78,7 @@ class PixelFieldState extends ConsumerState<PixelField> {
               image.width.toDouble(),
               image.height.toDouble(),
             ).contains(position)) {
-              if (widget.selectedPixel == position) {
-                widget.onPixelSelectionChanged(null);
-              } else {
-                widget.onPixelSelectionChanged(position);
-              }
+              widget.onPixelSelectionChanged(position);
             }
           },
           child: InteractiveViewer(
@@ -98,6 +94,7 @@ class PixelFieldState extends ConsumerState<PixelField> {
                   size: MediaQuery.of(context).size,
                   painter: CanvasPainter(
                     scale: scale,
+                    gridColor: context.colors.divider,
                     selectedPixel: widget.selectedPixel,
                     image: image,
                   ),
@@ -139,13 +136,19 @@ class PixelFieldState extends ConsumerState<PixelField> {
 }
 
 class CanvasPainter extends CustomPainter {
-  CanvasPainter({required this.scale, this.selectedPixel, required this.image});
+  CanvasPainter({
+    this.selectedPixel,
+    required this.scale,
+    required this.gridColor,
+    required this.image,
+  });
 
-  double scale;
-  Offset? selectedPixel;
-  late ui.Image image;
+  final Offset? selectedPixel;
+  final double scale;
+  final Color gridColor;
+  final ui.Image image;
 
-  final double minScaleForGrid = 4.5;
+  final double minScaleForGrid = 6;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -180,7 +183,7 @@ class CanvasPainter extends CustomPainter {
   void drawGrid(Canvas canvas, Size size, double scaleFactor) {
     final strokeWidth = 1 / scale;
     final gridPaint = Paint();
-    gridPaint.color = Colors.white.withOpacity(1);
+    gridPaint.color = gridColor;
     gridPaint.strokeWidth = strokeWidth;
     gridPaint.style = PaintingStyle.stroke;
 

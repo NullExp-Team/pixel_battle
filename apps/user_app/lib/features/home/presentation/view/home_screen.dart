@@ -65,6 +65,7 @@ class HomeScreen extends HookConsumerWidget {
 
     return AutoUnfocus(
       child: Scaffold(
+        backgroundColor: colors.backgroundMinor,
         body: Stack(
           children: [
             PixelField(
@@ -77,7 +78,7 @@ class HomeScreen extends HookConsumerWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: _BottomPanel(
-                onZoomIn: () => animateZoom(1.5),
+                onZoomIn: () => animateZoom(2),
                 onZoomOut: () => animateZoom(0.5),
               ),
             ),

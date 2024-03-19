@@ -79,9 +79,9 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
                 ),
                 shrinkWrap: true,
                 primary: false,
-                itemCount: _availableColors.length,
+                itemCount: pixelAvailableColors.length,
                 itemBuilder: (context, index) {
-                  final color = _availableColors[index];
+                  final color = pixelAvailableColors[index];
                   return _ColorCard(
                     color: color,
                     isSelected: color == selectedColor,
@@ -104,7 +104,7 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
   }
 }
 
-final _availableColors = [
+final pixelAvailableColors = [
   const Color(0xFFad253d),
   const Color(0xFFf6aa3a),
   const Color(0xFFeb5427),
