@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AdminControllerState {
   Offset? get selectedPixelPosition => throw _privateConstructorUsedError;
+  bool get isLogined => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AdminControllerStateCopyWith<AdminControllerState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $AdminControllerStateCopyWith<$Res> {
           $Res Function(AdminControllerState) then) =
       _$AdminControllerStateCopyWithImpl<$Res, AdminControllerState>;
   @useResult
-  $Res call({Offset? selectedPixelPosition});
+  $Res call({Offset? selectedPixelPosition, bool isLogined});
 }
 
 /// @nodoc
@@ -47,12 +48,17 @@ class _$AdminControllerStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? selectedPixelPosition = freezed,
+    Object? isLogined = null,
   }) {
     return _then(_value.copyWith(
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
+      isLogined: null == isLogined
+          ? _value.isLogined
+          : isLogined // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -65,7 +71,7 @@ abstract class _$$AdminControllerStateImplCopyWith<$Res>
       __$$AdminControllerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Offset? selectedPixelPosition});
+  $Res call({Offset? selectedPixelPosition, bool isLogined});
 }
 
 /// @nodoc
@@ -80,12 +86,17 @@ class __$$AdminControllerStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedPixelPosition = freezed,
+    Object? isLogined = null,
   }) {
     return _then(_$AdminControllerStateImpl(
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
+      isLogined: null == isLogined
+          ? _value.isLogined
+          : isLogined // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -93,14 +104,17 @@ class __$$AdminControllerStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AdminControllerStateImpl implements _AdminControllerState {
-  _$AdminControllerStateImpl({required this.selectedPixelPosition});
+  _$AdminControllerStateImpl(
+      {required this.selectedPixelPosition, required this.isLogined});
 
   @override
   final Offset? selectedPixelPosition;
+  @override
+  final bool isLogined;
 
   @override
   String toString() {
-    return 'AdminControllerState(selectedPixelPosition: $selectedPixelPosition)';
+    return 'AdminControllerState(selectedPixelPosition: $selectedPixelPosition, isLogined: $isLogined)';
   }
 
   @override
@@ -109,11 +123,14 @@ class _$AdminControllerStateImpl implements _AdminControllerState {
         (other.runtimeType == runtimeType &&
             other is _$AdminControllerStateImpl &&
             (identical(other.selectedPixelPosition, selectedPixelPosition) ||
-                other.selectedPixelPosition == selectedPixelPosition));
+                other.selectedPixelPosition == selectedPixelPosition) &&
+            (identical(other.isLogined, isLogined) ||
+                other.isLogined == isLogined));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedPixelPosition);
+  int get hashCode =>
+      Object.hash(runtimeType, selectedPixelPosition, isLogined);
 
   @JsonKey(ignore: true)
   @override
@@ -126,11 +143,13 @@ class _$AdminControllerStateImpl implements _AdminControllerState {
 
 abstract class _AdminControllerState implements AdminControllerState {
   factory _AdminControllerState(
-          {required final Offset? selectedPixelPosition}) =
-      _$AdminControllerStateImpl;
+      {required final Offset? selectedPixelPosition,
+      required final bool isLogined}) = _$AdminControllerStateImpl;
 
   @override
   Offset? get selectedPixelPosition;
+  @override
+  bool get isLogined;
   @override
   @JsonKey(ignore: true)
   _$$AdminControllerStateImplCopyWith<_$AdminControllerStateImpl>

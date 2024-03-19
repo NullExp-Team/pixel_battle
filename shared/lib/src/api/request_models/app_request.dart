@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 
+import 'ban_user_admin_data.dart';
 import 'login_data.dart';
 import 'pixel_info_admin_data.dart';
 import 'update_pixel_data.dart';
@@ -11,6 +12,8 @@ part 'app_request.g.dart';
 sealed class AppRequest with _$AppRequest {
   factory AppRequest.login(LoginData data) = LoginRequest;
 
+  factory AppRequest.loginAdmin(String data) = LoginAdminRequest;
+
   factory AppRequest.getFieldState() = GetFieldStateRequest;
 
   factory AppRequest.updatePixel(UpdatePixelData data) = UpdatePixelRequest;
@@ -21,9 +24,9 @@ sealed class AppRequest with _$AppRequest {
   factory AppRequest.pixelInfoAdmin(PixelInfoAdminData data) =
       PixelInfoAdminRequest;
 
-  factory AppRequest.banUserAdmin() = BanUserAdminRequest;
+  factory AppRequest.banUserAdmin(BanUserAdminData data) = BanUserAdminRequest;
 
-  factory AppRequest.resetGameAdmin() = ResetGameAdminRequest;
+  factory AppRequest.resetGameAdmin(List<int> data) = ResetGameAdminRequest;
 
   factory AppRequest.disconnect() = DisconnectRequest;
 

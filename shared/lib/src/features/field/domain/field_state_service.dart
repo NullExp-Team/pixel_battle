@@ -55,45 +55,6 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
 
     ref.onDispose(sub.cancel);
 
-    // Mock Start
-
-    // final colors = [Colors.red, Colors.yellow, Colors.blue, Colors.green];
-    // await Future.delayed(const Duration(milliseconds: 800));
-    // const width = 64;
-    // const height = 64;
-    // final fieldStateStream = Stream<FieldStateResponse>.value(
-    //   FieldStateResponse(
-    //     size: [width, height],
-    //     data: [
-    //       for (int x = 0; x < width; x++)
-    //         for (int y = 0; y < height; y++)
-    //           FieldPixel(x: x, y: y, color: colors[(x + y) % 4], nickname: ''),
-    //     ],
-    //   ),
-    // );
-
-    // final rand = Random();
-    // final timer = Timer.periodic(const Duration(milliseconds: 3000), (timer) {
-    //   final map = state.valueOrNull;
-    //   if (map != null) {
-    //     final x = rand.nextInt(map.width);
-    //     final y = rand.nextInt(map.height);
-    //     api.request<NoResponse>(
-    //       UpdatePixelRequest(
-    //         UpdatePixelData(
-    //           x: x,
-    //           y: y,
-    //           color: Colors.red,
-    //         ),
-    //       ),
-    //     );
-    //   }
-    // });
-
-    // ref.onDispose(timer.cancel);
-
-    // Mock End
-
     unawaited(
       Future(() => api.request<NoResponse>(GetFieldStateRequest())),
     );
