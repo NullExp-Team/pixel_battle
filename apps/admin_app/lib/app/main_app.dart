@@ -1,8 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shared/canvas/pixel_field.dart';
-import 'package:shared/shared.dart';
 
 import 'controller/admin_controller.dart';
 import 'view/admin_screen.dart';
