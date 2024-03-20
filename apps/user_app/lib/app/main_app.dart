@@ -1,9 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:shared/shared.dart';
-
-import '../features/auth/presentation/view/login_screen.dart';
 import '../router/app_router_config_provider.dart';
 
 // import '../router/app_router_config_provider.dart';
