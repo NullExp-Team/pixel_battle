@@ -83,16 +83,16 @@ class PixelFieldState extends ConsumerState<PixelField> {
                   widget.onPixelSelectionChanged(position);
                 }
               },
-              child: InteractiveViewer(
-                transformationController: transformationController,
-                maxScale: widget.maxScale,
-                minScale: widget.minScale,
-                boundaryMargin: boundaryMargin(image, size),
-                child: HookBuilder(
-                  builder: (context) {
-                    useListenable(transformationController);
+              child: HookBuilder(
+                builder: (context) {
+                  useListenable(transformationController);
 
-                    return CustomPaint(
+                  return InteractiveViewer(
+                    transformationController: transformationController,
+                    maxScale: widget.maxScale,
+                    minScale: widget.minScale,
+                    boundaryMargin: boundaryMargin(image, size),
+                    child: CustomPaint(
                       size: size,
                       painter: CanvasPainter(
                         scale: scale,
@@ -100,9 +100,9 @@ class PixelFieldState extends ConsumerState<PixelField> {
                         selectedPixel: widget.selectedPixel,
                         image: image,
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             );
           },
