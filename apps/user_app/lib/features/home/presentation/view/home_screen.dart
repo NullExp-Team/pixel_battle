@@ -18,6 +18,7 @@ part 'widgets/color_card.dart';
 part 'widgets/zoom_buttons.dart';
 part 'widgets/exit_button.dart';
 part 'widgets/online_count.dart';
+part 'widgets/connection_status.dart';
 
 part 'home_screen.g.dart';
 
