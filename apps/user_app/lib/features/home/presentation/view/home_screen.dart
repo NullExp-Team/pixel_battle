@@ -4,7 +4,6 @@ import 'dart:async';
 
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:shared/canvas/pixel_field.dart';
 import 'package:shared/shared.dart';
 // ignore: depend_on_referenced_packages
 import 'package:vector_math/vector_math_64.dart' as vector_math_64;
@@ -22,7 +21,7 @@ part 'widgets/connection_status.dart';
 
 part 'home_screen.g.dart';
 
-const minScale = 1.0;
+const minScale = 0.5;
 const maxScale = 100.0;
 
 @RoutePage()
@@ -55,16 +54,14 @@ class HomeScreen extends HookConsumerWidget {
               ),
             ),
             const Positioned(
+              top: 40,
               left: 20,
-              child: SafeArea(
-                child: _ExitButton(),
-              ),
+              child: _ExitButton(),
             ),
             const Positioned(
+              top: 40,
               right: 20,
-              child: SafeArea(
-                child: _OnlineCount(),
-              ),
+              child: _OnlineCount(),
             ),
           ],
         ),
