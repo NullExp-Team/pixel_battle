@@ -21,8 +21,8 @@ part 'widgets/connection_status.dart';
 
 part 'home_screen.g.dart';
 
-const minScale = 0.5;
-const maxScale = 100.0;
+const minScale = 0.75;
+const maxScale = 25.0;
 
 @RoutePage()
 class HomeScreen extends HookConsumerWidget {
