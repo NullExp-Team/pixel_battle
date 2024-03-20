@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'api/user_web_socket_client.dart';
 import 'app/app_splash.dart';
 import 'app/main_app.dart';
+import 'firebase_options.dart';
 import 'router/app_router_create_fn.dart';
 
 void main() {
@@ -41,6 +42,9 @@ void main() {
                 [
                   PersistenceStorage.init(HivePersistenceStorage.build()),
                   ref.read(sharedPreferencesProvider.future),
+                  Firebase.initializeApp(
+                    options: DefaultFirebaseOptions.currentPlatform,
+                  ),
                   Future.delayed(splashDuration),
                 ],
               );

@@ -24,5 +24,7 @@ export 'dart:async' show FutureOr;
 export 'package:rxdart/rxdart.dart';
 export 'package:ws/ws.dart';
 
+export 'package:firebase_core/firebase_core.dart';
+
 // Core
 export 'src/export.dart';
