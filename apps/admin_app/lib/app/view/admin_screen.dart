@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
 import '../controller/admin_controller.dart';
-import 'widgets/action_panel.dart';
+
+part 'widgets/action_panel.dart';
+
+part 'admin_screen.g.dart';
 
 class AdminScreen extends HookConsumerWidget {
   const AdminScreen({super.key});

@@ -5,6 +5,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'api/admin_web_socket_client.dart';
 import 'app/app_splash.dart';
 import 'app/main_app.dart';
 
@@ -15,6 +16,9 @@ void main() {
 
   final widgetConfiguration = WidgetConfiguration(
     child: ProviderScope(
+      overrides: [
+        webSocketClientProvider.overrideWith(createAdminWebSocketClient),
+      ],
       child: Consumer(
         builder: (context, ref, _) {
           return AppBuilder(

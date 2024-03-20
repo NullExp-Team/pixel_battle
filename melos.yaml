@@ -28,9 +28,6 @@ scripts:
   # Запускает build_runner watch в admin_app package
   admin_watch: 'melos exec --scope="admin_app" "dart run build_runner watch -d"'
 
-  # Запускает build_runner watch
-  all_watch: 'melos exec "dart run build_runner watch -d"'
-
   # Запускает build_runner build в user_app package
   user_build: 'melos exec --scope="user_app" "dart run build_runner build -d"'
   

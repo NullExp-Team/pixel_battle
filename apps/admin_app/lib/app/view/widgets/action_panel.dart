@@ -1,32 +1,32 @@
-import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:shared/shared.dart';
+part of '../admin_screen.dart';
 
-import '../../controller/admin_controller.dart';
+@Riverpod(dependencies: [FieldStateService])
+String? _selectedPixelUser(_SelectedPixelUserRef ref) {
+  final selectedPosition = ref.watch(
+    adminControllerProvider.select((value) => value.selectedPixelPosition),
+  );
+
+  if (selectedPosition == null) return null;
+
+  final fieldState = ref.watch(
+    fieldStateServiceProvider.select((value) => value.valueOrNull),
+  );
+
+  final x = selectedPosition.dx.toInt();
+  final y = selectedPosition.dy.toInt();
+
+  final nickname = fieldState?.pixels[x]?[y]?.nickname;
+
+  return nickname;
+}
 
 class ActionPanel extends HookConsumerWidget {
   const ActionPanel({super.key});
-
-  String? selectedPixelUser(
-    AsyncValue<FieldStateMap> fieldState,
-    Offset? selectedPixel,
-  ) {
-    if (selectedPixel != null) {
-      return fieldState
-          .value
-          ?.pixels[selectedPixel.dx.toInt()]?[selectedPixel.dy.toInt()]
-          ?.nickname;
-    }
-    return null;
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(adminControllerProvider.notifier);
     final state = ref.watch(adminControllerProvider);
-    final fieldState = ref.watch(fieldStateServiceProvider);
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -42,12 +42,12 @@ class ActionPanel extends HookConsumerWidget {
                 style: AppTextStyles.general.title,
               ),
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               'Параметры:',
               style: AppTextStyles.general.subtitle,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Row(
               children: [
                 Text(
@@ -74,7 +74,7 @@ class ActionPanel extends HookConsumerWidget {
                 },
               ),
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             SizedBox(
               height: 40,
               child: Text(
@@ -82,12 +82,12 @@ class ActionPanel extends HookConsumerWidget {
                 style: AppTextStyles.general.title,
               ),
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               'Текущий пиксель:',
               style: AppTextStyles.general.subtitle,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             SizedBox(
               height: 40,
               child: AppButton.outline(
@@ -98,42 +98,37 @@ class ActionPanel extends HookConsumerWidget {
                 },
               ),
             ),
-            const SizedBox(height: 12),
-            SizedBox(
-              height: 40,
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            const Gap(12),
+            Consumer(
+              builder: (context, ref, _) {
+                final nickname = ref.watch(_selectedPixelUserProvider);
+
+                if (nickname == null) return const SizedBox();
+
+                return SizedBox(
+                  height: 40,
+                  child: Row(
                     children: [
-                      const Text('Закрасил:'),
-                      Text(
-                        selectedPixelUser(
-                              fieldState,
-                              state.selectedPixelPosition,
-                            ) ??
-                            'Никто',
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SText.text('Закрасил:'),
+                          SText.text(nickname),
+                        ],
+                      ),
+                      const Spacer(),
+                      SizedBox(
+                        height: 40,
+                        width: 120,
+                        child: AppButton.outline(
+                          text: 'Забанить',
+                          onTap: controller.banUser,
+                        ),
                       ),
                     ],
                   ),
-                  const Spacer(),
-                  SizedBox(
-                    height: 40,
-                    width: 120,
-                    child: AppButton.outline(
-                      text: 'Забанить',
-                      isDisabled: selectedPixelUser(
-                            fieldState,
-                            state.selectedPixelPosition,
-                          ) ==
-                          null,
-                      onTap: () {
-                        controller.banUser();
-                      },
-                    ),
-                  ),
-                ],
-              ),
+                );
+              },
             ),
           ],
         ),
