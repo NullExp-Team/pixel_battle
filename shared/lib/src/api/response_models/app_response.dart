@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 
 import 'field_pixel.dart';
+import 'online_count_data.dart';
 
 part 'app_response.freezed.dart';
 part 'app_response.g.dart';
@@ -27,7 +28,8 @@ sealed class AppResponse with _$AppResponse {
 
   const factory AppResponse.pixelUpdate(FieldPixel data) = PixelUpdateResponse;
 
-  const factory AppResponse.onlineCount() = OnlineCountResponse;
+  const factory AppResponse.onlineCount(OnlineCountData data) =
+      OnlineCountResponse;
 
   const factory AppResponse.no() = NoResponse;
 
