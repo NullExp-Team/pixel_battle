@@ -32,7 +32,7 @@ class AdminService extends _$AdminService
   }) async {
     final adminLoginRequest = LoginAdminRequest(token);
 
-    await api.refresh();
+    await api.refreshConnection();
 
     await apiWrapStrictSingle(
       () => api.request<BackendSuccessResponse>(adminLoginRequest),

@@ -1,3 +1,6 @@
+// ignore: implementation_imports
+import 'package:ws/src/client/ws_client_interface.dart';
+
 import '../../core.dart';
 
 part 'web_socket_provider.g.dart';
@@ -6,12 +9,20 @@ const _baseUrl = 'ws://pixel-battle.k-lab.su/ws/';
 
 @Riverpod(keepAlive: true)
 Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
+  throw UnimplementedError();
+}
+
+Future<WebSocketClient> createWebSocketClient({
+  FutureOr<void> Function(IWebSocketClient)? afterConnect,
+}) async {
   final client = WebSocketClient(
     WebSocketOptions.common(
+      afterConnect: afterConnect,
       connectionRetryInterval: (
-        max: const Duration(seconds: 1),
-        min: Duration.zero,
+        max: const Duration(seconds: 10),
+        min: const Duration(seconds: 1),
       ),
+      timeout: const Duration(seconds: 15),
       interceptors: [
         WSInterceptor.wrap(
           onMessage: (data) {
@@ -33,17 +44,14 @@ Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
     ),
   );
 
+  client.stateChanges.listen((value) {
+    logger.log(
+      Log.info,
+      message: value.toString(),
+    );
+  });
+
   await client.connect(_baseUrl);
-
-  // ref.onDispose(() {
-  //   client.close();
-
-  //   logger.log(
-  //     LogType.info,
-  //     title: 'WebSocket Metrics',
-  //     message: client.metrics.toJson(),
-  //   );
-  // });
 
   return client;
 }

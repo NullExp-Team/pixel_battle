@@ -51,7 +51,7 @@ mixin _$AppResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) =>
@@ -65,7 +65,7 @@ mixin _$AppResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) =>
@@ -79,7 +79,7 @@ mixin _$AppResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -201,7 +201,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -218,7 +218,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -235,7 +235,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -398,7 +398,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -415,7 +415,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -432,7 +432,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -600,7 +600,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -617,7 +617,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -634,7 +634,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -801,7 +801,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -818,7 +818,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -835,7 +835,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1028,7 +1028,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1045,7 +1045,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1062,7 +1062,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1241,7 +1241,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1258,7 +1258,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1275,7 +1275,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1454,7 +1454,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1471,7 +1471,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1488,7 +1488,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1580,6 +1580,10 @@ abstract class _$$OnlineCountResponseImplCopyWith<$Res> {
   factory _$$OnlineCountResponseImplCopyWith(_$OnlineCountResponseImpl value,
           $Res Function(_$OnlineCountResponseImpl) then) =
       __$$OnlineCountResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({OnlineCountData data});
+
+  $OnlineCountDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1589,35 +1593,67 @@ class __$$OnlineCountResponseImplCopyWithImpl<$Res>
   __$$OnlineCountResponseImplCopyWithImpl(_$OnlineCountResponseImpl _value,
       $Res Function(_$OnlineCountResponseImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$OnlineCountResponseImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as OnlineCountData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OnlineCountDataCopyWith<$Res> get data {
+    return $OnlineCountDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$OnlineCountResponseImpl implements OnlineCountResponse {
-  const _$OnlineCountResponseImpl({final String? $type})
+  const _$OnlineCountResponseImpl(this.data, {final String? $type})
       : $type = $type ?? 'online_count';
 
   factory _$OnlineCountResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$OnlineCountResponseImplFromJson(json);
+
+  @override
+  final OnlineCountData data;
 
   @JsonKey(name: 'type')
   final String $type;
 
   @override
   String toString() {
-    return 'AppResponse.onlineCount()';
+    return 'AppResponse.onlineCount(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineCountResponseImpl);
+            other is _$OnlineCountResponseImpl &&
+            (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnlineCountResponseImplCopyWith<_$OnlineCountResponseImpl> get copyWith =>
+      __$$OnlineCountResponseImplCopyWithImpl<_$OnlineCountResponseImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1629,11 +1665,11 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
-    return onlineCount();
+    return onlineCount(data);
   }
 
   @override
@@ -1646,11 +1682,11 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
-    return onlineCount?.call();
+    return onlineCount?.call(data);
   }
 
   @override
@@ -1663,13 +1699,13 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
     if (onlineCount != null) {
-      return onlineCount();
+      return onlineCount(data);
     }
     return orElse();
   }
@@ -1738,10 +1774,16 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
 }
 
 abstract class OnlineCountResponse implements AppResponse {
-  const factory OnlineCountResponse() = _$OnlineCountResponseImpl;
+  const factory OnlineCountResponse(final OnlineCountData data) =
+      _$OnlineCountResponseImpl;
 
   factory OnlineCountResponse.fromJson(Map<String, dynamic> json) =
       _$OnlineCountResponseImpl.fromJson;
+
+  OnlineCountData get data;
+  @JsonKey(ignore: true)
+  _$$OnlineCountResponseImplCopyWith<_$OnlineCountResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1796,7 +1838,7 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1813,7 +1855,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1830,7 +1872,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1964,7 +2006,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(List<int> size, List<FieldPixel> data) fieldState,
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
-    required TResult Function() onlineCount,
+    required TResult Function(OnlineCountData data) onlineCount,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1981,7 +2023,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
-    TResult? Function()? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCount,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1998,7 +2040,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(List<int> size, List<FieldPixel> data)? fieldState,
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
-    TResult Function()? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCount,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),

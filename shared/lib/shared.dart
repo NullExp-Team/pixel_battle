@@ -16,3 +16,4 @@ export 'package:shared/src/features/field/domain/field_state_service.dart';
 export 'package:shared/src/features/field/domain/field_image_service.dart';
 export 'package:shared/src/api/convertors/color_convertor.dart';
 export 'package:shared/src/api/response_models/pixel_info_admin.dart';
+export 'package:shared/src/api/response_models/online_count_data.dart';
