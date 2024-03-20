@@ -3,6 +3,9 @@ import 'dart:convert';
 
 import 'package:core/core.dart';
 
+// ignore: implementation_imports, depend_on_referenced_packages
+import 'package:ws/src/client/ws_client_interface.dart';
+
 import 'request_models/app_request.dart';
 import 'response_models/app_response.dart';
 
@@ -19,6 +22,12 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     final stream = await ref
         .watch(webSocketClientProvider.selectAsync((data) => data.stream));
 
+    final mappedStream = _mapStream(stream);
+
+    yield* mappedStream;
+  }
+
+  Stream<AppResponse> _mapStream(WebSocketMessagesStream stream) async* {
     final newStream = stream.asyncMap((event) async {
       final json = jsonDecode(event.toString());
       final response = AppResponse.fromJson(json);
@@ -30,19 +39,22 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
 
   Future<T> request<T extends AppResponse>(
     AppRequest request, {
+    IWebSocketClient? client,
     Duration timeout = const Duration(seconds: 30),
   }) async {
-    // ignore: close_sinks
-    final client = await ref.watch(webSocketClientProvider.future);
+    client ??= await ref.watch(webSocketClientProvider.future);
 
     final json = jsonEncode(request.toJson());
-    await client.add(json);
+
+    final stream = client != null ? _mapStream(client.stream) : state;
+
+    await client!.add(json);
 
     if (T == NoResponse) {
       return const NoResponse() as T;
     }
 
-    final response = await state
+    final response = await stream
         .firstWhere((e) => e is T || e is BackendErrorResponse)
         .timeout(timeout);
 
@@ -51,7 +63,7 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
     return response as T;
   }
 
-  Future<void> refresh({
+  Future<void> refreshConnection({
     Duration timeout = const Duration(seconds: 30),
   }) async {
     final isInit = ref.read(
@@ -63,6 +75,7 @@ class WebSocketApi extends _$WebSocketApi with ControllerMixin {
 
     // ignore: close_sinks
     final client = await ref.watch(webSocketClientProvider.future);
+
     await client.reconnect();
   }
 }

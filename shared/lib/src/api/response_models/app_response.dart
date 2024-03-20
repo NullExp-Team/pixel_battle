@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 
 import 'field_pixel.dart';
+import 'online_count_data.dart';
 import 'pixel_info_admin.dart';
 
 part 'app_response.freezed.dart';
@@ -30,7 +31,8 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.pixelInfo(PixelInfoAdmin data) =
       PixelInfoAdminResponse;
 
-  const factory AppResponse.onlineCount() = OnlineCountResponse;
+  const factory AppResponse.onlineCount(OnlineCountData data) =
+      OnlineCountResponse;
 
   const factory AppResponse.no() = NoResponse;
 

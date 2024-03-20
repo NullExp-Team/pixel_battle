@@ -107,12 +107,14 @@ Map<String, dynamic> _$$PixelInfoAdminResponseImplToJson(
 _$OnlineCountResponseImpl _$$OnlineCountResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$OnlineCountResponseImpl(
+      OnlineCountData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$OnlineCountResponseImplToJson(
         _$OnlineCountResponseImpl instance) =>
     <String, dynamic>{
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 

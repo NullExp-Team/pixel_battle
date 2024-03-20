@@ -11,10 +11,12 @@ class LoginScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(loginContollerProvider.notifier);
 
+    final nicknameTextController = useTextEditingController(
+      text: ref.read(loginContollerProvider.select((value) => value.nickname)),
+    );
+
     return AutoUnfocus(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -29,6 +31,7 @@ class LoginScreen extends HookConsumerWidget {
                 const SizedBox(height: 28),
                 AppTextField(
                   hintText: 'Введите ник',
+                  controller: nicknameTextController,
                   onChanged: controller.updateNickname,
                   validator: controller.nicknameValidator,
                 ),
