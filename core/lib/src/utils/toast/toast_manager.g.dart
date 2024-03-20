@@ -15,7 +15,8 @@ String _$toastManagerHash() => r'fe866e2510fbb340613734d8bad96e75f2043327';
 final toastManagerProvider = Provider<ToastManager>.internal(
   toastManager,
   name: r'toastManagerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$toastManagerHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$toastManagerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

@@ -1031,7 +1031,7 @@ packages:
     source: hosted
     version: "0.27.7"
   shared_preferences:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shared_preferences
       sha256: "81429e4481e1ccfb51ede496e916348668fd0921627779233bd24cc3ff6abd02"
@@ -1380,7 +1380,7 @@ packages:
     source: hosted
     version: "0.5.0"
   web_socket_channel:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: web_socket_channel
       sha256: "1d8e795e2a8b3730c41b8a98a2dff2e0fb57ae6f0764a1c46ec5915387d257b2"
@@ -1403,6 +1403,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.1"
+  ws:
+    dependency: "direct main"
+    description:
+      name: ws
+      sha256: bb40a7b9219324ac285133c6b3c11bc16015d9cd5889e6555b76bd3e3a64b3e7
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   xdg_directories:
     dependency: transitive
     description:

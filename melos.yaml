@@ -8,7 +8,7 @@ packages:
 
 scripts:
   # Исправляет линты и форматирует все файлы в проекте
-  fix_format: 'melos exec "dart fix --apply && dart format --line-length=150 ."'
+  fix_format: 'melos exec "dart fix --apply && dart format --line-length=80 ."'
 
   # Запуск генерации переводов
   slang: 'melos exec "dart run slang"'
@@ -18,6 +18,9 @@ scripts:
 
   # Запускает во всех пакетах pub get
   pub_get: 'melos exec "flutter pub get"'
+
+  # Запускает build_runner watch во всех пакетах
+  all_watch: 'melos exec "dart run build_runner watch -d"'
 
   # Запускает build_runner build в admin_app package
   admin_build: 'melos exec --scope="admin_app" "dart run build_runner build -d"'

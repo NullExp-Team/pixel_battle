@@ -14,7 +14,8 @@ LogSettings _settingsBuilder(ILogType logType) {
     LogPart.message,
   ];
 
-  const skipStackTraceRegExp = 'package:riverpod|api_wrap|app_button|logger|dio|controller_utils|dev_kit';
+  const skipStackTraceRegExp =
+      'package:riverpod|api_wrap|app_button|logger|dio|controller_utils|dev_kit|package:ws';
 
   return switch (logType) {
     Log.request || Log.response => const LogSettings(
@@ -118,7 +119,7 @@ class AppLogger extends ProximaLoggerBase {
   }
 
   void response({
-    required int status,
+    required int? status,
     required String? method,
     required Uri? url,
     required dynamic data,
