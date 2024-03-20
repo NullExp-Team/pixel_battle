@@ -55,7 +55,7 @@ class UserService extends _$UserService
               state = null;
               toast.error(
                 title: 'Пользователь не найден',
-                text: 'Попробуйте ещё раз',
+                text: 'Попробуйте авторизоваться заново',
               );
             } else {
               throw error;
