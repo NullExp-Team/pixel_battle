@@ -34,6 +34,8 @@ class _OnlineCount extends HookConsumerWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Row(
         children: [
+          const _ConnectionStatus(),
+          const Gap(8),
           const Icon(Icons.account_circle_outlined),
           const Gap(8),
           asyncOnlineCount.when(
