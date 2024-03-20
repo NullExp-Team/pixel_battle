@@ -18,6 +18,20 @@ Map<String, dynamic> _$$LoginRequestImplToJson(_$LoginRequestImpl instance) =>
       'type': instance.$type,
     };
 
+_$LoginAdminRequestImpl _$$LoginAdminRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LoginAdminRequestImpl(
+      json['data'] as String,
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$LoginAdminRequestImplToJson(
+        _$LoginAdminRequestImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'type': instance.$type,
+    };
+
 _$GetFieldStateRequestImpl _$$GetFieldStateRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$GetFieldStateRequestImpl(
@@ -75,24 +89,28 @@ Map<String, dynamic> _$$PixelInfoAdminRequestImplToJson(
 _$BanUserAdminRequestImpl _$$BanUserAdminRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$BanUserAdminRequestImpl(
+      BanUserAdminData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$BanUserAdminRequestImplToJson(
         _$BanUserAdminRequestImpl instance) =>
     <String, dynamic>{
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 
 _$ResetGameAdminRequestImpl _$$ResetGameAdminRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$ResetGameAdminRequestImpl(
+      (json['data'] as List<dynamic>).map((e) => e as int).toList(),
       $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$ResetGameAdminRequestImplToJson(
         _$ResetGameAdminRequestImpl instance) =>
     <String, dynamic>{
+      'data': instance.data,
       'type': instance.$type,
     };
 

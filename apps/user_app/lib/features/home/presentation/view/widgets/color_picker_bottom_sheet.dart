@@ -20,12 +20,14 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
     final controller = ref.watch(homeControllerProvider.notifier);
 
     return Container(
+      constraints:
+          BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.9),
       decoration: BoxDecoration(
         color: colors.background,
         border: Border.all(color: colors.divider, strokeAlign: 1),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(38)),
       ),
-      padding: pagePadding.copyWith(top: 12, bottom: 36),
+      padding: const EdgeInsets.only(top: 12),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -65,38 +67,40 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
             ],
           ),
           const Gap(12),
-          Consumer(
-            builder: (_, ref, __) {
-              final selectedColor = ref.watch(
-                homeControllerProvider.select((value) => value.selectedColor),
-              );
+          Flexible(
+            child: Consumer(
+              builder: (_, ref, __) {
+                final selectedColor = ref.watch(
+                  homeControllerProvider.select((value) => value.selectedColor),
+                );
 
-              return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                ),
-                shrinkWrap: true,
-                primary: false,
-                itemCount: pixelAvailableColors.length,
-                itemBuilder: (context, index) {
-                  final color = pixelAvailableColors[index];
-                  return _ColorCard(
-                    color: color,
-                    isSelected: color == selectedColor,
-                    onTap: () async {
-                      controller.updateColor(color);
+                return GridView.builder(
+                  padding: pagePadding.copyWith(bottom: 36),
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 100,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                  ),
+                  shrinkWrap: true,
+                  itemCount: pixelAvailableColors.length,
+                  itemBuilder: (context, index) {
+                    final color = pixelAvailableColors[index];
+                    return _ColorCard(
+                      color: color,
+                      isSelected: color == selectedColor,
+                      onTap: () async {
+                        controller.updateColor(color);
 
-                      await Future.delayed(const Duration(milliseconds: 300));
+                        await Future.delayed(const Duration(milliseconds: 300));
 
-                      // ignore: unawaited_futures
-                      if (context.mounted) context.popRoute();
-                    },
-                  );
-                },
-              );
-            },
+                        // ignore: unawaited_futures
+                        if (context.mounted) context.popRoute();
+                      },
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ],
       ),
