@@ -1,8 +1,11 @@
 // ignore_for_file: parameter_assignments
 
+import 'dart:async';
+
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/canvas/pixel_field.dart';
+import 'package:shared/shared.dart';
 // ignore: depend_on_referenced_packages
 import 'package:vector_math/vector_math_64.dart' as vector_math_64;
 import '../../../../router/app_router.dart';
@@ -14,6 +17,9 @@ part 'widgets/color_picker_bottom_sheet.dart';
 part 'widgets/color_card.dart';
 part 'widgets/zoom_buttons.dart';
 part 'widgets/exit_button.dart';
+part 'widgets/online_count.dart';
+
+part 'home_screen.g.dart';
 
 const minScale = 1.0;
 const maxScale = 100.0;
@@ -51,6 +57,12 @@ class HomeScreen extends HookConsumerWidget {
               left: 20,
               child: SafeArea(
                 child: _ExitButton(),
+              ),
+            ),
+            const Positioned(
+              right: 20,
+              child: SafeArea(
+                child: _OnlineCount(),
               ),
             ),
           ],
