@@ -2,14 +2,12 @@ import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../shared.dart';
 
-class PixelField extends ConsumerStatefulWidget {
+class PixelField extends HookConsumerWidget {
   const PixelField({
     super.key,
     this.transformationController,
@@ -28,28 +26,43 @@ class PixelField extends ConsumerStatefulWidget {
   final Function(Offset) onPixelSelectionChanged;
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => PixelFieldState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final hookTransformationController = useTransformationController();
 
-class PixelFieldState extends ConsumerState<PixelField> {
-  late final TransformationController transformationController =
-      widget.transformationController ?? TransformationController();
+    final transformController =
+        transformationController ?? hookTransformationController;
 
-  bool isFirstBuild = true;
+    double getScale() => transformController.value.getMaxScaleOnAxis();
 
-  double get scale {
-    return transformationController.value.getMaxScaleOnAxis();
-  }
+    EdgeInsets boundaryMargin(ui.Image image, Size size) {
+      final scale = getScale();
+      return EdgeInsets.fromLTRB(
+            size.width / 2,
+            size.height / 2,
+            size.width / 2,
+            size.height / 2 - size.height * scale + size.width * scale,
+          ) /
+          scale;
+    }
 
-  Offset get offset {
-    return Offset(
-      transformationController.value[12],
-      transformationController.value[13],
-    );
-  }
+    Offset pixelPosition(Offset touchPosition, double imageWidth, Size size) {
+      final scale = getScale();
 
-  @override
-  Widget build(BuildContext context) {
+      final scaleFactor = size.width / imageWidth;
+
+      final offset = transformController.value.getTranslation();
+
+      final canvasTouchPosition = Offset(
+        (touchPosition.dx - offset.x) / scale,
+        (touchPosition.dy - offset.y) / scale,
+      );
+
+      return Offset(
+        (canvasTouchPosition.dx / scaleFactor).floorToDouble(),
+        (canvasTouchPosition.dy / scaleFactor).floorToDouble(),
+      );
+    }
+
     final asyncImage = ref.watch(fieldImageServiceProvider);
 
     return asyncImage.when(
@@ -58,79 +71,67 @@ class PixelFieldState extends ConsumerState<PixelField> {
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (e, s) => SText(e.toString()),
       data: (image) {
-        if (isFirstBuild) {
-          transformationController.value[13] =
-              (MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).size.width *
-                          (image.height / image.width)) /
-                  2;
-          isFirstBuild = false;
-        }
+        return LayoutBuilder(
+          builder: (context, constraints) {
+            final size = Size(constraints.maxWidth, constraints.maxHeight);
 
-        return GestureDetector(
-          onTapUp: (details) {
-            final position =
-                pixelPosition(details.localPosition, image.width.toDouble());
-
-            if (Rect.fromLTWH(
-              0,
-              0,
-              image.width.toDouble(),
-              image.height.toDouble(),
-            ).contains(position)) {
-              widget.onPixelSelectionChanged(position);
-            }
-          },
-          child: InteractiveViewer(
-            transformationController: transformationController,
-            maxScale: 100,
-            minScale: 1,
-            boundaryMargin: boundaryMargin(image),
-            child: HookBuilder(
+            return HookBuilder(
               builder: (context) {
-                useListenable(transformationController);
+                useEffect(
+                  () {
+                    transformController.value[13] = (size.height -
+                            size.width * (image.height / image.width)) /
+                        2;
+                  },
+                  const [],
+                );
 
-                return CustomPaint(
-                  size: MediaQuery.of(context).size,
-                  painter: CanvasPainter(
-                    scale: scale,
-                    gridColor: context.colors.divider,
-                    selectedPixel: widget.selectedPixel,
-                    image: image,
+                return GestureDetector(
+                  onTapUp: (details) {
+                    final position = pixelPosition(
+                      details.localPosition,
+                      image.width.toDouble(),
+                      size,
+                    );
+
+                    final rect = Rect.fromLTWH(
+                      0,
+                      0,
+                      image.width.toDouble(),
+                      image.height.toDouble(),
+                    );
+
+                    if (rect.contains(position)) {
+                      onPixelSelectionChanged(position);
+                    }
+                  },
+                  child: HookBuilder(
+                    builder: (context) {
+                      useListenable(transformationController);
+
+                      return InteractiveViewer(
+                        transformationController: transformationController,
+                        maxScale: maxScale,
+                        minScale: minScale,
+                        boundaryMargin: boundaryMargin(image, size),
+                        child: CustomPaint(
+                          size: size,
+                          painter: CanvasPainter(
+                            scale: getScale(),
+                            gridColor: context.colors.divider,
+                            selectedPixel: selectedPixel,
+                            image: image,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 );
               },
-            ),
-          ),
+            );
+          },
         );
       },
-    );
-  }
-
-  EdgeInsets boundaryMargin(ui.Image image) {
-    final windowSize = MediaQuery.of(context).size;
-    return EdgeInsets.fromLTRB(
-          windowSize.width / 2,
-          windowSize.height / 2,
-          windowSize.width / 2,
-          -(windowSize.height -
-                  windowSize.width * (image.height / image.width)) +
-              windowSize.height / 2,
-        ) /
-        scale;
-  }
-
-  Offset pixelPosition(Offset touchPosition, double imageWidth) {
-    final scaleFactor = MediaQuery.of(context).size.width / imageWidth;
-
-    final canvasTouchPosition = Offset(
-      (touchPosition.dx - offset.dx) / scale,
-      (touchPosition.dy - offset.dy) / scale,
-    );
-
-    return Offset(
-      (canvasTouchPosition.dx / scaleFactor).floorToDouble(),
-      (canvasTouchPosition.dy / scaleFactor).floorToDouble(),
     );
   }
 }
@@ -151,7 +152,7 @@ class CanvasPainter extends CustomPainter {
   final double minScaleForGrid = 6;
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(Canvas canvas, ui.Size size) {
     final scaleFactor = size.width / image.width;
 
     drawImage(canvas, size);
