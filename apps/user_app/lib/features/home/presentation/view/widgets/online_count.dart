@@ -24,32 +24,48 @@ class _OnlineCount extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncOnlineCount = ref.watch(_onlineCountProvider);
 
-    return Container(
-      height: 40,
-      decoration: BoxDecoration(
-        color: colors.background,
-        borderRadius: BorderRadius.circular(99),
-        border: Border.all(color: colors.divider),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Row(
-        children: [
-          const _ConnectionStatus(),
-          const Gap(8),
-          const Icon(Icons.account_circle_outlined),
-          const Gap(8),
-          asyncOnlineCount.when(
-            loading: () => SizedBox.square(
-              dimension: 18,
-              child: CircularProgressIndicator(
-                color: colors.text,
-                strokeWidth: 2,
+    return asyncOnlineCount.maybeWhen(
+      orElse: () => const SizedBox(),
+      data: (count) => HookBuilder(
+        builder: (context) {
+          final animationController = useAnimationController(
+            duration: const Duration(milliseconds: 400),
+          )..forward();
+
+          return FadeTransition(
+            opacity: animationController.drive(
+              CurveTween(curve: Curves.easeInOut),
+            ),
+            child: Container(
+              height: 40,
+              decoration: BoxDecoration(
+                color: colors.background,
+                borderRadius: BorderRadius.circular(99),
+                border: Border.all(color: colors.divider),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Row(
+                children: [
+                  const _ConnectionStatus(),
+                  const Gap(8),
+                  const Icon(Icons.account_circle_outlined),
+                  const Gap(8),
+                  asyncOnlineCount.when(
+                    loading: () => SizedBox.square(
+                      dimension: 18,
+                      child: CircularProgressIndicator(
+                        color: colors.text,
+                        strokeWidth: 2,
+                      ),
+                    ),
+                    error: (error, stackTrace) => const SizedBox(),
+                    data: (count) => SText.text('$count'),
+                  ),
+                ],
               ),
             ),
-            error: (error, stackTrace) => const SizedBox(),
-            data: (count) => SText.text('$count'),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
