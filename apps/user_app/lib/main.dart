@@ -4,9 +4,7 @@ import 'package:app_runner/app_runner.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shared/shared.dart';
-
-import 'api/user_web_socket_api.dart';
+import 'api/user_web_socket_client.dart';
 import 'app/app_splash.dart';
 import 'app/main_app.dart';
 import 'router/app_router_create_fn.dart';
@@ -20,7 +18,7 @@ void main() {
     child: ProviderScope(
       overrides: [
         appRouterProvider.overrideWith(appRouterProviderFn),
-        webSocketApiProvider.overrideWith(UserWebSocketApi.new),
+        webSocketClientProvider.overrideWith(createUserWebSocketClient),
       ],
       child: Consumer(
         builder: (context, ref, _) {

@@ -1,6 +1,9 @@
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
+// ignore: implementation_imports, depend_on_referenced_packages
+import 'package:ws/src/client/ws_client_interface.dart';
+
 part 'user_service.freezed.dart';
 part 'user_service.g.dart';
 
@@ -25,43 +28,64 @@ class UserService extends _$UserService
       );
 
   @useInApiWrap
-  Future<void> auth({
+  Future<void> authConnect({
+    required IWebSocketClient client,
+  }) async {
+    final curState = state;
+
+    if (curState == null) throw Exception('User not authorized');
+
+    await apiWrapStrictSingle(
+      () => api.request<BackendSuccessResponse>(
+        client: client,
+        LoginRequest(
+          LoginData(
+            nickname: curState.nickname,
+            userId: curState.userId,
+          ),
+        ),
+      ),
+      showErrorToast: false,
+      onError: (error) async {
+        switch (error) {
+          case InternalError(
+              error: BackendErrorResponse(message: 'User not found')
+            ):
+            if (state != null) {
+              state = null;
+              toast.error(
+                title: 'Пользователь не найден',
+                text: 'Попробуйте ещё раз',
+              );
+            } else {
+              throw error;
+            }
+          default:
+            throw error;
+        }
+      },
+    );
+  }
+
+  @useInApiWrap
+  Future<void> login({
     required String nickname,
   }) async {
-    final userId = state?.userId;
+    final curState = state;
+    final isAuthorized = curState != null;
 
-    final loginRequest = LoginRequest(
-      LoginData(
-        nickname: nickname,
-        userId: userId,
-      ),
-    );
+    state = state?.copyWith(nickname: nickname);
 
-    await api.refresh();
+    // Рефрешим подключение, чтобы сбросить текущее, если оно есть
+    // Если данные пользователя есть,
+    // то коннект автоматически авторизиует (authConnect)
+    await api.refreshConnection();
 
-    if (userId != null) {
-      await apiWrapStrictSingle(
-        () => api.request<BackendSuccessResponse>(loginRequest),
-        showErrorToast: false,
-        onError: (error) async {
-          switch (error) {
-            case InternalError(
-                error: BackendErrorResponse(message: 'User not found')
-              ):
-              if (state != null) {
-                state = null;
-                return auth(nickname: nickname);
-              } else {
-                throw error;
-              }
-            default:
-              throw error;
-          }
-        },
-      );
-    } else {
+    if (!isAuthorized) {
       await apiWrapStrict(
-        () => api.request<UserIdResponse>(loginRequest),
+        () => api.request<UserIdResponse>(
+          LoginRequest(LoginData(nickname: nickname)),
+        ),
         showErrorToast: false,
         onSuccess: (res) {
           state = UserServiceState(
