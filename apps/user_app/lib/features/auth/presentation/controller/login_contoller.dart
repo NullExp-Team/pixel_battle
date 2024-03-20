@@ -41,7 +41,7 @@ class LoginContoller extends _$LoginContoller
     if (!isValid) return;
 
     await apiWrap(
-      () => _userService.auth(nickname: nickname),
+      () => _userService.login(nickname: nickname),
       onSuccess: (_) {
         router.replaceAll([const HomeRoute()]);
       },
