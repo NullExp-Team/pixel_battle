@@ -2,7 +2,8 @@
 
 import '../../../../core.dart';
 
-final flavorManagerProvider = NotifierProvider<FlavorManager, FlavorType>(FlavorManager.new);
+final flavorManagerProvider =
+    NotifierProvider<FlavorManager, FlavorType>(FlavorManager.new);
 
 /// Управляет текущим flavor'ом приложения.
 ///

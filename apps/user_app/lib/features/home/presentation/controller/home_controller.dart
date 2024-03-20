@@ -1,8 +1,8 @@
-import 'dart:math';
-
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
+
+import '../view/home_screen.dart';
 
 part 'home_controller.freezed.dart';
 part 'home_controller.g.dart';
@@ -11,7 +11,8 @@ part 'home_controller.g.dart';
 class HomeControllerState with _$HomeControllerState {
   factory HomeControllerState({
     required Color selectedColor,
-    required Point<int>? selectedPixelPosition,
+    required Offset? selectedPixelPosition,
+    required Duration untilFill,
   }) = _HomeControllerState;
 }
 
@@ -19,11 +20,10 @@ class HomeControllerState with _$HomeControllerState {
 class HomeController extends _$HomeController with ControllerMixin {
   @override
   HomeControllerState build() => HomeControllerState(
-        selectedColor: Colors.red,
+        selectedColor: pixelAvailableColors.first,
         selectedPixelPosition: null,
+        untilFill: Duration.zero,
       );
-
-  WebSocketApi get _api => ref.watch(webSocketApiProvider.notifier);
 
   // Update methods
 
@@ -31,26 +31,35 @@ class HomeController extends _$HomeController with ControllerMixin {
     state = state.copyWith(selectedColor: color);
   }
 
-  void updateSelectedPosition(Point<int>? position) {
+  Future<void> updateSelectedPosition(Offset position) async {
+    if (position == state.selectedPixelPosition) {
+      await fillPixel();
+      state = state.copyWith(selectedPixelPosition: null);
+      return;
+    }
     state = state.copyWith(selectedPixelPosition: position);
   }
 
   // Business logic
 
   Future<void> fillPixel() async {
-    final point = state.selectedPixelPosition;
-    if (point == null) return;
+    final offset = state.selectedPixelPosition;
+    if (offset == null) return;
 
     await apiWrap(
-      () => _api.request<NoResponse>(
+      () => api.request(
         AppRequest.updatePixel(
-          UpdatePixel(
-            x: point.x,
-            y: point.y,
-            // TODO: Convert to hex
-            color: state.selectedColor.toString(),
-            actionTime: DateTime.now(),
+          UpdatePixelData(
+            x: offset.dx.toInt(),
+            y: offset.dy.toInt(),
+            color: state.selectedColor,
           ),
+        ),
+      ),
+      rateLimiter: Throttle(
+        // duration: const Duration(seconds: 1),
+        onTickCooldown: (remainingTime) => state = state.copyWith(
+          untilFill: remainingTime,
         ),
       ),
     );

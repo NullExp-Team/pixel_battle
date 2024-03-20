@@ -4,17 +4,22 @@ import 'package:app_runner/app_runner.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'api/user_web_socket_client.dart';
 import 'app/app_splash.dart';
 import 'app/main_app.dart';
+import 'router/app_router_create_fn.dart';
 
 void main() {
   FlavorManager.initial(FlavorType.develop);
 
-  const splashDuration = Duration(milliseconds: 2000);
+  const splashDuration = Duration(milliseconds: 5000);
 
   final widgetConfiguration = WidgetConfiguration(
     child: ProviderScope(
+      overrides: [
+        appRouterProvider.overrideWith(appRouterProviderFn),
+        webSocketClientProvider.overrideWith(createUserWebSocketClient),
+      ],
       child: Consumer(
         builder: (context, ref, _) {
           return AppBuilder(
@@ -32,7 +37,13 @@ void main() {
                 ),
               );
 
-              await Future.delayed(splashDuration);
+              await Future.wait(
+                [
+                  PersistenceStorage.init(HivePersistenceStorage.build()),
+                  ref.read(sharedPreferencesProvider.future),
+                  Future.delayed(splashDuration),
+                ],
+              );
             },
             builder: (context, snapshot, _) => TranslationProvider(
               child: DevicePreview(

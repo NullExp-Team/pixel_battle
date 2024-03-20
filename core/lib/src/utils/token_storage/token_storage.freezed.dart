@@ -27,19 +27,26 @@ mixin _$TokenStorageState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TokenStorageStateCopyWith<TokenStorageState> get copyWith => throw _privateConstructorUsedError;
+  $TokenStorageStateCopyWith<TokenStorageState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TokenStorageStateCopyWith<$Res> {
-  factory $TokenStorageStateCopyWith(TokenStorageState value, $Res Function(TokenStorageState) then) =
+  factory $TokenStorageStateCopyWith(
+          TokenStorageState value, $Res Function(TokenStorageState) then) =
       _$TokenStorageStateCopyWithImpl<$Res, TokenStorageState>;
   @useResult
-  $Res call({bool userPassedOnboarding, bool userAuthorized, String? refreshToken, String? accessToken});
+  $Res call(
+      {bool userPassedOnboarding,
+      bool userAuthorized,
+      String? refreshToken,
+      String? accessToken});
 }
 
 /// @nodoc
-class _$TokenStorageStateCopyWithImpl<$Res, $Val extends TokenStorageState> implements $TokenStorageStateCopyWith<$Res> {
+class _$TokenStorageStateCopyWithImpl<$Res, $Val extends TokenStorageState>
+    implements $TokenStorageStateCopyWith<$Res> {
   _$TokenStorageStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -77,18 +84,27 @@ class _$TokenStorageStateCopyWithImpl<$Res, $Val extends TokenStorageState> impl
 }
 
 /// @nodoc
-abstract class _$$TokenStorageStateImplCopyWith<$Res> implements $TokenStorageStateCopyWith<$Res> {
-  factory _$$TokenStorageStateImplCopyWith(_$TokenStorageStateImpl value, $Res Function(_$TokenStorageStateImpl) then) =
+abstract class _$$TokenStorageStateImplCopyWith<$Res>
+    implements $TokenStorageStateCopyWith<$Res> {
+  factory _$$TokenStorageStateImplCopyWith(_$TokenStorageStateImpl value,
+          $Res Function(_$TokenStorageStateImpl) then) =
       __$$TokenStorageStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool userPassedOnboarding, bool userAuthorized, String? refreshToken, String? accessToken});
+  $Res call(
+      {bool userPassedOnboarding,
+      bool userAuthorized,
+      String? refreshToken,
+      String? accessToken});
 }
 
 /// @nodoc
-class __$$TokenStorageStateImplCopyWithImpl<$Res> extends _$TokenStorageStateCopyWithImpl<$Res, _$TokenStorageStateImpl>
+class __$$TokenStorageStateImplCopyWithImpl<$Res>
+    extends _$TokenStorageStateCopyWithImpl<$Res, _$TokenStorageStateImpl>
     implements _$$TokenStorageStateImplCopyWith<$Res> {
-  __$$TokenStorageStateImplCopyWithImpl(_$TokenStorageStateImpl _value, $Res Function(_$TokenStorageStateImpl) _then) : super(_value, _then);
+  __$$TokenStorageStateImplCopyWithImpl(_$TokenStorageStateImpl _value,
+      $Res Function(_$TokenStorageStateImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -122,9 +138,14 @@ class __$$TokenStorageStateImplCopyWithImpl<$Res> extends _$TokenStorageStateCop
 /// @nodoc
 @JsonSerializable()
 class _$TokenStorageStateImpl implements _TokenStorageState {
-  _$TokenStorageStateImpl({required this.userPassedOnboarding, required this.userAuthorized, this.refreshToken, this.accessToken});
+  _$TokenStorageStateImpl(
+      {required this.userPassedOnboarding,
+      required this.userAuthorized,
+      this.refreshToken,
+      this.accessToken});
 
-  factory _$TokenStorageStateImpl.fromJson(Map<String, dynamic> json) => _$$TokenStorageStateImplFromJson(json);
+  factory _$TokenStorageStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TokenStorageStateImplFromJson(json);
 
   @override
   final bool userPassedOnboarding;
@@ -145,21 +166,27 @@ class _$TokenStorageStateImpl implements _TokenStorageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TokenStorageStateImpl &&
-            (identical(other.userPassedOnboarding, userPassedOnboarding) || other.userPassedOnboarding == userPassedOnboarding) &&
-            (identical(other.userAuthorized, userAuthorized) || other.userAuthorized == userAuthorized) &&
-            (identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken) &&
-            (identical(other.accessToken, accessToken) || other.accessToken == accessToken));
+            (identical(other.userPassedOnboarding, userPassedOnboarding) ||
+                other.userPassedOnboarding == userPassedOnboarding) &&
+            (identical(other.userAuthorized, userAuthorized) ||
+                other.userAuthorized == userAuthorized) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken) &&
+            (identical(other.accessToken, accessToken) ||
+                other.accessToken == accessToken));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, userPassedOnboarding, userAuthorized, refreshToken, accessToken);
+  int get hashCode => Object.hash(runtimeType, userPassedOnboarding,
+      userAuthorized, refreshToken, accessToken);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TokenStorageStateImplCopyWith<_$TokenStorageStateImpl> get copyWith =>
-      __$$TokenStorageStateImplCopyWithImpl<_$TokenStorageStateImpl>(this, _$identity);
+      __$$TokenStorageStateImplCopyWithImpl<_$TokenStorageStateImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -176,7 +203,8 @@ abstract class _TokenStorageState implements TokenStorageState {
       final String? refreshToken,
       final String? accessToken}) = _$TokenStorageStateImpl;
 
-  factory _TokenStorageState.fromJson(Map<String, dynamic> json) = _$TokenStorageStateImpl.fromJson;
+  factory _TokenStorageState.fromJson(Map<String, dynamic> json) =
+      _$TokenStorageStateImpl.fromJson;
 
   @override
   bool get userPassedOnboarding;
@@ -188,5 +216,6 @@ abstract class _TokenStorageState implements TokenStorageState {
   String? get accessToken;
   @override
   @JsonKey(ignore: true)
-  _$$TokenStorageStateImplCopyWith<_$TokenStorageStateImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$TokenStorageStateImplCopyWith<_$TokenStorageStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -8,18 +8,20 @@ part of 'web_socket_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$webSocketChannelHash() => r'3e4bfbdbc5b571a829f153a4457f62496e0b233c';
+String _$webSocketClientHash() => r'f13740118da790f03b0af6a3338ce0aa24bec021';
 
-/// See also [webSocketChannel].
-@ProviderFor(webSocketChannel)
-final webSocketChannelProvider = AutoDisposeFutureProvider<WebSocketChannel>.internal(
-  webSocketChannel,
-  name: r'webSocketChannelProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$webSocketChannelHash,
+/// See also [webSocketClient].
+@ProviderFor(webSocketClient)
+final webSocketClientProvider = FutureProvider<WebSocketClient>.internal(
+  webSocketClient,
+  name: r'webSocketClientProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$webSocketClientHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef WebSocketChannelRef = AutoDisposeFutureProviderRef<WebSocketChannel>;
+typedef WebSocketClientRef = FutureProviderRef<WebSocketClient>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
