@@ -19,6 +19,8 @@ sealed class AppRequest with _$AppRequest {
 
   factory AppRequest.getOnlineCount() = GetOnlineCountRequest;
 
+  factory AppRequest.getCooldown() = GetCooldownRequest;
+
   factory AppRequest.updatePixel(UpdatePixelData data) = UpdatePixelRequest;
 
   factory AppRequest.updatePixelAdmin(UpdatePixelData data) =

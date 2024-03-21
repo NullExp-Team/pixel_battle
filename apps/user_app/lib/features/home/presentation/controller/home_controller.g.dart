@@ -6,7 +6,7 @@ part of 'home_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeControllerHash() => r'fbfa44c209ef09dbf2cefa4298aa5a726f5ad9c2';
+String _$homeControllerHash() => r'294065f29e984f945986dfe834500e636840452f';
 
 /// See also [HomeController].
 @ProviderFor(HomeController)
@@ -17,8 +17,11 @@ final homeControllerProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$homeControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[fillPixelCooldownProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    fillPixelCooldownProvider,
+    ...?fillPixelCooldownProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$HomeController = AutoDisposeNotifier<HomeControllerState>;

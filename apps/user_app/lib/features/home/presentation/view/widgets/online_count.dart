@@ -1,20 +1,18 @@
 part of '../home_screen.dart';
 
 @Riverpod(dependencies: [WebSocketApi])
-Stream<int> _onlineCount(_OnlineCountRef ref) async* {
+Stream<int> _onlineCount(_OnlineCountRef ref) {
   final apiStream = ref.watch(webSocketApiProvider);
 
   final onlineCountStream = apiStream
       .whereType<OnlineCountUpdateResponse>()
       .map((event) => event.data.online);
 
-  final mockStream = Stream<int>.fromFuture(
-    Future.delayed(const Duration(seconds: 3), () => 1),
-  );
+  final api = ref.watch(webSocketApiProvider.notifier);
 
-  final stream = onlineCountStream.mergeWith([mockStream]);
+  unawaited(api.request(GetOnlineCountRequest()));
 
-  yield* stream;
+  return onlineCountStream;
 }
 
 class _OnlineCount extends HookConsumerWidget {

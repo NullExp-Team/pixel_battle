@@ -63,9 +63,7 @@ _$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
     _$FieldStateResponseImpl(
       cooldown: json['cooldown'] as int,
       size: (json['size'] as List<dynamic>).map((e) => e as int).toList(),
-      data: (json['data'] as List<dynamic>)
-          .map((e) => FieldPixel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      data: FieldStateData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
@@ -74,14 +72,14 @@ Map<String, dynamic> _$$FieldStateResponseImplToJson(
     <String, dynamic>{
       'cooldown': instance.cooldown,
       'size': instance.size,
-      'data': instance.data.map((e) => e.toJson()).toList(),
+      'data': instance.data.toJson(),
       'type': instance.$type,
     };
 
 _$PixelUpdateResponseImpl _$$PixelUpdateResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$PixelUpdateResponseImpl(
-      FieldPixel.fromJson(json['data'] as Map<String, dynamic>),
+      PixelUpdateData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
@@ -137,14 +135,14 @@ Map<String, dynamic> _$$OnlineCountUpdateResponseImplToJson(
 _$CooldownUpdateResponseImpl _$$CooldownUpdateResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$CooldownUpdateResponseImpl(
-      CooldownData.fromJson(json['data'] as Map<String, dynamic>),
+      json['data'] as int,
       $type: json['type'] as String?,
     );
 
 Map<String, dynamic> _$$CooldownUpdateResponseImplToJson(
         _$CooldownUpdateResponseImpl instance) =>
     <String, dynamic>{
-      'data': instance.data.toJson(),
+      'data': instance.data,
       'type': instance.$type,
     };
 

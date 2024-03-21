@@ -8,7 +8,7 @@ part 'selection_update_data.g.dart';
 @freezed
 class SelectionUpdateData with _$SelectionUpdateData {
   factory SelectionUpdateData({
-    required Position position,
+    required Position? position,
     required String nickname,
   }) = _SelectionUpdateData;
 

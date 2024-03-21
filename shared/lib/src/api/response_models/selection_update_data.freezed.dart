@@ -20,7 +20,7 @@ SelectionUpdateData _$SelectionUpdateDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SelectionUpdateData {
-  Position get position => throw _privateConstructorUsedError;
+  Position? get position => throw _privateConstructorUsedError;
   String get nickname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,9 +35,9 @@ abstract class $SelectionUpdateDataCopyWith<$Res> {
           SelectionUpdateData value, $Res Function(SelectionUpdateData) then) =
       _$SelectionUpdateDataCopyWithImpl<$Res, SelectionUpdateData>;
   @useResult
-  $Res call({Position position, String nickname});
+  $Res call({Position? position, String nickname});
 
-  $PositionCopyWith<$Res> get position;
+  $PositionCopyWith<$Res>? get position;
 }
 
 /// @nodoc
@@ -53,14 +53,14 @@ class _$SelectionUpdateDataCopyWithImpl<$Res, $Val extends SelectionUpdateData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = null,
+    Object? position = freezed,
     Object? nickname = null,
   }) {
     return _then(_value.copyWith(
-      position: null == position
+      position: freezed == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
-              as Position,
+              as Position?,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -70,8 +70,12 @@ class _$SelectionUpdateDataCopyWithImpl<$Res, $Val extends SelectionUpdateData>
 
   @override
   @pragma('vm:prefer-inline')
-  $PositionCopyWith<$Res> get position {
-    return $PositionCopyWith<$Res>(_value.position, (value) {
+  $PositionCopyWith<$Res>? get position {
+    if (_value.position == null) {
+      return null;
+    }
+
+    return $PositionCopyWith<$Res>(_value.position!, (value) {
       return _then(_value.copyWith(position: value) as $Val);
     });
   }
@@ -85,10 +89,10 @@ abstract class _$$SelectionUpdateDataImplCopyWith<$Res>
       __$$SelectionUpdateDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Position position, String nickname});
+  $Res call({Position? position, String nickname});
 
   @override
-  $PositionCopyWith<$Res> get position;
+  $PositionCopyWith<$Res>? get position;
 }
 
 /// @nodoc
@@ -102,14 +106,14 @@ class __$$SelectionUpdateDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = null,
+    Object? position = freezed,
     Object? nickname = null,
   }) {
     return _then(_$SelectionUpdateDataImpl(
-      position: null == position
+      position: freezed == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
-              as Position,
+              as Position?,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -127,7 +131,7 @@ class _$SelectionUpdateDataImpl implements _SelectionUpdateData {
       _$$SelectionUpdateDataImplFromJson(json);
 
   @override
-  final Position position;
+  final Position? position;
   @override
   final String nickname;
 
@@ -168,14 +172,14 @@ class _$SelectionUpdateDataImpl implements _SelectionUpdateData {
 
 abstract class _SelectionUpdateData implements SelectionUpdateData {
   factory _SelectionUpdateData(
-      {required final Position position,
+      {required final Position? position,
       required final String nickname}) = _$SelectionUpdateDataImpl;
 
   factory _SelectionUpdateData.fromJson(Map<String, dynamic> json) =
       _$SelectionUpdateDataImpl.fromJson;
 
   @override
-  Position get position;
+  Position? get position;
   @override
   String get nickname;
   @override

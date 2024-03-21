@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 
-import 'cooldown_data.dart';
-import 'field_pixel.dart';
+import 'field_state_data.dart';
 import 'online_count_data.dart';
 import 'pixel_info_admin.dart';
+import 'pixel_update_data.dart';
 import 'selection_update_data.dart';
 import 'user_info.dart';
 
@@ -29,10 +29,11 @@ sealed class AppResponse with _$AppResponse {
     // In seconds
     required int cooldown,
     required List<int> size,
-    required List<FieldPixel> data,
+    required FieldStateData data,
   }) = FieldStateResponse;
 
-  const factory AppResponse.pixelUpdate(FieldPixel data) = PixelUpdateResponse;
+  const factory AppResponse.pixelUpdate(PixelUpdateData data) =
+      PixelUpdateResponse;
 
   const factory AppResponse.pixelInfo(PixelInfoAdmin data) =
       PixelInfoAdminResponse;
@@ -43,8 +44,7 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.onlineCountUpdate(OnlineCountData data) =
       OnlineCountUpdateResponse;
 
-  const factory AppResponse.cooldownUpdate(CooldownData data) =
-      CooldownUpdateResponse;
+  const factory AppResponse.cooldownUpdate(int data) = CooldownUpdateResponse;
 
   const factory AppResponse.usersOnline(List<UserInfo> data) =
       UsersOnlineResponse;

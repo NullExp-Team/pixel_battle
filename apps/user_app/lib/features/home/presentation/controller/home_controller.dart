@@ -17,7 +17,7 @@ class HomeControllerState with _$HomeControllerState {
   }) = _HomeControllerState;
 }
 
-@Riverpod()
+@Riverpod(dependencies: [fillPixelCooldown, fillPixelCooldown])
 class HomeController extends _$HomeController with ControllerMixin {
   @override
   HomeControllerState build() => HomeControllerState(
@@ -35,7 +35,6 @@ class HomeController extends _$HomeController with ControllerMixin {
   Future<void> updateSelectedPosition(Offset position) async {
     if (position == state.selectedPixelPosition) {
       await fillPixel();
-      state = state.copyWith(selectedPixelPosition: null);
       return;
     }
     state = state.copyWith(selectedPixelPosition: position);
@@ -55,10 +54,8 @@ class HomeController extends _$HomeController with ControllerMixin {
       () => api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
-            position: Position(
-              x: offset.dx.toInt(),
-              y: offset.dy.toInt(),
-            ),
+            x: offset.dx.toInt(),
+            y: offset.dy.toInt(),
             color: state.selectedColor,
           ),
         ),
