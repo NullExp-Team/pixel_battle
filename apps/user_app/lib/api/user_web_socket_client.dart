@@ -5,7 +5,7 @@ import '../features/auth/domain/user_service.dart';
 Future<WebSocketClient> createUserWebSocketClient(
   FutureProviderRef<WebSocketClient> ref,
 ) async {
-  return createWebSocketClient(
+  final client = await createWebSocketClient(
     afterConnect: (client) async {
       final userService = ref.read(userServiceProvider.notifier);
       final userServiceState = ref.read(userServiceProvider);
@@ -15,4 +15,6 @@ Future<WebSocketClient> createUserWebSocketClient(
       }
     },
   );
+
+  return client;
 }

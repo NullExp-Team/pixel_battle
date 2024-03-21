@@ -11,6 +11,7 @@ _$UserServiceStateImpl _$$UserServiceStateImplFromJson(
     _$UserServiceStateImpl(
       nickname: json['nickname'] as String,
       userId: json['userId'] as String,
+      isBanned: json['isBanned'] as bool,
     );
 
 Map<String, dynamic> _$$UserServiceStateImplToJson(
@@ -18,13 +19,14 @@ Map<String, dynamic> _$$UserServiceStateImplToJson(
     <String, dynamic>{
       'nickname': instance.nickname,
       'userId': instance.userId,
+      'isBanned': instance.isBanned,
     };
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userServiceHash() => r'4da41d894eaf8518c9334bb4603489ea037a7978';
+String _$userServiceHash() => r'893c97189c98cef4d2c3c0aa5ac319ee4ed877d6';
 
 /// See also [UserService].
 @ProviderFor(UserService)

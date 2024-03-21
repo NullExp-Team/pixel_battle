@@ -12,6 +12,7 @@ class UserServiceState with _$UserServiceState {
   factory UserServiceState({
     required String nickname,
     required String userId,
+    required bool isBanned,
   }) = _UserServiceState;
 
   factory UserServiceState.fromJson(Map<String, dynamic> json) =>
@@ -35,6 +36,8 @@ class UserService extends _$UserService
 
     if (curState == null) throw Exception('User not authorized');
 
+    if (curState.isBanned) await Future.delayed(const Duration(seconds: 30));
+
     await apiWrapStrictSingle(
       () => api.request<BackendSuccessResponse>(
         client: client,
@@ -45,21 +48,29 @@ class UserService extends _$UserService
           ),
         ),
       ),
+      onSuccess: (res) {
+        state = state?.copyWith(isBanned: false);
+      },
       showErrorToast: false,
-      onError: (error) async {
+      onError: (error) {
         switch (error) {
           case InternalError(
               error: BackendErrorResponse(message: 'User not found')
             ):
-            if (state != null) {
-              state = null;
-              toast.error(
-                title: 'Пользователь не найден',
-                text: 'Попробуйте авторизоваться заново',
-              );
-            } else {
-              throw error;
-            }
+            state = null;
+            toast.error(
+              title: 'Пользователь не найден',
+              text: 'Попробуйте авторизоваться заново',
+            );
+
+          case InternalError(
+              error: BackendErrorResponse(message: 'User is banned')
+            ):
+            if (curState.isBanned) return;
+
+            toast.error(title: 'Пользователь заблокирован');
+            state = state?.copyWith(isBanned: true);
+
           default:
             throw error;
         }
@@ -72,7 +83,13 @@ class UserService extends _$UserService
     required String nickname,
   }) async {
     final curState = state;
+
     final isAuthorized = curState != null;
+
+    if (isAuthorized && curState.isBanned) {
+      toast.error(title: 'Пользователь заблокирован');
+      return;
+    }
 
     state = state?.copyWith(nickname: nickname);
 
@@ -91,6 +108,7 @@ class UserService extends _$UserService
           state = UserServiceState(
             nickname: nickname,
             userId: res.data,
+            isBanned: false,
           );
         },
       );

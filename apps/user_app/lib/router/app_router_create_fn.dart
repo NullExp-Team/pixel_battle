@@ -5,7 +5,7 @@ import 'app_router.dart';
 
 AppRouter appRouterProviderFn(ProviderRef<StackRouter> ref) {
   final userAuthorizedProvider =
-      userServiceProvider.select((value) => value != null);
+      userServiceProvider.select((value) => value != null && !value.isBanned);
 
   final router = AppRouter(
     userAuthorized: () => ref.read(userAuthorizedProvider),
