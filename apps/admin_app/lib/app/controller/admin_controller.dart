@@ -47,7 +47,7 @@ class AdminController extends _$AdminController with ControllerMixin {
     ref.onDispose(listener.cancel);
 
     dio.post<Map<String, dynamic>>(
-      'http://pixel-battle.k-lab.su/admin/login',
+      'https://pixel-battle.k-lab.su/admin/login',
       data: {
         'username': 'admin',
         'password': 'password',
