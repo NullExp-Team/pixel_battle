@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "626141887890",
+    "project_id": "pixel-battle-eb43c",
+    "storage_bucket": "pixel-battle-eb43c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626141887890:android:1f9ee75ecdb3e67d12554b",
+        "android_client_info": {
+          "package_name": "com.example.user_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXmcqTGxV3DzP64QMeskzdfpLKjAa_ALo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
