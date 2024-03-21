@@ -17,6 +17,8 @@ sealed class AppRequest with _$AppRequest {
 
   factory AppRequest.getFieldState() = GetFieldStateRequest;
 
+  factory AppRequest.getOnlineCount() = GetOnlineCountRequest;
+
   factory AppRequest.updatePixel(UpdatePixelData data) = UpdatePixelRequest;
 
   factory AppRequest.updatePixelAdmin(UpdatePixelData data) =

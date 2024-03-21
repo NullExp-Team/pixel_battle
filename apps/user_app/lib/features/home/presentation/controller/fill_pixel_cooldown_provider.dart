@@ -10,8 +10,9 @@ Stream<Duration> fillPixelCooldown(FillPixelCooldownRef ref) {
   final fieldStateCooldownStream =
       apiStream.whereType<FieldStateResponse>().map((event) => event.cooldown);
 
-  final cooldownUpdateStream =
-      apiStream.whereType<FieldStateResponse>().map((event) => event.cooldown);
+  final cooldownUpdateStream = apiStream
+      .whereType<CooldownUpdateResponse>()
+      .map((event) => event.data.cooldown);
 
   final cooldownStream =
       fieldStateCooldownStream.mergeWith([cooldownUpdateStream]);

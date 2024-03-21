@@ -120,15 +120,29 @@ Map<String, dynamic> _$$SelectionUpdateResponseImplToJson(
       'type': instance.$type,
     };
 
-_$OnlineCountResponseImpl _$$OnlineCountResponseImplFromJson(
+_$OnlineCountUpdateResponseImpl _$$OnlineCountUpdateResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$OnlineCountResponseImpl(
+    _$OnlineCountUpdateResponseImpl(
       OnlineCountData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$OnlineCountResponseImplToJson(
-        _$OnlineCountResponseImpl instance) =>
+Map<String, dynamic> _$$OnlineCountUpdateResponseImplToJson(
+        _$OnlineCountUpdateResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data.toJson(),
+      'type': instance.$type,
+    };
+
+_$CooldownUpdateResponseImpl _$$CooldownUpdateResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CooldownUpdateResponseImpl(
+      CooldownData.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$CooldownUpdateResponseImplToJson(
+        _$CooldownUpdateResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data.toJson(),
       'type': instance.$type,
