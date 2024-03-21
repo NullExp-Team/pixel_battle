@@ -10,21 +10,23 @@ _$AdminServiceStateImpl _$$AdminServiceStateImplFromJson(
         Map<String, dynamic> json) =>
     _$AdminServiceStateImpl(
       token: json['token'] as String,
-      isLogined: json['isLogined'] as bool,
+      users: (json['users'] as List<dynamic>)
+          .map((e) => UserInfo.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AdminServiceStateImplToJson(
         _$AdminServiceStateImpl instance) =>
     <String, dynamic>{
       'token': instance.token,
-      'isLogined': instance.isLogined,
+      'users': instance.users,
     };
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$adminServiceHash() => r'130d5400312022dfa35e9b8544bb1752fd6f123b';
+String _$adminServiceHash() => r'a4f0b0c22c6b679ae5872de52b7bbf4e4d89e5b6';
 
 /// See also [AdminService].
 @ProviderFor(AdminService)

@@ -70,7 +70,24 @@ class ActionPanel extends HookConsumerWidget {
               child: AppButton.outline(
                 text: 'Пересоздать холст',
                 onTap: () {
-                  controller.resetField();
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        backgroundColor: AppColors.light.background,
+                        contentPadding: const EdgeInsets.all(24),
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: AppColors.light.divider,
+                          ),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(24),
+                          ),
+                        ),
+                        content: const ResetFieldModal(),
+                      );
+                    },
+                  );
                 },
               ),
             ),

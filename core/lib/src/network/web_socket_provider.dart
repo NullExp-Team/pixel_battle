@@ -5,7 +5,7 @@ import '../../core.dart';
 
 part 'web_socket_provider.g.dart';
 
-const _baseUrl = 'ws://pixel-battle.k-lab.su/ws/';
+const _baseUrl = 'wss://pixel-battle.k-lab.su/ws/';
 
 @Riverpod(keepAlive: true)
 Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {

@@ -8,7 +8,7 @@ part 'admin_service.g.dart';
 class AdminServiceState with _$AdminServiceState {
   factory AdminServiceState({
     required String token,
-    required bool isLogined,
+    required List<UserInfo> users,
   }) = _AdminServiceState;
 
   factory AdminServiceState.fromJson(Map<String, dynamic> json) =>
@@ -36,7 +36,7 @@ class AdminService extends _$AdminService
       () => api.request<BackendSuccessResponse>(adminLoginRequest),
       showErrorToast: false,
       onSuccess: (res) {
-        state = AdminServiceState(token: token, isLogined: true);
+        state = AdminServiceState(token: token, users: []);
       },
       onError: (error) async {
         switch (error) {
