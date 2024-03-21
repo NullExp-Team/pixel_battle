@@ -56,6 +56,18 @@ Map<String, dynamic> _$$GetOnlineCountRequestImplToJson(
       'type': instance.$type,
     };
 
+_$GetCooldownRequestImpl _$$GetCooldownRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GetCooldownRequestImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$GetCooldownRequestImplToJson(
+        _$GetCooldownRequestImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };
+
 _$UpdatePixelRequestImpl _$$UpdatePixelRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$UpdatePixelRequestImpl(

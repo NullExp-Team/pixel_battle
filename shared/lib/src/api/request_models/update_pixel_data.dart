@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:core/core.dart';
 
 import '../convertors/color_convertor.dart';
-import '../response_models/position.dart';
 
 part 'update_pixel_data.freezed.dart';
 part 'update_pixel_data.g.dart';
@@ -11,7 +10,8 @@ part 'update_pixel_data.g.dart';
 @freezed
 class UpdatePixelData with _$UpdatePixelData {
   factory UpdatePixelData({
-    required Position position,
+    required int x,
+    required int y,
     @ColorConverter() required Color color,
   }) = _UpdatePixelData;
 

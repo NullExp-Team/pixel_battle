@@ -5,6 +5,7 @@ import 'package:core/core.dart';
 import '../../../api/request_models/app_request.dart';
 import '../../../api/response_models/app_response.dart';
 import '../../../api/response_models/field_pixel.dart';
+import '../../../api/response_models/position.dart';
 import '../../../api/web_socket_api.dart';
 
 part 'field_state_service.freezed.dart';
@@ -42,11 +43,15 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
         final map = state.valueOrNull;
         if (map != null) {
           final pixel = res.data;
-          final x = pixel.position.x;
-          final y = pixel.position.y;
+          final x = pixel.x;
+          final y = pixel.y;
           final pixels = map.pixels;
           pixels.putIfAbsent(x, () => {});
-          pixels[x]![y] = pixel;
+          pixels[x]![y] = FieldPixel(
+            position: Position(x: pixel.x, y: pixel.y),
+            color: pixel.color,
+            nickname: pixel.nickname,
+          );
 
           setData(map.copyWith(pixels: pixels));
         }
@@ -69,7 +74,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
 
     final pixels = <int, Map<int, FieldPixel>>{};
 
-    for (final pixel in fieldState.data) {
+    for (final pixel in fieldState.data.pixels) {
       final x = pixel.position.x;
       final y = pixel.position.y;
 

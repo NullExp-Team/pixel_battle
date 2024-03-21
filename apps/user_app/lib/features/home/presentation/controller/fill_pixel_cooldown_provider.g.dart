@@ -6,7 +6,7 @@ part of 'fill_pixel_cooldown_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fillPixelCooldownHash() => r'0837ead77c4bcc057d494e6f0488f79484728ee1';
+String _$fillPixelCooldownHash() => r'9f69820d0ddf16093fc848acf965e622f3b06119';
 
 /// See also [fillPixelCooldown].
 @ProviderFor(fillPixelCooldown)

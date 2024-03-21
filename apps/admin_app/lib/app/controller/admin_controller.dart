@@ -16,7 +16,7 @@ class AdminControllerState with _$AdminControllerState {
   }) = _AdminControllerState;
 }
 
-@Riverpod()
+@Riverpod(dependencies: [WebSocketApi])
 class AdminController extends _$AdminController with ControllerMixin {
   AdminService get _adminService => ref.read(adminServiceProvider.notifier);
 
@@ -68,10 +68,8 @@ class AdminController extends _$AdminController with ControllerMixin {
       () => api.request(
         AppRequest.updatePixelAdmin(
           UpdatePixelData(
-            position: Position(
-              x: state.selectedPixelPosition!.dx.toInt(),
-              y: state.selectedPixelPosition!.dy.toInt(),
-            ),
+            x: state.selectedPixelPosition!.dx.toInt(),
+            y: state.selectedPixelPosition!.dy.toInt(),
             color: const Color(0xffffffff),
           ),
         ),

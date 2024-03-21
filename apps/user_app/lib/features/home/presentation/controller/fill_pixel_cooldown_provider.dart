@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
@@ -10,15 +12,18 @@ Stream<Duration> fillPixelCooldown(FillPixelCooldownRef ref) {
   final fieldStateCooldownStream =
       apiStream.whereType<FieldStateResponse>().map((event) => event.cooldown);
 
-  final cooldownUpdateStream = apiStream
-      .whereType<CooldownUpdateResponse>()
-      .map((event) => event.data.cooldown);
+  final cooldownUpdateStream =
+      apiStream.whereType<CooldownUpdateResponse>().map((event) => event.data);
 
   final cooldownStream =
       fieldStateCooldownStream.mergeWith([cooldownUpdateStream]);
 
   final cooldownDurationStream =
       cooldownStream.map((event) => Duration(seconds: event));
+
+  final api = ref.watch(webSocketApiProvider.notifier);
+
+  unawaited(api.request(GetCooldownRequest()));
 
   return cooldownDurationStream;
 }
