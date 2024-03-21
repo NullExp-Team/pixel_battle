@@ -47,7 +47,9 @@ class HomeController extends _$HomeController with ControllerMixin {
     final offset = state.selectedPixelPosition;
     if (offset == null) return;
 
-    final cooldown = await ref.read(fillPixelCooldownProvider.future);
+    final cooldown = await apiWrapStrictSingle(
+      () => ref.read(fillPixelCooldownProvider.future),
+    );
 
     await apiWrap(
       () => api.request(

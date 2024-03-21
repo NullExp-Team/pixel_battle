@@ -5,7 +5,7 @@ Stream<int> _onlineCount(_OnlineCountRef ref) async* {
   final apiStream = ref.watch(webSocketApiProvider);
 
   final onlineCountStream = apiStream
-      .whereType<OnlineCountResponse>()
+      .whereType<OnlineCountUpdateResponse>()
       .map((event) => event.data.online);
 
   final mockStream = Stream<int>.fromFuture(

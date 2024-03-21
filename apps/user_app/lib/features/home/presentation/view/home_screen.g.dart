@@ -6,7 +6,7 @@ part of 'home_screen.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$onlineCountHash() => r'd8a6557be9bbdbe5cb9afd49fc2470123425bedd';
+String _$onlineCountHash() => r'7585d2a0e7fd5e65f40b5f11fe979bca9afa9dab';
 
 /// See also [_onlineCount].
 @ProviderFor(_onlineCount)

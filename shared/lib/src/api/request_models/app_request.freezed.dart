@@ -22,6 +22,8 @@ AppRequest _$AppRequestFromJson(Map<String, dynamic> json) {
       return LoginAdminRequest.fromJson(json);
     case 'get_field_state':
       return GetFieldStateRequest.fromJson(json);
+    case 'get_online_count':
+      return GetOnlineCountRequest.fromJson(json);
     case 'update_pixel':
       return UpdatePixelRequest.fromJson(json);
     case 'update_pixel_admin':
@@ -50,6 +52,7 @@ mixin _$AppRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -64,6 +67,7 @@ mixin _$AppRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -78,6 +82,7 @@ mixin _$AppRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -93,6 +98,7 @@ mixin _$AppRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -107,6 +113,7 @@ mixin _$AppRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -121,6 +128,7 @@ mixin _$AppRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -237,6 +245,7 @@ class _$LoginRequestImpl implements LoginRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -254,6 +263,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -271,6 +281,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -292,6 +303,7 @@ class _$LoginRequestImpl implements LoginRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -309,6 +321,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -326,6 +339,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -437,6 +451,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -454,6 +469,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -471,6 +487,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -492,6 +509,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -509,6 +527,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -526,6 +545,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -611,6 +631,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -628,6 +649,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -645,6 +667,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -666,6 +689,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -683,6 +707,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -700,6 +725,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -728,6 +754,182 @@ abstract class GetFieldStateRequest implements AppRequest {
 
   factory GetFieldStateRequest.fromJson(Map<String, dynamic> json) =
       _$GetFieldStateRequestImpl.fromJson;
+}
+
+/// @nodoc
+abstract class _$$GetOnlineCountRequestImplCopyWith<$Res> {
+  factory _$$GetOnlineCountRequestImplCopyWith(
+          _$GetOnlineCountRequestImpl value,
+          $Res Function(_$GetOnlineCountRequestImpl) then) =
+      __$$GetOnlineCountRequestImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetOnlineCountRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$GetOnlineCountRequestImpl>
+    implements _$$GetOnlineCountRequestImplCopyWith<$Res> {
+  __$$GetOnlineCountRequestImplCopyWithImpl(_$GetOnlineCountRequestImpl _value,
+      $Res Function(_$GetOnlineCountRequestImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
+  _$GetOnlineCountRequestImpl({final String? $type})
+      : $type = $type ?? 'get_online_count';
+
+  factory _$GetOnlineCountRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GetOnlineCountRequestImplFromJson(json);
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppRequest.getOnlineCount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetOnlineCountRequestImpl);
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
+    required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
+    required TResult Function(UpdatePixelData data) updatePixel,
+    required TResult Function(UpdatePixelData data) updatePixelAdmin,
+    required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
+    required TResult Function(BanUserAdminData data) banUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
+    required TResult Function() disconnect,
+  }) {
+    return getOnlineCount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
+    TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
+    TResult? Function(UpdatePixelData data)? updatePixel,
+    TResult? Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult? Function(BanUserAdminData data)? banUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
+    TResult? Function()? disconnect,
+  }) {
+    return getOnlineCount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
+    TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
+    TResult Function(UpdatePixelData data)? updatePixel,
+    TResult Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult Function(BanUserAdminData data)? banUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
+    TResult Function()? disconnect,
+    required TResult orElse(),
+  }) {
+    if (getOnlineCount != null) {
+      return getOnlineCount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
+    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
+    required TResult Function(BanUserAdminRequest value) banUserAdmin,
+    required TResult Function(ResetGameAdminRequest value) resetGameAdmin,
+    required TResult Function(DisconnectRequest value) disconnect,
+  }) {
+    return getOnlineCount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult? Function(BanUserAdminRequest value)? banUserAdmin,
+    TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult? Function(DisconnectRequest value)? disconnect,
+  }) {
+    return getOnlineCount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult Function(BanUserAdminRequest value)? banUserAdmin,
+    TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult Function(DisconnectRequest value)? disconnect,
+    required TResult orElse(),
+  }) {
+    if (getOnlineCount != null) {
+      return getOnlineCount(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GetOnlineCountRequestImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class GetOnlineCountRequest implements AppRequest {
+  factory GetOnlineCountRequest() = _$GetOnlineCountRequestImpl;
+
+  factory GetOnlineCountRequest.fromJson(Map<String, dynamic> json) =
+      _$GetOnlineCountRequestImpl.fromJson;
 }
 
 /// @nodoc
@@ -816,6 +1018,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -833,6 +1036,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -850,6 +1054,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -871,6 +1076,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -888,6 +1094,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -905,6 +1112,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1029,6 +1237,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -1046,6 +1255,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -1063,6 +1273,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -1084,6 +1295,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -1101,6 +1313,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1118,6 +1331,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1242,6 +1456,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -1259,6 +1474,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -1276,6 +1492,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -1297,6 +1514,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -1314,6 +1532,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1331,6 +1550,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1454,6 +1674,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -1471,6 +1692,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -1488,6 +1710,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -1509,6 +1732,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -1526,6 +1750,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1543,6 +1768,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1665,6 +1891,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -1682,6 +1909,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -1699,6 +1927,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -1720,6 +1949,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -1737,6 +1967,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1754,6 +1985,7 @@ class _$BanUserAdminRequestImpl implements BanUserAdminRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1874,6 +2106,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -1891,6 +2124,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -1908,6 +2142,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -1929,6 +2164,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -1946,6 +2182,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -1963,6 +2200,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,
@@ -2048,6 +2286,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     required TResult Function(LoginData data) login,
     required TResult Function(String data) loginAdmin,
     required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
@@ -2065,6 +2304,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult? Function(LoginData data)? login,
     TResult? Function(String data)? loginAdmin,
     TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
@@ -2082,6 +2322,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult Function(LoginData data)? login,
     TResult Function(String data)? loginAdmin,
     TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
@@ -2103,6 +2344,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     required TResult Function(LoginRequest value) login,
     required TResult Function(LoginAdminRequest value) loginAdmin,
     required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
     required TResult Function(UpdateSelectionnRequest value) updateSelection,
@@ -2120,6 +2362,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult? Function(LoginRequest value)? login,
     TResult? Function(LoginAdminRequest value)? loginAdmin,
     TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult? Function(UpdateSelectionnRequest value)? updateSelection,
@@ -2137,6 +2380,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult Function(LoginRequest value)? login,
     TResult Function(LoginAdminRequest value)? loginAdmin,
     TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
     TResult Function(UpdateSelectionnRequest value)? updateSelection,

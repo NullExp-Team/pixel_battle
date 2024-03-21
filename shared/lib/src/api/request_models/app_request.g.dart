@@ -44,6 +44,18 @@ Map<String, dynamic> _$$GetFieldStateRequestImplToJson(
       'type': instance.$type,
     };
 
+_$GetOnlineCountRequestImpl _$$GetOnlineCountRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GetOnlineCountRequestImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$GetOnlineCountRequestImplToJson(
+        _$GetOnlineCountRequestImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };
+
 _$UpdatePixelRequestImpl _$$UpdatePixelRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$UpdatePixelRequestImpl(

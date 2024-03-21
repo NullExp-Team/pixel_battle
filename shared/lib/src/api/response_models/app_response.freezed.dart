@@ -32,8 +32,10 @@ AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
       return PixelInfoAdminResponse.fromJson(json);
     case 'selection_update':
       return SelectionUpdateResponse.fromJson(json);
-    case 'online_count':
-      return OnlineCountResponse.fromJson(json);
+    case 'online_count_update':
+      return OnlineCountUpdateResponse.fromJson(json);
+    case 'cooldown_update':
+      return CooldownUpdateResponse.fromJson(json);
     case 'users_online':
       return UsersOnlineResponse.fromJson(json);
     case 'no':
@@ -58,7 +60,8 @@ mixin _$AppResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -75,7 +78,8 @@ mixin _$AppResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -92,7 +96,8 @@ mixin _$AppResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -109,7 +114,9 @@ mixin _$AppResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -125,7 +132,8 @@ mixin _$AppResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -141,7 +149,8 @@ mixin _$AppResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -224,7 +233,8 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -244,7 +254,8 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -264,7 +275,8 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -287,7 +299,9 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -306,7 +320,8 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -325,7 +340,8 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -437,7 +453,8 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -457,7 +474,8 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -477,7 +495,8 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -500,7 +519,9 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -519,7 +540,8 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -538,7 +560,8 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -655,7 +678,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -675,7 +699,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -695,7 +720,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -718,7 +744,9 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -737,7 +765,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -756,7 +785,8 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -872,7 +902,8 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -892,7 +923,8 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -912,7 +944,8 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -935,7 +968,9 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -954,7 +989,8 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -973,7 +1009,8 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -1127,7 +1164,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -1147,7 +1185,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -1167,7 +1206,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -1190,7 +1230,9 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -1209,7 +1251,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -1228,7 +1271,8 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -1359,7 +1403,8 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -1379,7 +1424,8 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -1399,7 +1445,8 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -1422,7 +1469,9 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -1441,7 +1490,8 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -1460,7 +1510,8 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -1588,7 +1639,8 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -1608,7 +1660,8 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -1628,7 +1681,8 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -1651,7 +1705,9 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -1670,7 +1726,8 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -1689,7 +1746,8 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -1817,7 +1875,8 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -1837,7 +1896,8 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -1857,7 +1917,8 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -1880,7 +1941,9 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -1899,7 +1962,8 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -1918,7 +1982,8 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -1952,10 +2017,11 @@ abstract class SelectionUpdateResponse implements AppResponse {
 }
 
 /// @nodoc
-abstract class _$$OnlineCountResponseImplCopyWith<$Res> {
-  factory _$$OnlineCountResponseImplCopyWith(_$OnlineCountResponseImpl value,
-          $Res Function(_$OnlineCountResponseImpl) then) =
-      __$$OnlineCountResponseImplCopyWithImpl<$Res>;
+abstract class _$$OnlineCountUpdateResponseImplCopyWith<$Res> {
+  factory _$$OnlineCountUpdateResponseImplCopyWith(
+          _$OnlineCountUpdateResponseImpl value,
+          $Res Function(_$OnlineCountUpdateResponseImpl) then) =
+      __$$OnlineCountUpdateResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({OnlineCountData data});
 
@@ -1963,11 +2029,12 @@ abstract class _$$OnlineCountResponseImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$OnlineCountResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountResponseImpl>
-    implements _$$OnlineCountResponseImplCopyWith<$Res> {
-  __$$OnlineCountResponseImplCopyWithImpl(_$OnlineCountResponseImpl _value,
-      $Res Function(_$OnlineCountResponseImpl) _then)
+class __$$OnlineCountUpdateResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$OnlineCountUpdateResponseImpl>
+    implements _$$OnlineCountUpdateResponseImplCopyWith<$Res> {
+  __$$OnlineCountUpdateResponseImplCopyWithImpl(
+      _$OnlineCountUpdateResponseImpl _value,
+      $Res Function(_$OnlineCountUpdateResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1975,7 +2042,7 @@ class __$$OnlineCountResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$OnlineCountResponseImpl(
+    return _then(_$OnlineCountUpdateResponseImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1994,12 +2061,12 @@ class __$$OnlineCountResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OnlineCountResponseImpl implements OnlineCountResponse {
-  const _$OnlineCountResponseImpl(this.data, {final String? $type})
-      : $type = $type ?? 'online_count';
+class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
+  const _$OnlineCountUpdateResponseImpl(this.data, {final String? $type})
+      : $type = $type ?? 'online_count_update';
 
-  factory _$OnlineCountResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OnlineCountResponseImplFromJson(json);
+  factory _$OnlineCountUpdateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OnlineCountUpdateResponseImplFromJson(json);
 
   @override
   final OnlineCountData data;
@@ -2009,14 +2076,14 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
 
   @override
   String toString() {
-    return 'AppResponse.onlineCount(data: $data)';
+    return 'AppResponse.onlineCountUpdate(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineCountResponseImpl &&
+            other is _$OnlineCountUpdateResponseImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -2027,9 +2094,9 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineCountResponseImplCopyWith<_$OnlineCountResponseImpl> get copyWith =>
-      __$$OnlineCountResponseImplCopyWithImpl<_$OnlineCountResponseImpl>(
-          this, _$identity);
+  _$$OnlineCountUpdateResponseImplCopyWith<_$OnlineCountUpdateResponseImpl>
+      get copyWith => __$$OnlineCountUpdateResponseImplCopyWithImpl<
+          _$OnlineCountUpdateResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2044,12 +2111,13 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
-    return onlineCount(data);
+    return onlineCountUpdate(data);
   }
 
   @override
@@ -2064,12 +2132,13 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
-    return onlineCount?.call(data);
+    return onlineCountUpdate?.call(data);
   }
 
   @override
@@ -2084,14 +2153,15 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
-    if (onlineCount != null) {
-      return onlineCount(data);
+    if (onlineCountUpdate != null) {
+      return onlineCountUpdate(data);
     }
     return orElse();
   }
@@ -2107,12 +2177,14 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
-    return onlineCount(this);
+    return onlineCountUpdate(this);
   }
 
   @override
@@ -2126,12 +2198,13 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
-    return onlineCount?.call(this);
+    return onlineCountUpdate?.call(this);
   }
 
   @override
@@ -2145,37 +2218,274 @@ class _$OnlineCountResponseImpl implements OnlineCountResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
-    if (onlineCount != null) {
-      return onlineCount(this);
+    if (onlineCountUpdate != null) {
+      return onlineCountUpdate(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$OnlineCountResponseImplToJson(
+    return _$$OnlineCountUpdateResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class OnlineCountResponse implements AppResponse {
-  const factory OnlineCountResponse(final OnlineCountData data) =
-      _$OnlineCountResponseImpl;
+abstract class OnlineCountUpdateResponse implements AppResponse {
+  const factory OnlineCountUpdateResponse(final OnlineCountData data) =
+      _$OnlineCountUpdateResponseImpl;
 
-  factory OnlineCountResponse.fromJson(Map<String, dynamic> json) =
-      _$OnlineCountResponseImpl.fromJson;
+  factory OnlineCountUpdateResponse.fromJson(Map<String, dynamic> json) =
+      _$OnlineCountUpdateResponseImpl.fromJson;
 
   OnlineCountData get data;
   @JsonKey(ignore: true)
-  _$$OnlineCountResponseImplCopyWith<_$OnlineCountResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OnlineCountUpdateResponseImplCopyWith<_$OnlineCountUpdateResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CooldownUpdateResponseImplCopyWith<$Res> {
+  factory _$$CooldownUpdateResponseImplCopyWith(
+          _$CooldownUpdateResponseImpl value,
+          $Res Function(_$CooldownUpdateResponseImpl) then) =
+      __$$CooldownUpdateResponseImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CooldownData data});
+
+  $CooldownDataCopyWith<$Res> get data;
+}
+
+/// @nodoc
+class __$$CooldownUpdateResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$CooldownUpdateResponseImpl>
+    implements _$$CooldownUpdateResponseImplCopyWith<$Res> {
+  __$$CooldownUpdateResponseImplCopyWithImpl(
+      _$CooldownUpdateResponseImpl _value,
+      $Res Function(_$CooldownUpdateResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$CooldownUpdateResponseImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CooldownData,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CooldownDataCopyWith<$Res> get data {
+    return $CooldownDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
+  const _$CooldownUpdateResponseImpl(this.data, {final String? $type})
+      : $type = $type ?? 'cooldown_update';
+
+  factory _$CooldownUpdateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CooldownUpdateResponseImplFromJson(json);
+
+  @override
+  final CooldownData data;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppResponse.cooldownUpdate(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CooldownUpdateResponseImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CooldownUpdateResponseImplCopyWith<_$CooldownUpdateResponseImpl>
+      get copyWith => __$$CooldownUpdateResponseImplCopyWithImpl<
+          _$CooldownUpdateResponseImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() banned,
+    required TResult Function(String data) success,
+    required TResult Function(String message) error,
+    required TResult Function(String data) userId,
+    required TResult Function(
+            int cooldown, List<int> size, List<FieldPixel> data)
+        fieldState,
+    required TResult Function(FieldPixel data) pixelUpdate,
+    required TResult Function(PixelInfoAdmin data) pixelInfo,
+    required TResult Function(SelectionUpdateData data) selectionUpdate,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
+    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function() no,
+    required TResult Function() unknown,
+  }) {
+    return cooldownUpdate(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? banned,
+    TResult? Function(String data)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String data)? userId,
+    TResult? Function(int cooldown, List<int> size, List<FieldPixel> data)?
+        fieldState,
+    TResult? Function(FieldPixel data)? pixelUpdate,
+    TResult? Function(PixelInfoAdmin data)? pixelInfo,
+    TResult? Function(SelectionUpdateData data)? selectionUpdate,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
+    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function()? no,
+    TResult? Function()? unknown,
+  }) {
+    return cooldownUpdate?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? banned,
+    TResult Function(String data)? success,
+    TResult Function(String message)? error,
+    TResult Function(String data)? userId,
+    TResult Function(int cooldown, List<int> size, List<FieldPixel> data)?
+        fieldState,
+    TResult Function(FieldPixel data)? pixelUpdate,
+    TResult Function(PixelInfoAdmin data)? pixelInfo,
+    TResult Function(SelectionUpdateData data)? selectionUpdate,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
+    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function()? no,
+    TResult Function()? unknown,
+    required TResult orElse(),
+  }) {
+    if (cooldownUpdate != null) {
+      return cooldownUpdate(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BannedResponse value) banned,
+    required TResult Function(BackendSuccessResponse value) success,
+    required TResult Function(BackendErrorResponse value) error,
+    required TResult Function(UserIdResponse value) userId,
+    required TResult Function(FieldStateResponse value) fieldState,
+    required TResult Function(PixelUpdateResponse value) pixelUpdate,
+    required TResult Function(PixelInfoAdminResponse value) pixelInfo,
+    required TResult Function(SelectionUpdateResponse value) selectionUpdate,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
+    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(NoResponse value) no,
+    required TResult Function(UnknownResponse value) unknown,
+  }) {
+    return cooldownUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BannedResponse value)? banned,
+    TResult? Function(BackendSuccessResponse value)? success,
+    TResult? Function(BackendErrorResponse value)? error,
+    TResult? Function(UserIdResponse value)? userId,
+    TResult? Function(FieldStateResponse value)? fieldState,
+    TResult? Function(PixelUpdateResponse value)? pixelUpdate,
+    TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
+    TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
+    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(NoResponse value)? no,
+    TResult? Function(UnknownResponse value)? unknown,
+  }) {
+    return cooldownUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BannedResponse value)? banned,
+    TResult Function(BackendSuccessResponse value)? success,
+    TResult Function(BackendErrorResponse value)? error,
+    TResult Function(UserIdResponse value)? userId,
+    TResult Function(FieldStateResponse value)? fieldState,
+    TResult Function(PixelUpdateResponse value)? pixelUpdate,
+    TResult Function(PixelInfoAdminResponse value)? pixelInfo,
+    TResult Function(SelectionUpdateResponse value)? selectionUpdate,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
+    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(NoResponse value)? no,
+    TResult Function(UnknownResponse value)? unknown,
+    required TResult orElse(),
+  }) {
+    if (cooldownUpdate != null) {
+      return cooldownUpdate(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CooldownUpdateResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class CooldownUpdateResponse implements AppResponse {
+  const factory CooldownUpdateResponse(final CooldownData data) =
+      _$CooldownUpdateResponseImpl;
+
+  factory CooldownUpdateResponse.fromJson(Map<String, dynamic> json) =
+      _$CooldownUpdateResponseImpl.fromJson;
+
+  CooldownData get data;
+  @JsonKey(ignore: true)
+  _$$CooldownUpdateResponseImplCopyWith<_$CooldownUpdateResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2269,7 +2579,8 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -2289,7 +2600,8 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -2309,7 +2621,8 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -2332,7 +2645,9 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -2351,7 +2666,8 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -2370,7 +2686,8 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -2458,7 +2775,8 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -2478,7 +2796,8 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -2498,7 +2817,8 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -2521,7 +2841,9 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -2540,7 +2862,8 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -2559,7 +2882,8 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
@@ -2642,7 +2966,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(FieldPixel data) pixelUpdate,
     required TResult Function(PixelInfoAdmin data) pixelInfo,
     required TResult Function(SelectionUpdateData data) selectionUpdate,
-    required TResult Function(OnlineCountData data) onlineCount,
+    required TResult Function(OnlineCountData data) onlineCountUpdate,
+    required TResult Function(CooldownData data) cooldownUpdate,
     required TResult Function(List<UserInfo> data) usersOnline,
     required TResult Function() no,
     required TResult Function() unknown,
@@ -2662,7 +2987,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(FieldPixel data)? pixelUpdate,
     TResult? Function(PixelInfoAdmin data)? pixelInfo,
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
-    TResult? Function(OnlineCountData data)? onlineCount,
+    TResult? Function(OnlineCountData data)? onlineCountUpdate,
+    TResult? Function(CooldownData data)? cooldownUpdate,
     TResult? Function(List<UserInfo> data)? usersOnline,
     TResult? Function()? no,
     TResult? Function()? unknown,
@@ -2682,7 +3008,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(FieldPixel data)? pixelUpdate,
     TResult Function(PixelInfoAdmin data)? pixelInfo,
     TResult Function(SelectionUpdateData data)? selectionUpdate,
-    TResult Function(OnlineCountData data)? onlineCount,
+    TResult Function(OnlineCountData data)? onlineCountUpdate,
+    TResult Function(CooldownData data)? cooldownUpdate,
     TResult Function(List<UserInfo> data)? usersOnline,
     TResult Function()? no,
     TResult Function()? unknown,
@@ -2705,7 +3032,9 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(PixelUpdateResponse value) pixelUpdate,
     required TResult Function(PixelInfoAdminResponse value) pixelInfo,
     required TResult Function(SelectionUpdateResponse value) selectionUpdate,
-    required TResult Function(OnlineCountResponse value) onlineCount,
+    required TResult Function(OnlineCountUpdateResponse value)
+        onlineCountUpdate,
+    required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
     required TResult Function(UsersOnlineResponse value) usersOnline,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
@@ -2724,7 +3053,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(PixelUpdateResponse value)? pixelUpdate,
     TResult? Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult? Function(OnlineCountResponse value)? onlineCount,
+    TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult? Function(UsersOnlineResponse value)? usersOnline,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
@@ -2743,7 +3073,8 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(PixelUpdateResponse value)? pixelUpdate,
     TResult Function(PixelInfoAdminResponse value)? pixelInfo,
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
-    TResult Function(OnlineCountResponse value)? onlineCount,
+    TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
+    TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
     TResult Function(UsersOnlineResponse value)? usersOnline,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
