@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AdminControllerState {
   Offset? get selectedPixelPosition => throw _privateConstructorUsedError;
-  bool get isLogined => throw _privateConstructorUsedError;
+  List<UserInfo> get users => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AdminControllerStateCopyWith<AdminControllerState> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $AdminControllerStateCopyWith<$Res> {
           $Res Function(AdminControllerState) then) =
       _$AdminControllerStateCopyWithImpl<$Res, AdminControllerState>;
   @useResult
-  $Res call({Offset? selectedPixelPosition, bool isLogined});
+  $Res call({Offset? selectedPixelPosition, List<UserInfo> users});
 }
 
 /// @nodoc
@@ -48,17 +48,17 @@ class _$AdminControllerStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? selectedPixelPosition = freezed,
-    Object? isLogined = null,
+    Object? users = null,
   }) {
     return _then(_value.copyWith(
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
-      isLogined: null == isLogined
-          ? _value.isLogined
-          : isLogined // ignore: cast_nullable_to_non_nullable
-              as bool,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
     ) as $Val);
   }
 }
@@ -71,7 +71,7 @@ abstract class _$$AdminControllerStateImplCopyWith<$Res>
       __$$AdminControllerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Offset? selectedPixelPosition, bool isLogined});
+  $Res call({Offset? selectedPixelPosition, List<UserInfo> users});
 }
 
 /// @nodoc
@@ -86,17 +86,17 @@ class __$$AdminControllerStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedPixelPosition = freezed,
-    Object? isLogined = null,
+    Object? users = null,
   }) {
     return _then(_$AdminControllerStateImpl(
       selectedPixelPosition: freezed == selectedPixelPosition
           ? _value.selectedPixelPosition
           : selectedPixelPosition // ignore: cast_nullable_to_non_nullable
               as Offset?,
-      isLogined: null == isLogined
-          ? _value.isLogined
-          : isLogined // ignore: cast_nullable_to_non_nullable
-              as bool,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
     ));
   }
 }
@@ -105,16 +105,23 @@ class __$$AdminControllerStateImplCopyWithImpl<$Res>
 
 class _$AdminControllerStateImpl implements _AdminControllerState {
   _$AdminControllerStateImpl(
-      {required this.selectedPixelPosition, required this.isLogined});
+      {required this.selectedPixelPosition,
+      required final List<UserInfo> users})
+      : _users = users;
 
   @override
   final Offset? selectedPixelPosition;
+  final List<UserInfo> _users;
   @override
-  final bool isLogined;
+  List<UserInfo> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
 
   @override
   String toString() {
-    return 'AdminControllerState(selectedPixelPosition: $selectedPixelPosition, isLogined: $isLogined)';
+    return 'AdminControllerState(selectedPixelPosition: $selectedPixelPosition, users: $users)';
   }
 
   @override
@@ -124,13 +131,12 @@ class _$AdminControllerStateImpl implements _AdminControllerState {
             other is _$AdminControllerStateImpl &&
             (identical(other.selectedPixelPosition, selectedPixelPosition) ||
                 other.selectedPixelPosition == selectedPixelPosition) &&
-            (identical(other.isLogined, isLogined) ||
-                other.isLogined == isLogined));
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, selectedPixelPosition, isLogined);
+  int get hashCode => Object.hash(runtimeType, selectedPixelPosition,
+      const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
@@ -144,12 +150,12 @@ class _$AdminControllerStateImpl implements _AdminControllerState {
 abstract class _AdminControllerState implements AdminControllerState {
   factory _AdminControllerState(
       {required final Offset? selectedPixelPosition,
-      required final bool isLogined}) = _$AdminControllerStateImpl;
+      required final List<UserInfo> users}) = _$AdminControllerStateImpl;
 
   @override
   Offset? get selectedPixelPosition;
   @override
-  bool get isLogined;
+  List<UserInfo> get users;
   @override
   @JsonKey(ignore: true)
   _$$AdminControllerStateImplCopyWith<_$AdminControllerStateImpl>

@@ -21,7 +21,7 @@ AdminServiceState _$AdminServiceStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AdminServiceState {
   String get token => throw _privateConstructorUsedError;
-  bool get isLogined => throw _privateConstructorUsedError;
+  List<UserInfo> get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $AdminServiceStateCopyWith<$Res> {
           AdminServiceState value, $Res Function(AdminServiceState) then) =
       _$AdminServiceStateCopyWithImpl<$Res, AdminServiceState>;
   @useResult
-  $Res call({String token, bool isLogined});
+  $Res call({String token, List<UserInfo> users});
 }
 
 /// @nodoc
@@ -52,17 +52,17 @@ class _$AdminServiceStateCopyWithImpl<$Res, $Val extends AdminServiceState>
   @override
   $Res call({
     Object? token = null,
-    Object? isLogined = null,
+    Object? users = null,
   }) {
     return _then(_value.copyWith(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      isLogined: null == isLogined
-          ? _value.isLogined
-          : isLogined // ignore: cast_nullable_to_non_nullable
-              as bool,
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$AdminServiceStateImplCopyWith<$Res>
       __$$AdminServiceStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String token, bool isLogined});
+  $Res call({String token, List<UserInfo> users});
 }
 
 /// @nodoc
@@ -90,17 +90,17 @@ class __$$AdminServiceStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? token = null,
-    Object? isLogined = null,
+    Object? users = null,
   }) {
     return _then(_$AdminServiceStateImpl(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      isLogined: null == isLogined
-          ? _value.isLogined
-          : isLogined // ignore: cast_nullable_to_non_nullable
-              as bool,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserInfo>,
     ));
   }
 }
@@ -108,19 +108,26 @@ class __$$AdminServiceStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AdminServiceStateImpl implements _AdminServiceState {
-  _$AdminServiceStateImpl({required this.token, required this.isLogined});
+  _$AdminServiceStateImpl(
+      {required this.token, required final List<UserInfo> users})
+      : _users = users;
 
   factory _$AdminServiceStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$AdminServiceStateImplFromJson(json);
 
   @override
   final String token;
+  final List<UserInfo> _users;
   @override
-  final bool isLogined;
+  List<UserInfo> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
 
   @override
   String toString() {
-    return 'AdminServiceState(token: $token, isLogined: $isLogined)';
+    return 'AdminServiceState(token: $token, users: $users)';
   }
 
   @override
@@ -129,13 +136,13 @@ class _$AdminServiceStateImpl implements _AdminServiceState {
         (other.runtimeType == runtimeType &&
             other is _$AdminServiceStateImpl &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.isLogined, isLogined) ||
-                other.isLogined == isLogined));
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, token, isLogined);
+  int get hashCode => Object.hash(
+      runtimeType, token, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +162,7 @@ class _$AdminServiceStateImpl implements _AdminServiceState {
 abstract class _AdminServiceState implements AdminServiceState {
   factory _AdminServiceState(
       {required final String token,
-      required final bool isLogined}) = _$AdminServiceStateImpl;
+      required final List<UserInfo> users}) = _$AdminServiceStateImpl;
 
   factory _AdminServiceState.fromJson(Map<String, dynamic> json) =
       _$AdminServiceStateImpl.fromJson;
@@ -163,7 +170,7 @@ abstract class _AdminServiceState implements AdminServiceState {
   @override
   String get token;
   @override
-  bool get isLogined;
+  List<UserInfo> get users;
   @override
   @JsonKey(ignore: true)
   _$$AdminServiceStateImplCopyWith<_$AdminServiceStateImpl> get copyWith =>
