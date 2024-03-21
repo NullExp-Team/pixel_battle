@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'field_pixel.dart';
 import 'online_count_data.dart';
 import 'pixel_info_admin.dart';
+import 'user_info.dart';
 
 part 'app_response.freezed.dart';
 part 'app_response.g.dart';
@@ -33,6 +34,8 @@ sealed class AppResponse with _$AppResponse {
 
   const factory AppResponse.onlineCount(OnlineCountData data) =
       OnlineCountResponse;
+
+  const factory AppResponse.userInfo(List<UserInfo> data) = UserInfoResponse;
 
   const factory AppResponse.no() = NoResponse;
 

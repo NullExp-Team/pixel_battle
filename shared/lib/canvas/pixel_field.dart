@@ -107,10 +107,10 @@ class PixelField extends HookConsumerWidget {
                   },
                   child: HookBuilder(
                     builder: (context) {
-                      useListenable(transformationController);
+                      useListenable(transformController);
 
                       return InteractiveViewer(
-                        transformationController: transformationController,
+                        transformationController: transformController,
                         maxScale: maxScale,
                         minScale: minScale,
                         boundaryMargin: boundaryMargin(image, size),

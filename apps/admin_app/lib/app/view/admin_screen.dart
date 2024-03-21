@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
 import '../controller/admin_controller.dart';
+import 'widgets/users_panel.dart';
 
 part 'widgets/action_panel.dart';
 
@@ -69,6 +70,7 @@ class AdminScreen extends HookConsumerWidget {
                       left: BorderSide(color: AppColors.light.divider),
                     ),
                   ),
+                  child: const UsersPanel(),
                 ),
               ],
             ),
