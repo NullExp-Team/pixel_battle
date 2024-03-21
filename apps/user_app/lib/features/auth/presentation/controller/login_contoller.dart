@@ -72,8 +72,8 @@ mixin LoginContollerValdator implements _$LoginContoller, ValidatorMixin {
         _ when nickname.isEmpty => 'Обязательное поле',
         _ when nickname.length < 3 => 'Слишком короткий никнейм',
         _ when nickname.length > 63 => 'Слишком длинный никнейм',
-        _ when !RegExp(r'^[a-zA-Z0-9_]+$').hasMatch(nickname) =>
-          'Никнейм может содержать только латинские буквы, цифры и символ подчеркивания',
+        _ when !RegExp(r'^[a-яА-Яa-zA-Z0-9_]+$').hasMatch(nickname) =>
+          'Никнейм может содержать только буквы, цифры и символ подчеркивания',
         _ => null
       };
 
