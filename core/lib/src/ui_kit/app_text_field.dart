@@ -121,7 +121,7 @@ class AppTextField extends HookConsumerWidget {
               borderRadius: BorderRadius.circular(16),
               color: readOnly ? colors.backgroundMinor : colors.backgroundMinor,
               border: Border.all(
-                width: 2,
+                width: hasFocus.value ? 2 : 1,
                 color: switch (readOnly) {
                   true => colors.divider,
                   false => hasFocus.value

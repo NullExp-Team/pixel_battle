@@ -18,17 +18,63 @@ class LoginScreen extends HookConsumerWidget {
     return AutoUnfocus(
       child: Scaffold(
         body: Center(
-          child: Padding(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 400),
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Spacer(),
-                Text(
-                  'Рисовашка',
-                  style: textStyles.label,
+                HookBuilder(
+                  builder: (context) {
+                    final animationController = useAnimationController(
+                      duration: const Duration(milliseconds: 2500),
+                    )..forward();
+
+                    return FadeTransition(
+                      opacity: animationController.drive(
+                        CurveTween(
+                          curve:
+                              const Interval(0, 0.3, curve: Curves.easeInOut),
+                        ),
+                      ),
+                      child: SlideTransition(
+                        position: Tween<Offset>(
+                          begin: const Offset(0, -3),
+                          end: Offset.zero,
+                        ).animate(
+                          CurvedAnimation(
+                            parent: animationController,
+                            curve: Curves.bounceOut,
+                          ),
+                        ),
+                        child: Container(
+                          width: 128,
+                          height: 128,
+                          padding: const EdgeInsets.all(18),
+                          decoration: BoxDecoration(
+                            color: colors.background,
+                            borderRadius: BorderRadius.circular(24),
+                            border: Border.all(
+                              color: colors.backgroundMinor,
+                              width: 2,
+                            ),
+                          ),
+                          child: Assets.pixelBattleLogoPng.image(),
+                        ),
+                      ),
+                    );
+                  },
                 ),
-                const SizedBox(height: 28),
+                const Gap(10),
+                const SText.label('Рисовашка'),
+                SText.subtitle(
+                  'developed by NullExp',
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: colors.textMinor,
+                ),
+                const Gap(28),
                 AppTextField(
                   hintText: 'Введите ник',
                   controller: nicknameTextController,
