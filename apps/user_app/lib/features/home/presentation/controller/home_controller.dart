@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
 
 import '../view/home_screen.dart';
+import 'fill_pixel_cooldown_provider.dart';
 
 part 'home_controller.freezed.dart';
 part 'home_controller.g.dart';
@@ -46,6 +47,8 @@ class HomeController extends _$HomeController with ControllerMixin {
     final offset = state.selectedPixelPosition;
     if (offset == null) return;
 
+    final cooldown = await ref.read(fillPixelCooldownProvider.future);
+
     await apiWrap(
       () => api.request(
         AppRequest.updatePixel(
@@ -59,7 +62,7 @@ class HomeController extends _$HomeController with ControllerMixin {
         ),
       ),
       rateLimiter: Throttle(
-        // duration: const Duration(seconds: 1),
+        duration: cooldown,
         onTickCooldown: (remainingTime) => state = state.copyWith(
           untilFill: remainingTime,
         ),
