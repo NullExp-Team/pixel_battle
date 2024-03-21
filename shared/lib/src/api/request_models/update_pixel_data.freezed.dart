@@ -20,8 +20,7 @@ UpdatePixelData _$UpdatePixelDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UpdatePixelData {
-  int get x => throw _privateConstructorUsedError;
-  int get y => throw _privateConstructorUsedError;
+  Position get position => throw _privateConstructorUsedError;
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
@@ -37,7 +36,9 @@ abstract class $UpdatePixelDataCopyWith<$Res> {
           UpdatePixelData value, $Res Function(UpdatePixelData) then) =
       _$UpdatePixelDataCopyWithImpl<$Res, UpdatePixelData>;
   @useResult
-  $Res call({int x, int y, @ColorConverter() Color color});
+  $Res call({Position position, @ColorConverter() Color color});
+
+  $PositionCopyWith<$Res> get position;
 }
 
 /// @nodoc
@@ -53,24 +54,27 @@ class _$UpdatePixelDataCopyWithImpl<$Res, $Val extends UpdatePixelData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? x = null,
-    Object? y = null,
+    Object? position = null,
     Object? color = null,
   }) {
     return _then(_value.copyWith(
-      x: null == x
-          ? _value.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as int,
-      y: null == y
-          ? _value.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as int,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Position,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PositionCopyWith<$Res> get position {
+    return $PositionCopyWith<$Res>(_value.position, (value) {
+      return _then(_value.copyWith(position: value) as $Val);
+    });
   }
 }
 
@@ -82,7 +86,10 @@ abstract class _$$UpdatePixelDataImplCopyWith<$Res>
       __$$UpdatePixelDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int x, int y, @ColorConverter() Color color});
+  $Res call({Position position, @ColorConverter() Color color});
+
+  @override
+  $PositionCopyWith<$Res> get position;
 }
 
 /// @nodoc
@@ -96,19 +103,14 @@ class __$$UpdatePixelDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? x = null,
-    Object? y = null,
+    Object? position = null,
     Object? color = null,
   }) {
     return _then(_$UpdatePixelDataImpl(
-      x: null == x
-          ? _value.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as int,
-      y: null == y
-          ? _value.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as int,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as Position,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -121,24 +123,20 @@ class __$$UpdatePixelDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdatePixelDataImpl implements _UpdatePixelData {
   _$UpdatePixelDataImpl(
-      {required this.x,
-      required this.y,
-      @ColorConverter() required this.color});
+      {required this.position, @ColorConverter() required this.color});
 
   factory _$UpdatePixelDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdatePixelDataImplFromJson(json);
 
   @override
-  final int x;
-  @override
-  final int y;
+  final Position position;
   @override
   @ColorConverter()
   final Color color;
 
   @override
   String toString() {
-    return 'UpdatePixelData(x: $x, y: $y, color: $color)';
+    return 'UpdatePixelData(position: $position, color: $color)';
   }
 
   @override
@@ -146,14 +144,14 @@ class _$UpdatePixelDataImpl implements _UpdatePixelData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdatePixelDataImpl &&
-            (identical(other.x, x) || other.x == x) &&
-            (identical(other.y, y) || other.y == y) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
             (identical(other.color, color) || other.color == color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, x, y, color);
+  int get hashCode => Object.hash(runtimeType, position, color);
 
   @JsonKey(ignore: true)
   @override
@@ -172,17 +170,14 @@ class _$UpdatePixelDataImpl implements _UpdatePixelData {
 
 abstract class _UpdatePixelData implements UpdatePixelData {
   factory _UpdatePixelData(
-      {required final int x,
-      required final int y,
+      {required final Position position,
       @ColorConverter() required final Color color}) = _$UpdatePixelDataImpl;
 
   factory _UpdatePixelData.fromJson(Map<String, dynamic> json) =
       _$UpdatePixelDataImpl.fromJson;
 
   @override
-  int get x;
-  @override
-  int get y;
+  Position get position;
   @override
   @ColorConverter()
   Color get color;

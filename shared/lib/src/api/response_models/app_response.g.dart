@@ -61,6 +61,7 @@ Map<String, dynamic> _$$UserIdResponseImplToJson(
 _$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$FieldStateResponseImpl(
+      cooldown: json['cooldown'] as int,
       size: (json['size'] as List<dynamic>).map((e) => e as int).toList(),
       data: (json['data'] as List<dynamic>)
           .map((e) => FieldPixel.fromJson(e as Map<String, dynamic>))
@@ -71,6 +72,7 @@ _$FieldStateResponseImpl _$$FieldStateResponseImplFromJson(
 Map<String, dynamic> _$$FieldStateResponseImplToJson(
         _$FieldStateResponseImpl instance) =>
     <String, dynamic>{
+      'cooldown': instance.cooldown,
       'size': instance.size,
       'data': instance.data.map((e) => e.toJson()).toList(),
       'type': instance.$type,
@@ -99,6 +101,20 @@ _$PixelInfoAdminResponseImpl _$$PixelInfoAdminResponseImplFromJson(
 
 Map<String, dynamic> _$$PixelInfoAdminResponseImplToJson(
         _$PixelInfoAdminResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data.toJson(),
+      'type': instance.$type,
+    };
+
+_$SelectionUpdateResponseImpl _$$SelectionUpdateResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SelectionUpdateResponseImpl(
+      SelectionUpdateData.fromJson(json['data'] as Map<String, dynamic>),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$SelectionUpdateResponseImplToJson(
+        _$SelectionUpdateResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data.toJson(),
       'type': instance.$type,

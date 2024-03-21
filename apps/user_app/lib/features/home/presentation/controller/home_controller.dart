@@ -50,8 +50,10 @@ class HomeController extends _$HomeController with ControllerMixin {
       () => api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
-            x: offset.dx.toInt(),
-            y: offset.dy.toInt(),
+            position: Position(
+              x: offset.dx.toInt(),
+              y: offset.dy.toInt(),
+            ),
             color: state.selectedColor,
           ),
         ),

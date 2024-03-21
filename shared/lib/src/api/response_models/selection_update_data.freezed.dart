@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'field_pixel.dart';
+part of 'selection_update_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,39 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-FieldPixel _$FieldPixelFromJson(Map<String, dynamic> json) {
-  return _FieldPixel.fromJson(json);
+SelectionUpdateData _$SelectionUpdateDataFromJson(Map<String, dynamic> json) {
+  return _SelectionUpdateData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FieldPixel {
+mixin _$SelectionUpdateData {
   Position get position => throw _privateConstructorUsedError;
-  @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
   String get nickname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FieldPixelCopyWith<FieldPixel> get copyWith =>
+  $SelectionUpdateDataCopyWith<SelectionUpdateData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FieldPixelCopyWith<$Res> {
-  factory $FieldPixelCopyWith(
-          FieldPixel value, $Res Function(FieldPixel) then) =
-      _$FieldPixelCopyWithImpl<$Res, FieldPixel>;
+abstract class $SelectionUpdateDataCopyWith<$Res> {
+  factory $SelectionUpdateDataCopyWith(
+          SelectionUpdateData value, $Res Function(SelectionUpdateData) then) =
+      _$SelectionUpdateDataCopyWithImpl<$Res, SelectionUpdateData>;
   @useResult
-  $Res call(
-      {Position position, @ColorConverter() Color color, String nickname});
+  $Res call({Position position, String nickname});
 
   $PositionCopyWith<$Res> get position;
 }
 
 /// @nodoc
-class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
-    implements $FieldPixelCopyWith<$Res> {
-  _$FieldPixelCopyWithImpl(this._value, this._then);
+class _$SelectionUpdateDataCopyWithImpl<$Res, $Val extends SelectionUpdateData>
+    implements $SelectionUpdateDataCopyWith<$Res> {
+  _$SelectionUpdateDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -57,7 +54,6 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
   @override
   $Res call({
     Object? position = null,
-    Object? color = null,
     Object? nickname = null,
   }) {
     return _then(_value.copyWith(
@@ -65,10 +61,6 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Position,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -86,44 +78,38 @@ class _$FieldPixelCopyWithImpl<$Res, $Val extends FieldPixel>
 }
 
 /// @nodoc
-abstract class _$$FieldPixelImplCopyWith<$Res>
-    implements $FieldPixelCopyWith<$Res> {
-  factory _$$FieldPixelImplCopyWith(
-          _$FieldPixelImpl value, $Res Function(_$FieldPixelImpl) then) =
-      __$$FieldPixelImplCopyWithImpl<$Res>;
+abstract class _$$SelectionUpdateDataImplCopyWith<$Res>
+    implements $SelectionUpdateDataCopyWith<$Res> {
+  factory _$$SelectionUpdateDataImplCopyWith(_$SelectionUpdateDataImpl value,
+          $Res Function(_$SelectionUpdateDataImpl) then) =
+      __$$SelectionUpdateDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {Position position, @ColorConverter() Color color, String nickname});
+  $Res call({Position position, String nickname});
 
   @override
   $PositionCopyWith<$Res> get position;
 }
 
 /// @nodoc
-class __$$FieldPixelImplCopyWithImpl<$Res>
-    extends _$FieldPixelCopyWithImpl<$Res, _$FieldPixelImpl>
-    implements _$$FieldPixelImplCopyWith<$Res> {
-  __$$FieldPixelImplCopyWithImpl(
-      _$FieldPixelImpl _value, $Res Function(_$FieldPixelImpl) _then)
+class __$$SelectionUpdateDataImplCopyWithImpl<$Res>
+    extends _$SelectionUpdateDataCopyWithImpl<$Res, _$SelectionUpdateDataImpl>
+    implements _$$SelectionUpdateDataImplCopyWith<$Res> {
+  __$$SelectionUpdateDataImplCopyWithImpl(_$SelectionUpdateDataImpl _value,
+      $Res Function(_$SelectionUpdateDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? position = null,
-    Object? color = null,
     Object? nickname = null,
   }) {
-    return _then(_$FieldPixelImpl(
+    return _then(_$SelectionUpdateDataImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as Position,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color,
       nickname: null == nickname
           ? _value.nickname
           : nickname // ignore: cast_nullable_to_non_nullable
@@ -134,76 +120,66 @@ class __$$FieldPixelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FieldPixelImpl implements _FieldPixel {
-  _$FieldPixelImpl(
-      {required this.position,
-      @ColorConverter() required this.color,
-      required this.nickname});
+class _$SelectionUpdateDataImpl implements _SelectionUpdateData {
+  _$SelectionUpdateDataImpl({required this.position, required this.nickname});
 
-  factory _$FieldPixelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FieldPixelImplFromJson(json);
+  factory _$SelectionUpdateDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SelectionUpdateDataImplFromJson(json);
 
   @override
   final Position position;
-  @override
-  @ColorConverter()
-  final Color color;
   @override
   final String nickname;
 
   @override
   String toString() {
-    return 'FieldPixel(position: $position, color: $color, nickname: $nickname)';
+    return 'SelectionUpdateData(position: $position, nickname: $nickname)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FieldPixelImpl &&
+            other is _$SelectionUpdateDataImpl &&
             (identical(other.position, position) ||
                 other.position == position) &&
-            (identical(other.color, color) || other.color == color) &&
             (identical(other.nickname, nickname) ||
                 other.nickname == nickname));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, position, color, nickname);
+  int get hashCode => Object.hash(runtimeType, position, nickname);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith =>
-      __$$FieldPixelImplCopyWithImpl<_$FieldPixelImpl>(this, _$identity);
+  _$$SelectionUpdateDataImplCopyWith<_$SelectionUpdateDataImpl> get copyWith =>
+      __$$SelectionUpdateDataImplCopyWithImpl<_$SelectionUpdateDataImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$FieldPixelImplToJson(
+    return _$$SelectionUpdateDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _FieldPixel implements FieldPixel {
-  factory _FieldPixel(
+abstract class _SelectionUpdateData implements SelectionUpdateData {
+  factory _SelectionUpdateData(
       {required final Position position,
-      @ColorConverter() required final Color color,
-      required final String nickname}) = _$FieldPixelImpl;
+      required final String nickname}) = _$SelectionUpdateDataImpl;
 
-  factory _FieldPixel.fromJson(Map<String, dynamic> json) =
-      _$FieldPixelImpl.fromJson;
+  factory _SelectionUpdateData.fromJson(Map<String, dynamic> json) =
+      _$SelectionUpdateDataImpl.fromJson;
 
   @override
   Position get position;
   @override
-  @ColorConverter()
-  Color get color;
-  @override
   String get nickname;
   @override
   @JsonKey(ignore: true)
-  _$$FieldPixelImplCopyWith<_$FieldPixelImpl> get copyWith =>
+  _$$SelectionUpdateDataImplCopyWith<_$SelectionUpdateDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

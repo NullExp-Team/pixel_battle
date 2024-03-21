@@ -42,8 +42,8 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
         final map = state.valueOrNull;
         if (map != null) {
           final pixel = res.data;
-          final x = pixel.x;
-          final y = pixel.y;
+          final x = pixel.position.x;
+          final y = pixel.position.y;
           final pixels = map.pixels;
           pixels.putIfAbsent(x, () => {});
           pixels[x]![y] = pixel;
@@ -70,8 +70,8 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     final pixels = <int, Map<int, FieldPixel>>{};
 
     for (final pixel in fieldState.data) {
-      final x = pixel.x;
-      final y = pixel.y;
+      final x = pixel.position.x;
+      final y = pixel.position.y;
 
       pixels.putIfAbsent(x, () => {});
       pixels[x]![y] = pixel;

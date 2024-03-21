@@ -9,13 +9,11 @@ part of 'pixel_info_admin_data.dart';
 _$PixelInfoAdminDataImpl _$$PixelInfoAdminDataImplFromJson(
         Map<String, dynamic> json) =>
     _$PixelInfoAdminDataImpl(
-      x: json['x'] as int,
-      y: json['y'] as int,
+      position: Position.fromJson(json['position'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$PixelInfoAdminDataImplToJson(
         _$PixelInfoAdminDataImpl instance) =>
     <String, dynamic>{
-      'x': instance.x,
-      'y': instance.y,
+      'position': instance.position.toJson(),
     };

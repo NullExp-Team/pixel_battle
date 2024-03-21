@@ -1,4 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:core/core.dart';
 
 part 'pixel_info_admin.freezed.dart';
 part 'pixel_info_admin.g.dart';
