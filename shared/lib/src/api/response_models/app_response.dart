@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'field_pixel.dart';
 import 'online_count_data.dart';
 import 'pixel_info_admin.dart';
+import 'selection_update_data.dart';
 import 'user_info.dart';
 
 part 'app_response.freezed.dart';
@@ -24,6 +25,8 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.userId(String data) = UserIdResponse;
 
   const factory AppResponse.fieldState({
+    // In seconds
+    required int cooldown,
     required List<int> size,
     required List<FieldPixel> data,
   }) = FieldStateResponse;
@@ -31,6 +34,9 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.pixelUpdate(FieldPixel data) = PixelUpdateResponse;
   const factory AppResponse.pixelInfo(PixelInfoAdmin data) =
       PixelInfoAdminResponse;
+
+  const factory AppResponse.selectionUpdate(SelectionUpdateData data) =
+      SelectionUpdateResponse;
 
   const factory AppResponse.onlineCount(OnlineCountData data) =
       OnlineCountResponse;

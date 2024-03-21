@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'update_pixel_data.dart';
+part of 'selection_update_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UpdatePixelDataImpl _$$UpdatePixelDataImplFromJson(
+_$SelectionUpdateDataImpl _$$SelectionUpdateDataImplFromJson(
         Map<String, dynamic> json) =>
-    _$UpdatePixelDataImpl(
+    _$SelectionUpdateDataImpl(
       position: Position.fromJson(json['position'] as Map<String, dynamic>),
-      color: const ColorConverter().fromJson(json['color'] as String),
+      nickname: json['nickname'] as String,
     );
 
-Map<String, dynamic> _$$UpdatePixelDataImplToJson(
-        _$UpdatePixelDataImpl instance) =>
+Map<String, dynamic> _$$SelectionUpdateDataImplToJson(
+        _$SelectionUpdateDataImpl instance) =>
     <String, dynamic>{
       'position': instance.position.toJson(),
-      'color': const ColorConverter().toJson(instance.color),
+      'nickname': instance.nickname,
     };

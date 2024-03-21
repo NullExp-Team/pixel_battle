@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'pixel_info_admin_data.dart';
+part of 'update_selection_data.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,25 +14,25 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-PixelInfoAdminData _$PixelInfoAdminDataFromJson(Map<String, dynamic> json) {
-  return _PixelInfoAdminData.fromJson(json);
+UpdateSelectionData _$UpdateSelectionDataFromJson(Map<String, dynamic> json) {
+  return _UpdateSelectionData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PixelInfoAdminData {
+mixin _$UpdateSelectionData {
   Position get position => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PixelInfoAdminDataCopyWith<PixelInfoAdminData> get copyWith =>
+  $UpdateSelectionDataCopyWith<UpdateSelectionData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PixelInfoAdminDataCopyWith<$Res> {
-  factory $PixelInfoAdminDataCopyWith(
-          PixelInfoAdminData value, $Res Function(PixelInfoAdminData) then) =
-      _$PixelInfoAdminDataCopyWithImpl<$Res, PixelInfoAdminData>;
+abstract class $UpdateSelectionDataCopyWith<$Res> {
+  factory $UpdateSelectionDataCopyWith(
+          UpdateSelectionData value, $Res Function(UpdateSelectionData) then) =
+      _$UpdateSelectionDataCopyWithImpl<$Res, UpdateSelectionData>;
   @useResult
   $Res call({Position position});
 
@@ -40,9 +40,9 @@ abstract class $PixelInfoAdminDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PixelInfoAdminDataCopyWithImpl<$Res, $Val extends PixelInfoAdminData>
-    implements $PixelInfoAdminDataCopyWith<$Res> {
-  _$PixelInfoAdminDataCopyWithImpl(this._value, this._then);
+class _$UpdateSelectionDataCopyWithImpl<$Res, $Val extends UpdateSelectionData>
+    implements $UpdateSelectionDataCopyWith<$Res> {
+  _$UpdateSelectionDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -72,11 +72,11 @@ class _$PixelInfoAdminDataCopyWithImpl<$Res, $Val extends PixelInfoAdminData>
 }
 
 /// @nodoc
-abstract class _$$PixelInfoAdminDataImplCopyWith<$Res>
-    implements $PixelInfoAdminDataCopyWith<$Res> {
-  factory _$$PixelInfoAdminDataImplCopyWith(_$PixelInfoAdminDataImpl value,
-          $Res Function(_$PixelInfoAdminDataImpl) then) =
-      __$$PixelInfoAdminDataImplCopyWithImpl<$Res>;
+abstract class _$$UpdateSelectionDataImplCopyWith<$Res>
+    implements $UpdateSelectionDataCopyWith<$Res> {
+  factory _$$UpdateSelectionDataImplCopyWith(_$UpdateSelectionDataImpl value,
+          $Res Function(_$UpdateSelectionDataImpl) then) =
+      __$$UpdateSelectionDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Position position});
@@ -86,11 +86,11 @@ abstract class _$$PixelInfoAdminDataImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PixelInfoAdminDataImplCopyWithImpl<$Res>
-    extends _$PixelInfoAdminDataCopyWithImpl<$Res, _$PixelInfoAdminDataImpl>
-    implements _$$PixelInfoAdminDataImplCopyWith<$Res> {
-  __$$PixelInfoAdminDataImplCopyWithImpl(_$PixelInfoAdminDataImpl _value,
-      $Res Function(_$PixelInfoAdminDataImpl) _then)
+class __$$UpdateSelectionDataImplCopyWithImpl<$Res>
+    extends _$UpdateSelectionDataCopyWithImpl<$Res, _$UpdateSelectionDataImpl>
+    implements _$$UpdateSelectionDataImplCopyWith<$Res> {
+  __$$UpdateSelectionDataImplCopyWithImpl(_$UpdateSelectionDataImpl _value,
+      $Res Function(_$UpdateSelectionDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -98,7 +98,7 @@ class __$$PixelInfoAdminDataImplCopyWithImpl<$Res>
   $Res call({
     Object? position = null,
   }) {
-    return _then(_$PixelInfoAdminDataImpl(
+    return _then(_$UpdateSelectionDataImpl(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
@@ -109,25 +109,25 @@ class __$$PixelInfoAdminDataImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PixelInfoAdminDataImpl implements _PixelInfoAdminData {
-  _$PixelInfoAdminDataImpl({required this.position});
+class _$UpdateSelectionDataImpl implements _UpdateSelectionData {
+  _$UpdateSelectionDataImpl({required this.position});
 
-  factory _$PixelInfoAdminDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PixelInfoAdminDataImplFromJson(json);
+  factory _$UpdateSelectionDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateSelectionDataImplFromJson(json);
 
   @override
   final Position position;
 
   @override
   String toString() {
-    return 'PixelInfoAdminData(position: $position)';
+    return 'UpdateSelectionData(position: $position)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PixelInfoAdminDataImpl &&
+            other is _$UpdateSelectionDataImpl &&
             (identical(other.position, position) ||
                 other.position == position));
   }
@@ -139,29 +139,29 @@ class _$PixelInfoAdminDataImpl implements _PixelInfoAdminData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PixelInfoAdminDataImplCopyWith<_$PixelInfoAdminDataImpl> get copyWith =>
-      __$$PixelInfoAdminDataImplCopyWithImpl<_$PixelInfoAdminDataImpl>(
+  _$$UpdateSelectionDataImplCopyWith<_$UpdateSelectionDataImpl> get copyWith =>
+      __$$UpdateSelectionDataImplCopyWithImpl<_$UpdateSelectionDataImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PixelInfoAdminDataImplToJson(
+    return _$$UpdateSelectionDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _PixelInfoAdminData implements PixelInfoAdminData {
-  factory _PixelInfoAdminData({required final Position position}) =
-      _$PixelInfoAdminDataImpl;
+abstract class _UpdateSelectionData implements UpdateSelectionData {
+  factory _UpdateSelectionData({required final Position position}) =
+      _$UpdateSelectionDataImpl;
 
-  factory _PixelInfoAdminData.fromJson(Map<String, dynamic> json) =
-      _$PixelInfoAdminDataImpl.fromJson;
+  factory _UpdateSelectionData.fromJson(Map<String, dynamic> json) =
+      _$UpdateSelectionDataImpl.fromJson;
 
   @override
   Position get position;
   @override
   @JsonKey(ignore: true)
-  _$$PixelInfoAdminDataImplCopyWith<_$PixelInfoAdminDataImpl> get copyWith =>
+  _$$UpdateSelectionDataImplCopyWith<_$UpdateSelectionDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -68,8 +68,10 @@ class AdminController extends _$AdminController with ControllerMixin {
       () => api.request(
         AppRequest.updatePixelAdmin(
           UpdatePixelData(
-            x: state.selectedPixelPosition!.dx.toInt(),
-            y: state.selectedPixelPosition!.dy.toInt(),
+            position: Position(
+              x: state.selectedPixelPosition!.dx.toInt(),
+              y: state.selectedPixelPosition!.dy.toInt(),
+            ),
             color: const Color(0xffffffff),
           ),
         ),
@@ -83,8 +85,10 @@ class AdminController extends _$AdminController with ControllerMixin {
     final userId = await api.request<PixelInfoAdminResponse>(
       AppRequest.pixelInfoAdmin(
         PixelInfoAdminData(
-          x: state.selectedPixelPosition!.dx.toInt(),
-          y: state.selectedPixelPosition!.dy.toInt(),
+          position: Position(
+            x: state.selectedPixelPosition!.dx.toInt(),
+            y: state.selectedPixelPosition!.dy.toInt(),
+          ),
         ),
       ),
     );
