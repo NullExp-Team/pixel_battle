@@ -118,6 +118,22 @@ Map<String, dynamic> _$$OnlineCountResponseImplToJson(
       'type': instance.$type,
     };
 
+_$UserInfoResponseImpl _$$UserInfoResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UserInfoResponseImpl(
+      (json['data'] as List<dynamic>)
+          .map((e) => UserInfo.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$UserInfoResponseImplToJson(
+        _$UserInfoResponseImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data.map((e) => e.toJson()).toList(),
+      'type': instance.$type,
+    };
+
 _$NoResponseImpl _$$NoResponseImplFromJson(Map<String, dynamic> json) =>
     _$NoResponseImpl(
       $type: json['type'] as String?,
