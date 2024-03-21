@@ -12,7 +12,7 @@ part 'admin_controller.g.dart';
 class AdminControllerState with _$AdminControllerState {
   factory AdminControllerState({
     required Offset? selectedPixelPosition,
-    required bool isLogined,
+    required List<UserInfo> users,
   }) = _AdminControllerState;
 }
 
@@ -22,7 +22,10 @@ class AdminController extends _$AdminController with ControllerMixin {
 
   @override
   AdminControllerState build() {
-    return AdminControllerState(selectedPixelPosition: null, isLogined: false);
+    return AdminControllerState(
+      selectedPixelPosition: null,
+      users: [],
+    );
   }
 
   void updateSelectedPosition(Offset? position) {
@@ -31,7 +34,17 @@ class AdminController extends _$AdminController with ControllerMixin {
 
   void login() {
     final dio = ref.read(dioProvider);
-    final adminService = ref.watch(adminServiceProvider.notifier);
+
+    final apiStream = ref.watch(webSocketApiProvider);
+    final userInfoStream = apiStream.whereType<UsersOnlineResponse>();
+
+    final listener = userInfoStream.listen(
+      (event) {
+        state = state.copyWith(users: event.data);
+      },
+    );
+
+    ref.onDispose(listener.cancel);
 
     dio.post<Map<String, dynamic>>(
       'http://pixel-battle.k-lab.su/admin/login',
@@ -42,7 +55,7 @@ class AdminController extends _$AdminController with ControllerMixin {
     ).then(
       (value) {
         if (value.data != null && value.data!['access_token'] != null) {
-          adminService.auth(token: value.data!['access_token']! as String);
+          _adminService.auth(token: value.data!['access_token']! as String);
         }
       },
     );

@@ -35,7 +35,8 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.onlineCount(OnlineCountData data) =
       OnlineCountResponse;
 
-  const factory AppResponse.userInfo(List<UserInfo> data) = UserInfoResponse;
+  const factory AppResponse.usersOnline(List<UserInfo> data) =
+      UsersOnlineResponse;
 
   const factory AppResponse.no() = NoResponse;
 
