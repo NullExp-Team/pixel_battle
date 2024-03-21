@@ -20,14 +20,15 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
     final controller = ref.watch(homeControllerProvider.notifier);
 
     return Container(
-      constraints:
-          BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.9),
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.sizeOf(context).height * 0.9,
+      ),
       decoration: BoxDecoration(
         color: colors.background,
         border: Border.all(color: colors.divider, strokeAlign: 1),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(38)),
       ),
-      padding: const EdgeInsets.only(top: 12),
+      padding: pagePadding.copyWith(top: 12),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -75,7 +76,7 @@ class _ColorPickerBottomSheet extends HookConsumerWidget {
                 );
 
                 return GridView.builder(
-                  padding: pagePadding.copyWith(bottom: 36),
+                  padding: const EdgeInsets.only(bottom: 36),
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 100,
                     mainAxisSpacing: 10,

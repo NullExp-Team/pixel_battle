@@ -26,7 +26,7 @@ dependencies:
   dio: ^5.4.1
   http: ^1.1.0
 
-  flutter_native_splash: ^2.3.13
+  flutter_native_splash: ^2.4.0
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
@@ -47,6 +47,16 @@ dev_dependencies:
 
   flutter_launcher_icons: ^0.13.1
   auto_route_generator: ^7.3.2
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "../../core/assets/pixel_battle_icon.png"
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "../../core/assets/pixel_battle_icon_rounded.png"
 
 flutter:
   uses-material-design: true

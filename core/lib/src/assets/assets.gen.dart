@@ -17,11 +17,26 @@ class Assets {
   static const String package = 'core';
 
   static const AssetGenImage aboba = AssetGenImage('assets/aboba.png');
+  static const AssetGenImage pixelBattleIcon =
+      AssetGenImage('assets/pixel_battle_icon.png');
+  static const AssetGenImage pixelBattleIconRounded =
+      AssetGenImage('assets/pixel_battle_icon_rounded.png');
+  static const AssetGenImage pixelBattleLogoPng =
+      AssetGenImage('assets/pixel_battle_logo.png');
+  static const SvgGenImage pixelBattleLogoSvg =
+      SvgGenImage('assets/pixel_battle_logo.svg');
   static const SvgGenImage workInProgress =
       SvgGenImage('assets/work-in-progress.svg');
 
   /// List of all assets
-  static List<dynamic> get values => [aboba, workInProgress];
+  static List<dynamic> get values => [
+        aboba,
+        pixelBattleIcon,
+        pixelBattleIconRounded,
+        pixelBattleLogoPng,
+        pixelBattleLogoSvg,
+        workInProgress
+      ];
 }
 
 class AssetGenImage {
