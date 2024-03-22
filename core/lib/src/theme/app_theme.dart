@@ -72,14 +72,14 @@ abstract class AppTheme {
   }
 
   static ThemeData light() => fromStyles(
-        data: ThemeData.light(useMaterial3: true),
+        data: ThemeData.light(useMaterial3: false),
         colors: AppColors.light,
         textStyles: AppTextStyles.general,
         shadows: AppShadows.general,
       );
 
   static ThemeData dark() => fromStyles(
-        data: ThemeData.dark(useMaterial3: true),
+        data: ThemeData.dark(useMaterial3: false),
         colors: AppColors.light,
         textStyles: AppTextStyles.general,
         shadows: AppShadows.general,

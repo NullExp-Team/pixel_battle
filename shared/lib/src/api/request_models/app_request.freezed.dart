@@ -31,7 +31,9 @@ AppRequest _$AppRequestFromJson(Map<String, dynamic> json) {
     case 'update_pixel_admin':
       return UpdatePixelAdminRequest.fromJson(json);
     case 'update_selection':
-      return UpdateSelectionnRequest.fromJson(json);
+      return UpdateSelectionRequest.fromJson(json);
+    case 'update_cooldown_admin':
+      return UpdateCooldownRequest.fromJson(json);
     case 'pixel_info_admin':
       return PixelInfoAdminRequest.fromJson(json);
     case 'toggle_ban_user_admin':
@@ -59,6 +61,7 @@ mixin _$AppRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -75,6 +78,7 @@ mixin _$AppRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -91,6 +95,7 @@ mixin _$AppRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -107,7 +112,8 @@ mixin _$AppRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -124,7 +130,8 @@ mixin _$AppRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -140,7 +147,8 @@ mixin _$AppRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -259,6 +267,7 @@ class _$LoginRequestImpl implements LoginRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -278,6 +287,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -297,6 +307,7 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -319,7 +330,8 @@ class _$LoginRequestImpl implements LoginRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -339,7 +351,8 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -358,7 +371,8 @@ class _$LoginRequestImpl implements LoginRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -472,6 +486,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -491,6 +506,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -510,6 +526,7 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -532,7 +549,8 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -552,7 +570,8 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -571,7 +590,8 @@ class _$LoginAdminRequestImpl implements LoginAdminRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -659,6 +679,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -678,6 +699,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -697,6 +719,7 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -719,7 +742,8 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -739,7 +763,8 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -758,7 +783,8 @@ class _$GetFieldStateRequestImpl implements GetFieldStateRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -842,6 +868,7 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -861,6 +888,7 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -880,6 +908,7 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -902,7 +931,8 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -922,7 +952,8 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -941,7 +972,8 @@ class _$GetOnlineCountRequestImpl implements GetOnlineCountRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1023,6 +1055,7 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -1042,6 +1075,7 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -1061,6 +1095,7 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -1083,7 +1118,8 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -1103,7 +1139,8 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1122,7 +1159,8 @@ class _$GetCooldownRequestImpl implements GetCooldownRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1241,6 +1279,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -1260,6 +1299,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -1279,6 +1319,7 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -1301,7 +1342,8 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -1321,7 +1363,8 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1340,7 +1383,8 @@ class _$UpdatePixelRequestImpl implements UpdatePixelRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1467,6 +1511,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -1486,6 +1531,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -1505,6 +1551,7 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -1527,7 +1574,8 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -1547,7 +1595,8 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1566,7 +1615,8 @@ class _$UpdatePixelAdminRequestImpl implements UpdatePixelAdminRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1601,11 +1651,11 @@ abstract class UpdatePixelAdminRequest implements AppRequest {
 }
 
 /// @nodoc
-abstract class _$$UpdateSelectionnRequestImplCopyWith<$Res> {
-  factory _$$UpdateSelectionnRequestImplCopyWith(
-          _$UpdateSelectionnRequestImpl value,
-          $Res Function(_$UpdateSelectionnRequestImpl) then) =
-      __$$UpdateSelectionnRequestImplCopyWithImpl<$Res>;
+abstract class _$$UpdateSelectionRequestImplCopyWith<$Res> {
+  factory _$$UpdateSelectionRequestImplCopyWith(
+          _$UpdateSelectionRequestImpl value,
+          $Res Function(_$UpdateSelectionRequestImpl) then) =
+      __$$UpdateSelectionRequestImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdateSelectionData data});
 
@@ -1613,12 +1663,12 @@ abstract class _$$UpdateSelectionnRequestImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UpdateSelectionnRequestImplCopyWithImpl<$Res>
-    extends _$AppRequestCopyWithImpl<$Res, _$UpdateSelectionnRequestImpl>
-    implements _$$UpdateSelectionnRequestImplCopyWith<$Res> {
-  __$$UpdateSelectionnRequestImplCopyWithImpl(
-      _$UpdateSelectionnRequestImpl _value,
-      $Res Function(_$UpdateSelectionnRequestImpl) _then)
+class __$$UpdateSelectionRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$UpdateSelectionRequestImpl>
+    implements _$$UpdateSelectionRequestImplCopyWith<$Res> {
+  __$$UpdateSelectionRequestImplCopyWithImpl(
+      _$UpdateSelectionRequestImpl _value,
+      $Res Function(_$UpdateSelectionRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1626,7 +1676,7 @@ class __$$UpdateSelectionnRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$UpdateSelectionnRequestImpl(
+    return _then(_$UpdateSelectionRequestImpl(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1645,12 +1695,12 @@ class __$$UpdateSelectionnRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
-  _$UpdateSelectionnRequestImpl(this.data, {final String? $type})
+class _$UpdateSelectionRequestImpl implements UpdateSelectionRequest {
+  _$UpdateSelectionRequestImpl(this.data, {final String? $type})
       : $type = $type ?? 'update_selection';
 
-  factory _$UpdateSelectionnRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UpdateSelectionnRequestImplFromJson(json);
+  factory _$UpdateSelectionRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateSelectionRequestImplFromJson(json);
 
   @override
   final UpdateSelectionData data;
@@ -1667,7 +1717,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateSelectionnRequestImpl &&
+            other is _$UpdateSelectionRequestImpl &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -1678,9 +1728,9 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateSelectionnRequestImplCopyWith<_$UpdateSelectionnRequestImpl>
-      get copyWith => __$$UpdateSelectionnRequestImplCopyWithImpl<
-          _$UpdateSelectionnRequestImpl>(this, _$identity);
+  _$$UpdateSelectionRequestImplCopyWith<_$UpdateSelectionRequestImpl>
+      get copyWith => __$$UpdateSelectionRequestImplCopyWithImpl<
+          _$UpdateSelectionRequestImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1693,6 +1743,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -1712,6 +1763,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -1731,6 +1783,7 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -1753,7 +1806,8 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -1773,7 +1827,8 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1792,7 +1847,8 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -1807,22 +1863,242 @@ class _$UpdateSelectionnRequestImpl implements UpdateSelectionnRequest {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UpdateSelectionnRequestImplToJson(
+    return _$$UpdateSelectionRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class UpdateSelectionnRequest implements AppRequest {
-  factory UpdateSelectionnRequest(final UpdateSelectionData data) =
-      _$UpdateSelectionnRequestImpl;
+abstract class UpdateSelectionRequest implements AppRequest {
+  factory UpdateSelectionRequest(final UpdateSelectionData data) =
+      _$UpdateSelectionRequestImpl;
 
-  factory UpdateSelectionnRequest.fromJson(Map<String, dynamic> json) =
-      _$UpdateSelectionnRequestImpl.fromJson;
+  factory UpdateSelectionRequest.fromJson(Map<String, dynamic> json) =
+      _$UpdateSelectionRequestImpl.fromJson;
 
   UpdateSelectionData get data;
   @JsonKey(ignore: true)
-  _$$UpdateSelectionnRequestImplCopyWith<_$UpdateSelectionnRequestImpl>
+  _$$UpdateSelectionRequestImplCopyWith<_$UpdateSelectionRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateCooldownRequestImplCopyWith<$Res> {
+  factory _$$UpdateCooldownRequestImplCopyWith(
+          _$UpdateCooldownRequestImpl value,
+          $Res Function(_$UpdateCooldownRequestImpl) then) =
+      __$$UpdateCooldownRequestImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int data});
+}
+
+/// @nodoc
+class __$$UpdateCooldownRequestImplCopyWithImpl<$Res>
+    extends _$AppRequestCopyWithImpl<$Res, _$UpdateCooldownRequestImpl>
+    implements _$$UpdateCooldownRequestImplCopyWith<$Res> {
+  __$$UpdateCooldownRequestImplCopyWithImpl(_$UpdateCooldownRequestImpl _value,
+      $Res Function(_$UpdateCooldownRequestImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UpdateCooldownRequestImpl(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UpdateCooldownRequestImpl implements UpdateCooldownRequest {
+  _$UpdateCooldownRequestImpl(this.data, {final String? $type})
+      : $type = $type ?? 'update_cooldown_admin';
+
+  factory _$UpdateCooldownRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UpdateCooldownRequestImplFromJson(json);
+
+  @override
+  final int data;
+
+  @JsonKey(name: 'type')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'AppRequest.updateCooldownAdmin(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateCooldownRequestImpl &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateCooldownRequestImplCopyWith<_$UpdateCooldownRequestImpl>
+      get copyWith => __$$UpdateCooldownRequestImplCopyWithImpl<
+          _$UpdateCooldownRequestImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LoginData data) login,
+    required TResult Function(String data) loginAdmin,
+    required TResult Function() getFieldState,
+    required TResult Function() getOnlineCount,
+    required TResult Function() getCooldown,
+    required TResult Function(UpdatePixelData data) updatePixel,
+    required TResult Function(UpdatePixelData data) updatePixelAdmin,
+    required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
+    required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
+    required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
+    required TResult Function(List<int> data) resetGameAdmin,
+    required TResult Function() disconnect,
+  }) {
+    return updateCooldownAdmin(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LoginData data)? login,
+    TResult? Function(String data)? loginAdmin,
+    TResult? Function()? getFieldState,
+    TResult? Function()? getOnlineCount,
+    TResult? Function()? getCooldown,
+    TResult? Function(UpdatePixelData data)? updatePixel,
+    TResult? Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
+    TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
+    TResult? Function(List<int> data)? resetGameAdmin,
+    TResult? Function()? disconnect,
+  }) {
+    return updateCooldownAdmin?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LoginData data)? login,
+    TResult Function(String data)? loginAdmin,
+    TResult Function()? getFieldState,
+    TResult Function()? getOnlineCount,
+    TResult Function()? getCooldown,
+    TResult Function(UpdatePixelData data)? updatePixel,
+    TResult Function(UpdatePixelData data)? updatePixelAdmin,
+    TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
+    TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
+    TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
+    TResult Function(List<int> data)? resetGameAdmin,
+    TResult Function()? disconnect,
+    required TResult orElse(),
+  }) {
+    if (updateCooldownAdmin != null) {
+      return updateCooldownAdmin(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginRequest value) login,
+    required TResult Function(LoginAdminRequest value) loginAdmin,
+    required TResult Function(GetFieldStateRequest value) getFieldState,
+    required TResult Function(GetOnlineCountRequest value) getOnlineCount,
+    required TResult Function(GetCooldownRequest value) getCooldown,
+    required TResult Function(UpdatePixelRequest value) updatePixel,
+    required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
+    required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
+    required TResult Function(ToggleBanUserAdminRequest value)
+        toggleBanUserAdmin,
+    required TResult Function(ResetGameAdminRequest value) resetGameAdmin,
+    required TResult Function(DisconnectRequest value) disconnect,
+  }) {
+    return updateCooldownAdmin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoginRequest value)? login,
+    TResult? Function(LoginAdminRequest value)? loginAdmin,
+    TResult? Function(GetFieldStateRequest value)? getFieldState,
+    TResult? Function(GetOnlineCountRequest value)? getOnlineCount,
+    TResult? Function(GetCooldownRequest value)? getCooldown,
+    TResult? Function(UpdatePixelRequest value)? updatePixel,
+    TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
+    TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
+    TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult? Function(DisconnectRequest value)? disconnect,
+  }) {
+    return updateCooldownAdmin?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginRequest value)? login,
+    TResult Function(LoginAdminRequest value)? loginAdmin,
+    TResult Function(GetFieldStateRequest value)? getFieldState,
+    TResult Function(GetOnlineCountRequest value)? getOnlineCount,
+    TResult Function(GetCooldownRequest value)? getCooldown,
+    TResult Function(UpdatePixelRequest value)? updatePixel,
+    TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
+    TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
+    TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
+    TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
+    TResult Function(DisconnectRequest value)? disconnect,
+    required TResult orElse(),
+  }) {
+    if (updateCooldownAdmin != null) {
+      return updateCooldownAdmin(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UpdateCooldownRequestImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class UpdateCooldownRequest implements AppRequest {
+  factory UpdateCooldownRequest(final int data) = _$UpdateCooldownRequestImpl;
+
+  factory UpdateCooldownRequest.fromJson(Map<String, dynamic> json) =
+      _$UpdateCooldownRequestImpl.fromJson;
+
+  int get data;
+  @JsonKey(ignore: true)
+  _$$UpdateCooldownRequestImplCopyWith<_$UpdateCooldownRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1918,6 +2194,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -1937,6 +2214,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -1956,6 +2234,7 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -1978,7 +2257,8 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -1998,7 +2278,8 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2017,7 +2298,8 @@ class _$PixelInfoAdminRequestImpl implements PixelInfoAdminRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2144,6 +2426,7 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -2163,6 +2446,7 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -2182,6 +2466,7 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -2204,7 +2489,8 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -2224,7 +2510,8 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2243,7 +2530,8 @@ class _$ToggleBanUserAdminRequestImpl implements ToggleBanUserAdminRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2366,6 +2654,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -2385,6 +2674,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -2404,6 +2694,7 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -2426,7 +2717,8 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -2446,7 +2738,8 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2465,7 +2758,8 @@ class _$ResetGameAdminRequestImpl implements ResetGameAdminRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2553,6 +2847,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     required TResult Function(UpdatePixelData data) updatePixel,
     required TResult Function(UpdatePixelData data) updatePixelAdmin,
     required TResult Function(UpdateSelectionData data) updateSelection,
+    required TResult Function(int data) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminData data) pixelInfoAdmin,
     required TResult Function(BanUserAdminData data) toggleBanUserAdmin,
     required TResult Function(List<int> data) resetGameAdmin,
@@ -2572,6 +2867,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult? Function(UpdatePixelData data)? updatePixel,
     TResult? Function(UpdatePixelData data)? updatePixelAdmin,
     TResult? Function(UpdateSelectionData data)? updateSelection,
+    TResult? Function(int data)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult? Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult? Function(List<int> data)? resetGameAdmin,
@@ -2591,6 +2887,7 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult Function(UpdatePixelData data)? updatePixel,
     TResult Function(UpdatePixelData data)? updatePixelAdmin,
     TResult Function(UpdateSelectionData data)? updateSelection,
+    TResult Function(int data)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminData data)? pixelInfoAdmin,
     TResult Function(BanUserAdminData data)? toggleBanUserAdmin,
     TResult Function(List<int> data)? resetGameAdmin,
@@ -2613,7 +2910,8 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     required TResult Function(GetCooldownRequest value) getCooldown,
     required TResult Function(UpdatePixelRequest value) updatePixel,
     required TResult Function(UpdatePixelAdminRequest value) updatePixelAdmin,
-    required TResult Function(UpdateSelectionnRequest value) updateSelection,
+    required TResult Function(UpdateSelectionRequest value) updateSelection,
+    required TResult Function(UpdateCooldownRequest value) updateCooldownAdmin,
     required TResult Function(PixelInfoAdminRequest value) pixelInfoAdmin,
     required TResult Function(ToggleBanUserAdminRequest value)
         toggleBanUserAdmin,
@@ -2633,7 +2931,8 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult? Function(GetCooldownRequest value)? getCooldown,
     TResult? Function(UpdatePixelRequest value)? updatePixel,
     TResult? Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult? Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult? Function(UpdateSelectionRequest value)? updateSelection,
+    TResult? Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult? Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult? Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult? Function(ResetGameAdminRequest value)? resetGameAdmin,
@@ -2652,7 +2951,8 @@ class _$DisconnectRequestImpl implements DisconnectRequest {
     TResult Function(GetCooldownRequest value)? getCooldown,
     TResult Function(UpdatePixelRequest value)? updatePixel,
     TResult Function(UpdatePixelAdminRequest value)? updatePixelAdmin,
-    TResult Function(UpdateSelectionnRequest value)? updateSelection,
+    TResult Function(UpdateSelectionRequest value)? updateSelection,
+    TResult Function(UpdateCooldownRequest value)? updateCooldownAdmin,
     TResult Function(PixelInfoAdminRequest value)? pixelInfoAdmin,
     TResult Function(ToggleBanUserAdminRequest value)? toggleBanUserAdmin,
     TResult Function(ResetGameAdminRequest value)? resetGameAdmin,

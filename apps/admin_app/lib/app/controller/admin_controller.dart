@@ -94,21 +94,33 @@ class AdminController extends _$AdminController with ControllerMixin {
       ),
     );
 
+    final id = userId.data.userId;
+
+    if (id == null) return;
+
     await apiWrap(
       () => api.request(
         AppRequest.toggleBanUserAdmin(
           BanUserAdminData(
-            userId: userId.data.userId,
+            userId: id,
           ),
         ),
       ),
     );
   }
 
-  Future<void> resetField() async {
+  Future<void> resetField(int width, int height) async {
     await apiWrap(
       () => api.request(
-        AppRequest.resetGameAdmin([64, 64]),
+        AppRequest.resetGameAdmin([width, height]),
+      ),
+    );
+  }
+
+  Future<void> updateCooldown(int cooldown) async {
+    await apiWrap(
+      () => api.request(
+        AppRequest.updateCooldownAdmin(cooldown),
       ),
     );
   }

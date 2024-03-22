@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:core/core.dart';
-import 'package:shared/shared.dart';
+
+import '../../../api/request_models/app_request.dart';
+import '../../../api/response_models/app_response.dart';
+import '../../../api/web_socket_api.dart';
 
 part 'fill_pixel_cooldown_provider.g.dart';
 
