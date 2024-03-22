@@ -105,10 +105,10 @@ class AdminController extends _$AdminController with ControllerMixin {
     );
   }
 
-  Future<void> resetField() async {
+  Future<void> resetField(int width, int height) async {
     await apiWrap(
       () => api.request(
-        AppRequest.resetGameAdmin([64, 64]),
+        AppRequest.resetGameAdmin([width, height]),
       ),
     );
   }

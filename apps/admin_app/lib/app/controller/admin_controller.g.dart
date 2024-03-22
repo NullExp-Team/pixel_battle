@@ -6,7 +6,7 @@ part of 'admin_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$adminControllerHash() => r'9e0f45698e3d71d48f0e30064f52dc269d8bc39d';
+String _$adminControllerHash() => r'de831934bb1caa8245163221d68c098f4482b40c';
 
 /// See also [AdminController].
 @ProviderFor(AdminController)
@@ -17,8 +17,11 @@ final adminControllerProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$adminControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[webSocketApiProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    webSocketApiProvider,
+    ...?webSocketApiProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$AdminController = AutoDisposeNotifier<AdminControllerState>;

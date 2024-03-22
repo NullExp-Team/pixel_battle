@@ -21,16 +21,14 @@ class FieldImageService extends _$FieldImageService with ControllerMixin {
   Future<ui.Image> _convertFieldStateToImage(
     FieldStateMap fieldState,
   ) async {
-    // final width = fieldState.width;
-    // final height = fieldState.height;
-    const width = 64;
-    const height = 64;
-    const length = width * height;
+    final width = fieldState.width;
+    final height = fieldState.height;
+    final length = width * height;
 
     final pixels = Uint32List(length);
 
-    for (var y = 0; y < width; y++) {
-      for (var x = 0; x < height; x++) {
+    for (var y = 0; y < height; y++) {
+      for (var x = 0; x < width; x++) {
         final index = y * width + x;
         pixels[index] = 0xFFFFFFFF;
       }
