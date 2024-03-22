@@ -12,9 +12,6 @@ class MainApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
-    final controller = ref.watch(adminControllerProvider.notifier);
-
-    controller.login();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

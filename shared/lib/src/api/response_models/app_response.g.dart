@@ -146,17 +146,17 @@ Map<String, dynamic> _$$CooldownUpdateResponseImplToJson(
       'type': instance.$type,
     };
 
-_$UsersOnlineResponseImpl _$$UsersOnlineResponseImplFromJson(
+_$UsersInfoUpdateResponseImpl _$$UsersInfoUpdateResponseImplFromJson(
         Map<String, dynamic> json) =>
-    _$UsersOnlineResponseImpl(
+    _$UsersInfoUpdateResponseImpl(
       (json['data'] as List<dynamic>)
           .map((e) => UserInfo.fromJson(e as Map<String, dynamic>))
           .toList(),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$UsersOnlineResponseImplToJson(
-        _$UsersOnlineResponseImpl instance) =>
+Map<String, dynamic> _$$UsersInfoUpdateResponseImplToJson(
+        _$UsersInfoUpdateResponseImpl instance) =>
     <String, dynamic>{
       'data': instance.data.map((e) => e.toJson()).toList(),
       'type': instance.$type,

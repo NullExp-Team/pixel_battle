@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
+// ignore: implementation_imports, depend_on_referenced_packages
+import 'package:ws/src/client/ws_client_interface.dart';
 
 import '../domain/admin_service.dart';
 
@@ -32,11 +34,13 @@ class AdminController extends _$AdminController with ControllerMixin {
     state = state.copyWith(selectedPixelPosition: position);
   }
 
-  void login() {
+  Future<void> login({
+    required IWebSocketClient client,
+  }) async {
     final dio = ref.read(dioProvider);
 
     final apiStream = ref.watch(webSocketApiProvider);
-    final userInfoStream = apiStream.whereType<UsersOnlineResponse>();
+    final userInfoStream = apiStream.whereType<UsersInfoUpdateResponse>();
 
     final listener = userInfoStream.listen(
       (event) {
@@ -46,19 +50,20 @@ class AdminController extends _$AdminController with ControllerMixin {
 
     ref.onDispose(listener.cancel);
 
-    dio.post<Map<String, dynamic>>(
+    final token = await dio.post<Map<String, dynamic>>(
       'https://pixel-battle.k-lab.su/admin/login',
       data: {
         'username': 'admin',
         'password': 'password',
       },
-    ).then(
-      (value) {
-        if (value.data != null && value.data!['access_token'] != null) {
-          _adminService.auth(token: value.data!['access_token']! as String);
-        }
-      },
     );
+
+    if (token.data != null && token.data!['access_token'] != null) {
+      await _adminService.auth(
+        token: token.data!['access_token']! as String,
+        client: client,
+      );
+    }
   }
 
   Future<void> clearPixel() async {

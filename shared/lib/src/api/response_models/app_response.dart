@@ -46,8 +46,8 @@ sealed class AppResponse with _$AppResponse {
 
   const factory AppResponse.cooldownUpdate(int data) = CooldownUpdateResponse;
 
-  const factory AppResponse.usersOnline(List<UserInfo> data) =
-      UsersOnlineResponse;
+  const factory AppResponse.usersInfoUpdate(List<UserInfo> data) =
+      UsersInfoUpdateResponse;
 
   const factory AppResponse.no() = NoResponse;
 

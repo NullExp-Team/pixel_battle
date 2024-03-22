@@ -1,6 +1,9 @@
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
+// ignore: implementation_imports, depend_on_referenced_packages
+import 'package:ws/src/client/ws_client_interface.dart';
+
 part 'admin_service.freezed.dart';
 part 'admin_service.g.dart';
 
@@ -27,31 +30,21 @@ class AdminService extends _$AdminService
   @useInApiWrap
   Future<void> auth({
     required String token,
+    required IWebSocketClient client,
   }) async {
     final adminLoginRequest = LoginAdminRequest(token);
 
     await api.refreshConnection();
 
-    await apiWrapStrictSingle(
-      () => api.request<BackendSuccessResponse>(adminLoginRequest),
+    await apiWrapStrictSingle<void>(
+      () => api.request<BackendSuccessResponse>(adminLoginRequest,
+          client: client),
       showErrorToast: false,
       onSuccess: (res) {
-        state = AdminServiceState(token: token, users: []);
-      },
-      onError: (error) async {
-        switch (error) {
-          case InternalError(
-              error: BackendErrorResponse(message: 'User not found')
-            ):
-            if (state != null) {
-              state = null;
-              return auth(token: token);
-            } else {
-              throw error;
-            }
-          default:
-            throw error;
-        }
+        state = AdminServiceState(
+          token: token,
+          users: [],
+        );
       },
     );
   }

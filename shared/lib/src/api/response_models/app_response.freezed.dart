@@ -36,8 +36,8 @@ AppResponse _$AppResponseFromJson(Map<String, dynamic> json) {
       return OnlineCountUpdateResponse.fromJson(json);
     case 'cooldown_update':
       return CooldownUpdateResponse.fromJson(json);
-    case 'users_online':
-      return UsersOnlineResponse.fromJson(json);
+    case 'users_info_update':
+      return UsersInfoUpdateResponse.fromJson(json);
     case 'no':
       return NoResponse.fromJson(json);
 
@@ -61,7 +61,7 @@ mixin _$AppResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) =>
@@ -79,7 +79,7 @@ mixin _$AppResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) =>
@@ -97,7 +97,7 @@ mixin _$AppResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -116,7 +116,7 @@ mixin _$AppResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) =>
@@ -133,7 +133,7 @@ mixin _$AppResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) =>
@@ -150,7 +150,7 @@ mixin _$AppResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -233,7 +233,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -254,7 +254,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -275,7 +275,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -300,7 +300,7 @@ class _$BannedResponseImpl implements BannedResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -320,7 +320,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -340,7 +340,7 @@ class _$BannedResponseImpl implements BannedResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -452,7 +452,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -473,7 +473,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -494,7 +494,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -519,7 +519,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -539,7 +539,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -559,7 +559,7 @@ class _$BackendSuccessResponseImpl implements BackendSuccessResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -676,7 +676,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -697,7 +697,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -718,7 +718,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -743,7 +743,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -763,7 +763,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -783,7 +783,7 @@ class _$BackendErrorResponseImpl implements BackendErrorResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -899,7 +899,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -920,7 +920,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -941,7 +941,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -966,7 +966,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -986,7 +986,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -1006,7 +1006,7 @@ class _$UserIdResponseImpl implements UserIdResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -1161,7 +1161,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1182,7 +1182,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1203,7 +1203,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1228,7 +1228,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -1248,7 +1248,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -1268,7 +1268,7 @@ class _$FieldStateResponseImpl implements FieldStateResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -1399,7 +1399,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1420,7 +1420,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1441,7 +1441,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1466,7 +1466,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -1486,7 +1486,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -1506,7 +1506,7 @@ class _$PixelUpdateResponseImpl implements PixelUpdateResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -1634,7 +1634,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1655,7 +1655,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1676,7 +1676,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1701,7 +1701,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -1721,7 +1721,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -1741,7 +1741,7 @@ class _$PixelInfoAdminResponseImpl implements PixelInfoAdminResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -1869,7 +1869,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -1890,7 +1890,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -1911,7 +1911,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -1936,7 +1936,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -1956,7 +1956,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -1976,7 +1976,7 @@ class _$SelectionUpdateResponseImpl implements SelectionUpdateResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -2104,7 +2104,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -2125,7 +2125,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -2146,7 +2146,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -2171,7 +2171,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -2191,7 +2191,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -2211,7 +2211,7 @@ class _$OnlineCountUpdateResponseImpl implements OnlineCountUpdateResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -2329,7 +2329,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -2350,7 +2350,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -2371,7 +2371,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -2396,7 +2396,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -2416,7 +2416,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -2436,7 +2436,7 @@ class _$CooldownUpdateResponseImpl implements CooldownUpdateResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -2469,20 +2469,22 @@ abstract class CooldownUpdateResponse implements AppResponse {
 }
 
 /// @nodoc
-abstract class _$$UsersOnlineResponseImplCopyWith<$Res> {
-  factory _$$UsersOnlineResponseImplCopyWith(_$UsersOnlineResponseImpl value,
-          $Res Function(_$UsersOnlineResponseImpl) then) =
-      __$$UsersOnlineResponseImplCopyWithImpl<$Res>;
+abstract class _$$UsersInfoUpdateResponseImplCopyWith<$Res> {
+  factory _$$UsersInfoUpdateResponseImplCopyWith(
+          _$UsersInfoUpdateResponseImpl value,
+          $Res Function(_$UsersInfoUpdateResponseImpl) then) =
+      __$$UsersInfoUpdateResponseImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<UserInfo> data});
 }
 
 /// @nodoc
-class __$$UsersOnlineResponseImplCopyWithImpl<$Res>
-    extends _$AppResponseCopyWithImpl<$Res, _$UsersOnlineResponseImpl>
-    implements _$$UsersOnlineResponseImplCopyWith<$Res> {
-  __$$UsersOnlineResponseImplCopyWithImpl(_$UsersOnlineResponseImpl _value,
-      $Res Function(_$UsersOnlineResponseImpl) _then)
+class __$$UsersInfoUpdateResponseImplCopyWithImpl<$Res>
+    extends _$AppResponseCopyWithImpl<$Res, _$UsersInfoUpdateResponseImpl>
+    implements _$$UsersInfoUpdateResponseImplCopyWith<$Res> {
+  __$$UsersInfoUpdateResponseImplCopyWithImpl(
+      _$UsersInfoUpdateResponseImpl _value,
+      $Res Function(_$UsersInfoUpdateResponseImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2490,7 +2492,7 @@ class __$$UsersOnlineResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$UsersOnlineResponseImpl(
+    return _then(_$UsersInfoUpdateResponseImpl(
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -2501,14 +2503,14 @@ class __$$UsersOnlineResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
-  const _$UsersOnlineResponseImpl(final List<UserInfo> data,
+class _$UsersInfoUpdateResponseImpl implements UsersInfoUpdateResponse {
+  const _$UsersInfoUpdateResponseImpl(final List<UserInfo> data,
       {final String? $type})
       : _data = data,
-        $type = $type ?? 'users_online';
+        $type = $type ?? 'users_info_update';
 
-  factory _$UsersOnlineResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UsersOnlineResponseImplFromJson(json);
+  factory _$UsersInfoUpdateResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersInfoUpdateResponseImplFromJson(json);
 
   final List<UserInfo> _data;
   @override
@@ -2523,14 +2525,14 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
 
   @override
   String toString() {
-    return 'AppResponse.usersOnline(data: $data)';
+    return 'AppResponse.usersInfoUpdate(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UsersOnlineResponseImpl &&
+            other is _$UsersInfoUpdateResponseImpl &&
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
@@ -2542,9 +2544,9 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UsersOnlineResponseImplCopyWith<_$UsersOnlineResponseImpl> get copyWith =>
-      __$$UsersOnlineResponseImplCopyWithImpl<_$UsersOnlineResponseImpl>(
-          this, _$identity);
+  _$$UsersInfoUpdateResponseImplCopyWith<_$UsersInfoUpdateResponseImpl>
+      get copyWith => __$$UsersInfoUpdateResponseImplCopyWithImpl<
+          _$UsersInfoUpdateResponseImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2560,11 +2562,11 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
-    return usersOnline(data);
+    return usersInfoUpdate(data);
   }
 
   @override
@@ -2581,11 +2583,11 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
-    return usersOnline?.call(data);
+    return usersInfoUpdate?.call(data);
   }
 
   @override
@@ -2602,13 +2604,13 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
   }) {
-    if (usersOnline != null) {
-      return usersOnline(data);
+    if (usersInfoUpdate != null) {
+      return usersInfoUpdate(data);
     }
     return orElse();
   }
@@ -2627,11 +2629,11 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
-    return usersOnline(this);
+    return usersInfoUpdate(this);
   }
 
   @override
@@ -2647,11 +2649,11 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
-    return usersOnline?.call(this);
+    return usersInfoUpdate?.call(this);
   }
 
   @override
@@ -2667,36 +2669,36 @@ class _$UsersOnlineResponseImpl implements UsersOnlineResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
   }) {
-    if (usersOnline != null) {
-      return usersOnline(this);
+    if (usersInfoUpdate != null) {
+      return usersInfoUpdate(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$UsersOnlineResponseImplToJson(
+    return _$$UsersInfoUpdateResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class UsersOnlineResponse implements AppResponse {
-  const factory UsersOnlineResponse(final List<UserInfo> data) =
-      _$UsersOnlineResponseImpl;
+abstract class UsersInfoUpdateResponse implements AppResponse {
+  const factory UsersInfoUpdateResponse(final List<UserInfo> data) =
+      _$UsersInfoUpdateResponseImpl;
 
-  factory UsersOnlineResponse.fromJson(Map<String, dynamic> json) =
-      _$UsersOnlineResponseImpl.fromJson;
+  factory UsersInfoUpdateResponse.fromJson(Map<String, dynamic> json) =
+      _$UsersInfoUpdateResponseImpl.fromJson;
 
   List<UserInfo> get data;
   @JsonKey(ignore: true)
-  _$$UsersOnlineResponseImplCopyWith<_$UsersOnlineResponseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UsersInfoUpdateResponseImplCopyWith<_$UsersInfoUpdateResponseImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2755,7 +2757,7 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -2776,7 +2778,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -2797,7 +2799,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -2822,7 +2824,7 @@ class _$NoResponseImpl implements NoResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -2842,7 +2844,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -2862,7 +2864,7 @@ class _$NoResponseImpl implements NoResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
@@ -2945,7 +2947,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(SelectionUpdateData data) selectionUpdate,
     required TResult Function(OnlineCountData data) onlineCountUpdate,
     required TResult Function(int data) cooldownUpdate,
-    required TResult Function(List<UserInfo> data) usersOnline,
+    required TResult Function(List<UserInfo> data) usersInfoUpdate,
     required TResult Function() no,
     required TResult Function() unknown,
   }) {
@@ -2966,7 +2968,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(SelectionUpdateData data)? selectionUpdate,
     TResult? Function(OnlineCountData data)? onlineCountUpdate,
     TResult? Function(int data)? cooldownUpdate,
-    TResult? Function(List<UserInfo> data)? usersOnline,
+    TResult? Function(List<UserInfo> data)? usersInfoUpdate,
     TResult? Function()? no,
     TResult? Function()? unknown,
   }) {
@@ -2987,7 +2989,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(SelectionUpdateData data)? selectionUpdate,
     TResult Function(OnlineCountData data)? onlineCountUpdate,
     TResult Function(int data)? cooldownUpdate,
-    TResult Function(List<UserInfo> data)? usersOnline,
+    TResult Function(List<UserInfo> data)? usersInfoUpdate,
     TResult Function()? no,
     TResult Function()? unknown,
     required TResult orElse(),
@@ -3012,7 +3014,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     required TResult Function(OnlineCountUpdateResponse value)
         onlineCountUpdate,
     required TResult Function(CooldownUpdateResponse value) cooldownUpdate,
-    required TResult Function(UsersOnlineResponse value) usersOnline,
+    required TResult Function(UsersInfoUpdateResponse value) usersInfoUpdate,
     required TResult Function(NoResponse value) no,
     required TResult Function(UnknownResponse value) unknown,
   }) {
@@ -3032,7 +3034,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult? Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult? Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult? Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult? Function(UsersOnlineResponse value)? usersOnline,
+    TResult? Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult? Function(NoResponse value)? no,
     TResult? Function(UnknownResponse value)? unknown,
   }) {
@@ -3052,7 +3054,7 @@ class _$UnknownResponseImpl implements UnknownResponse {
     TResult Function(SelectionUpdateResponse value)? selectionUpdate,
     TResult Function(OnlineCountUpdateResponse value)? onlineCountUpdate,
     TResult Function(CooldownUpdateResponse value)? cooldownUpdate,
-    TResult Function(UsersOnlineResponse value)? usersOnline,
+    TResult Function(UsersInfoUpdateResponse value)? usersInfoUpdate,
     TResult Function(NoResponse value)? no,
     TResult Function(UnknownResponse value)? unknown,
     required TResult orElse(),
