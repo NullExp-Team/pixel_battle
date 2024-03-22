@@ -20,6 +20,19 @@ String? _selectedPixelUser(_SelectedPixelUserRef ref) {
   return nickname;
 }
 
+@Riverpod(dependencies: [FieldStateService])
+Size? _currentFieldSize(_CurrentFieldSizeRef ref) {
+  final fieldState = ref.watch(
+    fieldStateServiceProvider.select((value) => value.valueOrNull),
+  );
+
+  if (fieldState == null) {
+    return null;
+  }
+
+  return Size(fieldState.width.toDouble(), fieldState.height.toDouble());
+}
+
 class ActionPanel extends HookConsumerWidget {
   const ActionPanel({super.key});
 
@@ -27,6 +40,7 @@ class ActionPanel extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(adminControllerProvider.notifier);
     final state = ref.watch(adminControllerProvider);
+    final fieldSize = ref.watch(_currentFieldSizeProvider);
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -84,7 +98,9 @@ class ActionPanel extends HookConsumerWidget {
                             Radius.circular(24),
                           ),
                         ),
-                        content: const ResetFieldModal(),
+                        content: ResetFieldModal(
+                          currentFieldSize: fieldSize,
+                        ),
                       );
                     },
                   );

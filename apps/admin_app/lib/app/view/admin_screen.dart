@@ -19,6 +19,7 @@ class AdminScreen extends HookConsumerWidget {
     final controller = ref.watch(adminControllerProvider.notifier);
 
     return Scaffold(
+      backgroundColor: AppColors.light.backgroundMinor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

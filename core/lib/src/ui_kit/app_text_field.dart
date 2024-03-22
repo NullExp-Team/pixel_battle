@@ -1,5 +1,6 @@
 import 'package:dev_kit/core_dev_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core.dart';
 
@@ -24,6 +25,7 @@ class AppTextField extends HookConsumerWidget {
     this.textAlign,
     this.validator,
     this.onTap,
+    this.inputFormatters,
   });
 
   final TextEditingController? controller;
@@ -43,6 +45,8 @@ class AppTextField extends HookConsumerWidget {
   final String? labelText;
   final Widget? label;
   final String? hintText;
+
+  final List<TextInputFormatter>? inputFormatters;
 
   final TextAlign? textAlign;
 
@@ -141,6 +145,7 @@ class AppTextField extends HookConsumerWidget {
               keyboardType: keyboardType,
               readOnly: readOnly,
               onChanged: onChanged,
+              inputFormatters: inputFormatters,
               onSubmitted: onSubmitted,
               onEditingComplete: onEditingComplete,
               obscureText: obscureText.value,
