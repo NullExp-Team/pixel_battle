@@ -24,3 +24,4 @@ export 'package:shared/src/api/response_models/selection_update_data.dart';
 export 'package:shared/src/api/request_models/update_selection_data.dart';
 export 'package:shared/src/api/response_models/cooldown_data.dart';
 export 'package:shared/src/api/response_models/pixel_update_data.dart';
+export 'package:shared/src/features/field/domain/fill_pixel_cooldown_provider.dart';

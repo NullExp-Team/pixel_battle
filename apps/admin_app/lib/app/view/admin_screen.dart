@@ -1,5 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:shared/shared.dart';
 
 import '../controller/admin_controller.dart';
@@ -19,6 +21,7 @@ class AdminScreen extends HookConsumerWidget {
     final controller = ref.watch(adminControllerProvider.notifier);
 
     return Scaffold(
+      backgroundColor: AppColors.light.backgroundMinor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -34,6 +37,21 @@ class AdminScreen extends HookConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: colors.background,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: colors.backgroundMinor,
+                        width: 2,
+                      ),
+                    ),
+                    child: Assets.pixelBattleLogoPng.image(),
+                  ),
+                  const Gap(12),
                   Text(
                     'Рисовашка Админка',
                     style: AppTextStyles.general.title,
