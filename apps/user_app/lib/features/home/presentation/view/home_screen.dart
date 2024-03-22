@@ -24,7 +24,7 @@ part 'widgets/connection_status.dart';
 
 part 'home_screen.g.dart';
 
-const minScale = 0.75;
+const minScale = 0.25;
 const maxScale = 25.0;
 
 @RoutePage()
@@ -56,15 +56,15 @@ class HomeScreen extends HookConsumerWidget {
                 transformationController: transformationController,
               ),
             ),
-            const Positioned(
-              top: 40,
-              left: 20,
-              child: _ExitButton(),
-            ),
-            const Positioned(
-              top: 40,
-              right: 20,
-              child: _OnlineCount(),
+            const SafeArea(
+              minimum: EdgeInsets.all(12),
+              child: Row(
+                children: [
+                  _ExitButton(),
+                  Spacer(),
+                  _OnlineCount(),
+                ],
+              ),
             ),
           ],
         ),
