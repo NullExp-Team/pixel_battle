@@ -124,15 +124,15 @@ Map<String, dynamic> _$$PixelInfoAdminRequestImplToJson(
       'type': instance.$type,
     };
 
-_$BanUserAdminRequestImpl _$$BanUserAdminRequestImplFromJson(
+_$ToggleBanUserAdminRequestImpl _$$ToggleBanUserAdminRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$BanUserAdminRequestImpl(
+    _$ToggleBanUserAdminRequestImpl(
       BanUserAdminData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$BanUserAdminRequestImplToJson(
-        _$BanUserAdminRequestImpl instance) =>
+Map<String, dynamic> _$$ToggleBanUserAdminRequestImplToJson(
+        _$ToggleBanUserAdminRequestImpl instance) =>
     <String, dynamic>{
       'data': instance.data.toJson(),
       'type': instance.$type,

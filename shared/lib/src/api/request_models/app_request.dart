@@ -32,7 +32,8 @@ sealed class AppRequest with _$AppRequest {
   factory AppRequest.pixelInfoAdmin(PixelInfoAdminData data) =
       PixelInfoAdminRequest;
 
-  factory AppRequest.banUserAdmin(BanUserAdminData data) = BanUserAdminRequest;
+  factory AppRequest.toggleBanUserAdmin(BanUserAdminData data) =
+      ToggleBanUserAdminRequest;
 
   factory AppRequest.resetGameAdmin(List<int> data) = ResetGameAdminRequest;
 

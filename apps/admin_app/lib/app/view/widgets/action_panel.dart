@@ -1,6 +1,6 @@
 part of '../admin_screen.dart';
 
-@Riverpod(dependencies: [FieldStateService])
+@Riverpod(dependencies: [AdminController, FieldStateService])
 String? _selectedPixelUser(_SelectedPixelUserRef ref) {
   final selectedPosition = ref.watch(
     adminControllerProvider.select((value) => value.selectedPixelPosition),
@@ -110,9 +110,7 @@ class ActionPanel extends HookConsumerWidget {
               child: AppButton.outline(
                 text: 'Очистить пиксель',
                 isDisabled: state.selectedPixelPosition == null,
-                onTap: () {
-                  controller.clearPixel();
-                },
+                onTap: controller.clearPixel,
               ),
             ),
             const Gap(12),

@@ -83,17 +83,15 @@ class AdminController extends _$AdminController with ControllerMixin {
     final userId = await api.request<PixelInfoAdminResponse>(
       AppRequest.pixelInfoAdmin(
         PixelInfoAdminData(
-          position: Position(
-            x: state.selectedPixelPosition!.dx.toInt(),
-            y: state.selectedPixelPosition!.dy.toInt(),
-          ),
+          x: state.selectedPixelPosition!.dx.toInt(),
+          y: state.selectedPixelPosition!.dy.toInt(),
         ),
       ),
     );
 
     await apiWrap(
       () => api.request(
-        AppRequest.banUserAdmin(
+        AppRequest.toggleBanUserAdmin(
           BanUserAdminData(
             userId: userId.data.userId,
           ),
