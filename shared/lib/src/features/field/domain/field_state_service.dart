@@ -61,11 +61,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     ref.onDispose(sub.cancel);
 
     unawaited(
-      // TODO: Хуйня какая-то исправить
-      Future.delayed(
-        const Duration(milliseconds: 4000),
-        () => api.request<NoResponse>(GetFieldStateRequest()),
-      ),
+      api.request<NoResponse>(GetFieldStateRequest()),
     );
 
     yield* fieldStateStream.map(_convertFieldStateToFieldStateMap);

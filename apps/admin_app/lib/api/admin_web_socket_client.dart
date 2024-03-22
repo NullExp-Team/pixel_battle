@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 
+import '../app/controller/admin_controller.dart';
 import '../app/domain/admin_service.dart';
 
 Future<WebSocketClient> createAdminWebSocketClient(
@@ -7,12 +8,9 @@ Future<WebSocketClient> createAdminWebSocketClient(
 ) async {
   return createWebSocketClient(
     afterConnect: (client) async {
-      // final userService = ref.read(adminServiceProvider.notifier);
-      // final userServiceState = ref.read(adminServiceProvider);
+      final controller = ref.read(adminControllerProvider.notifier);
 
-      // if (userServiceState != null) {
-      //   // await userService.authConnect(client: client);
-      // }
+      await controller.login(client: client);
     },
   );
 }
