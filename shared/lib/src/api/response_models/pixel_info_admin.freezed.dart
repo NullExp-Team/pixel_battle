@@ -21,7 +21,7 @@ PixelInfoAdmin _$PixelInfoAdminFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PixelInfoAdmin {
   @JsonKey(name: 'user_id')
-  String get userId => throw _privateConstructorUsedError;
+  String? get userId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $PixelInfoAdminCopyWith<$Res> {
           PixelInfoAdmin value, $Res Function(PixelInfoAdmin) then) =
       _$PixelInfoAdminCopyWithImpl<$Res, PixelInfoAdmin>;
   @useResult
-  $Res call({@JsonKey(name: 'user_id') String userId});
+  $Res call({@JsonKey(name: 'user_id') String? userId});
 }
 
 /// @nodoc
@@ -51,13 +51,13 @@ class _$PixelInfoAdminCopyWithImpl<$Res, $Val extends PixelInfoAdmin>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$PixelInfoAdminImplCopyWith<$Res>
       __$$PixelInfoAdminImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'user_id') String userId});
+  $Res call({@JsonKey(name: 'user_id') String? userId});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$PixelInfoAdminImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
+    Object? userId = freezed,
   }) {
     return _then(_$PixelInfoAdminImpl(
-      userId: null == userId
+      userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -105,7 +105,7 @@ class _$PixelInfoAdminImpl implements _PixelInfoAdmin {
 
   @override
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
 
   @override
   String toString() {
@@ -141,7 +141,7 @@ class _$PixelInfoAdminImpl implements _PixelInfoAdmin {
 
 abstract class _PixelInfoAdmin implements PixelInfoAdmin {
   factory _PixelInfoAdmin(
-          {@JsonKey(name: 'user_id') required final String userId}) =
+          {@JsonKey(name: 'user_id') required final String? userId}) =
       _$PixelInfoAdminImpl;
 
   factory _PixelInfoAdmin.fromJson(Map<String, dynamic> json) =
@@ -149,7 +149,7 @@ abstract class _PixelInfoAdmin implements PixelInfoAdmin {
 
   @override
   @JsonKey(name: 'user_id')
-  String get userId;
+  String? get userId;
   @override
   @JsonKey(ignore: true)
   _$$PixelInfoAdminImplCopyWith<_$PixelInfoAdminImpl> get copyWith =>
