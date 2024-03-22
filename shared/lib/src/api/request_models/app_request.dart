@@ -27,7 +27,9 @@ sealed class AppRequest with _$AppRequest {
       UpdatePixelAdminRequest;
 
   factory AppRequest.updateSelection(UpdateSelectionData data) =
-      UpdateSelectionnRequest;
+      UpdateSelectionRequest;
+
+  factory AppRequest.updateCooldownAdmin(int data) = UpdateCooldownRequest;
 
   factory AppRequest.pixelInfoAdmin(PixelInfoAdminData data) =
       PixelInfoAdminRequest;

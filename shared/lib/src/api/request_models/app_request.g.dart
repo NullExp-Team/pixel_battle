@@ -96,17 +96,31 @@ Map<String, dynamic> _$$UpdatePixelAdminRequestImplToJson(
       'type': instance.$type,
     };
 
-_$UpdateSelectionnRequestImpl _$$UpdateSelectionnRequestImplFromJson(
+_$UpdateSelectionRequestImpl _$$UpdateSelectionRequestImplFromJson(
         Map<String, dynamic> json) =>
-    _$UpdateSelectionnRequestImpl(
+    _$UpdateSelectionRequestImpl(
       UpdateSelectionData.fromJson(json['data'] as Map<String, dynamic>),
       $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$UpdateSelectionnRequestImplToJson(
-        _$UpdateSelectionnRequestImpl instance) =>
+Map<String, dynamic> _$$UpdateSelectionRequestImplToJson(
+        _$UpdateSelectionRequestImpl instance) =>
     <String, dynamic>{
       'data': instance.data.toJson(),
+      'type': instance.$type,
+    };
+
+_$UpdateCooldownRequestImpl _$$UpdateCooldownRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$UpdateCooldownRequestImpl(
+      json['data'] as int,
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$UpdateCooldownRequestImplToJson(
+        _$UpdateCooldownRequestImpl instance) =>
+    <String, dynamic>{
+      'data': instance.data,
       'type': instance.$type,
     };
 

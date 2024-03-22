@@ -24,3 +24,4 @@ export 'package:shared/src/api/request_models/ban_user_admin_data.dart';
 export 'package:shared/src/api/request_models/pixel_info_admin_data.dart';
 export 'package:shared/src/api/request_models/app_request.dart';
 export 'package:shared/src/api/request_models/login_data.dart';
+export 'package:shared/src/features/field/domain/fill_pixel_cooldown_provider.dart';
