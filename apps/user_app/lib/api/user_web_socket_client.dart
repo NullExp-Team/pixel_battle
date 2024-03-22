@@ -8,11 +8,8 @@ Future<WebSocketClient> createUserWebSocketClient(
   final client = await createWebSocketClient(
     afterConnect: (client) async {
       final userService = ref.read(userServiceProvider.notifier);
-      final userServiceState = ref.read(userServiceProvider);
 
-      if (userServiceState != null) {
-        await userService.authConnect(client: client);
-      }
+      await userService.authConnect(client: client);
     },
   );
 
