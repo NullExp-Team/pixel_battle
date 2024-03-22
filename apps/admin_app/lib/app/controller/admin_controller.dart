@@ -94,11 +94,15 @@ class AdminController extends _$AdminController with ControllerMixin {
       ),
     );
 
+    final id = userId.data.userId;
+
+    if (id == null) return;
+
     await apiWrap(
       () => api.request(
         AppRequest.toggleBanUserAdmin(
           BanUserAdminData(
-            userId: userId.data.userId,
+            userId: id,
           ),
         ),
       ),

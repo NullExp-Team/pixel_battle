@@ -28,7 +28,7 @@ class UsersPanel extends HookConsumerWidget {
                 ),
                 itemCount: state.users.length,
                 itemBuilder: (context, index) {
-                  return SText.text(state.users[index].nickname);
+                  return SText.text(state.users[index].nickname ?? '');
                 },
               ),
             ),

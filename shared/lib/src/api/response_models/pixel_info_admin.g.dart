@@ -8,7 +8,7 @@ part of 'pixel_info_admin.dart';
 
 _$PixelInfoAdminImpl _$$PixelInfoAdminImplFromJson(Map<String, dynamic> json) =>
     _$PixelInfoAdminImpl(
-      userId: json['user_id'] as String,
+      userId: json['user_id'] as String?,
     );
 
 Map<String, dynamic> _$$PixelInfoAdminImplToJson(
