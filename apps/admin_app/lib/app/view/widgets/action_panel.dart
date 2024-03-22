@@ -33,6 +33,19 @@ Size? _currentFieldSize(_CurrentFieldSizeRef ref) {
   return Size(fieldState.width.toDouble(), fieldState.height.toDouble());
 }
 
+@Riverpod(dependencies: [FieldStateService])
+int? _currentCooldown(_CurrentCooldownRef ref) {
+  final fieldState = ref.watch(
+    fieldStateServiceProvider.select((value) => value.valueOrNull),
+  );
+
+  if (fieldState == null) {
+    return null;
+  }
+
+  return 0;
+}
+
 class ActionPanel extends HookConsumerWidget {
   const ActionPanel({super.key});
 
@@ -41,6 +54,13 @@ class ActionPanel extends HookConsumerWidget {
     final controller = ref.watch(adminControllerProvider.notifier);
     final state = ref.watch(adminControllerProvider);
     final fieldSize = ref.watch(_currentFieldSizeProvider);
+    final cooldown = ref.watch(
+      fillPixelCooldownProvider.select((value) => value.valueOrNull),
+    );
+    final cooldownTextController = useTextEditingController(
+      keys: [cooldown],
+      text: cooldown?.inSeconds.toString(),
+    );
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -62,23 +82,6 @@ class ActionPanel extends HookConsumerWidget {
               style: AppTextStyles.general.subtitle,
             ),
             const Gap(12),
-            Row(
-              children: [
-                Text(
-                  'Время закраски (сек):',
-                  style: AppTextStyles.general.text
-                      .copyWith(color: AppColors.light.textMinor),
-                ),
-                const Spacer(),
-                const SizedBox(
-                  width: 80,
-                  child: AppTextField(
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
             SizedBox(
               height: 40,
               child: AppButton.outline(
@@ -108,6 +111,81 @@ class ActionPanel extends HookConsumerWidget {
               ),
             ),
             const Gap(12),
+            Row(
+              children: [
+                SText.text(
+                  'Время закраски (сек):',
+                  color: colors.textMinor,
+                ),
+                const Spacer(),
+                SizedBox(
+                  width: 80,
+                  child: HookConsumer(
+                    builder: (context, ref, _) {
+                      return AppTextField(
+                        controller: cooldownTextController,
+                        textAlign: TextAlign.center,
+                        hintText: cooldown?.inSeconds.toString(),
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                        ],
+                        onChanged: (value) {},
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: HookBuilder(
+                    builder: (context) {
+                      useListenable(cooldownTextController);
+                      return SizedBox(
+                        height: 40,
+                        child: AppButton.outline(
+                          text: 'Обновить',
+                          onTap: () {
+                            final newCooldown =
+                                int.tryParse(cooldownTextController.text) ??
+                                    cooldown?.inSeconds ??
+                                    60;
+                            controller.updateCooldown(newCooldown);
+                          },
+                          isDisabled: cooldown?.inSeconds ==
+                              int.tryParse(cooldownTextController.text),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const Gap(12),
+                Flexible(
+                  child: HookBuilder(
+                    builder: (context) {
+                      useListenable(cooldownTextController);
+
+                      return SizedBox(
+                        height: 40,
+                        child: AppButton.outline(
+                          text: 'Очистить',
+                          onTap: () {
+                            cooldownTextController.text =
+                                cooldown?.inSeconds.toString() ?? '';
+                          },
+                          isDisabled: cooldown?.inSeconds ==
+                              int.tryParse(cooldownTextController.text),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
             SizedBox(
               height: 40,
               child: Text(

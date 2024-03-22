@@ -29,7 +29,7 @@ final _selectedPixelUserProvider = AutoDisposeProvider<String?>.internal(
 );
 
 typedef _SelectedPixelUserRef = AutoDisposeProviderRef<String?>;
-String _$currentFieldSizeHash() => r'2f3066bafea62a962e397d33e582d593a439c4c2';
+String _$currentFieldSizeHash() => r'1ee56c98b845df430443a2e29c94d5c95323295d';
 
 /// See also [_currentFieldSize].
 @ProviderFor(_currentFieldSize)
@@ -39,18 +39,31 @@ final _currentFieldSizeProvider = AutoDisposeProvider<Size?>.internal(
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$currentFieldSizeHash,
-  dependencies: <ProviderOrFamily>[
-    adminControllerProvider,
-    fieldStateServiceProvider
-  ],
+  dependencies: <ProviderOrFamily>[fieldStateServiceProvider],
   allTransitiveDependencies: <ProviderOrFamily>{
-    adminControllerProvider,
-    ...?adminControllerProvider.allTransitiveDependencies,
     fieldStateServiceProvider,
     ...?fieldStateServiceProvider.allTransitiveDependencies
   },
 );
 
 typedef _CurrentFieldSizeRef = AutoDisposeProviderRef<Size?>;
+String _$currentCooldownHash() => r'458ff54bd3c629ef88c565c9548baa7d21d45dc9';
+
+/// See also [_currentCooldown].
+@ProviderFor(_currentCooldown)
+final _currentCooldownProvider = AutoDisposeProvider<int?>.internal(
+  _currentCooldown,
+  name: r'_currentCooldownProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentCooldownHash,
+  dependencies: <ProviderOrFamily>[fieldStateServiceProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    fieldStateServiceProvider,
+    ...?fieldStateServiceProvider.allTransitiveDependencies
+  },
+);
+
+typedef _CurrentCooldownRef = AutoDisposeProviderRef<int?>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

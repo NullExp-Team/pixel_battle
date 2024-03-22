@@ -112,4 +112,12 @@ class AdminController extends _$AdminController with ControllerMixin {
       ),
     );
   }
+
+  Future<void> updateCooldown(int cooldown) async {
+    await apiWrap(
+      () => api.request(
+        AppRequest.updateCooldownAdmin(cooldown),
+      ),
+    );
+  }
 }
