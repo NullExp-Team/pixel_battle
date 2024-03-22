@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
@@ -22,11 +24,23 @@ class UserServiceState with _$UserServiceState {
 @Riverpod(keepAlive: true)
 class UserService extends _$UserService
     with ControllerMixin, PersistenceMixin<UserServiceState?> {
+  Completer<void>? _completer;
+
   @override
   UserServiceState? build() => persistentBuild(
         () => null,
         fromJson: UserServiceState.fromJson,
       );
+
+  void completeAuth([Object? error]) {
+    if (_completer?.isCompleted ?? true) return;
+
+    if (error != null) {
+      _completer?.completeError(error);
+    } else {
+      _completer?.complete();
+    }
+  }
 
   @useInApiWrap
   Future<void> authConnect({
@@ -34,7 +48,10 @@ class UserService extends _$UserService
   }) async {
     final curState = state;
 
-    if (curState == null) throw Exception('User not authorized');
+    if (curState == null) {
+      completeAuth();
+      return;
+    }
 
     if (curState.isBanned) await Future.delayed(const Duration(seconds: 10));
 
@@ -49,10 +66,13 @@ class UserService extends _$UserService
         ),
       ),
       onSuccess: (res) {
+        completeAuth();
         state = state?.copyWith(isBanned: false);
       },
       showErrorToast: false,
       onError: (error) {
+        completeAuth(error);
+
         switch (error) {
           case InternalError(
               error: BackendErrorResponse(message: 'User not found')
@@ -67,7 +87,6 @@ class UserService extends _$UserService
               error: BackendErrorResponse(message: 'User is banned')
             ):
             if (curState.isBanned) return;
-
             toast.error(title: 'Пользователь заблокирован');
             state = state?.copyWith(isBanned: true);
 
@@ -92,10 +111,14 @@ class UserService extends _$UserService
 
     state = state?.copyWith(nickname: nickname);
 
+    _completer = Completer<void>();
+
     // Рефрешим подключение, чтобы сбросить текущее, если оно есть
     // Если данные пользователя есть,
     // то коннект автоматически авторизиует (authConnect)
     await api.refreshConnection();
+
+    await _completer?.future;
 
     if (!isAuthorized) {
       await apiWrapStrict(
