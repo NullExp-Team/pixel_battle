@@ -20,7 +20,8 @@ PixelInfoAdminData _$PixelInfoAdminDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$PixelInfoAdminData {
-  Position get position => throw _privateConstructorUsedError;
+  int get x => throw _privateConstructorUsedError;
+  int get y => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,9 +35,7 @@ abstract class $PixelInfoAdminDataCopyWith<$Res> {
           PixelInfoAdminData value, $Res Function(PixelInfoAdminData) then) =
       _$PixelInfoAdminDataCopyWithImpl<$Res, PixelInfoAdminData>;
   @useResult
-  $Res call({Position position});
-
-  $PositionCopyWith<$Res> get position;
+  $Res call({int x, int y});
 }
 
 /// @nodoc
@@ -52,22 +51,19 @@ class _$PixelInfoAdminDataCopyWithImpl<$Res, $Val extends PixelInfoAdminData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = null,
+    Object? x = null,
+    Object? y = null,
   }) {
     return _then(_value.copyWith(
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as Position,
+      x: null == x
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as int,
+      y: null == y
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $PositionCopyWith<$Res> get position {
-    return $PositionCopyWith<$Res>(_value.position, (value) {
-      return _then(_value.copyWith(position: value) as $Val);
-    });
   }
 }
 
@@ -79,10 +75,7 @@ abstract class _$$PixelInfoAdminDataImplCopyWith<$Res>
       __$$PixelInfoAdminDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Position position});
-
-  @override
-  $PositionCopyWith<$Res> get position;
+  $Res call({int x, int y});
 }
 
 /// @nodoc
@@ -96,13 +89,18 @@ class __$$PixelInfoAdminDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = null,
+    Object? x = null,
+    Object? y = null,
   }) {
     return _then(_$PixelInfoAdminDataImpl(
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as Position,
+      x: null == x
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as int,
+      y: null == y
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -110,17 +108,19 @@ class __$$PixelInfoAdminDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PixelInfoAdminDataImpl implements _PixelInfoAdminData {
-  _$PixelInfoAdminDataImpl({required this.position});
+  _$PixelInfoAdminDataImpl({required this.x, required this.y});
 
   factory _$PixelInfoAdminDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$PixelInfoAdminDataImplFromJson(json);
 
   @override
-  final Position position;
+  final int x;
+  @override
+  final int y;
 
   @override
   String toString() {
-    return 'PixelInfoAdminData(position: $position)';
+    return 'PixelInfoAdminData(x: $x, y: $y)';
   }
 
   @override
@@ -128,13 +128,13 @@ class _$PixelInfoAdminDataImpl implements _PixelInfoAdminData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PixelInfoAdminDataImpl &&
-            (identical(other.position, position) ||
-                other.position == position));
+            (identical(other.x, x) || other.x == x) &&
+            (identical(other.y, y) || other.y == y));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, position);
+  int get hashCode => Object.hash(runtimeType, x, y);
 
   @JsonKey(ignore: true)
   @override
@@ -152,14 +152,16 @@ class _$PixelInfoAdminDataImpl implements _PixelInfoAdminData {
 }
 
 abstract class _PixelInfoAdminData implements PixelInfoAdminData {
-  factory _PixelInfoAdminData({required final Position position}) =
+  factory _PixelInfoAdminData({required final int x, required final int y}) =
       _$PixelInfoAdminDataImpl;
 
   factory _PixelInfoAdminData.fromJson(Map<String, dynamic> json) =
       _$PixelInfoAdminDataImpl.fromJson;
 
   @override
-  Position get position;
+  int get x;
+  @override
+  int get y;
   @override
   @JsonKey(ignore: true)
   _$$PixelInfoAdminDataImplCopyWith<_$PixelInfoAdminDataImpl> get copyWith =>

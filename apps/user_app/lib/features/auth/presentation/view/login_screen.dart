@@ -19,12 +19,11 @@ class LoginScreen extends HookConsumerWidget {
       child: Scaffold(
         body: Center(
           child: Container(
-            constraints: const BoxConstraints(maxWidth: 400),
+            constraints: const BoxConstraints(maxWidth: 400, maxHeight: 1000),
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(),
                 HookBuilder(
                   builder: (context) {
                     final animationController = useAnimationController(
@@ -81,7 +80,7 @@ class LoginScreen extends HookConsumerWidget {
                   onChanged: controller.updateNickname,
                   validator: controller.nicknameValidator,
                 ),
-                const Spacer(flex: 2),
+                const Gap(28),
                 AppButton.fill(
                   text: 'Начать',
                   onTap: controller.login,

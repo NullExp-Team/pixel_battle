@@ -35,7 +35,7 @@ sealed class AppResponse with _$AppResponse {
   const factory AppResponse.pixelUpdate(PixelUpdateData data) =
       PixelUpdateResponse;
 
-  const factory AppResponse.pixelInfo(PixelInfoAdmin data) =
+  const factory AppResponse.pixelInfoUpdate(PixelInfoAdmin data) =
       PixelInfoAdminResponse;
 
   const factory AppResponse.selectionUpdate(SelectionUpdateData data) =
