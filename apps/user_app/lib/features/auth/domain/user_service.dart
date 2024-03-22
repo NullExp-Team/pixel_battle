@@ -36,7 +36,7 @@ class UserService extends _$UserService
 
     if (curState == null) throw Exception('User not authorized');
 
-    if (curState.isBanned) await Future.delayed(const Duration(seconds: 30));
+    if (curState.isBanned) await Future.delayed(const Duration(seconds: 10));
 
     await apiWrapStrictSingle(
       () => api.request<BackendSuccessResponse>(
@@ -88,7 +88,6 @@ class UserService extends _$UserService
 
     if (isAuthorized && curState.isBanned) {
       toast.error(title: 'Пользователь заблокирован');
-      return;
     }
 
     state = state?.copyWith(nickname: nickname);
