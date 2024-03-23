@@ -43,7 +43,7 @@ class LoginContoller extends _$LoginContoller
     await apiWrap(
       () => _userService.login(nickname: nickname),
       onSuccess: (_) {
-        router.replaceAll([const HomeRoute()]);
+        router.push(const HomeRoute());
       },
       showErrorToast: false,
       onError: (error) {

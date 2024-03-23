@@ -30,6 +30,8 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
   ) =>
       true;
 
+  WebSocketApi get api => ref.watch(webSocketApiProvider.notifier);
+
   @override
   Stream<FieldStateMap> build() => _build().asBroadcastStream();
 

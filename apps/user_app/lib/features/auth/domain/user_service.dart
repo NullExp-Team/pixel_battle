@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:core/core.dart';
 import 'package:shared/shared.dart';
 
@@ -12,7 +14,6 @@ class UserServiceState with _$UserServiceState {
   factory UserServiceState({
     required String nickname,
     required String userId,
-    required bool isBanned,
   }) = _UserServiceState;
 
   factory UserServiceState.fromJson(Map<String, dynamic> json) =>
@@ -22,11 +23,25 @@ class UserServiceState with _$UserServiceState {
 @Riverpod(keepAlive: true)
 class UserService extends _$UserService
     with ControllerMixin, PersistenceMixin<UserServiceState?> {
+  Completer<void>? _completer;
+
+  WebSocketApi get _api => ref.read(webSocketApiProvider.notifier);
+
   @override
   UserServiceState? build() => persistentBuild(
         () => null,
         fromJson: UserServiceState.fromJson,
       );
+
+  void completeAuth([Object? error]) {
+    if (_completer?.isCompleted ?? true) return;
+
+    if (error != null) {
+      _completer?.completeError(error);
+    } else {
+      _completer?.complete();
+    }
+  }
 
   @useInApiWrap
   Future<void> authConnect({
@@ -34,12 +49,13 @@ class UserService extends _$UserService
   }) async {
     final curState = state;
 
-    if (curState == null) throw Exception('User not authorized');
-
-    if (curState.isBanned) await Future.delayed(const Duration(seconds: 10));
+    if (curState == null) {
+      completeAuth();
+      return;
+    }
 
     await apiWrapStrictSingle(
-      () => api.request<BackendSuccessResponse>(
+      () => _api.request<BackendSuccessResponse>(
         client: client,
         LoginRequest(
           LoginData(
@@ -49,10 +65,12 @@ class UserService extends _$UserService
         ),
       ),
       onSuccess: (res) {
-        state = state?.copyWith(isBanned: false);
+        completeAuth();
       },
       showErrorToast: false,
       onError: (error) {
+        completeAuth(error);
+
         switch (error) {
           case InternalError(
               error: BackendErrorResponse(message: 'User not found')
@@ -66,10 +84,7 @@ class UserService extends _$UserService
           case InternalError(
               error: BackendErrorResponse(message: 'User is banned')
             ):
-            if (curState.isBanned) return;
-
             toast.error(title: 'Пользователь заблокирован');
-            state = state?.copyWith(isBanned: true);
 
           default:
             throw error;
@@ -86,20 +101,20 @@ class UserService extends _$UserService
 
     final isAuthorized = curState != null;
 
-    if (isAuthorized && curState.isBanned) {
-      toast.error(title: 'Пользователь заблокирован');
-    }
-
     state = state?.copyWith(nickname: nickname);
+
+    _completer = Completer<void>();
 
     // Рефрешим подключение, чтобы сбросить текущее, если оно есть
     // Если данные пользователя есть,
     // то коннект автоматически авторизиует (authConnect)
-    await api.refreshConnection();
+    await _api.refreshConnection();
+
+    await _completer?.future;
 
     if (!isAuthorized) {
       await apiWrapStrict(
-        () => api.request<UserIdResponse>(
+        () => _api.request<UserIdResponse>(
           LoginRequest(LoginData(nickname: nickname)),
         ),
         showErrorToast: false,
@@ -107,7 +122,6 @@ class UserService extends _$UserService
           state = UserServiceState(
             nickname: nickname,
             userId: res.data,
-            isBanned: false,
           );
         },
       );

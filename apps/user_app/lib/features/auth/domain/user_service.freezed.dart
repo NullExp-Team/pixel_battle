@@ -22,7 +22,6 @@ UserServiceState _$UserServiceStateFromJson(Map<String, dynamic> json) {
 mixin _$UserServiceState {
   String get nickname => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
-  bool get isBanned => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +35,7 @@ abstract class $UserServiceStateCopyWith<$Res> {
           UserServiceState value, $Res Function(UserServiceState) then) =
       _$UserServiceStateCopyWithImpl<$Res, UserServiceState>;
   @useResult
-  $Res call({String nickname, String userId, bool isBanned});
+  $Res call({String nickname, String userId});
 }
 
 /// @nodoc
@@ -54,7 +53,6 @@ class _$UserServiceStateCopyWithImpl<$Res, $Val extends UserServiceState>
   $Res call({
     Object? nickname = null,
     Object? userId = null,
-    Object? isBanned = null,
   }) {
     return _then(_value.copyWith(
       nickname: null == nickname
@@ -65,10 +63,6 @@ class _$UserServiceStateCopyWithImpl<$Res, $Val extends UserServiceState>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
-              as bool,
     ) as $Val);
   }
 }
@@ -81,7 +75,7 @@ abstract class _$$UserServiceStateImplCopyWith<$Res>
       __$$UserServiceStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String nickname, String userId, bool isBanned});
+  $Res call({String nickname, String userId});
 }
 
 /// @nodoc
@@ -97,7 +91,6 @@ class __$$UserServiceStateImplCopyWithImpl<$Res>
   $Res call({
     Object? nickname = null,
     Object? userId = null,
-    Object? isBanned = null,
   }) {
     return _then(_$UserServiceStateImpl(
       nickname: null == nickname
@@ -108,10 +101,6 @@ class __$$UserServiceStateImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      isBanned: null == isBanned
-          ? _value.isBanned
-          : isBanned // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -119,8 +108,7 @@ class __$$UserServiceStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserServiceStateImpl implements _UserServiceState {
-  _$UserServiceStateImpl(
-      {required this.nickname, required this.userId, required this.isBanned});
+  _$UserServiceStateImpl({required this.nickname, required this.userId});
 
   factory _$UserServiceStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserServiceStateImplFromJson(json);
@@ -129,12 +117,10 @@ class _$UserServiceStateImpl implements _UserServiceState {
   final String nickname;
   @override
   final String userId;
-  @override
-  final bool isBanned;
 
   @override
   String toString() {
-    return 'UserServiceState(nickname: $nickname, userId: $userId, isBanned: $isBanned)';
+    return 'UserServiceState(nickname: $nickname, userId: $userId)';
   }
 
   @override
@@ -144,14 +130,12 @@ class _$UserServiceStateImpl implements _UserServiceState {
             other is _$UserServiceStateImpl &&
             (identical(other.nickname, nickname) ||
                 other.nickname == nickname) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.isBanned, isBanned) ||
-                other.isBanned == isBanned));
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, nickname, userId, isBanned);
+  int get hashCode => Object.hash(runtimeType, nickname, userId);
 
   @JsonKey(ignore: true)
   @override
@@ -171,8 +155,7 @@ class _$UserServiceStateImpl implements _UserServiceState {
 abstract class _UserServiceState implements UserServiceState {
   factory _UserServiceState(
       {required final String nickname,
-      required final String userId,
-      required final bool isBanned}) = _$UserServiceStateImpl;
+      required final String userId}) = _$UserServiceStateImpl;
 
   factory _UserServiceState.fromJson(Map<String, dynamic> json) =
       _$UserServiceStateImpl.fromJson;
@@ -181,8 +164,6 @@ abstract class _UserServiceState implements UserServiceState {
   String get nickname;
   @override
   String get userId;
-  @override
-  bool get isBanned;
   @override
   @JsonKey(ignore: true)
   _$$UserServiceStateImplCopyWith<_$UserServiceStateImpl> get copyWith =>
