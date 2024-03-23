@@ -81,9 +81,12 @@ class LoginScreen extends HookConsumerWidget {
                   validator: controller.nicknameValidator,
                 ),
                 const Gap(28),
-                AppButton.fill(
-                  text: 'Начать',
-                  onTap: controller.login,
+                SizedBox(
+                  height: 56,
+                  child: AppButton.fill(
+                    text: 'Начать',
+                    onTap: controller.login,
+                  ),
                 ),
                 const SizedBox(height: 50),
               ],
