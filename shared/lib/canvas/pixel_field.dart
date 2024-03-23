@@ -1,14 +1,9 @@
 import 'dart:io';
-import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 import '../shared.dart';
 
@@ -127,12 +122,13 @@ class PixelField extends HookConsumerWidget {
                         child: CustomPaint(
                           size: size,
                           painter: CanvasPainter(
-                              scale: getScale(),
-                              gridColor: context.colors.divider,
-                              selectedPixel: selectedPixel,
-                              image: image,
-                              selections: selections,
-                              username: username),
+                            scale: getScale(),
+                            gridColor: context.colors.divider,
+                            selectedPixel: selectedPixel,
+                            image: image,
+                            selections: selections,
+                            username: username,
+                          ),
                         ),
                       );
                     },
@@ -176,7 +172,7 @@ class CanvasPainter extends CustomPainter {
     Color(0xFF4B48D2),
     Color(0xFF8B6CB3),
     Color(0xFFB867A6),
-    Color(0xFF8D8D8D)
+    Color(0xFF8D8D8D),
   ];
 
   @override
@@ -214,7 +210,7 @@ class CanvasPainter extends CustomPainter {
       );
     }
 
-    if (scale > 1.5) {
+    if (scale > 1) {
       for (final position in selections.keys) {
         final nicknames = selections[position];
         if (nicknames == null) continue;
@@ -293,9 +289,10 @@ class CanvasPainter extends CustomPainter {
     Color color,
     Size size,
   ) {
+    final k = (scale * 0.4).clamp(0.4, 1).toDouble();
     final textScale = scale * scaleFactor;
     final textOffset = Offset(
-      pixel.dx * textScale - 3,
+      pixel.dx * textScale - 3 * k,
       (pixel.dy + 1) * textScale + (3.0 / (scale * 2)),
     );
     final backgroundPaint = Paint();
@@ -304,7 +301,7 @@ class CanvasPainter extends CustomPainter {
     final span = TextSpan(
       text: aboba,
       style: TextStyle(
-        fontSize: 14,
+        fontSize: 14 * k,
         fontWeight: ui.FontWeight.w600,
         color: Colors.white,
         backgroundColor: color,
@@ -324,11 +321,11 @@ class CanvasPainter extends CustomPainter {
       RRect.fromRectAndRadius(
         Rect.fromLTWH(
           textOffset.dx,
-          textOffset.dy + 6,
-          painter.width + 8,
-          painter.height + 4,
+          textOffset.dy + 6 * k,
+          painter.width + 12 * k,
+          painter.height + 6 * k,
         ),
-        const ui.Radius.circular(6),
+        ui.Radius.circular(6 * k),
       ),
       backgroundPaint,
     );
@@ -336,8 +333,8 @@ class CanvasPainter extends CustomPainter {
     painter.paint(
       canvas,
       Offset(
-        textOffset.dx + 4,
-        textOffset.dy + 8,
+        textOffset.dx + 6 * k,
+        textOffset.dy + 9 * k,
       ),
     );
 
@@ -350,7 +347,7 @@ class CanvasPainter extends CustomPainter {
     double scaleFactor,
     Color color,
   ) {
-    final strokeWidth = (3 / scale) * scale.clamp(0.75, 1);
+    final strokeWidth = (3 / scale) * (scale * 0.4).clamp(0.4, 1);
     final blackPaint = Paint();
     blackPaint.color = color;
     blackPaint.strokeWidth = strokeWidth;
@@ -369,11 +366,10 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor + strokeWidth,
           1 * scaleFactor + strokeWidth,
         ),
-        Radius.circular(strokeWidth * 3 * scale.clamp(0.5, 2)),
+        Radius.circular(strokeWidth * 3 * (scale * 0.4).clamp(0.4, 1)),
       ),
       blackPaint,
     );
-    print(scale);
 
     canvas.drawRRect(
       RRect.fromRectAndRadius(
@@ -383,7 +379,9 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor - strokeWidth,
           1 * scaleFactor - strokeWidth,
         ),
-        Radius.circular(strokeWidth * 3 * scale.clamp(0.5, 2) - strokeWidth),
+        Radius.circular(
+          strokeWidth * 3 * (scale * 0.4).clamp(0.4, 1) - strokeWidth,
+        ),
       ),
       whitePaint,
     );
