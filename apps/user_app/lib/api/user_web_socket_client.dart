@@ -7,6 +7,8 @@ import '../features/auth/domain/user_service.dart';
 Future<WebSocketClient> createUserWebSocketClient(
   AutoDisposeFutureProviderRef<WebSocketClient> ref,
 ) async {
+  final keepAlive = ref.keepAlive();
+
   final client = await createWebSocketClient(
     afterConnect: (client) async {
       final userService = ref.read(userServiceProvider.notifier);
@@ -15,7 +17,6 @@ Future<WebSocketClient> createUserWebSocketClient(
     },
   );
 
-  final keepAlive = ref.keepAlive();
   Timer? timer;
   ref.onResume(() => timer?.cancel());
   ref.onCancel(
