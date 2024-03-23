@@ -47,7 +47,7 @@ final _currentFieldSizeProvider = AutoDisposeProvider<Size?>.internal(
 );
 
 typedef _CurrentFieldSizeRef = AutoDisposeProviderRef<Size?>;
-String _$currentCooldownHash() => r'458ff54bd3c629ef88c565c9548baa7d21d45dc9';
+String _$currentCooldownHash() => r'222294efa1a8f6cab053fffd3b4ea5f6dd2daaff';
 
 /// See also [_currentCooldown].
 @ProviderFor(_currentCooldown)

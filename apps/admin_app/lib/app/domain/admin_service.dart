@@ -27,6 +27,8 @@ class AdminService extends _$AdminService
         fromJson: AdminServiceState.fromJson,
       );
 
+  WebSocketApi get _api => ref.read(webSocketApiProvider.notifier);
+
   @useInApiWrap
   Future<void> auth({
     required String token,
@@ -34,10 +36,10 @@ class AdminService extends _$AdminService
   }) async {
     final adminLoginRequest = LoginAdminRequest(token);
 
-    await api.refreshConnection();
+    await _api.refreshConnection();
 
     await apiWrapStrictSingle<void>(
-      () => api.request<BackendSuccessResponse>(adminLoginRequest,
+      () => _api.request<BackendSuccessResponse>(adminLoginRequest,
           client: client),
       showErrorToast: false,
       onSuccess: (res) {
