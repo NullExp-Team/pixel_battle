@@ -37,6 +37,19 @@ class HomeController extends _$HomeController with ControllerMixin {
       return;
     }
     state = state.copyWith(selectedPixelPosition: position);
+
+    await apiWrap(
+      () => api.request(
+        AppRequest.updateSelection(
+          UpdateSelectionData(
+            position: Position(
+              x: position.dx.toInt(),
+              y: position.dy.toInt(),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   // Business logic

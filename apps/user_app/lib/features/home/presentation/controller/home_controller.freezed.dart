@@ -48,12 +48,12 @@ class _$HomeControllerStateCopyWithImpl<$Res, $Val extends HomeControllerState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedColor = null,
+    Object? selectedColor = freezed,
     Object? selectedPixelPosition = freezed,
     Object? untilFill = null,
   }) {
     return _then(_value.copyWith(
-      selectedColor: null == selectedColor
+      selectedColor: freezed == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -92,12 +92,12 @@ class __$$HomeControllerStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedColor = null,
+    Object? selectedColor = freezed,
     Object? selectedPixelPosition = freezed,
     Object? untilFill = null,
   }) {
     return _then(_$HomeControllerStateImpl(
-      selectedColor: null == selectedColor
+      selectedColor: freezed == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -138,17 +138,20 @@ class _$HomeControllerStateImpl implements _HomeControllerState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeControllerStateImpl &&
-            (identical(other.selectedColor, selectedColor) ||
-                other.selectedColor == selectedColor) &&
-            (identical(other.selectedPixelPosition, selectedPixelPosition) ||
-                other.selectedPixelPosition == selectedPixelPosition) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedColor, selectedColor) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedPixelPosition, selectedPixelPosition) &&
             (identical(other.untilFill, untilFill) ||
                 other.untilFill == untilFill));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, selectedColor, selectedPixelPosition, untilFill);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(selectedColor),
+      const DeepCollectionEquality().hash(selectedPixelPosition),
+      untilFill);
 
   @JsonKey(ignore: true)
   @override
