@@ -326,7 +326,7 @@ class CanvasPainter extends CustomPainter {
           painter.width + 8,
           painter.height + 4,
         ),
-        const ui.Radius.circular(4.5),
+        const ui.Radius.circular(6),
       ),
       backgroundPaint,
     );
@@ -367,7 +367,7 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor + strokeWidth,
           1 * scaleFactor + strokeWidth,
         ),
-        Radius.circular(strokeWidth * 1.5),
+        Radius.circular(strokeWidth * 3),
       ),
       blackPaint,
     );
@@ -380,7 +380,7 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor - strokeWidth,
           1 * scaleFactor - strokeWidth,
         ),
-        Radius.circular(strokeWidth * 0.5),
+        Radius.circular(strokeWidth * 2),
       ),
       whitePaint,
     );

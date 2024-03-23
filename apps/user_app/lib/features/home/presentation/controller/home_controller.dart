@@ -45,7 +45,7 @@ class HomeController extends _$HomeController with ControllerMixin {
     state = state.copyWith(selectedPixelPosition: position);
 
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.updateSelection(
           UpdateSelectionData(
             position: Position(

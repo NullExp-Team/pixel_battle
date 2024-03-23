@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:shared/shared.dart';
 
 import '../controller/login_contoller.dart';
 
@@ -15,12 +14,6 @@ class LoginScreen extends HookConsumerWidget {
     final nicknameTextController = useTextEditingController(
       text: ref.read(loginContollerProvider.select((value) => value.nickname)),
     );
-
-    final isLoading = useState(false);
-
-    if (isLoading.value) {
-      ref.watch(webSocketClientProvider.select((value) => null));
-    }
 
     return AutoUnfocus(
       child: Scaffold(
@@ -88,13 +81,12 @@ class LoginScreen extends HookConsumerWidget {
                   validator: controller.nicknameValidator,
                 ),
                 const Gap(28),
-                AppButton.fill(
-                  text: 'Начать',
-                  onTap: () async {
-                    isLoading.value = true;
-                    await controller.login();
-                    if (context.mounted) isLoading.value = false;
-                  },
+                SizedBox(
+                  height: 52,
+                  child: AppButton.fill(
+                    text: 'Начать',
+                    onTap: controller.login,
+                  ),
                 ),
                 const SizedBox(height: 50),
               ],
