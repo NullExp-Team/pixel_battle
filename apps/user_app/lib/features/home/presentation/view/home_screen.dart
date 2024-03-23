@@ -33,8 +33,11 @@ class HomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final userState = ref.watch(userServiceProvider);
     final state = ref.watch(homeControllerProvider);
     final controller = ref.watch(homeControllerProvider.notifier);
+    final fieldState = ref
+        .watch(fieldStateServiceProvider.select((value) => value.valueOrNull));
 
     final transformationController = useTransformationController();
 
@@ -48,7 +51,9 @@ class HomeScreen extends HookConsumerWidget {
               maxScale: maxScale,
               minScale: minScale,
               selectedPixel: state.selectedPixelPosition,
+              selections: fieldState?.selections ?? {},
               onPixelSelectionChanged: controller.updateSelectedPosition,
+              username: userState?.nickname ?? '',
             ),
             Align(
               alignment: Alignment.bottomCenter,
