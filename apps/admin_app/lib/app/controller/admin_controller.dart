@@ -18,9 +18,11 @@ class AdminControllerState with _$AdminControllerState {
   }) = _AdminControllerState;
 }
 
-@Riverpod(dependencies: [WebSocketApi])
+@Riverpod()
 class AdminController extends _$AdminController with ControllerMixin {
   AdminService get _adminService => ref.read(adminServiceProvider.notifier);
+
+  WebSocketApi get _api => ref.read(webSocketApiProvider.notifier);
 
   @override
   AdminControllerState build() {
@@ -70,7 +72,7 @@ class AdminController extends _$AdminController with ControllerMixin {
     if (state.selectedPixelPosition == null) return;
 
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.updatePixelAdmin(
           UpdatePixelData(
             x: state.selectedPixelPosition!.dx.toInt(),
@@ -85,7 +87,7 @@ class AdminController extends _$AdminController with ControllerMixin {
   Future<void> banUser() async {
     if (state.selectedPixelPosition == null) return;
 
-    final userId = await api.request<PixelInfoAdminResponse>(
+    final userId = await _api.request<PixelInfoAdminResponse>(
       AppRequest.pixelInfoAdmin(
         PixelInfoAdminData(
           x: state.selectedPixelPosition!.dx.toInt(),
@@ -99,7 +101,7 @@ class AdminController extends _$AdminController with ControllerMixin {
     if (id == null) return;
 
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.toggleBanUserAdmin(
           BanUserAdminData(
             userId: id,
@@ -111,7 +113,7 @@ class AdminController extends _$AdminController with ControllerMixin {
 
   Future<void> resetField(int width, int height) async {
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.resetGameAdmin([width, height]),
       ),
     );
@@ -119,7 +121,7 @@ class AdminController extends _$AdminController with ControllerMixin {
 
   Future<void> updateCooldown(int cooldown) async {
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.updateCooldownAdmin(cooldown),
       ),
     );

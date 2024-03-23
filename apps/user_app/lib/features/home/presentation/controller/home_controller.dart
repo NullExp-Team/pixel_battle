@@ -16,14 +16,20 @@ class HomeControllerState with _$HomeControllerState {
   }) = _HomeControllerState;
 }
 
-@Riverpod(dependencies: [fillPixelCooldown, fillPixelCooldown])
+@Riverpod()
 class HomeController extends _$HomeController with ControllerMixin {
+  WebSocketApi get _api => ref.watch(webSocketApiProvider.notifier);
+
   @override
-  HomeControllerState build() => HomeControllerState(
-        selectedColor: pixelAvailableColors.first,
-        selectedPixelPosition: null,
-        untilFill: Duration.zero,
-      );
+  HomeControllerState build() {
+    ref.listen(fillPixelCooldownProvider, (_, __) {});
+
+    return HomeControllerState(
+      selectedColor: pixelAvailableColors.first,
+      selectedPixelPosition: null,
+      untilFill: Duration.zero,
+    );
+  }
 
   // Update methods
 
@@ -63,7 +69,7 @@ class HomeController extends _$HomeController with ControllerMixin {
     );
 
     await apiWrap(
-      () => api.request(
+      () => _api.request(
         AppRequest.updatePixel(
           UpdatePixelData(
             x: offset.dx.toInt(),

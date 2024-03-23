@@ -8,7 +8,7 @@ import '../../../api/web_socket_api.dart';
 
 part 'fill_pixel_cooldown_provider.g.dart';
 
-@Riverpod(keepAlive: true, dependencies: [WebSocketApi])
+@Riverpod()
 Stream<Duration> fillPixelCooldown(FillPixelCooldownRef ref) {
   final apiStream = ref.watch(webSocketApiProvider);
 
