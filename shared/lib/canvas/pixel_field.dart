@@ -167,14 +167,16 @@ class CanvasPainter extends CustomPainter {
   final double minScaleForGrid = 6;
 
   final List<Color> userColors = const [
-    ui.Color.fromARGB(255, 154, 17, 17),
-    ui.Color.fromARGB(255, 248, 199, 52),
-    ui.Color.fromARGB(255, 135, 231, 71),
-    ui.Color.fromARGB(255, 20, 173, 147),
-    ui.Color.fromARGB(255, 28, 122, 181),
-    ui.Color.fromARGB(255, 80, 38, 220),
-    ui.Color.fromARGB(255, 207, 36, 193),
-    ui.Color.fromARGB(255, 112, 112, 112),
+    Color(0xFFEA6161),
+    Color(0xFFEAB361),
+    Color(0xFFECC746),
+    Color(0xFF81D279),
+    Color(0xFF7EC8B1),
+    Color(0xFF7EACCE),
+    Color(0xFF4B48D2),
+    Color(0xFF8B6CB3),
+    Color(0xFFB867A6),
+    Color(0xFF8D8D8D)
   ];
 
   @override
@@ -348,7 +350,7 @@ class CanvasPainter extends CustomPainter {
     double scaleFactor,
     Color color,
   ) {
-    final strokeWidth = 3 / scale;
+    final strokeWidth = (3 / scale) * scale.clamp(0.75, 1);
     final blackPaint = Paint();
     blackPaint.color = color;
     blackPaint.strokeWidth = strokeWidth;
@@ -367,10 +369,11 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor + strokeWidth,
           1 * scaleFactor + strokeWidth,
         ),
-        Radius.circular(strokeWidth * 3),
+        Radius.circular(strokeWidth * 3 * scale.clamp(0.5, 2)),
       ),
       blackPaint,
     );
+    print(scale);
 
     canvas.drawRRect(
       RRect.fromRectAndRadius(
@@ -380,7 +383,7 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor - strokeWidth,
           1 * scaleFactor - strokeWidth,
         ),
-        Radius.circular(strokeWidth * 2),
+        Radius.circular(strokeWidth * 3 * scale.clamp(0.5, 2) - strokeWidth),
       ),
       whitePaint,
     );
