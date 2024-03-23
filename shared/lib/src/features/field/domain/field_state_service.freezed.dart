@@ -20,6 +20,8 @@ mixin _$FieldStateMap {
   int get height => throw _privateConstructorUsedError;
   Map<int, Map<int, FieldPixel>> get pixels =>
       throw _privateConstructorUsedError;
+  Map<Position, List<String>> get selections =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FieldStateMapCopyWith<FieldStateMap> get copyWith =>
@@ -32,7 +34,11 @@ abstract class $FieldStateMapCopyWith<$Res> {
           FieldStateMap value, $Res Function(FieldStateMap) then) =
       _$FieldStateMapCopyWithImpl<$Res, FieldStateMap>;
   @useResult
-  $Res call({int width, int height, Map<int, Map<int, FieldPixel>> pixels});
+  $Res call(
+      {int width,
+      int height,
+      Map<int, Map<int, FieldPixel>> pixels,
+      Map<Position, List<String>> selections});
 }
 
 /// @nodoc
@@ -51,6 +57,7 @@ class _$FieldStateMapCopyWithImpl<$Res, $Val extends FieldStateMap>
     Object? width = null,
     Object? height = null,
     Object? pixels = null,
+    Object? selections = null,
   }) {
     return _then(_value.copyWith(
       width: null == width
@@ -65,6 +72,10 @@ class _$FieldStateMapCopyWithImpl<$Res, $Val extends FieldStateMap>
           ? _value.pixels
           : pixels // ignore: cast_nullable_to_non_nullable
               as Map<int, Map<int, FieldPixel>>,
+      selections: null == selections
+          ? _value.selections
+          : selections // ignore: cast_nullable_to_non_nullable
+              as Map<Position, List<String>>,
     ) as $Val);
   }
 }
@@ -77,7 +88,11 @@ abstract class _$$FieldStateMapImplCopyWith<$Res>
       __$$FieldStateMapImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int width, int height, Map<int, Map<int, FieldPixel>> pixels});
+  $Res call(
+      {int width,
+      int height,
+      Map<int, Map<int, FieldPixel>> pixels,
+      Map<Position, List<String>> selections});
 }
 
 /// @nodoc
@@ -94,6 +109,7 @@ class __$$FieldStateMapImplCopyWithImpl<$Res>
     Object? width = null,
     Object? height = null,
     Object? pixels = null,
+    Object? selections = null,
   }) {
     return _then(_$FieldStateMapImpl(
       width: null == width
@@ -108,6 +124,10 @@ class __$$FieldStateMapImplCopyWithImpl<$Res>
           ? _value.pixels
           : pixels // ignore: cast_nullable_to_non_nullable
               as Map<int, Map<int, FieldPixel>>,
+      selections: null == selections
+          ? _value.selections
+          : selections // ignore: cast_nullable_to_non_nullable
+              as Map<Position, List<String>>,
     ));
   }
 }
@@ -116,7 +136,10 @@ class __$$FieldStateMapImplCopyWithImpl<$Res>
 
 class _$FieldStateMapImpl implements _FieldStateMap {
   _$FieldStateMapImpl(
-      {required this.width, required this.height, required this.pixels});
+      {required this.width,
+      required this.height,
+      required this.pixels,
+      required this.selections});
 
   @override
   final int width;
@@ -124,10 +147,12 @@ class _$FieldStateMapImpl implements _FieldStateMap {
   final int height;
   @override
   final Map<int, Map<int, FieldPixel>> pixels;
+  @override
+  final Map<Position, List<String>> selections;
 
   @override
   String toString() {
-    return 'FieldStateMap(width: $width, height: $height, pixels: $pixels)';
+    return 'FieldStateMap(width: $width, height: $height, pixels: $pixels, selections: $selections)';
   }
 
   @override
@@ -137,12 +162,18 @@ class _$FieldStateMapImpl implements _FieldStateMap {
             other is _$FieldStateMapImpl &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height) &&
-            const DeepCollectionEquality().equals(other.pixels, pixels));
+            const DeepCollectionEquality().equals(other.pixels, pixels) &&
+            const DeepCollectionEquality()
+                .equals(other.selections, selections));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, width, height, const DeepCollectionEquality().hash(pixels));
+      runtimeType,
+      width,
+      height,
+      const DeepCollectionEquality().hash(pixels),
+      const DeepCollectionEquality().hash(selections));
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +186,8 @@ abstract class _FieldStateMap implements FieldStateMap {
   factory _FieldStateMap(
           {required final int width,
           required final int height,
-          required final Map<int, Map<int, FieldPixel>> pixels}) =
+          required final Map<int, Map<int, FieldPixel>> pixels,
+          required final Map<Position, List<String>> selections}) =
       _$FieldStateMapImpl;
 
   @override
@@ -164,6 +196,8 @@ abstract class _FieldStateMap implements FieldStateMap {
   int get height;
   @override
   Map<int, Map<int, FieldPixel>> get pixels;
+  @override
+  Map<Position, List<String>> get selections;
   @override
   @JsonKey(ignore: true)
   _$$FieldStateMapImplCopyWith<_$FieldStateMapImpl> get copyWith =>

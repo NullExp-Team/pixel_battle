@@ -17,6 +17,7 @@ class FieldStateMap with _$FieldStateMap {
     required int width,
     required int height,
     required Map<int, Map<int, FieldPixel>> pixels,
+    required Map<Position, List<String>> selections,
   }) = _FieldStateMap;
 }
 
@@ -39,6 +40,8 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
 
     final fieldStateStream = apiStream.whereType<FieldStateResponse>();
     final pixelUpdateStream = apiStream.whereType<PixelUpdateResponse>();
+    final selectionUpdateStream =
+        apiStream.whereType<SelectionUpdateResponse>();
 
     final sub = pixelUpdateStream.listen(
       (res) {
@@ -60,7 +63,45 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
       },
     );
 
+    final sub2 = selectionUpdateStream.listen(
+      (res) {
+        final map = state.valueOrNull;
+        if (map == null) {
+          return;
+        }
+        final newSelections = {...map.selections};
+
+        void removeUser(Map<Position, List<String>> selections, String user) {
+          final position = selections.keys.firstWhereOrNull(
+            (pos) => selections[pos]?.contains(user) ?? false,
+          );
+
+          if (position == null) return;
+          selections[position]?.remove(user);
+          if (selections[position]?.isEmpty ?? false) {
+            selections.remove(position);
+          }
+        }
+
+        void addUser(
+          Map<Position, List<String>> selections,
+          Position pos,
+          String user,
+        ) {
+          selections[pos] = [...?selections[pos], user];
+        }
+
+        removeUser(newSelections, res.data.nickname);
+        if (res.data.position != null) {
+          addUser(newSelections, res.data.position!, res.data.nickname);
+        }
+
+        setData(map.copyWith(selections: newSelections));
+      },
+    );
+
     ref.onDispose(sub.cancel);
+    ref.onDispose(sub2.cancel);
 
     unawaited(
       api.request<NoResponse>(GetFieldStateRequest()),
@@ -75,6 +116,7 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
     final [width, height] = fieldState.size;
 
     final pixels = <int, Map<int, FieldPixel>>{};
+    final selections = <Position, List<String>>{};
 
     for (final pixel in fieldState.data.pixels) {
       final x = pixel.position.x;
@@ -84,10 +126,18 @@ class FieldStateService extends _$FieldStateService with ControllerMixin {
       pixels[x]![y] = pixel;
     }
 
+    for (final selection in fieldState.data.selections) {
+      final position = selection.position;
+      if (position == null) continue;
+
+      selections[position] = [...?selections[position], selection.nickname];
+    }
+
     return FieldStateMap(
       width: width,
       height: height,
       pixels: pixels,
+      selections: selections,
     );
   }
 }

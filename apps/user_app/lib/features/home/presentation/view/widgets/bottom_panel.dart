@@ -20,52 +20,56 @@ class _BottomPanel extends HookConsumerWidget {
           shadows.shadow,
         ],
       ),
-      padding: pagePadding.copyWith(top: 12, bottom: 36),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _ZoomButtons(
-            transformationController: transformationController,
-          ),
-          const Spacer(),
-          Consumer(
-            builder: (_, ref, __) {
-              final selectedColor = ref.watch(
-                homeControllerProvider.select((value) => value.selectedColor),
-              );
-
-              return SizedBox(
-                height: 40,
-                width: 40,
-                child: _ColorCard(
-                  color: selectedColor,
-                  onTap: () => _showColorPickerBottomSheet(context: context),
-                ),
-              );
-            },
-          ),
-          const Gap(8),
-          SizedBox(
-            height: 40,
-            width: 120,
-            child: Consumer(
+      padding: pagePadding.copyWith(top: 12, bottom: 12),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _ZoomButtons(
+              transformationController: transformationController,
+            ),
+            const Spacer(),
+            Consumer(
               builder: (_, ref, __) {
-                final untilFill = ref.watch(
-                  homeControllerProvider.select((value) => value.untilFill),
+                final selectedColor = ref.watch(
+                  homeControllerProvider.select((value) => value.selectedColor),
                 );
 
-                final canFiil = untilFill <= Duration.zero;
-
-                return AppButton.outline(
-                  text: canFiil ? 'Закрасить' : formatter.countdown(untilFill),
-                  padding: EdgeInsets.zero,
-                  isDisabled: !canFiil,
-                  onTap: controller.fillPixel,
+                return SizedBox(
+                  height: 40,
+                  width: 40,
+                  child: _ColorCard(
+                    color: selectedColor,
+                    onTap: () => _showColorPickerBottomSheet(context: context),
+                  ),
                 );
               },
             ),
-          ),
-        ],
+            const Gap(8),
+            SizedBox(
+              height: 40,
+              width: 120,
+              child: Consumer(
+                builder: (_, ref, __) {
+                  final untilFill = ref.watch(
+                    homeControllerProvider.select((value) => value.untilFill),
+                  );
+
+                  final canFiil = untilFill <= Duration.zero;
+
+                  return AppButton.outline(
+                    text:
+                        canFiil ? 'Закрасить' : formatter.countdown(untilFill),
+                    padding: EdgeInsets.zero,
+                    isDisabled: !canFiil,
+                    onTap: controller.fillPixel,
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

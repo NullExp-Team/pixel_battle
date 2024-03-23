@@ -19,6 +19,8 @@ class AdminScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(adminControllerProvider);
     final controller = ref.watch(adminControllerProvider.notifier);
+    final fieldState = ref
+        .watch(fieldStateServiceProvider.select((value) => value.valueOrNull));
 
     return Scaffold(
       backgroundColor: AppColors.light.backgroundMinor,
@@ -78,7 +80,9 @@ class AdminScreen extends HookConsumerWidget {
                     maxScale: 100,
                     minScale: 0.1,
                     selectedPixel: state.selectedPixelPosition,
+                    selections: fieldState?.selections ?? {},
                     onPixelSelectionChanged: controller.updateSelectedPosition,
+                    username: '',
                   ),
                 ),
                 Container(
