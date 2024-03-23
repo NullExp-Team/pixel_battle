@@ -22,7 +22,7 @@ class _ColorCard extends HookConsumerWidget {
         color: color,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          width: isSelected ? 6 : 2,
+          width: isSelected ? 4 : 1,
           color: isSelected
               ? Color.lerp(borderColor, Colors.black, 0.2)!
               : borderColor,

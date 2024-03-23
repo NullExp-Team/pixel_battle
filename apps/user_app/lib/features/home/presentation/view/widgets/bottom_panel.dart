@@ -23,6 +23,7 @@ class _BottomPanel extends HookConsumerWidget {
       padding: pagePadding.copyWith(top: 12, bottom: 12),
       child: SafeArea(
         top: false,
+        minimum: const EdgeInsets.only(bottom: 36),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
