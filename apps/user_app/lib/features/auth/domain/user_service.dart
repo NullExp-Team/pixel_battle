@@ -89,6 +89,7 @@ class UserService extends _$UserService
             // ignore: unawaited_futures
             router.replaceAll([const LoginRoute()]);
           default:
+            completeAuth(error);
             throw error;
         }
 
