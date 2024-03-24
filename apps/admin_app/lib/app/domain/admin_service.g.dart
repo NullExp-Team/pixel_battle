@@ -26,7 +26,7 @@ Map<String, dynamic> _$$AdminServiceStateImplToJson(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$adminServiceHash() => r'512c9bd8ed88ca96b5bc3dd4b44e1b028b23cce8';
+String _$adminServiceHash() => r'04b1669e1e5871ba84fb7d805ac125f7b3b6a903';
 
 /// See also [AdminService].
 @ProviderFor(AdminService)
