@@ -72,6 +72,8 @@ class ToastManager {
         text: text != null
             ? SText.text(
                 text,
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
                 maxLines: 16,
                 overflow: TextOverflow.ellipsis,
               )
