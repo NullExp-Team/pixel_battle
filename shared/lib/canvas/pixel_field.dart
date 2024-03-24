@@ -68,8 +68,9 @@ class PixelField extends HookConsumerWidget {
       );
     }
 
-    final asyncImage = ref.watch(fieldImageServiceProvider);
+    print(MediaQuery.of(context).size.width);
 
+    final asyncImage = ref.watch(fieldImageServiceProvider);
     return asyncImage.when(
       skipLoadingOnReload: true,
       skipError: true,
@@ -128,6 +129,13 @@ class PixelField extends HookConsumerWidget {
                             image: image,
                             selections: selections,
                             username: username,
+                            screenScale:
+                                MediaQuery.of(context).devicePixelRatio *
+                                    (400 /
+                                        (MediaQuery.of(context).size.width /
+                                            (3 /
+                                                MediaQuery.of(context)
+                                                    .devicePixelRatio))),
                           ),
                         ),
                       );
@@ -151,6 +159,7 @@ class CanvasPainter extends CustomPainter {
     required this.image,
     required this.selections,
     required this.username,
+    required this.screenScale,
   });
 
   final Offset? selectedPixel;
@@ -161,6 +170,8 @@ class CanvasPainter extends CustomPainter {
   final String username;
 
   final double minScaleForGrid = 6;
+
+  final double screenScale;
 
   final List<Color> userColors = const [
     Color(0xFFEA6161),
@@ -210,7 +221,8 @@ class CanvasPainter extends CustomPainter {
       );
     }
 
-    if (scale > 1) {
+    print(3 / screenScale * scale);
+    if (3 / screenScale * scale > 1) {
       for (final position in selections.keys) {
         final nicknames = selections[position];
         if (nicknames == null) continue;
@@ -289,11 +301,11 @@ class CanvasPainter extends CustomPainter {
     Color color,
     Size size,
   ) {
-    final k = (scale * 0.4).clamp(0.4, 1).toDouble();
+    final k = ((3 / screenScale * scale) * 0.2).clamp(0.3, 1).toDouble();
     final textScale = scale * scaleFactor;
     final textOffset = Offset(
       pixel.dx * textScale - 3 * k,
-      (pixel.dy + 1) * textScale + (3.0 / (scale * 2)),
+      (pixel.dy + 1) * textScale + (3.0 / ((3 / screenScale * scale) * 2)),
     );
     final backgroundPaint = Paint();
     backgroundPaint.color = color;
@@ -347,7 +359,8 @@ class CanvasPainter extends CustomPainter {
     double scaleFactor,
     Color color,
   ) {
-    final strokeWidth = (3 / scale) * (scale * 0.4).clamp(0.4, 1);
+    final sizeScale = ((3 / screenScale * scale) * 0.2).clamp(0.4, 1);
+    final strokeWidth = (3 / scale) * sizeScale;
     final blackPaint = Paint();
     blackPaint.color = color;
     blackPaint.strokeWidth = strokeWidth;
@@ -366,7 +379,9 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor + strokeWidth,
           1 * scaleFactor + strokeWidth,
         ),
-        Radius.circular(strokeWidth * 3 * (scale * 0.4).clamp(0.4, 1)),
+        Radius.circular(
+          strokeWidth * 3 * sizeScale,
+        ),
       ),
       blackPaint,
     );
@@ -380,7 +395,7 @@ class CanvasPainter extends CustomPainter {
           1 * scaleFactor - strokeWidth,
         ),
         Radius.circular(
-          strokeWidth * 3 * (scale * 0.4).clamp(0.4, 1) - strokeWidth,
+          strokeWidth * 3 * sizeScale - strokeWidth,
         ),
       ),
       whitePaint,
