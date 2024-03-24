@@ -1,15 +1,16 @@
 part of '../home_screen.dart';
 
 class _ColorCard extends HookConsumerWidget {
-  const _ColorCard({
-    required this.color,
-    this.isSelected = false,
-    required this.onTap,
-  });
+  const _ColorCard(
+      {required this.color,
+      this.isSelected = false,
+      required this.onTap,
+      required this.cornerRadius});
 
   final Color color;
   final bool isSelected;
   final VoidCallback onTap;
+  final double cornerRadius;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,7 +21,7 @@ class _ColorCard extends HookConsumerWidget {
       curve: Curves.easeInOut,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(cornerRadius),
         border: Border.all(
           width: isSelected ? 4 : 1,
           color: isSelected
