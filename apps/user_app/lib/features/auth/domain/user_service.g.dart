@@ -24,7 +24,7 @@ Map<String, dynamic> _$$UserServiceStateImplToJson(
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userServiceHash() => r'450739b4a43f5087fc85bde1cc7ff09422652f4d';
+String _$userServiceHash() => r'fcd22f309626be3e321f05856386779ff0f855ea';
 
 /// See also [UserService].
 @ProviderFor(UserService)
