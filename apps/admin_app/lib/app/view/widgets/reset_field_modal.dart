@@ -80,16 +80,33 @@ class ResetFieldModal extends HookConsumerWidget {
           const Gap(12),
           SizedBox(
             height: 40,
-            child: AppButton.fill(
-              text: 'Пересоздать',
-              onTap: () {
-                final width = int.tryParse(widthController.text) ??
-                    currentFieldSize?.width.toInt() ??
-                    64;
-                final height = int.tryParse(heightController.text) ??
-                    currentFieldSize?.height.toInt() ??
-                    64;
-                controller.resetField(width, height);
+            child: HookConsumer(
+              builder: (context, ref, _) {
+                useListenable(widthController);
+                useListenable(heightController);
+
+                final isEnabled = ((int.tryParse(widthController.text) ??
+                            currentFieldSize?.width.toInt()) !=
+                        0) &&
+                    ((int.tryParse(heightController.text) ??
+                            currentFieldSize?.height.toInt()) !=
+                        0);
+                return AppButton.fill(
+                  text: 'Пересоздать',
+                  isDisabled: !isEnabled,
+                  onTap: () {
+                    final width = int.tryParse(widthController.text) ??
+                        currentFieldSize?.width.toInt() ??
+                        64;
+                    final height = int.tryParse(heightController.text) ??
+                        currentFieldSize?.height.toInt() ??
+                        64;
+                    controller.resetField(width, height);
+                    Navigator.pop(context);
+                    controller.loadField();
+                    controller.loadUsers();
+                  },
+                );
               },
             ),
           ),

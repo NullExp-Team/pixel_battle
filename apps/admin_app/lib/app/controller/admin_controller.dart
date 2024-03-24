@@ -119,6 +119,22 @@ class AdminController extends _$AdminController with ControllerMixin {
     );
   }
 
+  Future<void> loadField() async {
+    await apiWrap(
+      () => _api.request(
+        AppRequest.getFieldState(),
+      ),
+    );
+  }
+
+  Future<void> loadUsers() async {
+    await apiWrap(
+      () => _api.request(
+        AppRequest.getOnlineInfoAdmin(),
+      ),
+    );
+  }
+
   Future<void> updateCooldown(int cooldown) async {
     await apiWrap(
       () => _api.request(
