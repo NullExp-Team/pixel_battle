@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:core/core.dart';
@@ -92,6 +93,11 @@ class PixelField extends HookConsumerWidget {
                   const [],
                 );
 
+                final screenScale = MediaQuery.of(context).devicePixelRatio;
+                final imageSizeGuarder = max(image.height, image.height) / 64;
+                final screenSizeGuarder = 400 /
+                    (MediaQuery.of(context).size.width / (3 / screenScale));
+
                 return GestureDetector(
                   onTapUp: (details) {
                     final position = pixelPosition(
@@ -129,13 +135,9 @@ class PixelField extends HookConsumerWidget {
                             image: image,
                             selections: selections,
                             username: username,
-                            screenScale:
-                                MediaQuery.of(context).devicePixelRatio *
-                                    (400 /
-                                        (MediaQuery.of(context).size.width /
-                                            (3 /
-                                                MediaQuery.of(context)
-                                                    .devicePixelRatio))),
+                            screenScale: screenScale *
+                                screenSizeGuarder *
+                                imageSizeGuarder,
                           ),
                         ),
                       );
@@ -221,7 +223,6 @@ class CanvasPainter extends CustomPainter {
       );
     }
 
-    print(3 / screenScale * scale);
     if (3 / screenScale * scale > 1) {
       for (final position in selections.keys) {
         final nicknames = selections[position];
