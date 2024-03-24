@@ -22,7 +22,9 @@ class LoginContoller extends _$LoginContoller
   @override
   LoginContollerState build() {
     final nickname = ref.read(
-      userServiceProvider.select((value) => value?.nickname ?? ''),
+      userServiceProvider.select(
+        (value) => value?.nickname ?? stateOrNull?.nickname ?? '',
+      ),
     );
 
     return LoginContollerState(
@@ -39,6 +41,9 @@ class LoginContoller extends _$LoginContoller
 
     final isValid = await validateAll();
     if (!isValid) return;
+
+    // Подписываемся, на клиент, чтобы он не диспоузнулся
+    ref.watch(webSocketApiProvider);
 
     await apiWrap(
       () => _userService.login(nickname: nickname),
@@ -59,11 +64,12 @@ class LoginContoller extends _$LoginContoller
 
         if (errorStr != null) {
           nicknameValidator.setError(errorStr);
-        } else {
-          toast.apiError(error);
         }
       },
     );
+
+    // Инвалидируемся, снимая подписку на клиент
+    Future.delayed(const Duration(seconds: 1), ref.invalidateSelf);
   }
 }
 

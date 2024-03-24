@@ -1,3 +1,5 @@
+// ignore_for_file: join_return_with_assignment
+
 import 'dart:async';
 
 import 'package:core/core.dart';
@@ -9,20 +11,27 @@ Future<WebSocketClient> createUserWebSocketClient(
 ) async {
   final keepAlive = ref.keepAlive();
 
-  final client = await createWebSocketClient(
+  Timer? timer;
+  WebSocketClient? client;
+  ref.onResume(() {
+    timer?.cancel();
+  });
+  ref.onCancel(
+    () {
+      timer = Timer(const Duration(seconds: 3), keepAlive.close);
+    },
+  );
+  ref.onDispose(() {
+    client?.close();
+  });
+
+  client = await createWebSocketClient(
     afterConnect: (client) async {
       final userService = ref.read(userServiceProvider.notifier);
 
       await userService.authConnect(client: client);
     },
   );
-
-  Timer? timer;
-  ref.onResume(() => timer?.cancel());
-  ref.onCancel(
-    () => timer = Timer(const Duration(seconds: 3), keepAlive.close),
-  );
-  ref.onDispose(client.close);
 
   return client;
 }

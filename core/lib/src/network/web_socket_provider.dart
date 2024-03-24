@@ -7,7 +7,7 @@ part 'web_socket_provider.g.dart';
 
 const _baseUrl = 'wss://pixel-battle.k-lab.su/ws/';
 
-@Riverpod(dependencies: [])
+@Riverpod()
 Future<WebSocketClient> webSocketClient(WebSocketClientRef ref) async {
   throw UnimplementedError();
 }
