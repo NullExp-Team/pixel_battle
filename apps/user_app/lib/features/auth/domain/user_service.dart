@@ -70,9 +70,7 @@ class UserService extends _$UserService
         completeAuth();
       },
       showErrorToast: false,
-      onError: (error) {
-        completeAuth(error);
-
+      onError: (error) async {
         switch (error) {
           case InternalError(
               error: BackendErrorResponse(message: 'User not found')
@@ -82,15 +80,19 @@ class UserService extends _$UserService
               title: 'Пользователь не найден',
               text: 'Попробуйте авторизоваться заново',
             );
-
+            await client.close();
           case InternalError(
               error: BackendErrorResponse(message: 'User is banned')
             ):
             toast.error(title: 'Пользователь заблокирован');
+            await client.close();
+            // ignore: unawaited_futures
             router.replaceAll([const LoginRoute()]);
           default:
             throw error;
         }
+
+        completeAuth(error);
       },
     );
   }

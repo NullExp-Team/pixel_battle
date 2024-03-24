@@ -8,7 +8,7 @@ part of 'web_socket_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$webSocketClientHash() => r'ea23d3c712083dc5b07c13d3d6ded3b92b50b1cf';
+String _$webSocketClientHash() => r'4dd21bf4cd710c4361e2ca48e7933bf91692da26';
 
 /// See also [webSocketClient].
 @ProviderFor(webSocketClient)
@@ -19,8 +19,8 @@ final webSocketClientProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$webSocketClientHash,
-  dependencies: const <ProviderOrFamily>[],
-  allTransitiveDependencies: const <ProviderOrFamily>{},
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
 
 typedef WebSocketClientRef = AutoDisposeFutureProviderRef<WebSocketClient>;
