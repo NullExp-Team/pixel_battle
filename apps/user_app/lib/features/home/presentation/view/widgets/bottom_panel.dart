@@ -42,6 +42,7 @@ class _BottomPanel extends HookConsumerWidget {
                   width: 40,
                   child: _ColorCard(
                     color: selectedColor,
+                    cornerRadius: 12,
                     onTap: () => _showColorPickerBottomSheet(context: context),
                   ),
                 );
