@@ -110,6 +110,18 @@ Map<String, dynamic> _$$UpdateSelectionRequestImplToJson(
       'type': instance.$type,
     };
 
+_$GetOnlineInfoAdminRequestImpl _$$GetOnlineInfoAdminRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GetOnlineInfoAdminRequestImpl(
+      $type: json['type'] as String?,
+    );
+
+Map<String, dynamic> _$$GetOnlineInfoAdminRequestImplToJson(
+        _$GetOnlineInfoAdminRequestImpl instance) =>
+    <String, dynamic>{
+      'type': instance.$type,
+    };
+
 _$UpdateCooldownRequestImpl _$$UpdateCooldownRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$UpdateCooldownRequestImpl(

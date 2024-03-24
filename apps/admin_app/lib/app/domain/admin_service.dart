@@ -35,6 +35,7 @@ class AdminService extends _$AdminService
     required IWebSocketClient client,
   }) async {
     final adminLoginRequest = LoginAdminRequest(token);
+    final lsitRequest = GetOnlineInfoAdminRequest();
 
     await _api.refreshConnection();
 
@@ -47,6 +48,8 @@ class AdminService extends _$AdminService
           token: token,
           users: [],
         );
+
+        apiWrapStrictSingle<void>(() => _api.request(lsitRequest));
       },
     );
   }
