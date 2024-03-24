@@ -78,6 +78,7 @@ class HomeController extends _$HomeController with ControllerMixin {
           ),
         ),
       ),
+      showErrorToast: false,
       rateLimiter: Throttle(
         duration: cooldown,
         onTickCooldown: (remainingTime) => state = state.copyWith(
