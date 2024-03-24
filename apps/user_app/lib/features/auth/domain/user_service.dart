@@ -6,6 +6,8 @@ import 'package:shared/shared.dart';
 // ignore: implementation_imports, depend_on_referenced_packages
 import 'package:ws/src/client/ws_client_interface.dart';
 
+import '../../../router/app_router.dart';
+
 part 'user_service.freezed.dart';
 part 'user_service.g.dart';
 
@@ -85,7 +87,7 @@ class UserService extends _$UserService
               error: BackendErrorResponse(message: 'User is banned')
             ):
             toast.error(title: 'Пользователь заблокирован');
-
+            router.replaceAll([const LoginRoute()]);
           default:
             throw error;
         }
