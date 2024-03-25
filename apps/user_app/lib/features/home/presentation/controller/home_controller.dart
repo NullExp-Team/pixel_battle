@@ -1,5 +1,9 @@
+import 'dart:ui' as ui;
+
 import 'package:core/core.dart';
+import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared/shared.dart';
 
 import '../view/home_screen.dart';
@@ -86,5 +90,22 @@ class HomeController extends _$HomeController with ControllerMixin {
         ),
       ),
     );
+  }
+
+  Future<void> shareImage() async {
+    final image = await ref.read(fieldImageServiceProvider.future);
+
+    final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+
+    final pngBytes = byteData!.buffer.asUint8List();
+
+    await FileSaver.instance.saveFile(
+      name: 'pixel_battle.png',
+      bytes: pngBytes,
+    );
+
+    // final resilt = await Share.shareXFiles([XFile.fromData(pngBytes)]);
+
+    // logger.debug('Share result', resilt.toString());
   }
 }

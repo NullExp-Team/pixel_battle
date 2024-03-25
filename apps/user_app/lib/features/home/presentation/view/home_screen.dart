@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:core/core.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -21,6 +22,7 @@ part 'widgets/zoom_buttons.dart';
 part 'widgets/exit_button.dart';
 part 'widgets/online_count.dart';
 part 'widgets/connection_status.dart';
+part 'widgets/share_button.dart';
 
 part 'home_screen.g.dart';
 

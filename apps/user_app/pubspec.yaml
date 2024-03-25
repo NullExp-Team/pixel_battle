@@ -28,6 +28,8 @@ dependencies:
 
   flutter_native_splash: ^2.4.0
   cupertino_icons: ^1.0.6
+  share_plus: ^8.0.2
+  file_saver: ^0.2.12
 
 dev_dependencies:
   flutter_test:

@@ -30,6 +30,7 @@ class _BottomPanel extends HookConsumerWidget {
             _ZoomButtons(
               transformationController: transformationController,
             ),
+            if (MediaQuery.of(context).size.width > 600) const _ShareButton(),
             const Spacer(),
             Consumer(
               builder: (_, ref, __) {

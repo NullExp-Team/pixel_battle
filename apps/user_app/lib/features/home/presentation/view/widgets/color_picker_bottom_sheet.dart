@@ -7,7 +7,7 @@ void _showColorPickerBottomSheet({required BuildContext context}) {
     isScrollControlled: true,
     constraints: BoxConstraints(
       maxHeight: MediaQuery.sizeOf(context).height * 0.9,
-      maxWidth: 480,
+      maxWidth: 680,
     ),
     elevation: 0,
     builder: (_) {
