@@ -103,9 +103,5 @@ class HomeController extends _$HomeController with ControllerMixin {
       name: 'pixel_battle.png',
       bytes: pngBytes,
     );
-
-    // final resilt = await Share.shareXFiles([XFile.fromData(pngBytes)]);
-
-    // logger.debug('Share result', resilt.toString());
   }
 }
